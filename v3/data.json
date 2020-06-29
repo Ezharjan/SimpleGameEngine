@@ -1,0 +1,67 @@
+{
+	"id": "container1",
+	"children": [
+		{
+			"children": [
+				{
+					"id": "image",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./assests/images/Paris.png"
+						}
+					]
+				},
+				{
+					"id": "greenRect",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 200,
+							"y": 50,
+							"alpha": -2.220446049250313e-15
+						},
+						{
+							"name": "RectRenderer",
+							"height": 40,
+							"color": "green"
+						}
+					]
+				},
+				{
+					"children": [
+						{
+							"id": "button",
+							"prefabUrl": "button.json"
+						}
+					],
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 50,
+							"y": 50,
+							"rotation": 23,
+							"alpha": 0
+						}
+					]
+				}
+			],
+			"behaviours": [
+				{
+					"name": "Transform"
+				}
+			]
+		}
+	],
+	"behaviours": [
+		{
+			"name": "Transform"
+		},
+		{
+			"name": "GameStartupBehaviour"
+		}
+	]
+}
