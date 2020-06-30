@@ -5,8 +5,11 @@
             "name": "Transform"
         },
         {
+            "name":"ClickContainerBehaviour"
+        },
+        {
             "name": "ImageRenderer",
-            "image": "./images/monster.png"
+            "image": "./assests/images/Monster.png"
         }
     ]
 }

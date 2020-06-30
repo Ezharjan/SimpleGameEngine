@@ -4,52 +4,37 @@
 		{
 			"children": [
 				{
-					"id": "image",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 96,
-							"y": 100,
-							"scaleX": 1.1999999999999955,
-							"rotation": 25
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./assests/images/Paris.png"
-						}
-					]
+					"behaviours": [{
+						"name": "Transform",
+						"x": 120,
+						"y": 320
+					}],
+					"children": [{
+						"id": "hero",
+						"prefabUrl": "hero.json"
+					}]
 				},
 				{
-					"id": "greenRect",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 200,
-							"y": 50,
-							"alpha": -2.220446049250313e-15
-						},
-						{
-							"name": "RectRenderer",
-							"height": 40,
-							"color": "green"
-						}
-					]
+					"behaviours": [{
+						"name": "Transform",
+						"x": 195,
+						"y": 320
+					}],
+					"children": [{
+						"id": "monster",
+						"prefabUrl": "monster.json"
+					}]
 				},
 				{
-					"children": [
-						{
-							"id": "button",
-							"prefabUrl": "button.json"
-						}
-					],
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 50,
-							"y": 50,
-							"rotation": 23
-						}
-					]
+					"behaviours": [{
+						"name": "Transform",
+						"x": 65,
+						"y": 320
+					}],
+					"children": [{
+						"id": "tool",
+						"prefabUrl": "tool.json"
+					}]
 				}
 			],
 			"behaviours": [

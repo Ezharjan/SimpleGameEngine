@@ -35,53 +35,53 @@ class ClickContainerBehaviour extends Behaviour {
     }
 }
 
-class KeyContainerBehaviour extends Behaviour{
+ class KeyContainerBehaviour extends Behaviour{
 
-	onStart(){
-		const Hero = core.getObjectById("hero");
-        const Monster = core.getObjectById("monster");
-        const Tool = core.getObjectById("tool");
+ 	onStart(){
+ 		const Hero = core.getObjectById("hero");
+         const Monster = core.getObjectById("monster");
+         const Tool = core.getObjectById("tool");
 
-		window.onkeydown = function(e){
-			switch(e.keyCode){
-				case 38:
-					Hero.getBehaviour(Transform).y -= 5;
-					break;
-				case 40:
-					Hero.getBehaviour(Transform).y += 5;
-					break;
-				case 37:
-		 			Hero.getBehaviour(Transform).x -= 5;
-					break;
-				case 39:
-					Hero.getBehaviour(Transform).x += 5;
-					break;
-			}
+ 		window.onkeydown = function(e){
+ 			switch(e.keyCode){
+ 				case 38:
+ 					Hero.getBehaviour(Transform).y -= 50;
+ 					break;
+ 				case 40:
+ 					Hero.getBehaviour(Transform).y += 50;
+ 					break;
+ 				case 37:
+ 		 			Hero.getBehaviour(Transform).x -= 50;
+ 					break;
+ 				case 39:
+ 					Hero.getBehaviour(Transform).x += 50;
+ 					break;
+ 			}
 
-			//判定是否触碰
-	if (
-		Hero.getBehaviour(Transform).x <= (Monster.getBehaviour(Transform).x + 1)
-		&& Monster.getBehaviour(Transform).x <= (Hero.getBehaviour(Transform).x + 1)
-		&& Hero.getBehaviour(Transform).y <= (Monster.getBehaviour(Transform).y + 8)
-		&& Monster.getBehaviour(Transform).y <= (Hero.getBehaviour(Transform).y + 8)
-	) {
-		//"弹窗，遭遇怪物"
-	}
+ 			//判定是否触碰
+ 	if (
+ 		Hero.getBehaviour(Transform).x <= (Monster.getBehaviour(Transform).x + 1)
+ 		&& Monster.getBehaviour(Transform).x <= (Hero.getBehaviour(Transform).x + 1)
+ 		&& Hero.getBehaviour(Transform).y <= (Monster.getBehaviour(Transform).y + 8)
+ 		&& Monster.getBehaviour(Transform).y <= (Hero.getBehaviour(Transform).y + 8)
+ 	) {
+ 		//"弹窗，遭遇怪物"
+ 	}
 	
-	if (
-		Hero.getBehaviour(Transform).x <= (Tool.getBehaviour(Transform).x + 1)
-		&& Tool.getBehaviour(Transform).x <= (Hero.getBehaviour(Transform).x + 1)
-		&& Hero.getBehaviour(Transform).y <= (Tool.getBehaviour(Transform).y + 8)
-		&& Tool.getBehaviour(Transform).y <= (Hero.getBehaviour(Transform).y + 8)
-	) {
-		//"弹窗，是否拾取道具"
-	}
+ 	if (
+ 		Hero.getBehaviour(Transform).x <= (Tool.getBehaviour(Transform).x + 1)
+ 		&& Tool.getBehaviour(Transform).x <= (Hero.getBehaviour(Transform).x + 1)
+ 		&& Hero.getBehaviour(Transform).y <= (Tool.getBehaviour(Transform).y + 8)
+ 		&& Tool.getBehaviour(Transform).y <= (Hero.getBehaviour(Transform).y + 8)
+ 	) {
+ 		//"弹窗，是否拾取道具"
+ 	}
 
-	}
+ 	}
 
-	}
+ 	}
 	
-}
+ }
 
 core.registerBehaviourClass(KeyContainerBehaviour)
 

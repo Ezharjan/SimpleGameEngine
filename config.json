@@ -10,7 +10,10 @@
     ],
     "scenes": [
         "data.json",
-        "button.json"
+        "button.json",
+        "hero.json",
+        "monster.json",
+        "tool.json"
     ],
-    "images": ["./assests/images/Sydney.png", "./assests/images/Paris.png"]
+    "images": ["./assests/images/Sydney.png", "./assests/images/Paris.png","./assests/images/Hero.png","./assests/images/Monster.png","./assests/images/Tool.png"]
 }
