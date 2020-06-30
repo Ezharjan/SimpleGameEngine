@@ -4,14 +4,43 @@
 		{
 			"children": [
 				{
+					"behaviours": [{
+						"name": "Transform",
+						"x": 120,
+						"y": 320
+					}],
+					"children": [{
+						"id": "hero",
+						"prefabUrl": "hero.json"
+					}]
+				},
+				{
+					"behaviours": [{
+						"name": "Transform",
+						"x": 195,
+						"y": 320
+					}],
+					"children": [{
+						"id": "monster",
+						"prefabUrl": "monster.json"
+					}]
+				},
+				{
+					"behaviours": [{
+						"name": "Transform",
+						"x": 65,
+						"y": 320
+					}],
+					"children": [{
+						"id": "tool",
+						"prefabUrl": "tool.json"
+					}]
+				},
+				{
 					"id": "image",
 					"behaviours": [
 						{
-							"name": "Transform",
-							"x": 96,
-							"y": 100,
-							"scaleX": 1.1999999999999955,
-							"rotation": 25
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -47,7 +76,8 @@
 							"name": "Transform",
 							"x": 50,
 							"y": 50,
-							"rotation": 23
+							"rotation": 23,
+							"alpha": 0
 						}
 					]
 				}
