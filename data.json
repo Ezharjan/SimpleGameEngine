@@ -4,10 +4,24 @@
 		{
 			"children": [
 				{
+					"id": "background",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 280,
+							"y": 0
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./assests/images/Background.png"
+						}
+					]
+				},
+				{
 					"behaviours": [{
 						"name": "Transform",
-						"x": 120,
-						"y": 320
+						"x": 280,
+						"y": 670
 					}],
 					"children": [{
 						"id": "hero",
@@ -17,8 +31,8 @@
 				{
 					"behaviours": [{
 						"name": "Transform",
-						"x": 195,
-						"y": 320
+						"x": 390,
+						"y": 360
 					}],
 					"children": [{
 						"id": "monster",
@@ -28,12 +42,34 @@
 				{
 					"behaviours": [{
 						"name": "Transform",
-						"x": 65,
-						"y": 320
+						"x": 600,
+						"y": 410
 					}],
 					"children": [{
 						"id": "tool",
 						"prefabUrl": "tool.json"
+					}]
+				},
+				{
+					"behaviours": [{
+						"name": "Transform",
+						"x": 280,
+						"y": 0
+					}],
+					"children": [{
+						"id": "stairs1",
+						"prefabUrl": "stairs1.json"
+					}]
+				},
+				{
+					"behaviours": [{
+						"name": "Transform",
+						"x": 950,
+						"y": 0
+					}],
+					"children": [{
+						"id": "stairs2",
+						"prefabUrl": "stairs2.json"
 					}]
 				}
 			],

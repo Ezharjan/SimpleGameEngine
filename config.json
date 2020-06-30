@@ -13,7 +13,10 @@
         "button.json",
         "hero.json",
         "monster.json",
-        "tool.json"
+        "tool.json",
+        "stairs1.json",
+        "stairs2.json"
     ],
-    "images": ["./assests/images/Sydney.png", "./assests/images/Paris.png","./assests/images/Hero.png","./assests/images/Monster.png","./assests/images/Tool.png"]
+    "images": ["./assests/images/Hero.png","./assests/images/Monster.png","./assests/images/Tool.png",
+    "./assests/images/stairs1.png","./assests/images/stairs2.png","./assests/images/Background.png"]
 }
