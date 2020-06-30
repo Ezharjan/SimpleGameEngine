@@ -1,0 +1,22 @@
+{
+    "scripts": [
+        "./out/engine/math.js",
+        "./out/engine/core.js",
+        "./out/engine/entities.js",
+        "./out/engine/components.js",
+        "./out/engine/systems.js",
+        "./out/game.js",
+        "./out/engine/startup.js"
+    ],
+    "scenes": [
+        "data.json",
+        "button.json",
+        "hero.json",
+        "monster.json",
+        "tool.json",
+        "stairs1.json",
+        "stairs2.json"
+    ],
+    "images": ["./assests/images/Hero.png","./assests/images/Monster.png","./assests/images/Tool.png",
+    "./assests/images/stairs1.png","./assests/images/stairs2.png","./assests/images/Background.png"]
+}

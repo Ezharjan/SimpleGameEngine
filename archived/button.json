@@ -1,0 +1,33 @@
+{
+    "id": "button",
+    "children": [{
+            "behaviours": [{
+                    "name": "Transform"
+                },
+                {
+                    "name": "RectRenderer",
+                    "width": 200,
+                    "height": 20,
+                    "color": "blue"
+                }
+            ]
+        },
+        {
+            "behaviours": [{
+                    "name": "Transform"
+                },
+                {
+                    "name": "TextRenderer",
+                    "color": "red"
+                }
+            ]
+        }
+    ],
+    "behaviours": [{
+            "name": "ClickContainerBehaviour"
+        },
+        {
+            "name": "Transform"
+        }
+    ]
+}

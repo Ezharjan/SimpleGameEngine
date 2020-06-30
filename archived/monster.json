@@ -1,0 +1,15 @@
+{
+    "id": "monster",
+    "behaviours": [
+        {
+            "name": "Transform"
+        },
+        {
+            "name":"ClickContainerBehaviour"
+        },
+        {
+            "name": "ImageRenderer",
+            "image": "./assests/images/Monster.png"
+        }
+    ]
+}

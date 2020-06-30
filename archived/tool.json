@@ -1,0 +1,15 @@
+{
+    "id": "tool",
+    "behaviours": [
+        {
+            "name": "Transform"
+        },
+        {
+            "name":"ClickContainerBehaviour"
+        },
+        {
+            "name": "ImageRenderer",
+            "image": "./assests/images/Tool.png"
+        }
+    ]
+}

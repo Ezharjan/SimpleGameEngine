@@ -1,44 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Engine Task</title>
+    <div id="app">
+        <canvas id="mainCanvas" class="mycanvas" width="400px" height="400px"></canvas>
+        <audio src="assests/explode.mp3" preload="auto" id="explode_sound"></audio>
+        <audio src="assests/bgMusic.mp3" preload="auto" id="bg_music"></audio>
+        <audio src="assests/failed.mp3" preload="auto" id="failed_music"></audio>
+        <audio src="assests/danger.mp3" preload="auto" id="danger_music"></audio>
+        <audio src="assests/succeed.wav" preload="auto" id="succeed_music"></audio>
+        <script src="Input.js"></script>
+        <script src="KeyCodeEnum.js"></script>
+        <script src="ColorEnum.js"></script>
+        <script src="GameState.js"></script>
+        <script src="CommercialLogo.js"></script>
+    </div>
+    <link rel="stylesheet" href="viewerStyle.css">
 </head>
 
 <body>
-    <canvas id='game' width='1280' height='720'></canvas>
-    <script>
-        function loadText(url) {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.onload = () => {
-                    resolve(xhr.responseText);
-                }
-                xhr.open('get', url);
-                xhr.send();
-            })
-        }
-
-        function loadScript(url) {
-            return new Promise((resolve, reject) => {
-                const script = document.createElement("script");
-                script.onload = () => resolve();
-                script.src = url;
-                document.body.appendChild(script)
-
-            });
-        }
-
-        async function run() {
-            const content = await loadText('config.json');
-            window['configData'] = JSON.parse(content)
-            const javascriptFiles = window['configData'].scripts;
-
-            for (let item of javascriptFiles) {
-                await loadScript(item);
-            }
-        }
-        run();
-    </script>
+    <script src="engine.js"></script>
+    <script src="loading.js"></script>
+    <script src="game.js"></script>
 </body>
 
 </html>

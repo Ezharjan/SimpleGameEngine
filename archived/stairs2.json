@@ -1,0 +1,15 @@
+{
+    "id": "stairs2",
+    "behaviours": [
+        {
+            "name": "Transform"
+        },
+        {
+            "name":"ClickContainerBehaviour"
+        },
+        {
+            "name": "ImageRenderer",
+            "image": "./assests/images/stairs2.png"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "self-made-game-engine",
+    "version": "1.0.0",
+    "description": "A game engine.",
+    "main": "editor/main.js",
+    "scripts": {
+        "elect": "electron .",
+        "start": "servez",
+        "watch": "tsc -w"
+    },
+    "author": "Alexander",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^8.3.0",
+        "http-server": "^0.12.3",
+        "servez": "^1.10.0",
+        "typescript": "^3.8.3"
+    },
+    "dependencies": {}
+}
