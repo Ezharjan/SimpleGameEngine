@@ -1,0 +1,18 @@
+{
+    "id": "hero",
+    "behaviours": [
+        {
+            "name": "Transform"
+        },
+        {
+            "name":"ClickContainerBehaviour"
+        },
+        {
+            "name":"KeyContainerBehaviour"
+        },
+        {
+            "name": "ImageRenderer",
+            "image": "./images/hero.png"
+        }
+    ]
+}

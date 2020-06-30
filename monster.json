@@ -1,0 +1,12 @@
+{
+    "id": "monster",
+    "behaviours": [
+        {
+            "name": "Transform"
+        },
+        {
+            "name": "ImageRenderer",
+            "image": "./images/monster.png"
+        }
+    ]
+}
