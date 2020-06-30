@@ -1,21 +1,20 @@
-#  Under Construction...
+## The third version of the engine.
+
+#### More flexible and mature than the second version.
 
 
 
-#### Open index.html to play my game and view my engine.
+1.  Added Unity-Like framework such as behavior.
+2.  Seperated data from inside the game to outside for variable needs.
+3.  Client application created using electron.
+4.  Game engine has been completed on its core works.
+5.  Scene changement utility added.
 
-### Note: 
 
-1.  All versions of game engine developed in taking the course of *Game Engine Analysis & Practice* in Software Faculty of BJUT.
 
-2.  Contact me by [e-mail](bjutsoft@sina.com "Alexander")  .
 
-    ---
 
-    *This is a project owned by Alexander, any commercial related violation against copyright will be seriously punished according to the Intellectual Property Law of the People's Republic of China.*
 
-    ---
-
-    <p align="right">April,9th,2020</p>
-
-    
+### Warn:
+1.  Running node http-server on the google browser will cause its storage unclearance and finnally result in failure to see the latest scripts running but the last one, so running on the private mode on google browser will eventually solve this trouble but it was not the best solution.  
+2.  Best solution is to disable cache in **Settings** --> **Preferences** --> **Net** .

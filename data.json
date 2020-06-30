@@ -7,7 +7,11 @@
 					"id": "image",
 					"behaviours": [
 						{
-							"name": "Transform"
+							"name": "Transform",
+							"x": 96,
+							"y": 100,
+							"scaleX": 1.1999999999999955,
+							"rotation": 25
 						},
 						{
 							"name": "ImageRenderer",
@@ -43,8 +47,7 @@
 							"name": "Transform",
 							"x": 50,
 							"y": 50,
-							"rotation": 23,
-							"alpha": 0
+							"rotation": 23
 						}
 					]
 				}
