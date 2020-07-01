@@ -1,0 +1,25 @@
+{
+  "name": "my-team-game",
+  "version": "1.0.0",
+  "description": "a simple game",
+  "main": "game.js",
+  "scripts": {
+    "test": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ezharjan/MyTeamGame.git"
+  },
+  "keywords": [
+    "null"
+  ],
+  "author": "Alexander Ezharjan",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "servez": "^1.10.0"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}

@@ -76,6 +76,14 @@ romnia.posX = 125;
 romnia.posY = 95;
 
 
+// const backgroundImage = new ImageRenderer();
+// backgroundImage.source = './assests/background.png';
+// backgroundImage.width = 700;
+// backgroundImage.height = 700;
+// backgroundImage.posX = 0;
+// backgroundImage.posY = 0;
+
+
 class AVGBehaviour extends BaseBehaviour {
     //pass
 }
@@ -118,10 +126,10 @@ class MyGame extends BaseBehaviour {
 
     isTriggered() {
         if (collision.collidedWithSame(playerX, playerY,
-                playerWidth, playerHeight, canvas.width, canvas.height)) {
+            playerWidth, playerHeight, canvas.width, canvas.height)) {
             document.getElementById('explode_sound').play();
         } else if (collision.collidedWithSame(playerX, playerY, playerWidth,
-                destinationX, destinationY, destinationWidth, destinationHeight)) {
+            destinationX, destinationY, destinationWidth, destinationHeight)) {
 
             console.log("Win!");
             score += 10;
@@ -131,7 +139,7 @@ class MyGame extends BaseBehaviour {
             // document.getElementById('bg_music').stop();
             alert("Congradulations on wining the game! \n\nHit F5 to play again! ");
         } else if (collision.collidedWidthDiff(playerX, playerY,
-                canvas.width / 2, canvas.height / 2, enemyRadius) && interacted) {
+            canvas.width / 2, canvas.height / 2, enemyRadius) && interacted) {
 
             console.log("Lose!");
             document.getElementById('failed_music').play();
@@ -155,7 +163,7 @@ class MyGame extends BaseBehaviour {
         player.draw(ctx);
         destination.draw(ctx);
 
-        ////Call your own method using game.
+        //Call your own method using game.
         game.isTriggered();
         enemy.radius = enemyRadius;
         enemy.draw(ctx);
@@ -168,6 +176,8 @@ class MyGame extends BaseBehaviour {
         // leftButton.draw(ctx);
         // answer1.draw(ctx);
         // answer2.draw(ctx);
+
+        // backgroundImage.draw(ctx);
 
     }
 

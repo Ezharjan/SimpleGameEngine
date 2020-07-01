@@ -31,7 +31,7 @@ class BaseRenderer {
         this.renderer();
     }
 
-    renderer() {}
+    renderer() { }
 }
 
 
@@ -108,7 +108,7 @@ class Collider {
 
     collidedWithSame(targetPosX, targetPosY, targetWidth, colliderX, colliderY, colliderWidth, colliderHeight) {
         if ((targetPosX >= (colliderX - targetWidth) &&
-                targetPosX <= (colliderX + colliderWidth)) &&
+            targetPosX <= (colliderX + colliderWidth)) &&
             (targetPosY >= (colliderY - colliderHeight) &&
                 (targetPosY <= colliderY + colliderHeight))
         ) {
@@ -121,7 +121,7 @@ class Collider {
     collidedWidthDiff(targetPosX, targetPosY, colliderWidth, colliderHeight, redLine) {
 
         if (Math.sqrt(((targetPosX - colliderWidth) * (targetPosX - colliderWidth) -
-                (targetPosY - colliderHeight) * (targetPosY - colliderHeight))) < redLine) {
+            (targetPosY - colliderHeight) * (targetPosY - colliderHeight))) < redLine) {
             return true;
         } else {
             return false;
@@ -140,8 +140,8 @@ class Collider {
 
 
 var gameState = State.loading;
-var canStart = false; //Production mode
-// var canStart = true; //Dev mode
+// var canStart = false; //Production mode
+var canStart = true; //Dev mode
 
 
 class BaseBehaviour {
@@ -208,10 +208,10 @@ class BaseBehaviour {
         canStart && callback();
     }
 
-    onUpdate() {}
+    onUpdate() { }
 
     onInputDetect(ractanglePoints) {
-        window.addEventListener('click', function(e) {
+        window.addEventListener('click', function (e) {
             const mouseGlobalX = e.offsetX;
             const mouseGlobalY = e.offsetY;
             console.log(mouseGlobalX + " : " + mouseGlobalY);
@@ -230,7 +230,7 @@ class BaseBehaviour {
         });
     }
 
-    onDestroy() {}
+    onDestroy() { }
 
     onGameOver() {
         if (gameOver) {

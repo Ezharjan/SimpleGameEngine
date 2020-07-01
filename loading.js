@@ -74,5 +74,5 @@ class Bubles {
     }
 }
 
-const bubleSpawner = new Bubles();
-bubleSpawner.randomBubles();
+// const bubleSpawner = new Bubles();
+// bubleSpawner.randomBubles();
