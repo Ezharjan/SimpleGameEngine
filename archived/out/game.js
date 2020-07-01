@@ -11,6 +11,26 @@ class ClickDebugBehaviour extends Behaviour {
         };
     }
 }
+class X extends Behaviour {
+    onStart() {
+        const someObj = core.getObjectById("hero");
+        someObj.addBehaviour(someObj);
+        console.log("KKKKKKKKKKKKKK");
+    }
+    onUpdate() {
+        console.log("sssssssssss");
+    }
+}
+class XBehaviour extends Behaviour {
+    onStart() {
+        console.log("$$$$$$$$$$$$$");
+    }
+    onUpdate() {
+        console.log("#######");
+    }
+}
+core.registerBehaviourClass(X);
+core.registerBehaviourClass(XBehaviour);
 class ClickContainerBehaviour extends Behaviour {
     onStart() {
         this.gameObject.onClick = function () {
@@ -32,24 +52,34 @@ class ClickContainerBehaviour extends Behaviour {
         };
     }
 }
+class MyGameObject extends Behaviour {
+    onStart() {
+        const littleObject = core.getObjectById("stairs");
+        const motion = new MovtionBehaviour();
+        littleObject.addBehaviour(motion);
+    }
+    onUpdate() {
+        console.log("sssssssssssssss");
+    }
+}
 class KeyContainerBehaviour extends Behaviour {
     onStart() {
         const Hero = core.getObjectById("hero");
         const Monster = core.getObjectById("monster");
         const Tool = core.getObjectById("tool");
+        const motion = new MovtionBehaviour();
+        motion.time = 1000;
+        motion.targetX = 10;
+        Monster.addBehaviour(motion);
         const Stairs1 = core.getObjectById("stairs1");
         const Stairs2 = core.getObjectById("stairs2");
         window.onkeydown = function (e) {
             switch (e.keyCode) {
                 case 38:
                     Hero.getBehaviour(Transform).y -= 50;
-                    console.log(Hero.getBehaviour(Transform).y + 670);
-                    console.log(Monster.getBehaviour(Transform).y + 360);
                     break;
                 case 40:
                     Hero.getBehaviour(Transform).y += 50;
-                    console.log(Hero.getBehaviour(Transform).x + 280);
-                    console.log(Monster.getBehaviour(Transform).x + 390);
                     break;
                 case 37:
                     Hero.getBehaviour(Transform).x -= 50;
