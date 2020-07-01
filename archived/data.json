@@ -14,63 +14,86 @@
 						{
 							"name": "ImageRenderer",
 							"image": "./assests/images/Background.png"
+						},
+						{
+							"name": "XBehaviour"
 						}
 					]
 				},
 				{
-					"behaviours": [{
-						"name": "Transform",
-						"x": 280,
-						"y": 670
-					}],
-					"children": [{
-						"id": "hero",
-						"prefabUrl": "hero.json"
-					}]
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 280,
+							"y": 670
+						}
+					],
+					"children": [
+						{
+							"id": "hero",
+							"prefabUrl": "hero.json"
+						}
+					]
 				},
 				{
-					"behaviours": [{
-						"name": "Transform",
-						"x": 390,
-						"y": 360
-					}],
-					"children": [{
-						"id": "monster",
-						"prefabUrl": "monster.json"
-					}]
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 390,
+							"y": 360
+						}
+					],
+					"children": [
+						{
+							"id": "monster",
+							"prefabUrl": "monster.json"
+						}
+					]
 				},
 				{
-					"behaviours": [{
-						"name": "Transform",
-						"x": 600,
-						"y": 410
-					}],
-					"children": [{
-						"id": "tool",
-						"prefabUrl": "tool.json"
-					}]
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 600,
+							"y": 410
+						}
+					],
+					"children": [
+						{
+							"id": "tool",
+							"prefabUrl": "tool.json"
+						}
+					]
 				},
 				{
-					"behaviours": [{
-						"name": "Transform",
-						"x": 280,
-						"y": 0
-					}],
-					"children": [{
-						"id": "stairs1",
-						"prefabUrl": "stairs1.json"
-					}]
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 280,
+							"y": 0
+						}
+					],
+					"children": [
+						{
+							"id": "stairs1",
+							"prefabUrl": "stairs1.json"
+						}
+					]
 				},
 				{
-					"behaviours": [{
-						"name": "Transform",
-						"x": 950,
-						"y": 0
-					}],
-					"children": [{
-						"id": "stairs2",
-						"prefabUrl": "stairs2.json"
-					}]
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 950,
+							"y": 0
+						}
+					],
+					"children": [
+						{
+							"id": "stairs2",
+							"prefabUrl": "stairs2.json"
+						}
+					]
 				}
 			],
 			"behaviours": [

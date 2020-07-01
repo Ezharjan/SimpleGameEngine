@@ -10,19 +10,6 @@ class ClickDebugBehaviour extends Behaviour {
 
 
 
-class X extends Behaviour {
-    onStart() {
-        const someObj = core.getObjectById("hero");
-        someObj.addBehaviour(someObj);
-
-        console.log("KKKKKKKKKKKKKK");
-
-    }
-    onUpdate() {
-        console.log("sssssssssss")
-    }
-}
-
 class XBehaviour extends Behaviour {
     onStart() {
         console.log("$$$$$$$$$$$$$");
@@ -32,7 +19,6 @@ class XBehaviour extends Behaviour {
     }
 }
 
-core.registerBehaviourClass(X);
 core.registerBehaviourClass(XBehaviour);
 
 
