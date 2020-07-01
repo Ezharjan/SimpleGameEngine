@@ -4,7 +4,8 @@
   "description": "a simple game",
   "main": "game.js",
   "scripts": {
-    "test": "http-server -c-1"
+    "test": "http-server -c-1",
+    "start": "servez"
   },
   "repository": {
     "type": "git",
