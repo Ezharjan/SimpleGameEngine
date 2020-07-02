@@ -13,6 +13,7 @@
 						},
 						{
 							"name": "ImageRenderer",
+<<<<<<< HEAD
 							"image": "./img/q.png"
 						}
 					]
@@ -304,7 +305,7 @@
 							"image": "./img/yshi2.png"
 						}
 					]
-				}					
+				}				
 			],
 			"behaviours": [
 				{

@@ -190,6 +190,7 @@ function xuanran() {
 	}
 	diyic = 1;
 }
+<<<<<<< HEAD
 xuanran();
 
 
@@ -373,6 +374,21 @@ document.onkeydown = function (event) {
 
 //     private initX = 0;
 //     private initY = 0;
+=======
+
+
+
+class XBehaviour extends Behaviour {
+    onStart() {
+        console.log("$$$$$$$$$$$$$");
+    }
+    onUpdate() {
+        console.log("#######");
+    }
+}
+
+core.registerBehaviourClass(XBehaviour);
+>>>>>>> 63b3c94d679e4f56b99d3d743a6ab78fbd9710a8
 
 //     @SerializedField(0)
 //     targetX: number;
