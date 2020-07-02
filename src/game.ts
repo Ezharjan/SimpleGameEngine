@@ -15,3 +15,26 @@ class GameStartupBehaviour extends Behaviour {
 
 core.registerBehaviourClass(ClickContainerBehaviour);
 core.registerBehaviourClass(GameStartupBehaviour);
+
+
+class PlayerManager extends Behaviour {
+    warrior;
+    onStart() {
+        this.warrior = core.getObjectById('image');
+        const tr = new Trigger(this.warrior, this.warrior);
+    }
+
+    onUpdate() {
+        console.log("K: ", this.warrior.getBehaviour(Transform).x);
+        if (this.warrior.getBehaviour(Transform).x < 100) {
+            this.warrior.getBehaviour(Transform).x += 1;
+        }
+    }
+
+}
+
+
+
+
+
+core.registerBehaviourClass(PlayerManager);

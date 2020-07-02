@@ -1,96 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>魔塔</title>
-    <link rel="stylesheet" type="text/css" href="src/game/css/index.css">
-    <link rel="stylesheet" type="text/css" href="src/game/css/init.css">
+    <meta charset="utf-8" />
 </head>
 
 <body>
+    <canvas id='game' width='1280' height='720'></canvas>
+    <script>
+        function loadText(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.onload = () => {
+                    resolve(xhr.responseText);
+                }
+                xhr.open('get', url);
+                xhr.send();
+            })
+        }
 
-    <div id="game" class="game">
-        <div id="attribute" class="attribute">
-            <div id="floor" class="floor"></div>
-            <div class="col">
-                <img class="blood_img" src="images/attribute/blood.png" alt="血量">
-                <div id="blood" class="value"></div>
-            </div>
-            <div class="col">
-                <img class="blood_img" src="images/attribute/attack.png" alt="攻击力">
-                <div id="attack" class="value"></div>
-            </div>
-            <div class="col">
-                <img class="blood_img" src="images/attribute/defense.png" alt="防御力">
-                <div id="defense" class="value"></div>
-            </div>
-            <div class="col">
-                <img class="blood_img" src="images/attribute/gold.png" alt="金钱">
-                <div id="gold" class="value"></div>
-            </div>
-            <div id="tools" class="tools"></div>
-        </div>
+        function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.onload = () => resolve();
+                script.src = url;
+                document.body.appendChild(script)
 
-        <div id="main" class="main">
+            });
+        }
 
-        </div>
+        async function run() {
+            const content = await loadText('config.json');
+            window['configData'] = JSON.parse(content)
+            const javascriptFiles = window['configData'].scripts;
 
-        <div id="possess" class="possess">
-            <div id="weapon" class="weapon">
-                <div id="weapon_name" class="weapon_name">武器<br>神圣剑</div>
-                <div id="weapon_img" class="weapon_img"></div>
-            </div>
-            <div id="armor" class="weapon">
-                <div id="armor_name" class="armor_name">武器<br>神圣盾</div>
-                <div id="armor_img" class="armor_img"></div>
-            </div>
-
-            <div id="keys" class="keys"></div>
-        </div>
-
-        <!-- 默认隐藏的界面 -->
-        <!-- 对话框 -->
-        <div id="message" class="message"></div>
-        <!-- 读取存档 -->
-        <div id="load" class="load"></div>
-        <!-- 怪物手册,读取本层怪物信息 -->
-        <div id="handbook" class="handbook">按ENTER继续</div>
-        <!-- 商店 -->
-        <div id="store" class="store">
-            <div class="store_title">你若给我&nbsp;&nbsp;20&nbsp;&nbsp;个金币，我就替你提升以下一种能力。</div>
-            <div class="store_content" onclick="increase_dp()">1>&nbsp;&nbsp;&nbsp;生命力 + 100</div>
-            <div class="store_content" onclick="increase_attack()">2>&nbsp;&nbsp;&nbsp;攻击力 + 2</div>
-            <div class="store_content" onclick="increase_defense()">3>&nbsp;&nbsp;&nbsp;防御力 + 4</div>
-            <div class="store_content" onclick="thanks()">4>&nbsp;&nbsp;&nbsp;谢谢，下次再说</div>
-        </div>
-
-        <div id="tips" class="tips">SPACE-帮助 Z-保存游戏 X-载入存档 C-重新开始</div>
-    </div>
-
-    <!--<script type="text/javascript" src="src/game/map.js"></script>
-    <script type="text/javascript" src="src/game/warrior.js"></script>
-    <script type="text/javascript" src="src/game/monster.js"></script>
-    <script type="text/javascript" src="src/game/init.js"></script>
-    <script type="text/javascript" src="src/game/move.js"></script>
-    <script type="text/javascript" src="src/game/attack.js"></script>
-    <script type="text/javascript" src="src/game/stair.js"></script>
-    <script type="text/javascript" src="src/game/events.js"></script>
-    <script type="text/javascript" src="src/game/save.js"></script>
-    <script type="text/javascript" src="src/game/tools.js"></script>-->
-
-    <!-- 下方的是将游戏的js脚本改成ts之后解开注释的语句 -->
-    <script type="text/javascript" src="out/game/map.js"></script>
-    <script type="text/javascript" src="out/game/warrior.js"></script>
-    <script type="text/javascript" src="out/game/monster.js"></script>
-    <script type="text/javascript" src="out/game/init.js"></script>
-    <script type="text/javascript" src="out/game/move.js"></script>
-    <script type="text/javascript" src="out/game/attack.js"></script>
-    <script type="text/javascript" src="out/game/stair.js"></script>
-    <script type="text/javascript" src="out/game/events.js"></script>
-    <script type="text/javascript" src="out/game/save.js"></script>
-    <script type="text/javascript" src="out/game/tools.js"></script>
-
+            for (let item of javascriptFiles) {
+                await loadScript(item);
+            }
+        }
+        run();
+    </script>
 </body>
 
 </html>

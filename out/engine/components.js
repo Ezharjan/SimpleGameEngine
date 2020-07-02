@@ -173,3 +173,18 @@ __decorate([
 __decorate([
     SerializedField('black')
 ], RectRenderer.prototype, "color", void 0);
+class Trigger {
+    constructor(objectA, objectB) {
+        this.objectA = objectA;
+        this.objectB = objectB;
+        this.isTriggered();
+    }
+    isTriggered() {
+        if ((this.objectA.x == this.objectB.x) && (this.objectA.y == this.objectB)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}

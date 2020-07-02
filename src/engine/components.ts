@@ -196,3 +196,25 @@ class RectRenderer extends Behaviour {
         }
     }
 }
+
+
+class Trigger {
+
+    objectA: any;
+    objectB: any;
+
+    constructor(objectA: any, objectB: any) {
+        this.objectA = objectA;
+        this.objectB = objectB;
+        this.isTriggered();
+    }
+
+    isTriggered() {
+        if ((this.objectA.x == this.objectB.x) && (this.objectA.y == this.objectB){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}

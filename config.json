@@ -11,5 +11,7 @@
     "scenes": [
         "data.json"
     ],
-    "images": []
+    "images": [
+        "./images/main/warrior.png"
+    ]
 }
