@@ -1,0 +1,15 @@
+{
+    "scripts": [
+        "./out/engine/math.js",
+        "./out/engine/core.js",
+        "./out/engine/entities.js",
+        "./out/engine/components.js",
+        "./out/engine/systems.js",
+        "./out/game.js",
+        "./out/engine/startup.js"
+    ],
+    "scenes": [
+        "data.json"
+    ],
+    "images": []
+}

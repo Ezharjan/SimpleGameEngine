@@ -1,0 +1,20 @@
+{
+	"id": "container1",
+	"children": [
+		{
+			"behaviours": [
+				{
+					"name": "Transform"
+				}
+			]
+		}
+	],
+	"behaviours": [
+		{
+			"name": "Transform"
+		},
+		{
+			"name": "GameStartupBehaviour"
+		}
+	]
+}

@@ -1,0 +1,275 @@
+.warrior {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/warrior.png);
+    display: inline-block;
+}
+
+.yellow_key {
+    height: 30px;
+    width: 20px;
+    margin-left: 5px;
+    background: url(../../../images/possess/yellow_key.png);
+    display: inline-block;
+}
+
+.blue_key {
+    height: 30px;
+    width: 20px;
+    margin-left: 5px;
+    background: url(../../../images/possess/blue_key.png);
+    display: inline-block;
+}
+
+
+.resource_1 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_1.png);
+    display: inline-block;
+}
+
+.resource_2 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_2.png);
+    display: inline-block;
+}
+
+.resource_5 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_5.png);
+    display: inline-block;
+}
+
+.resource_6 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_6.png);
+    display: inline-block;
+}
+
+.resource_7 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_7.png);
+    display: inline-block;
+}
+
+.resource_8 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_8.png);
+    display: inline-block;
+}
+
+.resource_9 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_9.png);
+    display: inline-block;
+}
+
+.resource_10 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_10.png);
+    display: inline-block;
+}
+
+.resource_11 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_11.png);
+    display: inline-block;
+}
+
+.resource_20 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_20.png);
+    display: inline-block;
+}
+
+.resource_21 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_21.png);
+    display: inline-block;
+}
+
+.resource_24 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_24.png);
+    display: inline-block;
+}
+
+.resource_27 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_27.png);
+    display: inline-block;
+}
+
+.resource_28 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_28.png);
+    display: inline-block;
+}
+
+.resource_29 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_29.png);
+    display: inline-block;
+}
+
+.resource_30 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_30.png);
+    display: inline-block;
+}
+
+.resource_37 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_37.png);
+    display: inline-block;
+}
+
+.resource_38 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_38.png);
+    display: inline-block;
+}
+
+.resource_60 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_60.png);
+    display: inline-block;
+}
+
+.resource_61 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_61.png);
+    display: inline-block;
+}
+
+.resource_62 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_62.png);
+    display: inline-block;
+}
+
+.resource_63 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_63.png);
+    display: inline-block;
+}
+
+.resource_64 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_64.png);
+    display: inline-block;
+}
+
+.resource_65 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_65.png);
+    display: inline-block;
+}
+
+.resource_66 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_66.png);
+    display: inline-block;
+}
+
+.resource_67 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_67.png);
+    display: inline-block;
+}
+
+.resource_80 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_80.png);
+    display: inline-block;
+}
+
+.resource_81 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_81.png);
+    display: inline-block;
+}
+
+.resource_82 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_82.png);
+    display: inline-block;
+}
+
+.resource_83 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_83.png);
+    display: inline-block;
+}
+
+.resource_84 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_84.png);
+    display: inline-block;
+}
+
+.resource_85 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_85.png);
+    display: inline-block;
+}
+
+.resource_86 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_86.png);
+    display: inline-block;
+}
+
+.resource_87 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_87.png);
+    display: inline-block;
+}
+
+.resource_88 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_88.png);
+    display: inline-block;
+}
+
+.resource_98 {
+    height: 46px;
+    width: 46px;
+    background: url(../../../images/main/resource_98.png);
+    display: inline-block;
+}
