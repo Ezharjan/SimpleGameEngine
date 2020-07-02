@@ -1,5 +1,5 @@
 //勇士
-function warrior() {
+function Warrior(){
     this.dp = 1000;   //血量
     this.attack = 100;   //攻击力
     this.defense = 100;  //防御力
@@ -15,3 +15,4 @@ function warrior() {
     this.weapon = 'Sacred Sword';     //武器:'Sacred Sword'|'Holy Sword'|'Knight Sword'|'Silver Sword'|'Iron Sword'|'None'
     this.armor = 'Sacred Shield';     //防具:'Sacred Shield'|'Holy Shield'|'Knight Shield'|'Silver Shield'|'Iron Shield'|'None'
 }
+
