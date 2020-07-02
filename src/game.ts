@@ -21,7 +21,7 @@ class PlayerManager extends Behaviour {
     warrior;
     onStart() {
         this.warrior = core.getObjectById('image');
-        const tr = new Trigger(this.warrior, this.warrior);
+        new Trigger(this.warrior, this.warrior);
     }
 
     onUpdate() {

@@ -173,14 +173,16 @@ __decorate([
 __decorate([
     SerializedField('black')
 ], RectRenderer.prototype, "color", void 0);
-class Trigger {
+class Trigger extends Behaviour {
     constructor(objectA, objectB) {
+        super();
         this.objectA = objectA;
         this.objectB = objectB;
         this.isTriggered();
     }
     isTriggered() {
-        if ((this.objectA.x == this.objectB.x) && (this.objectA.y == this.objectB)) {
+        if ((this.objectA.getBehaviour(Transform).x == this.objectB.getBehaviour(Transform).x) &&
+            (this.objectA.getBehaviour(Transform).y == this.objectB.getBehaviour(Transform).y)) {
             return true;
         }
         else {

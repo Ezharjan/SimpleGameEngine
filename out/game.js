@@ -13,7 +13,7 @@ core.registerBehaviourClass(GameStartupBehaviour);
 class PlayerManager extends Behaviour {
     onStart() {
         this.warrior = core.getObjectById('image');
-        const tr = new Trigger(this.warrior, this.warrior);
+        new Trigger(this.warrior, this.warrior);
     }
     onUpdate() {
         console.log("K: ", this.warrior.getBehaviour(Transform).x);
