@@ -18,5 +18,9 @@
         "stairs2.json"
     ],
     "images": ["./assests/images/Hero.png","./assests/images/Monster.png","./assests/images/Tool.png",
-    "./assests/images/stairs1.png","./assests/images/stairs2.png","./assests/images/Background.png"]
+    "./assests/images/stairs1.png","./assests/images/stairs2.png","./assests/images/Background.png",
+    "./img/q.png","./img/1.png","./img/2.png","./img/3.png","./img/4.png","./img/5.png","./img/6.png",
+    "./img/7.png","./img/8.png","./img/9.png", "./img/bg.png","./img/q.png","./img/m1.png","./img/m2.png",
+    "./img/rw.png","./img/lt1.png","./img/lt2.png","./img/bz.png","./img/dun.png","./img/j.png","./img/jl.png",
+    "./img/ys1.png","./img/ys2.png","./img/yshi1.png","./img/yshi2.png"]
 }
