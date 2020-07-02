@@ -88,7 +88,7 @@ function refresh_weapon() {
             weapon_name.innerText = '武器\n无';
             weapon_img.style.backgroundImage = 'url(images/attribute/gray.png)';
             break;
-        default :
+        default:
             weapon_name.innerText = '武器\n无';
             weapon_img.style.backgroundImage = 'url(images/attribute/gray.png)';
             break;
@@ -127,7 +127,7 @@ function refresh_weapon() {
             armor_name.innerText = '防具\n无';
             armor_img.style.backgroundImage = 'url(images/attribute/gray.png)';
             break;
-        default :
+        default:
             armor_name.innerText = '防具\n无';
             armor_img.style.backgroundImage = 'url(images/attribute/gray.png)';
             break;
