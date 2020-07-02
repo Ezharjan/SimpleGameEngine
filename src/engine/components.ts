@@ -210,7 +210,7 @@ class Trigger {
     }
 
     isTriggered() {
-        if ((this.objectA.x == this.objectB.x) && (this.objectA.y == this.objectB){
+        if ((this.objectA.x == this.objectB.x) && (this.objectA.y == this.objectB)) {
             return true;
         }
         else {
