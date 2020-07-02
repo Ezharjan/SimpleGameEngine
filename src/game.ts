@@ -30,11 +30,29 @@ class PlayerManager extends Behaviour {
             this.warrior.getBehaviour(Transform).x += 1;
         }
     }
-
 }
 
 
 
 
+/* import { Quadtree } from "@timohausmann/quadtree-js";
 
+const myTree = new Quadtree({
+    x: 0,
+    y: 0,
+    width: 400,
+    height: 300
+}, 10, 4);
+
+
+const myObject = {
+    x: 200,
+    y: 100,
+    width: 35,
+    height: 70
+}
+
+myTree.insert(myObject);
+
+ */
 core.registerBehaviourClass(PlayerManager);
