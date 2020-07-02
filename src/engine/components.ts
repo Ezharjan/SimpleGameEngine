@@ -198,19 +198,22 @@ class RectRenderer extends Behaviour {
 }
 
 
-class Trigger {
+class Trigger extends Behaviour {
 
     objectA: any;
     objectB: any;
 
     constructor(objectA: any, objectB: any) {
+        super();
         this.objectA = objectA;
         this.objectB = objectB;
         this.isTriggered();
     }
 
     isTriggered() {
-        if ((this.objectA.x == this.objectB.x) && (this.objectA.y == this.objectB)) {
+
+        if ((this.objectA.getBehaviour(Transform).x == this.objectB.getBehaviour(Transform).x) &&
+            (this.objectA.getBehaviour(Transform).y == this.objectB.getBehaviour(Transform).y)) {
             return true;
         }
         else {
