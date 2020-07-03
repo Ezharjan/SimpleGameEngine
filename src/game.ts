@@ -1,28 +1,9 @@
-class ClickContainerBehaviour extends Behaviour {
-
-
-	onStart() {
-		this.gameObject.onClick = function () {
-			const qidong = core.getObjectById("qidong");
-			const move3 = new MoveBehaviour()
-			move3.time = 1000;
-			move3.targetX = 0;
-			qidong.addBehaviour(move3);
-		}
-		// qidong.onClick = function () {
-
-		// }
-	}
-
-}
-
-
 class KeyContainerBehaviour extends Behaviour {
 
 	private currentTime = 0;
 
 	onStart() {
-		var allditu = [
+		var allMaps = [
 			[
 				[1, 1, 1, 42, 0, 0, 1, 1, 1, 0, 51],
 				[1, 0, 1, 1, 0, 0, 0, 0, 1, 2, 1],
@@ -53,7 +34,7 @@ class KeyContainerBehaviour extends Behaviour {
 
 		var peoplex = 0;
 		var peopley = 0;
-		var diyic = 0;
+		var firstFloor = 0;
 
 		var floor = 0;
 		var jinkey = 5;
@@ -63,7 +44,7 @@ class KeyContainerBehaviour extends Behaviour {
 		var gjili = 10;
 		var fangyu = 10;
 
-		var arr = allditu[floor];
+		var arr = allMaps[floor];
 		// const a = core.getObjectById("lu");const b = core.getObjectById("lu");const c = core.getObjectById("lu");const d = core.getObjectById("lu");const e = core.getObjectById("lu");
 		// const f = core.getObjectById("lu");const g = core.getObjectById("lu");const h = core.getObjectById("lu");const i = core.getObjectById("lu");const j = core.getObjectById("lu");
 		// const k = core.getObjectById("lu");const l = core.getObjectById("lu");
@@ -76,6 +57,41 @@ class KeyContainerBehaviour extends Behaviour {
 		for (var i = 0; i < arr.length; i++) {
 			for (var j = 0; j < arr[i].length; j++) {
 				if (arr[i][j] == 1) {
+
+					/*
+										//重构示例1---不推荐
+										const roadCount = 0;
+										let myArr = new Dictionary();
+										for (let i = 0; i < roadCount; i++) {
+											myArr.add("road" + i, core.getObjectById("lu1"));
+										}
+										for (let i = 0; i < roadCount; i++) {
+											myArr.find("road" + i).getBehaviour(Transform).x = 0;
+										}
+					
+										//重构示例2---推荐
+										const map = new GameMapDesigner();
+										map.setMap(["road", "nude", "player", "wall"],
+											[1, 2, 3, 4],
+											["../img/dun.png",
+												"../img/dun.png",
+												"../img/dun.png",
+												"../img/dun.png"]);
+					
+										const roadUrl = map.getMap("road");
+										let roads = [];
+										for (let i = 0; i < roadCount; i++) {
+											const road: any = roads.push(roadUrl);
+											if (i == 1) {
+												road.x = 0;
+												road.y = 0;
+											}
+										}
+					
+					*/
+
+
+
 					const a1 = core.getObjectById("lu1"); const a2 = core.getObjectById("lu2"); const a3 = core.getObjectById("lu3"); const a4 = core.getObjectById("lu"); const a5 = core.getObjectById("lu"); const a6 = core.getObjectById("lu"); const a7 = core.getObjectById("lu4"); const a8 = core.getObjectById("lu5"); const a9 = core.getObjectById("lu6"); const a10 = core.getObjectById("lu"); const a11 = core.getObjectById("lu");
 					const b1 = core.getObjectById("lu7"); const b2 = core.getObjectById("lu"); const b3 = core.getObjectById("lu8"); const b4 = core.getObjectById("lu9"); const b5 = core.getObjectById("lu"); const b6 = core.getObjectById("lu"); const b7 = core.getObjectById("lu"); const b8 = core.getObjectById("lu"); const b9 = core.getObjectById("lu10"); const b10 = core.getObjectById("lu"); const b11 = core.getObjectById("lu11");
 					const c1 = core.getObjectById("lu"); const c2 = core.getObjectById("lu"); const c3 = core.getObjectById("lu"); const c4 = core.getObjectById("lu"); const c5 = core.getObjectById("lu"); const c6 = core.getObjectById("lu"); const c7 = core.getObjectById("lu"); const c8 = core.getObjectById("lu"); const c9 = core.getObjectById("lu"); const c10 = core.getObjectById("lu"); const c11 = core.getObjectById("lu");
@@ -246,7 +262,7 @@ class KeyContainerBehaviour extends Behaviour {
 			}
 		}
 
-		diyic = 1;
+		firstFloor = 1;
 
 		//1为路 0为墙 2x为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具
 		function yidongguoceng(x, y, x1, y1) {
@@ -278,14 +294,14 @@ class KeyContainerBehaviour extends Behaviour {
 				//arr[x][y] = 1;
 				//yinkey--;
 			} else if (arr[x1][y1] == 51) {
-				if (floor >= 0 && floor < allditu.length - 1) {
+				if (floor >= 0 && floor < allMaps.length - 1) {
 					floor++;
-					arr = allditu[floor];
+					arr = allMaps[floor];
 				}
 			} else if (arr[x1][y1] == 52) {
-				if (floor >= 1 && floor < allditu.length) {
+				if (floor >= 1 && floor < allMaps.length) {
 					floor--;
-					arr = allditu[floor];
+					arr = allMaps[floor];
 				}
 			} else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
 				var shanghai = arr[x1][y1] % 40;
@@ -366,56 +382,14 @@ class KeyContainerBehaviour extends Behaviour {
 
 core.registerBehaviourClass(KeyContainerBehaviour)
 
-class MoveBehaviour extends Behaviour {
-
-	@SerializedField(1000)
-	time: number;
-
-	@SerializedField(0)
-	targetX: number;
-
-	private currentTime = 0;
-	private initX = 0;
-	private initY = 0;
-	onStart() {
-		this.initX = this.$getTransform().x;
-		this.initY = this.$getTransform().y;
-	}
-
-	$getTransform() {
-		return this.gameObject.getBehaviour(Transform);
-	}
-
-	onUpdate(duringTime) {
-		const transform = this.$getTransform();
-		this.currentTime += duringTime;
-		let timeRatio = this.currentTime / this.time;
-		if (timeRatio > 1) {
-			timeRatio = 1;
-		}
-		const needToMoveX = this.targetX - this.initX;
-		transform.x = this.initX + timeRatio * needToMoveX;
-		if (timeRatio == 1) {
-			this.gameObject.removeBehaviour(this);
-		}
-	}
-
-	onDestroy() {
-
-	}
-}
-
-core.registerBehaviourClass(MoveBehaviour);
-
-class GameStartupBehaviour extends Behaviour {
-	onStart() {
-
-	}
-}
 
 
-core.registerBehaviourClass(ClickContainerBehaviour);
-core.registerBehaviourClass(GameStartupBehaviour);
+
+
+
+
+
+
 
 // class PlayerManager extends Behaviour {
 

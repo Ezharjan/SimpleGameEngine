@@ -10,10 +10,7 @@
 							"name": "Transform"
 						},
 						{
-							"name":"ClickContainerBehaviour"
-						},
-						{
-							"name":"KeyContainerBehaviour"
+							"name": "KeyContainerBehaviour"
 						},
 						{
 							"name": "ImageRenderer",
@@ -33,11 +30,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu2",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -45,11 +42,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu3",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -57,11 +54,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu4",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -69,11 +66,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu5",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -81,11 +78,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu6",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -93,11 +90,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu7",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -105,11 +102,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu8",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -117,11 +114,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "guaiwu9",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -129,11 +126,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "lu1",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -145,7 +142,7 @@
 					"id": "lu2",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -157,7 +154,7 @@
 					"id": "lu3",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -169,7 +166,7 @@
 					"id": "lu4",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -181,7 +178,7 @@
 					"id": "lu5",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -193,7 +190,7 @@
 					"id": "lu6",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -205,7 +202,7 @@
 					"id": "lu7",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -217,7 +214,7 @@
 					"id": "lu8",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -229,7 +226,7 @@
 					"id": "lu9",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -241,7 +238,7 @@
 					"id": "lu10",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -253,7 +250,7 @@
 					"id": "lu11",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -265,7 +262,7 @@
 					"id": "lu",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -273,11 +270,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "qiang",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -285,11 +282,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "men1",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -297,11 +294,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "men2",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -309,12 +306,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "renwu",
 					"behaviours": [
 						{
 							"name": "Transform"
-							
 						},
 						{
 							"name": "ImageRenderer",
@@ -322,11 +318,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "loti1",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -334,11 +330,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "loti2",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -346,11 +342,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju1",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -358,11 +354,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju2",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -370,11 +366,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju3",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -382,11 +378,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju4",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -394,11 +390,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju5",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -406,11 +402,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju6",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -418,11 +414,11 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju7",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
@@ -430,18 +426,18 @@
 						}
 					]
 				},
-                {
+				{
 					"id": "daoju8",
 					"behaviours": [
 						{
-                            "name": "Transform"
+							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
 							"image": "./img/yshi2.png"
 						}
 					]
-				}					
+				}
 			],
 			"behaviours": [
 				{
@@ -453,9 +449,6 @@
 	"behaviours": [
 		{
 			"name": "Transform"
-		},
-		{
-			"name": "GameStartupBehaviour"
 		}
 	]
 }

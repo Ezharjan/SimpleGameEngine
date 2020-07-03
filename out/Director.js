@@ -20,5 +20,5 @@ class RM {
     }
 }
 // const resourceManager = new RM.setCanvas(720, 720);
-RM.canvasWidth = 720;
-RM.canvasHeight = 720;
+RM.canvasWidth = 640;
+RM.canvasHeight = 640;
