@@ -19,6 +19,12 @@ class PlayerManager extends Behaviour {
         const isMapSet = map.setMap(["warrior", "monster", "tool", "wall"], [1, 2, 3, 4], ["../images/main***.png", "../images/main***.png", "../images/main***.png"]);
         if (isMapSet) {
             console.log("获取到的指定角色图像为: " + map.getMap("tool"));
+            const walls = [];
+            const wallImagesNeeded = 34;
+            const wallSrc = map.getMap["wall"];
+            for (let i = 0; i < wallImagesNeeded; i++) {
+                walls.push(wallSrc);
+            }
         }
     }
     onUpdate() {

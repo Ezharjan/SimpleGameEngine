@@ -30,6 +30,13 @@ class PlayerManager extends Behaviour {
             ["../images/main***.png", "../images/main***.png", "../images/main***.png"]);
         if (isMapSet) {
             console.log("获取到的指定角色图像为: " + map.getMap("tool"));
+
+            const walls = [];
+            const wallImagesNeeded = 34;
+            const wallSrc = map.getMap["wall"];
+            for (let i = 0; i < wallImagesNeeded; i++) {
+                walls.push(wallSrc);
+            }
         }
     }
 
