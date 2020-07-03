@@ -1,5 +1,8 @@
 {
     "scripts": [
+        "./out/engine/utils.js",
+        "./out/engine/input.js",
+        "./out/Director.js",
         "./out/engine/math.js",
         "./out/engine/core.js",
         "./out/engine/entities.js",
@@ -12,9 +15,32 @@
         "data.json"
     ],
     "images": [
-        "./images/main/warrior.png","./images/load.png","./img/q.png","./img/1.png","./img/2.png","./img/3.png","./img/4.png","./img/5.png","./img/6.png",
-        "./img/7.png","./img/8.png","./img/9.png", "./img/bg.png","./img/q.png","./img/m1.png","./img/m2.png",
-        "./img/rw.png","./img/lt1.png","./img/lt2.png","./img/bz.png","./img/dun.png","./img/j.png","./img/jl.png",
-        "./img/ys1.png","./img/ys2.png","./img/yshi1.png","./img/yshi2.png"
+        "./images/main/warrior.png",
+        "./images/load.png",
+        "./img/q.png",
+        "./img/1.png",
+        "./img/2.png",
+        "./img/3.png",
+        "./img/4.png",
+        "./img/5.png",
+        "./img/6.png",
+        "./img/7.png",
+        "./img/8.png",
+        "./img/9.png",
+        "./img/bg.png",
+        "./img/q.png",
+        "./img/m1.png",
+        "./img/m2.png",
+        "./img/rw.png",
+        "./img/lt1.png",
+        "./img/lt2.png",
+        "./img/bz.png",
+        "./img/dun.png",
+        "./img/j.png",
+        "./img/jl.png",
+        "./img/ys1.png",
+        "./img/ys2.png",
+        "./img/yshi1.png",
+        "./img/yshi2.png"
     ]
 }
