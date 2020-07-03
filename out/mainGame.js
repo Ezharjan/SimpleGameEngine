@@ -556,28 +556,3 @@ class GameStartupBehaviour extends Behaviour {
 }
 core.registerBehaviourClass(ClickContainerBehaviour);
 core.registerBehaviourClass(GameStartupBehaviour);
-class PlayerManager extends Behaviour {
-    onStart() {
-        this.warrior = core.getObjectById('image');
-        new Trigger(this.warrior, this.warrior);
-        //示例
-        const map = new GameMapDesigner();
-        const isMapSet = map.setMap(["warrior", "monster", "tool", "wall"], [1, 2, 3, 4], ["../images/main***.png", "../images/main***.png", "../images/main***.png"]);
-        if (isMapSet) {
-            console.log("获取到的指定角色图像为: " + map.getMap("tool"));
-            const walls = [];
-            const wallImagesNeeded = 34;
-            const wallSrc = map.getMap["wall"];
-            for (let i = 0; i < wallImagesNeeded; i++) {
-                walls.push(wallSrc);
-            }
-        }
-    }
-    onUpdate() {
-        // console.log("K: ", this.warrior.getBehaviour(Transform).x);
-        if (this.warrior.getBehaviour(Transform).x < 100) {
-            this.warrior.getBehaviour(Transform).x += 1;
-        }
-    }
-}
-core.registerBehaviourClass(PlayerManager);

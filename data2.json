@@ -1,0 +1,461 @@
+{
+	"id": "container1",
+	"children": [
+		{
+			"children": [
+				{
+					"id": "warrior",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name":"ClickContainerBehaviour"
+						},
+						{
+							"name":"KeyContainerBehaviour"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./images/main/warrior.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu1",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/1.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu2",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/2.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu3",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/3.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu4",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/4.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu5",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/5.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu6",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/6.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu7",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/7.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu8",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/8.png"
+						}
+					]
+				},
+                {
+					"id": "guaiwu9",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/9.png"
+						}
+					]
+				},
+                {
+					"id": "lu1",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu2",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu3",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu4",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu5",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu6",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu7",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu8",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu9",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu10",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu11",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+				{
+					"id": "lu",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bg.png"
+						}
+					]
+				},
+                {
+					"id": "qiang",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/q.png"
+						}
+					]
+				},
+                {
+					"id": "men1",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/m1.png"
+						}
+					]
+				},
+                {
+					"id": "men2",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/m2.png"
+						}
+					]
+				},
+                {
+					"id": "renwu",
+					"behaviours": [
+						{
+							"name": "Transform"
+							
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/rw.png"
+						}
+					]
+				},
+                {
+					"id": "loti1",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/lt1.png"
+						}
+					]
+				},
+                {
+					"id": "loti2",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/lt2.png"
+						}
+					]
+				},
+                {
+					"id": "daoju1",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bz.png"
+						}
+					]
+				},
+                {
+					"id": "daoju2",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/dun.png"
+						}
+					]
+				},
+                {
+					"id": "daoju3",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/j.png"
+						}
+					]
+				},
+                {
+					"id": "daoju4",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/jl.png"
+						}
+					]
+				},
+                {
+					"id": "daoju5",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys1.png"
+						}
+					]
+				},
+                {
+					"id": "daoju6",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys2.png"
+						}
+					]
+				},
+                {
+					"id": "daoju7",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/yshi1.png"
+						}
+					]
+				},
+                {
+					"id": "daoju8",
+					"behaviours": [
+						{
+                            "name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/yshi2.png"
+						}
+					]
+				}					
+			],
+			"behaviours": [
+				{
+					"name": "Transform"
+				}
+			]
+		}
+	],
+	"behaviours": [
+		{
+			"name": "Transform"
+		},
+		{
+			"name": "GameStartupBehaviour"
+		}
+	]
+}
