@@ -1,6 +1,7 @@
 {
     "scripts": [
         "./out/engine/utils.js",
+        "./out/engine/input.js",
         "./out/Director.js",
         "./out/engine/math.js",
         "./out/engine/core.js",

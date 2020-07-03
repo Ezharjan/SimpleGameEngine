@@ -18,16 +18,26 @@ core.registerBehaviourClass(GameStartupBehaviour);
 
 
 class PlayerManager extends Behaviour {
+
     warrior;
+
+    music = new AudioSystem();
+    video = new VideoSystem();
+
     onStart() {
+
+        //示例1
         this.warrior = core.getObjectById('image');
         new Trigger(this.warrior, this.warrior);
 
-        //示例
+        //示例2
         const map = new GameMapDesigner();
         const isMapSet = map.setMap(["warrior", "monster", "tool", "wall"],
             [1, 2, 3, 4],
-            ["../images/main***.png", "../images/main***.png", "../images/main***.png"]);
+            ["../images/main***.png",
+                "../images/main***.png",
+                "../images/main***.png",
+                "../images/main***.png"]);
         if (isMapSet) {
             console.log("获取到的指定角色图像为: " + map.getMap("tool"));
 
@@ -38,16 +48,48 @@ class PlayerManager extends Behaviour {
                 walls.push(wallSrc);
             }
         }
+
+        //示例3
+        this.music.audioPath = "./medias/bgMusic.mp3";
+        this.music.playAudio(false);
+        console.log("is audio ended? " + this.music.isAudioEnded());
+
+        //示例6
+        // this.video.videoPath = "./medias/sample_video.mp4";
+        // this.video.playVideo(false);
+        // console.log("is video ended? " + this.video.isVideoEnded());
     }
 
     onUpdate() {
-        // console.log("K: ", this.warrior.getBehaviour(Transform).x);
+        //示例0
         if (this.warrior.getBehaviour(Transform).x < 100) {
             this.warrior.getBehaviour(Transform).x += 1;
         }
+
+        //示例4
+        this.interaction();
+
+    }
+
+    interaction() {
+
+        if (GetKeyDown.RightArrow) {
+            console.log("Right is pressed");
+        }
+        if (GetKeyDown.LeftArrow) {
+            console.log("Left is pressed");
+        }
+        if (GetKeyDown.A) {
+            console.log("A is pressed");
+        }
+        if (GetKeyDown.Enter) {
+            console.log("Enter is pressed");
+        }
+        if (GetKeyDown.Six) {
+            console.log("6 is pressed");
+        }
     }
 }
-
 
 
 

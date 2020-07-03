@@ -12,11 +12,15 @@ core.registerBehaviourClass(ClickContainerBehaviour);
 core.registerBehaviourClass(GameStartupBehaviour);
 class PlayerManager extends Behaviour {
     onStart() {
+        //示例1
         this.warrior = core.getObjectById('image');
         new Trigger(this.warrior, this.warrior);
-        //示例
+        //示例2
         const map = new GameMapDesigner();
-        const isMapSet = map.setMap(["warrior", "monster", "tool", "wall"], [1, 2, 3, 4], ["../images/main***.png", "../images/main***.png", "../images/main***.png"]);
+        const isMapSet = map.setMap(["warrior", "monster", "tool", "wall"], [1, 2, 3, 4], ["../images/main***.png",
+            "../images/main***.png",
+            "../images/main***.png",
+            "../images/main***.png"]);
         if (isMapSet) {
             console.log("获取到的指定角色图像为: " + map.getMap("tool"));
             const walls = [];
@@ -26,11 +30,36 @@ class PlayerManager extends Behaviour {
                 walls.push(wallSrc);
             }
         }
+        //示例3
+        const music = new AudioSystem();
+        music.audioPath = "./medias/bgMusic.mp3";
+        music.playAudio(false);
+        console.log("is audio ended? " + music.isAudioEnded());
+        console.log("is audio paused? " + music.isAudioPaused());
     }
     onUpdate() {
-        // console.log("K: ", this.warrior.getBehaviour(Transform).x);
+        //示例0
         if (this.warrior.getBehaviour(Transform).x < 100) {
             this.warrior.getBehaviour(Transform).x += 1;
+        }
+        //示例4
+        this.interaction();
+    }
+    interaction() {
+        if (GetKeyDown.RightArrow) {
+            console.log("Right is pressed");
+        }
+        if (GetKeyDown.LeftArrow) {
+            console.log("Left is pressed");
+        }
+        if (GetKeyDown.A) {
+            console.log("A is pressed");
+        }
+        if (GetKeyDown.Enter) {
+            console.log("Enter is pressed");
+        }
+        if (GetKeyDown.Six) {
+            console.log("6 is pressed");
         }
     }
 }

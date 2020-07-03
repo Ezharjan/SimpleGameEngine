@@ -234,6 +234,7 @@ class EditorAPISystem extends GameEngineSystem {
                 });
                 win.on('close', () => { });
                 win.loadFile("documentation.html");
+                break;
             case "Import":
                 alert("this function has not yet been done");
                 break;
@@ -387,5 +388,97 @@ class GameEngineDebugger extends GameEngineSystem {
                 console.error(this.$message);
             }
         }
+    }
+}
+class AudioSystem extends GameEngineSystem {
+    constructor() {
+        super();
+        this.audioTag = document.createElement("audio");
+        this.audioPath = "";
+    }
+    playAudio(shouldLoop) {
+        try {
+            this.audioTag.src = this.audioPath;
+            shouldLoop && (this.audioTag.loop = true);
+            this.audioTag.play();
+            return true;
+        }
+        catch (err) {
+            console.error(err);
+            return false;
+        }
+    }
+    reloadAudio() {
+        try {
+            this.audioTag.src = this.audioPath;
+        }
+        catch (err) {
+            console.error(err);
+        }
+        this.audioTag.load();
+    }
+    pauseAudio() {
+        try {
+            this.audioTag.src = this.audioPath;
+        }
+        catch (err) {
+            console.error(err);
+        }
+        this.audioTag.pause();
+    }
+    isAudioEnded(audio = this.audioTag) {
+        return audio.ended;
+    }
+    isAudioPaused(audio = this.audioTag) {
+        return audio.paused;
+    }
+    getAudioState(audio = this.audioTag) {
+        return audio.readyState;
+    }
+}
+class VideoSystem extends GameEngineSystem {
+    constructor() {
+        super();
+        this.videoTag = document.createElement("video");
+        this.videoPath = "";
+    }
+    playVideo(shouldLoop) {
+        try {
+            this.videoTag.src = this.videoPath;
+            shouldLoop && (this.videoTag.loop = true);
+            this.videoTag.play();
+            return true;
+        }
+        catch (err) {
+            console.error(err);
+            return false;
+        }
+    }
+    reloadVideo() {
+        try {
+            this.videoTag.src = this.videoPath;
+        }
+        catch (err) {
+            console.error(err);
+        }
+        this.videoTag.load();
+    }
+    pauseVideo() {
+        try {
+            this.videoTag.src = this.videoPath;
+        }
+        catch (err) {
+            console.error(err);
+        }
+        this.videoTag.pause();
+    }
+    isVideoEnded(video = this.videoTag) {
+        return video.ended;
+    }
+    isVideoPaused(video = this.videoTag) {
+        return video.paused;
+    }
+    getVideoState(video = this.videoTag) {
+        return video.readyState;
     }
 }
