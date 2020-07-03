@@ -196,7 +196,7 @@ class FileIcon {
     create(labelName: string) {
         const img = document.createElement("img");
         img.src = './editor/ui/scene-icon.png';
-        img.style.width = '64px'
+        img.style.width = '33px'
         const label = document.createElement('p');
         label.innerText = labelName;
         label.style.color = 'white';

@@ -34,6 +34,17 @@ class KeyContainerBehaviour extends Behaviour {
 core.registerBehaviourClass(KeyContainerBehaviour);
 class GameStartupBehaviour extends Behaviour {
     onStart() {
+<<<<<<< HEAD
+=======
+        this.warrior = core.getObjectById('image');
+        new Trigger(this.warrior, this.warrior);
+    }
+    onUpdate() {
+        console.log("K: ", this.warrior.getBehaviour(Transform).x);
+        if (this.warrior.getBehaviour(Transform).x < 100) {
+            this.warrior.getBehaviour(Transform).x += 1;
+        }
+>>>>>>> fbfca7e5cdb1ae39ff175d4924a82d7de6f568a9
     }
 }
 core.registerBehaviourClass(ClickContainerBehaviour);
