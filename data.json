@@ -9,37 +9,24 @@
 						{
 							"name": "Transform",
 							"x": -111,
-							"y": 71,
-							"scaleX": 2.3000000000000007,
-							"scaleY": 2.100000000000001,
-							"rotation": -22,
-							"alpha": 0.7000000000000001
+							"y": 71
 						},
 						{
 							"name": "ImageRenderer",
 							"image": "./images/main/warrior.png"
-						},
-						{
-							"name": "PlayerManager"
 						}
 					]
 				},
 				{
-					"id": "greenRect",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 200,
-							"y": 79,
-							"scaleX": 2.3999999999999995,
-							"alpha": -2.220446049250313e-15
-						},
-						{
-							"name": "RectRenderer",
-							"height": 40,
-							"color": "green"
-						}
-					]
+					"behaviours": [{
+						"name": "Transform",
+						"x": 120,
+						"y": 320
+					}],
+					"children": [{
+						"id": "warrior",
+						"prefabUrl": "warrior.json"
+					}]
 				}
 			],
 			"behaviours": [

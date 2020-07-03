@@ -9,7 +9,8 @@
         "./out/engine/startup.js"
     ],
     "scenes": [
-        "data.json"
+        "data.json",
+        "warrior.json"
     ],
     "images": [
         "./images/main/warrior.png"

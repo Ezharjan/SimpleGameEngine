@@ -6,35 +6,48 @@ class ClickContainerBehaviour extends Behaviour {
     }
 }
 
+class KeyContainerBehaviour extends Behaviour{
+
+    private currentTime = 0;
+
+	onStart(){
+            
+        }
+           
+    onUpdate(){
+		
+		console.log('1');
+            
+		window.onkeydown = function(e){
+            const player = core.getObjectById("warrior");
+			switch(e.keyCode){
+				case 38:
+					player.getBehaviour(Transform).y -= 5;
+					break;
+				case 40:
+					player.getBehaviour(Transform).y += 5;
+					break;
+				case 37:
+		 			player.getBehaviour(Transform).x -= 5;
+					break;
+				case 39:
+					player.getBehaviour(Transform).x += 5;
+					break;
+       
+                   }               
+              }
+	}
+}
+
+core.registerBehaviourClass(KeyContainerBehaviour)
+
 
 class GameStartupBehaviour extends Behaviour {
     onStart() {
+
     }
 }
 
 
 core.registerBehaviourClass(ClickContainerBehaviour);
 core.registerBehaviourClass(GameStartupBehaviour);
-
-
-class PlayerManager extends Behaviour {
-    warrior;
-    onStart() {
-        this.warrior = core.getObjectById('image');
-        const tr = new Trigger(this.warrior, this.warrior);
-    }
-
-    onUpdate() {
-        console.log("K: ", this.warrior.getBehaviour(Transform).x);
-        if (this.warrior.getBehaviour(Transform).x < 100) {
-            this.warrior.getBehaviour(Transform).x += 1;
-        }
-    }
-
-}
-
-
-
-
-
-core.registerBehaviourClass(PlayerManager);

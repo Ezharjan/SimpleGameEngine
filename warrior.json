@@ -1,0 +1,18 @@
+{
+    "id": "warrior",
+    "behaviours": [
+        {
+            "name": "Transform"
+        },
+        {
+            "name":"ClickContainerBehaviour"
+        },
+        {
+            "name":"KeyContainerBehaviour"
+        },
+        {
+            "name": "ImageRenderer",
+            "image": "./images/main/warrior.png"
+        }
+    ]
+}
