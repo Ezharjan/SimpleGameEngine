@@ -254,7 +254,11 @@ class GameEngineCore {
     //advancedTime is the time the game has runned
     onFrame(advancedTime) {
         context.save();
-        context.clearRect(0, 0, 400, 400);
+        // context.clearRect(0, 0, 400, 400);
+        // console.log("%%%%%:  " + resourceManager.getCanvasWidth());
+        // console.log("%%%%%:  " + resourceManager.getCanvasHeight());
+        // context.clearRect(0, 0, resourceManager.getCanvasWidth(), resourceManager.getCanvasWidth());
+        context.clearRect(0, 0, RM.canvasWidth, RM.canvasHeight);
 
         for (let system of this.$systems) {
             system.onFrame(advancedTime);

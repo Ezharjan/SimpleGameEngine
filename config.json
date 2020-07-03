@@ -1,5 +1,7 @@
 {
     "scripts": [
+        "./out/engine/utils.js",
+        "./out/Director.js",
         "./out/engine/math.js",
         "./out/engine/core.js",
         "./out/engine/entities.js",
@@ -9,8 +11,7 @@
         "./out/engine/startup.js"
     ],
     "scenes": [
-        "data.json",
-        "warrior.json"
+        "data.json"
     ],
     "images": [
         "./images/main/warrior.png"

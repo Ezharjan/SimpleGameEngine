@@ -190,3 +190,57 @@ class Trigger extends Behaviour {
         }
     }
 }
+class GameMapDesigner extends Behaviour {
+    constructor() {
+        super(...arguments);
+        this.rowIndex = 0;
+        this.columnIndex = 0;
+        this.mapContent = "";
+        this.gameMap = new Dictionary();
+        this.sourceMap = new Dictionary();
+    }
+    // constructor(rowCount, columnCount) {
+    //     super();
+    //     this.columnCount = columnCount;
+    //     this.rowCount = rowCount;
+    // }
+    setMap(roles, indeies, sources) {
+        try {
+            for (let i = 0; i < roles.length; i++) {
+                this.gameMap.add(roles[i], indeies[i]);
+                this.sourceMap.add(indeies[i], sources[i]);
+            }
+            return true;
+        }
+        catch (err) {
+            alert("Error happened!");
+            console.error("Error happened! --- " + err);
+            return false;
+        }
+    }
+    getMap(role) {
+        const roleIndex = this.gameMap.find(role);
+        const source = this.sourceMap.find(roleIndex);
+        return source;
+    }
+    readMap(mapFile) {
+        const d3 = require("d3");
+        d3.json(mapFile, function (err, content) {
+            err && console.log(err);
+            this.mapContent = content;
+            return this.mapContent;
+        });
+    }
+    deleteRole(roleName) {
+        try {
+            this.gameMap.remove(roleName);
+            this.sourceMap.remove(roleName);
+            return true;
+        }
+        catch (err) {
+            alert("Error happened!");
+            console.error("Error happened! --- " + err);
+            return false;
+        }
+    }
+}

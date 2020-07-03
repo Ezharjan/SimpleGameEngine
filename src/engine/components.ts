@@ -221,3 +221,65 @@ class Trigger extends Behaviour {
         }
     }
 }
+
+
+class GameMapDesigner extends Behaviour {
+
+
+    rowCount;
+    columnCount;
+    rowIndex = 0;
+    columnIndex = 0;
+
+    mapContent = "";
+    gameMap = new Dictionary();
+    sourceMap = new Dictionary();
+
+    // constructor(rowCount, columnCount) {
+    //     super();
+    //     this.columnCount = columnCount;
+    //     this.rowCount = rowCount;
+    // }
+
+    setMap(roles: string[], indeies: number[], sources: string[]) {
+        try {
+            for (let i = 0; i < roles.length; i++) {
+                this.gameMap.add(roles[i], indeies[i]);
+                this.sourceMap.add(indeies[i], sources[i]);
+            }
+            return true;
+        } catch (err) {
+            alert("Error happened!");
+            console.error("Error happened! --- " + err);
+            return false;
+        }
+    }
+
+    getMap(role: string) {
+        const roleIndex = this.gameMap.find(role);
+        const source = this.sourceMap.find(roleIndex);
+        return source;
+    }
+
+    readMap(mapFile: string) {
+        const d3 = require("d3");
+        d3.json(mapFile, function (err, content) {
+            err && console.log(err);
+            this.mapContent = content;
+            return this.mapContent;
+        });
+    }
+
+    deleteRole(roleName: string) {
+        try {
+            this.gameMap.remove(roleName);
+            this.sourceMap.remove(roleName);
+            return true;
+        }
+        catch (err) {
+            alert("Error happened!");
+            console.error("Error happened! --- " + err);
+            return false;
+        }
+    }
+}

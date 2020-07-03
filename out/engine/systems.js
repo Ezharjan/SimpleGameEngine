@@ -223,6 +223,37 @@ class EditorAPISystem extends GameEngineSystem {
                 gameObject1.addBehaviour(new behaviourClass());
                 insepectorPanel.update(getInspectorData(gameObject1));
                 break;
+            case "Contact":
+                window.alert("    E-mail:    bjutsoft@sina.com");
+                break;
+            case "Documentation":
+                const BrowserWindow = require('electron').remote.BrowserWindow;
+                const win = new BrowserWindow({
+                    width: 800,
+                    height: 400
+                });
+                win.on('close', () => { });
+                win.loadFile("documentation.html");
+            case "Import":
+                alert("this function has not yet been done");
+                break;
+            case "Open":
+                Utils.getLocalFilePath();
+                //Noe integration here to read the files
+                // async function openDialog() {
+                //     const result = await require('electron').remote.dialog.showOpenDialog({
+                //         properties: ['openFile'],
+                //     });
+                //     return result;
+                // }
+                // console.log(openDialog());
+                break;
+            case "Build":
+                //TODO: Build method
+                console.log("TODO...");
+                break;
+            default:
+                break;
         }
     }
 }

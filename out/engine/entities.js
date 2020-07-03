@@ -9,11 +9,15 @@ class GameObject {
         this.renderer = null;
         this.$behaviours = [];
         this.onClick = null;
+        this.children = [];
         this.uuid = GameObject.gameObjectUuidIndex++;
         GameObject.allObjects[this.uuid] = this;
     }
     static getGameObject(uuid) {
         return this.allObjects[uuid];
+    }
+    static findWithUuid(uuid) {
+        return this.uuidGameObjectsPair[uuid];
     }
     addBehaviour(behaviour) {
         this.$behaviours.push(behaviour);
@@ -54,3 +58,4 @@ class GameObject {
 }
 GameObject.allObjects = {};
 GameObject.gameObjectUuidIndex = 1;
+GameObject.uuidGameObjectsPair = {};

@@ -1,0 +1,17 @@
+{
+    "mapIndex": 0,
+    "src": {
+        "row": [
+            "./images/main/***.png",
+            "./images/main/***.png",
+            "./images/main/***.png",
+            "./images/main/***.png"
+        ],
+        "column": [
+            "./images/main/***.png",
+            "./images/main/***.png",
+            "./images/main/***.png",
+            "./images/main/***.png"
+        ]
+    }
+}

@@ -8,13 +8,15 @@ var config = {
                     height: 70,
                     content: [{
                         type: 'component',
-                        componentName: 'HierarchyPanel'
+                        componentName: 'HierarchyPanel',
+                        width: 17
                     }, {
                         type: 'component',
                         componentName: 'GamePanel'
                     }, {
                         type: 'component',
-                        componentName: 'InspectorPanel'
+                        componentName: 'InspectorPanel',
+                        width: 17
                     }]
                 },
                 {
@@ -63,10 +65,9 @@ setTimeout(async () => {
     }
 
     const gamePanel = document.getElementById('gamePanel');
-    const button = document.createElement("button");
-    button.innerText = "Play";
-    gamePanel.appendChild(button);
-    button.onclick = () => {
+    const buttonPlay = document.createElement("button");
+    buttonPlay.innerText = "Play";
+    buttonPlay.onclick = () => {
         const BrowserWindow = require('electron').remote.BrowserWindow;
         const win = new BrowserWindow({
             width: 800,
@@ -74,13 +75,29 @@ setTimeout(async () => {
         });
         win.on('close', () => { });
         win.loadFile("index.html");
+
+        //开发者工具
         win.webContents.openDevTools();
     }
+
+
+    const buttonBuild = document.createElement("button");
+    buttonBuild.innerText = "Build";
+    buttonBuild.style.margin = "3px";
+    buttonBuild.onclick = () => {
+        alert("Waiting to be done!");
+    }
+
+
     const canvas = document.createElement('canvas');
     canvas.id = 'game';
-    canvas.width = 400;
-    canvas.height = 400;
+    // canvas.width = 1920;
+    // canvas.height = 1280;
+    canvas.width = 410;
+    canvas.height = 410;
     gamePanel.appendChild(canvas);
+    gamePanel.appendChild(buttonPlay);
+    gamePanel.appendChild(buttonBuild);
 
 
     const content = await loadText('config.json');

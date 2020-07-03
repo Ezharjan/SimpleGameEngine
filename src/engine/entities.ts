@@ -28,11 +28,17 @@ class GameObject {
 
     prefabUrl: string;
 
+    private static uuidGameObjectsPair: { [uuid: number]: GameObject } = {};
 
+    public children: GameObject[] = [];
 
     constructor() {
         this.uuid = GameObject.gameObjectUuidIndex++;
         GameObject.allObjects[this.uuid] = this;
+    }
+
+    public static findWithUuid(uuid: number) {
+        return this.uuidGameObjectsPair[uuid];
     }
 
 

@@ -1,11 +1,12 @@
 {
-    "name": "v3",
+    "name": "alex-engine",
     "version": "1.0.0",
     "description": "A game engine.",
     "main": "editor/main.js",
     "scripts": {
         "start": "electron .",
-        "watch": "tsc -w"
+        "watch": "tsc -w",
+        "package": "electron-packager ./ myapp --out ./out --app-version 1.0.0 --overwrite --icon=icon.ico"
     },
     "author": "Alexander",
     "license": "ISC",
@@ -16,6 +17,7 @@
         "typescript": "^3.8.3"
     },
     "dependencies": {
-        "@types/node": "^14.0.14"
+        "@types/node": "^14.0.14",
+        "d3": "^5.16.0"
     }
 }

@@ -8,6 +8,24 @@
         window._ = require('./libs/lodash/lodash.js')
         window.InspireTree = require('./libs/inspire-tree/inspire-tree.js')
         window.InspireTreeDOM = require('./libs/inspire-tree/inspire-tree-dom.js').InspireTreeDOM;
+
+        window.alert = function (name) {
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display = "none";
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }
+        window.confirm = function (message) {
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display = "none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            var alertFrame = window.frames[0];
+            var result = alertFrame.window.confirm(message);
+            iframe.parentNode.removeChild(iframe);
+            return result;
+        }
     </script>
     <script type="text/javascript" src="./libs/dat.gui/dat.gui.min.js"></script>
     <script type="text/javascript" src="./libs/golden-layout/golden-layout.js"></script>

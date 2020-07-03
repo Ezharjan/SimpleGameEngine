@@ -1,5 +1,15 @@
 const electron = require('electron');
 const Menu = electron.remote.Menu;
+class Utils {
+    static getLocalFilePath() {
+        const { dialog } = require('electron').remote;
+        const localFilePath = dialog.showOpenDialogSync(this, {
+            properties: ['openFile', 'openDirectory']
+        });
+        console.log(localFilePath);
+        return localFilePath;
+    }
+}
 class NativeMenu {
     run(context) {
         let template = [
@@ -7,8 +17,31 @@ class NativeMenu {
                 label: "File",
                 submenu: [
                     {
-                        label: "Save", click: () => {
+                        label: "Save",
+                        accelerator: 'CmdOrCtrl+S',
+                        click: () => {
                             context.executeCommand("Save");
+                        }
+                    },
+                    {
+                        label: "Import",
+                        accelerator: 'CmdOrCtrl+I',
+                        click: () => {
+                            context.executeCommand("Import");
+                        }
+                    },
+                    {
+                        label: "Open",
+                        accelerator: 'CmdOrCtrl+O',
+                        click: () => {
+                            context.executeCommand("Open");
+                        }
+                    },
+                    {
+                        label: "Build",
+                        accelerator: 'CmdOrCtrl+B',
+                        click: () => {
+                            context.executeCommand("Build");
                         }
                     }
                 ]
@@ -38,7 +71,21 @@ class NativeMenu {
                         accelerator: 'CmdOrCtrl+W',
                         role: 'close'
                     }, {
-                        label: 'Change developer tool',
+                        label: 'Refresh',
+                        accelerator: 'F5',
+                        role: 'reload'
+                    },
+                    {
+                        label: 'Zoom Out',
+                        accelerator: 'CmdOrCtrl+-',
+                        role: 'zoomout'
+                    },
+                    {
+                        label: 'Zoom In',
+                        accelerator: 'CmdOrCtrl+=',
+                        role: 'zoomin'
+                    }, {
+                        label: 'Dev Tool',
                         accelerator: (function () {
                             if (process.platform === 'darwin') {
                                 return 'Alt+Command+I';
@@ -59,7 +106,22 @@ class NativeMenu {
             {
                 label: 'Help',
                 role: 'help',
-                submenu: []
+                submenu: [
+                    {
+                        label: 'Documentation',
+                        accelerator: 'CmdOrCtrl+H',
+                        click: () => {
+                            context.executeCommand("Documentation");
+                        }
+                    },
+                    {
+                        label: 'Contact',
+                        accelerator: 'Shift+CmdOrCtrl+H',
+                        click: () => {
+                            context.executeCommand("Contact");
+                        }
+                    }
+                ]
             }
         ];
         const menu = Menu.buildFromTemplate(template);
@@ -103,18 +165,112 @@ class InspectorPanel {
             const behaviourFolder = folder.addFolder(behaviour.name);
             behaviourFolder.open();
             const obj = {};
+            const controllers = [];
             for (const property of behaviour.properties) {
                 obj[property.key] = property.value;
-                const controller = behaviourFolder.add(obj, property.key);
-                controller.onChange((value) => {
-                    // Fires when a controller loses focus.
-                    this.context.executeCommand("ModifyBehaviourProperty", {
-                        uuid: behaviour.uuid,
-                        key: property.key,
-                        newValue: value
+                if (property.key == "x") {
+                    const controller = behaviourFolder.add(obj, "x", 0, 1920).step(1);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
                     });
-                });
+                }
+                else if (property.key == "y") {
+                    const controller = behaviourFolder.add(obj, "y", 0, 1920).step(1);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
+                    });
+                }
+                else if (property.key == "scaleX") {
+                    const controller = behaviourFolder.add(obj, "scaleX", 0, 1920).step(0.1);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
+                    });
+                }
+                else if (property.key == "scaleY") {
+                    const controller = behaviourFolder.add(obj, "scaleY", 0, 1920).step(0.1);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
+                    });
+                }
+                else if (property.key == "rotation") {
+                    const controller = behaviourFolder.add(obj, "rotation", -360, 360).step(1);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
+                    });
+                }
+                else if (property.key == "alpha") {
+                    const controller = behaviourFolder.add(obj, "alpha", 0, 1).step(0.1);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
+                    });
+                }
+                else {
+                    const controller = behaviourFolder.add(obj, property.key);
+                    controllers.push(controller);
+                    controller.onChange((value) => {
+                        // Fires when a controller loses focus.
+                        this.context.executeCommand("ModifyBehaviourProperty", {
+                            uuid: behaviour.uuid,
+                            key: property.key,
+                            newValue: value
+                        });
+                    });
+                }
+                // controllers[index].onChange((value) => {
+                //     // Fires when a controller loses focus.
+                //     this.context.executeCommand("ModifyBehaviourProperty", {
+                //         uuid: behaviour.uuid,
+                //         key: property.key,
+                //         newValue: value
+                //     });
+                // });
             }
+            // for (const property of behaviour.properties) {
+            //     const controller = controllers.pop();
+            //     controller.onChange((value) => {
+            //         this.context.executeCommand("ModifyBehaviourProperty", {
+            //             uuid: behaviour.uuid,
+            //             key: property.key,
+            //             newValue: value
+            //         });
+            //     });
+            // }
         }
         const controller = gui.add({
             addComponent: ""
@@ -161,10 +317,16 @@ class FileIcon {
     create(labelName) {
         const img = document.createElement("img");
         img.src = './editor/ui/scene-icon.png';
-        img.style.width = '64px';
+        img.style.width = '33px';
+        img.style.marginTop = '20px';
+        img.style.marginLeft = '20px';
+        img.style.marginRight = '20px';
         const label = document.createElement('p');
         label.innerText = labelName;
         label.style.color = 'white';
+        label.style.marginTop = '3px';
+        label.style.marginLeft = '14px';
+        label.style.marginRight = '20px';
         this.view.appendChild(img);
         this.view.appendChild(label);
     }

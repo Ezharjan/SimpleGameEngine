@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var config = {
     content: [
         {
@@ -17,13 +8,15 @@ var config = {
                     height: 70,
                     content: [{
                             type: 'component',
-                            componentName: 'HierarchyPanel'
+                            componentName: 'HierarchyPanel',
+                            width: 17
                         }, {
                             type: 'component',
                             componentName: 'GamePanel'
                         }, {
                             type: 'component',
-                            componentName: 'InspectorPanel'
+                            componentName: 'InspectorPanel',
+                            width: 17
                         }]
                 },
                 {
@@ -54,7 +47,7 @@ myLayout.registerComponent('ResourcePanel', function (container, componentState)
     container.getElement().html(`<div id="resourcePanel"></div>`);
 });
 myLayout.init();
-setTimeout(() => __awaiter(this, void 0, void 0, function* () {
+setTimeout(async () => {
     function loadText(url) {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
@@ -66,10 +59,9 @@ setTimeout(() => __awaiter(this, void 0, void 0, function* () {
         });
     }
     const gamePanel = document.getElementById('gamePanel');
-    const button = document.createElement("button");
-    button.innerText = "Play";
-    gamePanel.appendChild(button);
-    button.onclick = () => {
+    const buttonPlay = document.createElement("button");
+    buttonPlay.innerText = "Play";
+    buttonPlay.onclick = () => {
         const BrowserWindow = require('electron').remote.BrowserWindow;
         const win = new BrowserWindow({
             width: 800,
@@ -77,18 +69,29 @@ setTimeout(() => __awaiter(this, void 0, void 0, function* () {
         });
         win.on('close', () => { });
         win.loadFile("index.html");
+        //开发者工具
         win.webContents.openDevTools();
+    };
+    const buttonBuild = document.createElement("button");
+    buttonBuild.innerText = "Build";
+    buttonBuild.style.margin = "3px";
+    buttonBuild.onclick = () => {
+        alert("Waiting to be done!");
     };
     const canvas = document.createElement('canvas');
     canvas.id = 'game';
-    canvas.width = 400;
-    canvas.height = 400;
+    // canvas.width = 1920;
+    // canvas.height = 1280;
+    canvas.width = 410;
+    canvas.height = 410;
     gamePanel.appendChild(canvas);
-    const content = yield loadText('config.json');
+    gamePanel.appendChild(buttonPlay);
+    gamePanel.appendChild(buttonBuild);
+    const content = await loadText('config.json');
     window['configData'] = JSON.parse(content);
     const javascriptFiles = window['configData'].scripts;
     for (let item of javascriptFiles) {
-        yield loadScript(item);
+        await loadScript(item);
     }
     const editorJavaScriptFiles = [
         "./libs/dat.gui/dat.gui.min.js",
@@ -96,9 +99,9 @@ setTimeout(() => __awaiter(this, void 0, void 0, function* () {
         "./out/engine/editor-ui.js"
     ];
     for (let item of editorJavaScriptFiles) {
-        yield loadScript(item);
+        await loadScript(item);
     }
-}), 1000);
+}, 1000);
 function loadScript(url) {
     //async method let it wait 
     return new Promise((resolve, reject) => {

@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 
+
 function createWindow() {
     // Create browser window
     let win = new BrowserWindow({
@@ -11,7 +12,10 @@ function createWindow() {
     });
 
     win.loadFile('editor.html')
-    win.webContents.openDevTools();
+
+    //开发者工具
+    // win.webContents.openDevTools();
+    win.maximize()
 }
 
 app.whenReady().then(createWindow);
