@@ -11,6 +11,11 @@ class GameStartupBehaviour extends Behaviour {
 core.registerBehaviourClass(ClickContainerBehaviour);
 core.registerBehaviourClass(GameStartupBehaviour);
 class PlayerManager extends Behaviour {
+    constructor() {
+        super(...arguments);
+        this.music = new AudioSystem();
+        this.video = new VideoSystem();
+    }
     onStart() {
         //示例1
         this.warrior = core.getObjectById('image');
@@ -31,11 +36,13 @@ class PlayerManager extends Behaviour {
             }
         }
         //示例3
-        const music = new AudioSystem();
-        music.audioPath = "./medias/bgMusic.mp3";
-        music.playAudio(false);
-        console.log("is audio ended? " + music.isAudioEnded());
-        console.log("is audio paused? " + music.isAudioPaused());
+        this.music.audioPath = "./medias/bgMusic.mp3";
+        this.music.playAudio(false);
+        console.log("is audio ended? " + this.music.isAudioEnded());
+        //示例6
+        // this.video.videoPath = "./medias/sample_video.mp4";
+        // this.video.playVideo(false);
+        // console.log("is video ended? " + this.video.isVideoEnded());
     }
     onUpdate() {
         //示例0
