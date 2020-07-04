@@ -4,17 +4,72 @@
 		{
 			"children": [
 				{
-					"id": "warrior",
+					"id": "backmap",
 					"behaviours": [
 						{
-							"name": "Transform"
-						},
-						{
-							"name": "KeyContainerBehaviour"
+							"name": "Transform",
+							"x":50,
+							"y":50
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./images/main/warrior.png"
+							"image": "./img/temp/map_1.png"
+						}
+					]
+				},
+				{
+					"id": "border1",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x":0,
+							"y":50
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/temp/hight_50.png"
+						}
+					]
+				},
+				{
+					"id": "border2",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x":750,
+							"y":50
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/temp/hight_50.png"
+						}
+					]
+				},
+				{
+					"id": "border3",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x":50,
+							"y":0
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/temp/width_50.png"
+						}
+					]
+				},
+				{
+					"id": "border4",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x":50,
+							"y":750
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/temp/width_50.png"
 						}
 					]
 				},
@@ -283,38 +338,62 @@
 					]
 				},
 				{
-					"id": "men1",
+					"id": "door1",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/m1.png"
+							"image": "./img/door.png"
 						}
 					]
 				},
 				{
-					"id": "men2",
+					"id": "door2",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/m2.png"
+							"image": "./img/door.png"
 						}
 					]
 				},
 				{
-					"id": "renwu",
+					"id": "door3",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/rw.png"
+							"image": "./img/door.png"
+						}
+					]
+				},
+				{
+					"id": "door4",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/door.png"
+						}
+					]
+				},
+				{
+					"id": "stone1",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/stone.png"
 						}
 					]
 				},
@@ -343,14 +422,14 @@
 					]
 				},
 				{
-					"id": "daoju1",
+					"id": "weapon1",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/bz.png"
+							"image": "./img/weapon1.png"
 						}
 					]
 				},
@@ -391,7 +470,7 @@
 					]
 				},
 				{
-					"id": "daoju5",
+					"id": "ys1",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -403,7 +482,7 @@
 					]
 				},
 				{
-					"id": "daoju6",
+					"id": "ys2",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -415,26 +494,98 @@
 					]
 				},
 				{
-					"id": "daoju7",
+					"id": "key",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/yshi1.png"
+							"image": "./img/key.png"
 						}
 					]
 				},
 				{
-					"id": "daoju8",
+					"id": "bomb1",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/yshi2.png"
+							"image": "./img/bomb.png"
+						}
+					]
+				},
+				{
+					"id": "player",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/player.png"
+						}
+					]
+				},
+				{
+					"id": "HPText",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 800,
+							"y": 300
+						},
+						{
+							"name": "TextRenderer",
+							"color": "#00000",
+							"text": "生命值HP"
+						}
+					]
+				},
+				{
+					"id": "AttackText",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 800,
+							"y": 320
+						},
+						{
+							"name": "TextRenderer",
+							"color": "#00000",
+							"text": "攻击力"
+						}
+					]
+				},
+				{
+					"id": "KeyText",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 800,
+							"y": 340
+						},
+						{
+							"name": "TextRenderer",
+							"color": "#00000",
+							"text": "钥匙数"
+						}
+					]
+				},
+				{
+					"id": "BombText",
+					"behaviours": [
+						{
+							"name": "Transform",
+							"x": 800,
+							"y": 360
+						},
+						{
+							"name": "TextRenderer",
+							"color": "#00000",
+							"text": "炸弹数"
 						}
 					]
 				}
@@ -442,6 +593,9 @@
 			"behaviours": [
 				{
 					"name": "Transform"
+				},
+				{
+					"name": "KeyContainerBehaviour"
 				}
 			]
 		}
