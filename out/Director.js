@@ -100,7 +100,7 @@ class Bubles {
 }
 const bubleSpawner = new Bubles();
 bubleSpawner.randomBubles();
-animationLoad();
+// animationLoad();
 /* class Loader {
     onUpdate() {
         console.log(loadSpeed);
@@ -116,7 +116,8 @@ core.registerBehaviourClass(Loader);
 //     console.log("ssss" + loadSpeed);
 // }
 // loader();
-window.onload = function () {
+// window.onload = function () {
+function Load() {
     const context = document.getElementById('game').getContext('2d'), centerX = document.getElementById('game').width / 2, centerY = document.getElementById('game').height / 2, rad = Math.PI * 2 / 100, speed = 0.1;
     function text(n) {
         context.save();
@@ -155,4 +156,4 @@ window.onload = function () {
             this.speed = 0;
         this.speed += 0.1;
     }());
-};
+}

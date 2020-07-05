@@ -133,7 +133,7 @@ class Bubles {
 
 const bubleSpawner = new Bubles();
 bubleSpawner.randomBubles();
-animationLoad();
+// animationLoad();
 
 
 /* class Loader {
@@ -153,7 +153,8 @@ core.registerBehaviourClass(Loader);
 // }
 // loader();
 
-window.onload = function () {
+// window.onload = function () {
+function Load() {
 
     const context = (document.getElementById('game') as HTMLCanvasElement).getContext('2d'),
         centerX = (document.getElementById('game') as HTMLCanvasElement).width / 2,
