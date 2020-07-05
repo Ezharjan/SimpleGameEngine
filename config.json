@@ -44,6 +44,7 @@
         "./img/bomb.png",
         "./img/temp/hight_50.png",
         "./img/temp/width_50.png",
-        "./img/temp/map_1.png"
+        "./img/temp/map_1.png",
+        "./img/downstair.png"
     ]
 }

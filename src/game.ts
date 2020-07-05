@@ -89,9 +89,9 @@ class KeyContainerBehaviour extends Behaviour {
 			
 				} else if (50 <= arr[i][j] && arr[i][j] < 60) {
 					if (arr[i][j] == 51) {
-						// const loti1 = core.getObjectById("loti1");
-						// loti1.getBehaviour(Transform).x = j * 50;
-						// loti1.getBehaviour(Transform).y = i * 50;
+						const loti1 = core.getObjectById("loti1");
+						loti1.getBehaviour(Transform).x = j * 50;
+						loti1.getBehaviour(Transform).y = i * 50;
 					} else if (arr[i][j] == 52) {
 						// const loti2 = core.getObjectById("loti2");
 						// loti2.getBehaviour(Transform).x = j * 50;
@@ -260,9 +260,10 @@ class KeyContainerBehaviour extends Behaviour {
 			} else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
 				// var shanghai = arr[x1][y1] % 40;
 				// hp = hp - shanghai * 10;
-				hp = hp - 10;
+				hp = hp - 110;
 				if (hp < 0) {
 					arr[x][y] = 99;
+					alert("You're dead！Game Over!");
 				} else {
 					player.getBehaviour(Transform).x = y1 * 50;
 					player.getBehaviour(Transform).y = x1 * 50;
@@ -314,9 +315,6 @@ class KeyContainerBehaviour extends Behaviour {
 					}else if(arr[peoplex - 1][peopley] == 22 && key > 0){
 						peoplex = peoplex - 1;
 					}
-					//console.log('1');
-					//console.log(peoplex);
-					//console.log(peopley);
 					console.log(bomb);
 					console.log(gjili);
 				//}
@@ -350,21 +348,17 @@ class KeyContainerBehaviour extends Behaviour {
 				}
 			}
 			const HPText = core.getObjectById("HPText");
-			// HPText.getBehaviour(Transform).x = 800;
-			// HPText.getBehaviour(Transform).y = 300;
 			HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
 			const AttackTest = core.getObjectById("AttackText");
-			// AttackTest.getBehaviour(Transform).x = 800;
-			// AttackTest.getBehaviour(Transform).y = 320;
 			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + gjili;
 			const KeyTest = core.getObjectById("KeyText");
-			// KeyTest.getBehaviour(Transform).x = 800;
-			// KeyTest.getBehaviour(Transform).y = 340;
 			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + key;
 			const BombTest = core.getObjectById("BombText");
-			// BombTest.getBehaviour(Transform).x = 800;
-			// BombTest.getBehaviour(Transform).y = 360;
 			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bomb;
+			// const restart = core.getObjectById("restart");
+			// restart.onclick = function () {
+			// 	location.href += "?reload=true";
+			// }
 		};
 	}
 

@@ -31,6 +31,69 @@ class MainPageLoader {
         context.clearRect(0, 0, this.rectWidth, this.rectHeight);
     }
 }
+class PrefStorageSystem {
+    constructor(fileName = '/data/save.db') {
+        // 加载模块
+        this.nedb = require('nedb');
+        // 实例化连接对象（不带参数默认为内存数据库）
+        this.db = new this.nedb({
+            filename: fileName,
+            autoload: true
+        });
+    }
+    //TODO: move to system
+    dbOperation() {
+        // 插入单项
+        this.db.insert({
+            name: 'tom'
+        }, (err, ret) => { });
+        // 插入多项
+        this.db.insert([
+            { name: 'tom' },
+            { name: 'jerry' }
+        ], (err, ret) => { });
+        // 查询单项
+        this.db.findOne({
+            name: 'tom'
+        }, (err, ret) => { });
+        // 查询多项
+        this.db.find({
+            name: {
+                $in: ['tom', 'jerry']
+            }
+        })
+            .sort({
+            _id: -1
+        })
+            .exec((err, ret) => { });
+        // 更新单项
+        this.db.update({
+            _id: '1'
+        }, {
+            $set: {
+                name: 'kitty'
+            }
+        }, (err, ret) => { });
+        // 更新多项
+        this.db.update({}, {
+            $set: {
+                name: 'kitty'
+            }
+        }, {
+            multi: true
+        }, (err, ret) => { });
+        // 删除单项
+        this.db.remove({
+            _id: '1'
+        }, (err, ret) => { });
+        // 删除多项
+        this.db.remove({
+            name: 'kitty'
+        }, {
+            multi: true
+        }, (err, ret) => { });
+    }
+}
 //Progress bar
 class LoadingAnimation {
     constructor() {
