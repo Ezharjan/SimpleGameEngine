@@ -29,18 +29,22 @@
         "./img/9.png",
         "./img/bg.png",
         "./img/q.png",
-        "./img/m1.png",
-        "./img/m2.png",
-        "./img/rw.png",
+        "./img/door.png",
+        "./img/stone.png",
+        "./img/player.png",
         "./img/lt1.png",
         "./img/lt2.png",
-        "./img/bz.png",
+        "./img/weapon1.png",
         "./img/dun.png",
         "./img/j.png",
         "./img/jl.png",
         "./img/ys1.png",
         "./img/ys2.png",
-        "./img/yshi1.png",
-        "./img/yshi2.png"
+        "./img/key.png",
+        "./img/bomb.png",
+        "./img/temp/hight_50.png",
+        "./img/temp/width_50.png",
+        "./img/temp/map_1.png",
+        "./img/downstair.png"
     ]
 }
