@@ -167,7 +167,7 @@ function checkClickPosition(callback) {
         callback && callback();
         console.log("Start button clicked!");
         window.event.returnValue = false;
-        loadPage("./index.html");
+        loadPage("./firstPage.html");
     }
 
 

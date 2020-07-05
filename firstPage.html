@@ -1,32 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharaoh Blowing The Lights</title>
+    <meta charset="utf-8" />
 </head>
-<canvas id="index" width="1280" height="720"></canvas>
-<p style="align-content: center;   vertical-align:middle;">
-    <!-- <div>
-    <img src="./img/indexPage.png"> -->
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-    <button onclick="loadPage('./index.html ')" style=" width: 167px; height: 91px; margin-top: 0px;text-align: center; text-emphasis: yes; font-size: 60px;">Click</button>
-</p>
-<div id="clickMe"></div>
-<!-- <audio id="index-audio" src="./medias/bgMusic.mp3"> -->
-</audio>
-<!-- </div> -->
 
 <body>
-    <script src="./out/engine/utils.js"></script>
-    <script src="./mainPageLogics/firstPage.js"></script>
+    <canvas id='game' width='1280' height='1000'></canvas>
+    <script>
+        function loadText(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.onload = () => {
+                    resolve(xhr.responseText);
+                }
+                xhr.open('get', url);
+                xhr.send();
+            })
+        }
+
+        function loadScript(url) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.onload = () => resolve();
+                script.src = url;
+                document.body.appendChild(script)
+            });
+        }
+
+        async function run() {
+            const content = await loadText('config.json');
+            window['configData'] = JSON.parse(content)
+            const javascriptFiles = window['configData'].scripts;
+
+            for (let item of javascriptFiles) {
+                await loadScript(item);
+            }
+        }
+        run();
+    </script>
 </body>
 
 </html>
