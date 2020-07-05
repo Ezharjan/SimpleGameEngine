@@ -1,6 +1,3 @@
-
-
-
 class CustomBaseRenderer {
 
     posX = 0;
