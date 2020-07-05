@@ -1,3 +1,4 @@
+// import { GameMap } from './engine/map-enum';
 class KeyContainerBehaviour extends Behaviour {
     constructor() {
         super(...arguments);
