@@ -68,7 +68,8 @@ setTimeout(async () => {
             height: 400
         });
         win.on('close', () => { });
-        win.loadFile("index.html");
+        // win.loadFile("index.html");//Old page --- main page of the game
+        win.loadFile("firstPage.html"); //New page --- 1st page of the game 
         //开发者工具
         win.webContents.openDevTools();
     };

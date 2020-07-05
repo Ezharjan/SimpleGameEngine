@@ -482,3 +482,56 @@ class VideoSystem extends GameEngineSystem {
         return video.readyState;
     }
 }
+class PrefStorageSystem {
+    constructor(fileName = '/data/save.db') {
+        // 加载模块
+        this.nedb = require('nedb');
+        // 实例化连接对象（不带参数默认为内存数据库）
+        this.db = new this.nedb({
+            filename: fileName,
+            autoload: true
+        });
+    }
+    insert(info) {
+        // 插入单项
+        this.db.insert(info, (err, ret) => { });
+    }
+    findOne(info) {
+        // 查询单项
+        this.db.findOne(info, (err, ret) => { });
+    }
+    findMany(from, which) {
+        // 查询多项
+        this.db.find(from)
+            .sort({
+            _id: which
+        })
+            .exec((err, ret) => { });
+    }
+    updateOne(oldElement, newElement) {
+        // 更新单项
+        this.db.update(oldElement, {
+            $set: newElement
+        }, (err, ret) => { });
+        // // 更新多项
+        // this.db.update({}, {
+        //     $set: {
+        //         name: 'kitty'
+        //     }
+        // }, {
+        //     multi: true
+        // }, (err, ret) => { });
+    }
+    delete(id) {
+        // 删除单项
+        this.db.remove({
+            _id: id
+        }, (err, ret) => { });
+        // // 删除多项
+        // this.db.remove({
+        //     name: 'kitty'
+        // }, {
+        //     multi: true
+        // }, (err, ret) => { });
+    }
+}
