@@ -540,7 +540,7 @@
 						{
 							"name": "TextRenderer",
 							"color": "#00000",
-							"text": "生命值HP"
+							"text": "生命值"
 						}
 					]
 				},
