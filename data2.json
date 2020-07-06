@@ -123,7 +123,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_11.png"
 						}
 					]
 				},
@@ -135,7 +135,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_12.png"
 						}
 					]
 				},
@@ -147,7 +147,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_21.png"
 						}
 					]
 				},
@@ -159,7 +159,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_22.png"
 						}
 					]
 				},
@@ -171,7 +171,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_11.png"
 						}
 					]
 				},
@@ -183,7 +183,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_12.png"
 						}
 					]
 				},
@@ -195,7 +195,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_21.png"
 						}
 					]
 				},
@@ -207,43 +207,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
-						}
-					]
-				},
-				{
-					"id": "lu1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "qiang",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/q.png"
+							"image": "./img/Ammit/Ammit_22.png"
 						}
 					]
 				},
@@ -273,18 +237,6 @@
 				},
 				{
 					"id": "door3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door4",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -328,18 +280,6 @@
 						{
 							"name": "ImageRenderer",
 							"image": "./img/downstair.png"
-						}
-					]
-				},
-				{
-					"id": "loti2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/lt2.png"
 						}
 					]
 				},
@@ -412,42 +352,6 @@
 						{
 							"name": "ImageRenderer",
 							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "daoju2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/dun.png"
-						}
-					]
-				},
-				{
-					"id": "daoju3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/j.png"
-						}
-					]
-				},
-				{
-					"id": "daoju4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/jl.png"
 						}
 					]
 				},
