@@ -44,6 +44,18 @@
 					]
 				},
 				{
+					"id": "guaiwu111",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/3.png"
+						}
+					]
+				},
+				{
 					"id": "guaiwu12",
 					"behaviours": [
 						{
