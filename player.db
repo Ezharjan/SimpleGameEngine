@@ -1,4 +1,5 @@
 {"name":"ability","value":10,"_id":"3dk0imlPft68BMJU"}
+{"name":"life","value":100,"_id":"5Ja3s3mvwWVGzojA"}
 {"name":"keys","value":6,"_id":"7tbuPnnd8wd50hwx"}
 {"name":"life","value":100,"_id":"ASZ54Mc74QeJPj9S"}
 {"name":"coins","value":0,"_id":"BGWat92I4mQgT2bq"}
@@ -9,6 +10,8 @@
 {"name":"ability","value":10,"_id":"J3MwubfS4Lt1x3b5"}
 {"name":"keys","value":0,"_id":"Je7RWDCmpOMmMlGK"}
 {"name":"coins","value":0,"_id":"LL1SaZmltxswy4Ac"}
+{"name":"keys","value":0,"_id":"Ms0i4Pk76Ib8j9EN"}
+{"name":"coins","value":0,"_id":"Mu72YPFJrILLyk2Y"}
 {"name":"ability","value":10,"_id":"NmTXWWKWOlPMQ8JE"}
 {"name":"keys","value":0,"_id":"O8i1E4AE6tFaJw7c"}
 {"name":"ability","value":10,"_id":"OTeaXM1iWbow00Ns"}
@@ -24,6 +27,7 @@
 {"name":"coins","value":0,"_id":"Vp0RpoVQdgzpMJto"}
 {"name":"keys","value":0,"_id":"W6EbvBTG8LMz1fJb"}
 {"name":"ability","value":10,"_id":"YQrQESuCgzFM4Feu"}
+{"name":"bombs","value":0,"_id":"YiW3bCyPoRrzf7ip"}
 {"name":"life","value":100,"_id":"YifQL3zeL1jYFdtN"}
 {"name":"bombs","value":0,"_id":"aZwCFihJhzhQE1Hm"}
 {"name":"coins","value":0,"_id":"bMRFYRmPzKH99hBc"}
@@ -31,6 +35,7 @@
 {"name":"life","value":100,"_id":"dqAvIbo8q3Oq0UZ9"}
 {"name":"keys","value":0,"_id":"hK3Qq1TSkezg74kb"}
 {"name":"bombs","value":3,"_id":"hMxANyhQXJ9cYb1v"}
+{"name":"ability","value":10,"_id":"hbiXgAAi6Ek98IHO"}
 {"name":"bombs","value":0,"_id":"k8pqXs7zbCBU3AYa"}
 {"name":"coins","value":0,"_id":"kneJVav4r6rJACNC"}
 {"name":"keys","value":0,"_id":"laN6eDyTLIAr4oYy"}
@@ -43,8 +48,8 @@
 {"name":"bombs","value":0,"_id":"uuOOy5D2MaBAfnUl"}
 {"name":"bombs","value":0,"_id":"yhSiddqnujquYVZR"}
 {"name":"ability","value":10,"_id":"z13ZABUfg9nJ0rRT"}
-{"name":"life","value":100,"_id":"5Ja3s3mvwWVGzojA"}
-{"name":"ability","value":10,"_id":"hbiXgAAi6Ek98IHO"}
-{"name":"keys","value":0,"_id":"Ms0i4Pk76Ib8j9EN"}
-{"name":"bombs","value":0,"_id":"YiW3bCyPoRrzf7ip"}
-{"name":"coins","value":0,"_id":"Mu72YPFJrILLyk2Y"}
+{"name":"life","value":100,"_id":"CMOJ9wITYQENRDWZ"}
+{"name":"ability","value":10,"_id":"I3ugm2RelaMK2HQ6"}
+{"name":"keys","value":0,"_id":"oh2BpMObIGDzPy4e"}
+{"name":"bombs","value":0,"_id":"U4KLMfqMo3LVIiAm"}
+{"name":"coins","value":0,"_id":"vAC3JTK6rlEM4x4L"}
