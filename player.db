@@ -11,6 +11,8 @@
 {"name":"bombs","value":0,"_id":"3RlWhW52dzPONiQT"}
 {"name":"ability","value":10,"_id":"3dk0imlPft68BMJU"}
 {"name":"ability","value":10,"_id":"3fHsLKUpImsbcIbk"}
+{"name":"keys","value":0,"_id":"3h8NhS5xXIBrehWK"}
+{"name":"keys","value":0,"_id":"48OVJuvDm92GSyy3"}
 {"name":"coins","value":0,"_id":"496l6Vom9g2KSMbb"}
 {"name":"bombs","value":0,"_id":"4Gd0D7GmzHOK8XXk"}
 {"name":"life","value":100,"_id":"4NIag7NrIfbkuJGM"}
@@ -36,6 +38,7 @@
 {"name":"keys","value":0,"_id":"9AwOaUqj6wQTpsOk"}
 {"name":"life","value":100,"_id":"9BABDtWVFOLuetEk"}
 {"name":"keys","value":0,"_id":"9PjyBKOCWDpDwycH"}
+{"name":"bombs","value":0,"_id":"9Q3mkeFCRodCGGfd"}
 {"name":"life","value":100,"_id":"9Wi24CeyI5uF3xDX"}
 {"name":"life","value":100,"_id":"9sQiLi8S19ey5Aik"}
 {"name":"keys","value":0,"_id":"9x0sk6bNaDZNrcxO"}
@@ -55,6 +58,7 @@
 {"name":"bombs","value":0,"_id":"DZtrwMWtTEG6Y4ar"}
 {"name":"life","value":100,"_id":"DdX6dBxZTV3YyrUm"}
 {"name":"bombs","value":0,"_id":"DheaDhfP3hDj7eiY"}
+{"name":"coins","value":0,"_id":"DmIa4A5XpfKkvJPG"}
 {"name":"keys","value":6,"_id":"Dvt6wNAvAZ8NdPCS"}
 {"name":"bombs","value":0,"_id":"DxNTUfEH2aQknQbr"}
 {"name":"bombs","value":0,"_id":"Dz1tyIMWIUXD7SwI"}
@@ -93,6 +97,7 @@
 {"name":"coins","value":0,"_id":"LL1SaZmltxswy4Ac"}
 {"name":"keys","value":0,"_id":"LexBTOhjlR3WXVbb"}
 {"name":"ability","value":10,"_id":"LpHM44su4PSB5GlD"}
+{"name":"life","value":100,"_id":"M0EVO2HAzh7Ie7eX"}
 {"name":"coins","value":0,"_id":"MArrXl92fpqiJB4N"}
 {"name":"life","value":100,"_id":"MIE99RGYucudTkHL"}
 {"name":"ability","value":10,"_id":"MTMacFoeNng2WgSF"}
@@ -112,11 +117,13 @@
 {"name":"bombs","value":0,"_id":"ODDBRk1F9hwD2dMD"}
 {"name":"ability","value":10,"_id":"OML2841NmPWv9J6p"}
 {"name":"life","value":100,"_id":"OQp5uvqsqGzjAxvC"}
+{"name":"life","value":100,"_id":"ORVFkvdHmLe8sKkN"}
 {"name":"life","value":100,"_id":"ORlSpg4tD6cOpW9U"}
 {"name":"coins","value":0,"_id":"OT6v8I5mcoGJzT0W"}
 {"name":"ability","value":10,"_id":"OTeaXM1iWbow00Ns"}
 {"name":"life","value":100,"_id":"OVjPVYjb4GpXIgxY"}
 {"name":"coins","value":0,"_id":"OWlpAqcvZ4SROtRi"}
+{"name":"ability","value":10,"_id":"OitrqFsxhXC0Hc3v"}
 {"name":"keys","value":0,"_id":"OjXLx9eu7qWTNdiy"}
 {"name":"ability","value":10,"_id":"OkX23WZ87m9Y1vSF"}
 {"name":"coins","value":0,"_id":"P3gwLG9dZ1G0jMef"}
@@ -131,10 +138,12 @@
 {"name":"life","value":-10,"_id":"Q1w5Ew3iVoZNzWZA"}
 {"name":"life","value":100,"_id":"Q3IDxHsFjgNj6aDX"}
 {"name":"ability","value":10,"_id":"Q8GYVTds4v1L5BSo"}
+{"name":"coins","value":0,"_id":"Q9NYgNYzZQawiYKT"}
 {"name":"coins","value":0,"_id":"QIeJr5yV0pmNq6C8"}
 {"name":"keys","value":0,"_id":"QOJBVIFgzr1WRMLp"}
 {"name":"keys","value":0,"_id":"QhBjRICTx9wNnchM"}
 {"name":"coins","value":0,"_id":"RFQVhFsVLTanUq2A"}
+{"name":"keys","value":0,"_id":"RmkbqQnVjHDDwlKi"}
 {"name":"bombs","value":0,"_id":"S4q42fljuQWUyAxf"}
 {"name":"life","value":100,"_id":"S8jNGeiQmNVSqBFs"}
 {"name":"keys","value":0,"_id":"SIPJT0pT0PktnD0K"}
@@ -162,6 +171,8 @@
 {"name":"ability","value":10,"_id":"WkYxONLeOfwBz9tr"}
 {"name":"coins","value":0,"_id":"XMHs5krBqQfesd27"}
 {"name":"keys","value":0,"_id":"XjA2Hdy8OZzODTBP"}
+{"name":"bombs","value":0,"_id":"Y5jUEYNKAa9bAJDT"}
+{"name":"coins","value":0,"_id":"YGEvXBan1K7iNsSU"}
 {"name":"ability","value":10,"_id":"YQrQESuCgzFM4Feu"}
 {"name":"bombs","value":0,"_id":"YiW3bCyPoRrzf7ip"}
 {"name":"life","value":100,"_id":"YifQL3zeL1jYFdtN"}
@@ -178,9 +189,11 @@
 {"name":"life","value":100,"_id":"aGPCiSVrbgFc5B9j"}
 {"name":"bombs","value":0,"_id":"aZwCFihJhzhQE1Hm"}
 {"name":"bombs","value":0,"_id":"avgrrwULnuU0mk1t"}
+{"name":"ability","value":10,"_id":"bGjrsI8X3nPw7Q96"}
 {"name":"keys","value":0,"_id":"bL5RVRHui4gqAKwG"}
 {"name":"coins","value":0,"_id":"bMRFYRmPzKH99hBc"}
 {"name":"life","value":100,"_id":"baLmvQmdbPTI4aOr"}
+{"name":"bombs","value":0,"_id":"beggAKvQbVqMdPIA"}
 {"name":"ability","value":10,"_id":"c2afJquaco34eOzH"}
 {"name":"life","value":100,"_id":"c7bMb99lHsXCfKxs"}
 {"name":"ability","value":10,"_id":"d2JZNnMFBuPlE5jp"}
@@ -202,6 +215,7 @@
 {"name":"ability","value":10,"_id":"fNM3PdlOSCB83k56"}
 {"name":"keys","value":0,"_id":"fNwPhzexqzT6ygDZ"}
 {"name":"life","value":100,"_id":"fRjylchSD7bEiOme"}
+{"name":"ability","value":10,"_id":"fXyK1Q7tjZNo4adA"}
 {"name":"coins","value":0,"_id":"fYWGOE3kByDhmIa2"}
 {"name":"life","value":100,"_id":"g9lFf7gCyk49SdY6"}
 {"name":"coins","value":0,"_id":"gXAovTgbFZmpsXqp"}
@@ -221,6 +235,7 @@
 {"name":"ability","value":10,"_id":"jGG6JLLRm1JvTCyu"}
 {"name":"bombs","value":0,"_id":"jI7KHQa4P3MItPYb"}
 {"name":"life","value":100,"_id":"jKDx3ziZCBdFRPYF"}
+{"name":"life","value":100,"_id":"jiX5euHapalxKzRR"}
 {"name":"coins","value":0,"_id":"k82M6q8iF5Kj4ryE"}
 {"name":"bombs","value":0,"_id":"k8pqXs7zbCBU3AYa"}
 {"name":"bombs","value":0,"_id":"kdCfCT0f0FQkfZKb"}
@@ -288,8 +303,8 @@
 {"name":"ability","value":10,"_id":"za7ZfBmzIL4jwKKz"}
 {"name":"coins","value":0,"_id":"zb5ZZiKqgNWtbuOk"}
 {"name":"coins","value":0,"_id":"zuUk1JaJbfMAaB6g"}
-{"name":"life","value":100,"_id":"ORVFkvdHmLe8sKkN"}
-{"name":"ability","value":10,"_id":"bGjrsI8X3nPw7Q96"}
-{"name":"keys","value":0,"_id":"RmkbqQnVjHDDwlKi"}
-{"name":"bombs","value":0,"_id":"9Q3mkeFCRodCGGfd"}
-{"name":"coins","value":0,"_id":"Q9NYgNYzZQawiYKT"}
+{"name":"life","value":100,"_id":"yJAwJ9KDdJVKKJhE"}
+{"name":"ability","value":10,"_id":"SnCqXRXXOEsNzlSc"}
+{"name":"keys","value":0,"_id":"DPIPtTAZVVPFIugM"}
+{"name":"bombs","value":0,"_id":"w6IWLUD2oJ51qQt5"}
+{"name":"coins","value":0,"_id":"Vbk2IzQCQLXSBhWH"}
