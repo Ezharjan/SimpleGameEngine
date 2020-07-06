@@ -1,608 +1,555 @@
 {
-	"id": "container1",
-	"children": [
-		{
-			"children": [
-				{
-					"id": "backmap",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":50,
-							"y":50
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/temp/map_1.png"
-						}
-					]
-				},
-				{
-					"id": "border1",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":0,
-							"y":50
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/temp/hight_50.png"
-						}
-					]
-				},
-				{
-					"id": "border2",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":750,
-							"y":50
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/temp/hight_50.png"
-						}
-					]
-				},
-				{
-					"id": "border3",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":50,
-							"y":0
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/temp/width_50.png"
-						}
-					]
-				},
-				{
-					"id": "border4",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":50,
-							"y":750
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/temp/width_50.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/1.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/2.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/4.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu5",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/5.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu6",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/6.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu7",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/7.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu8",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/8.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu9",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/9.png"
-						}
-					]
-				},
-				{
-					"id": "lu1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu5",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu6",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu7",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu8",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu9",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu10",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu11",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "lu",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bg.png"
-						}
-					]
-				},
-				{
-					"id": "qiang",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/q.png"
-						}
-					]
-				},
-				{
-					"id": "door1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "stone1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/stone.png"
-						}
-					]
-				},
-				{
-					"id": "loti1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/downstair.png"
-						}
-					]
-				},
-				{
-					"id": "loti2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/lt2.png"
-						}
-					]
-				},
-				{
-					"id": "weapon1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "daoju2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/dun.png"
-						}
-					]
-				},
-				{
-					"id": "daoju3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/j.png"
-						}
-					]
-				},
-				{
-					"id": "daoju4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/jl.png"
-						}
-					]
-				},
-				{
-					"id": "ys1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys2.png"
-						}
-					]
-				},
-				{
-					"id": "key",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/key.png"
-						}
-					]
-				},
-				{
-					"id": "bomb1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bomb.png"
-						}
-					]
-				},
-				{
-					"id": "player",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/player.png"
-						}
-					]
-				},
-				{
-					"id": "HPText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 800,
-							"y": 300
-						},
-						{
-							"name": "TextRenderer2",
-							"color": "#00000",
-							"text": "生命值"
-						}
-					]
-				},
-				{
-					"id": "AttackText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 800,
-							"y": 320
-						},
-						{
-							"name": "TextRenderer2",
-							"color": "#00000",
-							"text": "攻击力"
-						}
-					]
-				},
-				{
-					"id": "KeyText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 800,
-							"y": 340
-						},
-						{
-							"name": "TextRenderer2",
-							"color": "#00000",
-							"text": "钥匙数"
-						}
-					]
-				},
-				{
-					"id": "BombText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 800,
-							"y": 360
-						},
-						{
-							"name": "TextRenderer2",
-							"color": "#00000",
-							"text": "炸弹数"
-						}
-					]
-				}
-			],
-			"behaviours": [
-				{
-					"name": "Transform"
-				},
-				{
-					"name": "KeyContainerBehaviour"
-				}
-			]
-		}
-	],
-	"behaviours": [
-		{
-			"name": "Transform"
-		}
-	]
+    "id": "container1",
+    "children": [{
+        "children": [{
+                "id": "backmap",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 50,
+                        "y": 50
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/temp/map_1.png"
+                    }
+                ]
+            },
+            {
+                "id": "border1",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 0,
+                        "y": 50
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/temp/hight_50.png"
+                    }
+                ]
+            },
+            {
+                "id": "border2",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 750,
+                        "y": 50
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/temp/hight_50.png"
+                    }
+                ]
+            },
+            {
+                "id": "border3",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 50,
+                        "y": 0
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/temp/width_50.png"
+                    }
+                ]
+            },
+            {
+                "id": "border4",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 50,
+                        "y": 750
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/temp/width_50.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/1.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/2.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/4.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu5",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/5.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu6",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/6.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu7",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/7.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu8",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/8.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu9",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/9.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu5",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu6",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu7",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu8",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu9",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu10",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu11",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "lu",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bg.png"
+                    }
+                ]
+            },
+            {
+                "id": "qiang",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/q.png"
+                    }
+                ]
+            },
+            {
+                "id": "door1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "door2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "door3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "door4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "stone1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/stone.png"
+                    }
+                ]
+            },
+            {
+                "id": "loti1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/downstair.png"
+                    }
+                ]
+            },
+            {
+                "id": "loti2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/lt2.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "daoju2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/dun.png"
+                    }
+                ]
+            },
+            {
+                "id": "daoju3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/j.png"
+                    }
+                ]
+            },
+            {
+                "id": "daoju4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/jl.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys2.png"
+                    }
+                ]
+            },
+            {
+                "id": "key",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/key.png"
+                    }
+                ]
+            },
+            {
+                "id": "bomb1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bomb.png"
+                    }
+                ]
+            },
+            {
+                "id": "player",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/player.png"
+                    }
+                ]
+            },
+            {
+                "id": "HPText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 800,
+                        "y": 300
+                    },
+                    {
+                        "name": "ScoreInfoRenderer",
+                        "color": "#00000",
+                        "text": "生命值"
+                    }
+                ]
+            },
+            {
+                "id": "AttackText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 800,
+                        "y": 320
+                    },
+                    {
+                        "name": "ScoreInfoRenderer",
+                        "color": "#00000",
+                        "text": "攻击力"
+                    }
+                ]
+            },
+            {
+                "id": "KeyText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 800,
+                        "y": 340
+                    },
+                    {
+                        "name": "ScoreInfoRenderer",
+                        "color": "#00000",
+                        "text": "钥匙数"
+                    }
+                ]
+            },
+            {
+                "id": "BombText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 800,
+                        "y": 360
+                    },
+                    {
+                        "name": "ScoreInfoRenderer",
+                        "color": "#00000",
+                        "text": "炸弹数"
+                    }
+                ]
+            }
+        ],
+        "behaviours": [{
+                "name": "Transform"
+            },
+            {
+                "name": "KeyContainerBehaviour"
+            }
+        ]
+    }],
+    "behaviours": [{
+        "name": "Transform"
+    }]
 }

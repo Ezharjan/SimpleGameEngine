@@ -244,3 +244,18 @@ class GameMapDesigner extends Behaviour {
         }
     }
 }
+class ScoreInfoRenderer extends TextRenderer {
+    constructor() {
+        super(...arguments);
+        this.prevText = "";
+    }
+    onDraw(context) {
+        if (this.prevText !== this.text) {
+            context.font = this.size + 'px Arial';
+            context.fillStyle = this.color;
+            context.drawImage(images["./img/gamescore_background.png"], 0, 0);
+            context.fillText(this.text, this.$textPosX, this.$textPosY, 400);
+            this.prevText = this.text;
+        }
+    }
+}

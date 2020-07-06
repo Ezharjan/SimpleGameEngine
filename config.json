@@ -8,6 +8,7 @@
         "./out/engine/entities.js",
         "./out/engine/components.js",
         "./out/engine/systems.js",
+        "./out/database.js",
         "./out/game.js",
         "./out/engine/startup.js"
     ],

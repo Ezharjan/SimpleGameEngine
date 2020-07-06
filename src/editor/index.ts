@@ -71,11 +71,15 @@ setTimeout(async () => {
         const BrowserWindow = require('electron').remote.BrowserWindow;
         const win = new BrowserWindow({
             width: 800,
-            height: 400
+            height: 400,
+            webPreferences: {
+                nodeIntegration: true
+            }
         });
         win.on('close', () => { });
         win.loadFile("index.html");//Old page --- main page of the game
         // win.loadFile("firstPage.html");//New page --- 1st page of the game 
+        win.maximize();
 
         //开发者工具
         win.webContents.openDevTools();

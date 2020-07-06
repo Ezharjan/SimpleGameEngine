@@ -1,19 +1,3 @@
-// import { GameMap } from './engine/map-enum';
-class TextRenderer2 extends TextRenderer {
-    constructor() {
-        super(...arguments);
-        this.prevText = "";
-    }
-    onDraw(context) {
-        if (this.prevText !== this.text) {
-            context.font = this.size + 'px Arial';
-            context.fillStyle = this.color;
-            context.drawImage(images["./img/gamescore_background.png"], 0, 0);
-            context.fillText(this.text, this.$textPosX, this.$textPosY, 400);
-            this.prevText = this.text;
-        }
-    }
-}
 class KeyContainerBehaviour extends Behaviour {
     constructor() {
         super(...arguments);
@@ -62,7 +46,7 @@ class KeyContainerBehaviour extends Behaviour {
         var bomb = 3;
         var key = 6;
         var hp = 100;
-        var gjili = 10;
+        var ability = 10;
         var fangyu = 10;
         var arr = allMaps[floor];
         for (var i = 0; i < arr.length; i++) {
@@ -280,7 +264,7 @@ class KeyContainerBehaviour extends Behaviour {
             }
             else if (arr[x1][y1] > 60 && arr[x1][y1] < 70) {
                 if (arr[x1][y1] == 61) {
-                    gjili = gjili + 10;
+                    ability = ability + 10;
                     weapon1.getBehaviour(Transform).x = 1000;
                     weapon1.getBehaviour(Transform).y = 1000;
                 }
@@ -288,10 +272,10 @@ class KeyContainerBehaviour extends Behaviour {
                     fangyu = fangyu + 10;
                 }
                 else if (arr[x1][y1] == 63) {
-                    gjili = gjili + 10;
+                    ability = ability + 10;
                 }
                 else if (arr[x1][y1] == 64) {
-                    gjili = gjili + 15;
+                    ability = ability + 15;
                     fangyu = fangyu + 15;
                 }
                 else if (arr[x1][y1] == 65) {
@@ -329,7 +313,7 @@ class KeyContainerBehaviour extends Behaviour {
                     peoplex = peoplex - 1;
                 }
                 console.log(bomb);
-                console.log(gjili);
+                console.log(ability);
                 //}
             }
             else if (e && e.keyCode == 37) {
@@ -369,24 +353,34 @@ class KeyContainerBehaviour extends Behaviour {
                 }
             }
             const HPText = core.getObjectById("HPText");
-            HPText.getBehaviour(TextRenderer2).text = "生命值：" + hp;
+            HPText.getBehaviour(ScoreInfoRenderer).text = "生命值：" + hp;
+            updataData('life', hp);
             const AttackTest = core.getObjectById("AttackText");
-            AttackTest.getBehaviour(TextRenderer2).text = "攻击力：" + gjili;
+            AttackTest.getBehaviour(ScoreInfoRenderer).text = "攻击力：" + ability;
+            updataData('ability', ability);
             const KeyTest = core.getObjectById("KeyText");
-            KeyTest.getBehaviour(TextRenderer2).text = "钥匙数：" + key;
+            KeyTest.getBehaviour(ScoreInfoRenderer).text = "钥匙数：" + key;
+            updataData('keys', key);
             const BombTest = core.getObjectById("BombText");
-            BombTest.getBehaviour(TextRenderer2).text = "炸弹数：" + bomb;
+            BombTest.getBehaviour(ScoreInfoRenderer).text = "炸弹数：" + bomb;
+            updataData('bombs', bomb);
             // const restart = core.getObjectById("restart");
             // restart.onclick = function () {
             // 	location.href += "?reload=true";
             // }
         };
+        //数据库查询玩家属性示例
+        if (GetKeyDown.Q) {
+            playerData.findOne({ name: "ability" }, (err, ret) => {
+                err && console.log(err);
+                console.log(ret);
+            });
+        }
     }
-    onUpdate() {
-    }
+    onUpdate() { }
 }
 core.registerBehaviourClass(KeyContainerBehaviour);
-core.registerBehaviourClass(TextRenderer2);
+core.registerBehaviourClass(ScoreInfoRenderer);
 // class PlayerManager extends Behaviour {
 //     warrior;
 //     music = new AudioSystem();

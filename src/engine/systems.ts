@@ -564,15 +564,17 @@ class VideoSystem extends GameEngineSystem {
 
 
 
-class PrefStorageSystem {
+const db = require("nedb");
 
+
+class PrefStorageSystem {
 
     nedb;
     db;
 
     constructor(fileName: string = '/data/save.db') {
         // 加载模块
-        this.nedb = require('nedb');
+        this.nedb = db; //require('nedb');
 
         // 实例化连接对象（不带参数默认为内存数据库）
         this.db = new this.nedb({
@@ -583,24 +585,16 @@ class PrefStorageSystem {
 
 
     insert(info: any) {
-        // 插入单项
-        this.db.insert(info, (err, ret) => { });
+        this.db.insert(info, (err, ret) => {
+            console.log(err);
+            console.log(ret);
+        });
     }
 
 
-    findOne(info: any) {
+    findOne(info: any, callback) {
         // 查询单项
-        this.db.findOne(info, (err, ret) => { });
-    }
-
-
-    findMany(from: any, which: any) {
-        // 查询多项
-        this.db.find(from)
-            .sort({
-                _id: which
-            })
-            .exec((err, ret) => { });
+        this.db.findOne(info, callback);
     }
 
 
@@ -608,32 +602,30 @@ class PrefStorageSystem {
         // 更新单项
         this.db.update(oldElement, {
             $set: newElement
-        }, (err, ret) => { });
-
-        // // 更新多项
-        // this.db.update({}, {
-        //     $set: {
-        //         name: 'kitty'
-        //     }
-        // }, {
-        //     multi: true
-        // }, (err, ret) => { });
+        }, {}, (err, ret) => {
+            err && console.log(err);
+            console.log("OK " + ret);
+        });
     }
 
 
-    delete(id: string) {
+    deleteOne(doc: any) {
         // 删除单项
-        this.db.remove({
-            _id: id
-        }, (err, ret) => { })
+        this.db.remove(doc, (err, ret) => {
+            err && console.log(err);
+            console.log(ret);
+        })
 
-        // // 删除多项
-        // this.db.remove({
-        //     name: 'kitty'
-        // }, {
-        //     multi: true
-        // }, (err, ret) => { });
+    }
+
+    deleteMany(docs: any) {
+        // 删除多项
+        this.db.remove(docs, {
+            multi: true
+        }, (err, ret) => {
+            err && console.log(err);
+            console.log(ret);
+        });
     }
 }
-
 
