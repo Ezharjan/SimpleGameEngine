@@ -2,7 +2,7 @@
     "scripts": [
         "./out/engine/utils.js",
         "./out/engine/input.js",
-        "./out/director.js",
+        "./out/my-director.js",
         "./out/engine/math.js",
         "./out/engine/core.js",
         "./out/engine/entities.js",
