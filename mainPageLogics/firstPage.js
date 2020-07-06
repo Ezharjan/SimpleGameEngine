@@ -71,7 +71,7 @@ rectHelpBTN.color = '#002299';
 
 //帮助按钮
 const imgHelpBTN = new CustomImageRenderer();
-imgHelpBTN.source = "./img/button_start.png"
+imgHelpBTN.source = "./img/button_introduction.png"
 imgHelpBTN.posX = 720;
 imgHelpBTN.posY = 400;
 imgHelpBTN.width = 230;
