@@ -10,11 +10,11 @@
         "./out/engine/systems.js",
         "./out/database.js",
         "./out/game/map.js",
-        "./out/game.js",
-        "./out/engine/startup.js"
+        "./out/game3.js",
+        "./out/engine/startup3.js"
     ],
     "scenes": [
-        "data.json"
+        "data3.json"
     ],
     "images": [
         "./images/main/warrior.png",
