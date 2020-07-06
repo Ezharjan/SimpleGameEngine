@@ -1,19 +1,19 @@
 // import { GameMap } from './engine/map-enum';
 
 class TextRenderer2 extends TextRenderer {
-	
- prevText = "";
+
+	prevText = "";
 
 	onDraw(context) {
 		if (this.prevText !== this.text) {
-	     context.font = this.size + 'px Arial';
-         context.fillStyle = this.color;
+			context.font = this.size + 'px Arial';
+			context.fillStyle = this.color;
 
-          context.drawImage(images["./img/gamescore_background.png"], 0, 0);
-          context.fillText(this.text, this.$textPosX, this.$textPosY, 400);
+			context.drawImage(images["./img/gamescore_background.png"], 0, 0);
+			context.fillText(this.text, this.$textPosX, this.$textPosY, 400);
 
-          this.prevText = this.text;
-   		}
+			this.prevText = this.text;
+		}
 	}
 }
 
@@ -25,36 +25,6 @@ class KeyContainerBehaviour extends Behaviour {
 	onStart() {
 
 		var allMaps = [
-			// [
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// 	[9,1, 1, 1, 42, 0, 0, 1, 1, 1, 0, 51,9],
-			// 	[9,1, 0, 1, 1, 1, 0, 0, 0, 1, 2, 1,9],
-			// 	[9,65, 0, 1, 2, 1, 0, 63, 67, 1, 0, 0,9],
-			// 	[9,1, 0, 1, 0, 1, 0, 65, 68, 1, 0, 1,9],
-			// 	[9,1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1,9],
-			// 	[9,66, 0, 1, 0, 1, 2, 62, 66, 1, 1, 1,9],
-			// 	[9,1, 0, 1, 1, 2, 0, 0, 0, 0, 0, 1,9],
-			// 	[9,1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,9],
-			// 	[9,1, 1, 1, 1, 1, 0, 1, 0, 0, 2, 0,9],
-			// 	[9,0, 0, 0, 0, 0, 0, 1, 0, 1, 48, 1,9],
-			// 	[9,3, 1, 61, 67, 1, 1, 1, 0, 0, 65, 43,9],
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// ],
-			// [
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// 	[9,1, 67, 1, 0, 67, 61, 62, 0, 1, 1, 1,9],
-			// 	[9,66, 1, 68, 0, 66, 1, 66, 0, 67, 1, 65,9],
-			// 	[9,1, 1, 1, 0, 1, 45, 1, 0, 1, 41, 1,9],
-			// 	[9,0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0,9],
-			// 	[9,1, 42, 1, 2, 43, 1, 1, 44, 1, 1, 1,9],
-			// 	[9,1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,9],
-			// 	[9,45, 1, 46, 1, 1, 1, 1, 1, 1, 1, 1,9],
-			// 	[9,2, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2,9],
-			// 	[9,1, 0, 1, 41, 1, 0, 1, 47, 1, 0, 1,9],
-			// 	[9,1, 0, 49, 1, 63, 0, 64, 1, 65, 0, 3,9],
-			// 	[9,51, 0, 61, 43, 62, 0, 1, 48, 1, 0, 52,9],
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// ],
 			[//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 				[9, 1, 1, 1, 1, 0, 1, 68, 68, 21, 1, 1, 1, 0, 51, 9],
@@ -71,40 +41,7 @@ class KeyContainerBehaviour extends Behaviour {
 				[9, 1, 1, 1, 1, 1, 1, 41, 68, 0, 1, 1, 1, 1, 1, 9],
 				[9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 9],
 				[9, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 67, 1, 9],
-				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-				// /* [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-				// [9, 1, 1, 1, 1, 0, 1, 68, 68, 21, 1, 1, 1, 0, 51, 9],
-				// [9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 22, 1, 9],
-				// [9, 1, 0, 1, 1, 1, 1, 1, 65, 0, 0, 1, 0, 0, 0, 9],
-				// [9, 1, 0, 1, 1, 1, 1, 1, 1, 41, 0, 41, 0, 68, 1, 9],
-				// [9, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 42, 0, 1, 1, 9],
-				// [9, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 22, 42, 1, 9],
-				// [9, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 65, 9],
-				// [9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 22, 61, 1, 42, 9],
-				// [9, 1, 0, 1, 1, 0, 0, 41, 1, 1, 1, 0, 1, 1, 1, 9],
-				// [9, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 9],
-				// [9, 1, 0, 0, 0, 0, 22, 0, 0, 1, 1, 1, 1, 1, 1, 9],
-				// [9, 1, 1, 1, 1, 1, 1, 41, 68, 0, 1, 1, 1, 1, 1, 9],
-				// [9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 9],
-				// [9, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 67, 1, 9],
-				// [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9], */
-				// [GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.road, GameMap.key, GameMap.key, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.door, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.tools, GameMap.wall, GameMap.wall, GameMap.road, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.road, GameMap.wall, GameMap.key, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.monster, GameMap.wall, GameMap.road, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.door, GameMap.monster, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.tools, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.door, GameMap.road, GameMap.road, GameMap.monster, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.door, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.key, GameMap.wall, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.wall, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.charactor, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.road, GameMap.wall, GameMap.wall, GameMap.bomb, GameMap.road, GameMap.border],
-				// [GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border, GameMap.border],
-			],
+				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],],
 			[
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 				[9, 1, 67, 1, 0, 67, 61, 62, 0, 1, 1, 1, 9],
@@ -267,7 +204,6 @@ class KeyContainerBehaviour extends Behaviour {
 			}
 		}
 
-		//firstFloor = 1;
 
 		//1为路 0为墙 2x为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具
 		function playerMove(x, y, x1, y1) {
