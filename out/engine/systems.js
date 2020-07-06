@@ -482,11 +482,10 @@ class VideoSystem extends GameEngineSystem {
         return video.readyState;
     }
 }
-const db = require("nedb");
 class PrefStorageSystem {
     constructor(fileName = '/data/save.db') {
         // 加载模块
-        this.nedb = db; //require('nedb');
+        this.nedb = require('nedb');
         // 实例化连接对象（不带参数默认为内存数据库）
         this.db = new this.nedb({
             filename: fileName,
