@@ -538,7 +538,7 @@
 							"y": 300
 						},
 						{
-							"name": "TextRenderer",
+							"name": "TextRenderer2",
 							"color": "#00000",
 							"text": "生命值"
 						}
@@ -553,7 +553,7 @@
 							"y": 320
 						},
 						{
-							"name": "TextRenderer",
+							"name": "TextRenderer2",
 							"color": "#00000",
 							"text": "攻击力"
 						}
@@ -568,7 +568,7 @@
 							"y": 340
 						},
 						{
-							"name": "TextRenderer",
+							"name": "TextRenderer2",
 							"color": "#00000",
 							"text": "钥匙数"
 						}
@@ -583,7 +583,7 @@
 							"y": 360
 						},
 						{
-							"name": "TextRenderer",
+							"name": "TextRenderer2",
 							"color": "#00000",
 							"text": "炸弹数"
 						}

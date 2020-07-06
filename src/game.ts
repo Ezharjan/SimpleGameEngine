@@ -1,5 +1,23 @@
 // import { GameMap } from './engine/map-enum';
 
+class TextRenderer2 extends TextRenderer {
+	
+ prevText = "";
+
+	onDraw(context) {
+		if (this.prevText !== this.text) {
+	     context.font = this.size + 'px Arial';
+         context.fillStyle = this.color;
+
+          context.drawImage(images["./img/gamescore_background.png"], 0, 0);
+          context.fillText(this.text, this.$textPosX, this.$textPosY, 400);
+
+          this.prevText = this.text;
+   		}
+	}
+}
+
+
 class KeyContainerBehaviour extends Behaviour {
 
 	private currentTime = 0;
@@ -383,13 +401,13 @@ class KeyContainerBehaviour extends Behaviour {
 				}
 			}
 			const HPText = core.getObjectById("HPText");
-			HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
+			HPText.getBehaviour(TextRenderer2).text = "生命值：" + hp;
 			const AttackTest = core.getObjectById("AttackText");
-			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + gjili;
+			AttackTest.getBehaviour(TextRenderer2).text = "攻击力：" + gjili;
 			const KeyTest = core.getObjectById("KeyText");
-			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + key;
+			KeyTest.getBehaviour(TextRenderer2).text = "钥匙数：" + key;
 			const BombTest = core.getObjectById("BombText");
-			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bomb;
+			BombTest.getBehaviour(TextRenderer2).text = "炸弹数：" + bomb;
 			// const restart = core.getObjectById("restart");
 			// restart.onclick = function () {
 			// 	location.href += "?reload=true";
@@ -401,7 +419,9 @@ class KeyContainerBehaviour extends Behaviour {
 	}
 }
 
+
 core.registerBehaviourClass(KeyContainerBehaviour)
+core.registerBehaviourClass(TextRenderer2)
 
 
 
