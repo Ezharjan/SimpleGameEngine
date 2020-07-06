@@ -1,10 +1,10 @@
-// import { GameMap } from './engine/map-enum';
 class KeyContainerBehaviour extends Behaviour {
     constructor() {
         super(...arguments);
         this.currentTime = 0;
     }
     onStart() {
+        // let allMaps = Maps.map;
         var allMaps = [
             // [
             // 	[9,9,9,9,9,9,9,9,9,9,9,9,9],

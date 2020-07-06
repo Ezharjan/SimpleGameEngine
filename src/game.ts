@@ -1,10 +1,10 @@
-// import { GameMap } from './engine/map-enum';
-
 class KeyContainerBehaviour extends Behaviour {
 
 	private currentTime = 0;
 
 	onStart() {
+
+		// let allMaps = Maps.map;
 
 		var allMaps = [
 			// [
@@ -126,7 +126,7 @@ class KeyContainerBehaviour extends Behaviour {
 						const guaiwu23 = core.getObjectById("guaiwu23");
 						guaiwu23.getBehaviour(Transform).x = 915;
 						guaiwu23.getBehaviour(Transform).y = 360;
-					 }// else if (arr[i][j] == 43) {
+					}// else if (arr[i][j] == 43) {
 					// 	const guaiwu3 = core.getObjectById("guaiwu3");
 					// 	guaiwu3.getBehaviour(Transform).x = j * 50;
 					// 	guaiwu3.getBehaviour(Transform).y = i * 50;
@@ -189,7 +189,7 @@ class KeyContainerBehaviour extends Behaviour {
 						ys11.getBehaviour(Transform).y = 150 - 40;
 						ys12.getBehaviour(Transform).x = 700 + 215;
 						ys12.getBehaviour(Transform).y = 350 - 40;
-					} 
+					}
 					// else if (arr[i][j] == 66) {
 					// 	const ys2 = core.getObjectById("ys2");
 					// 	ys2.getBehaviour(Transform).x = j * 50;
@@ -197,7 +197,7 @@ class KeyContainerBehaviour extends Behaviour {
 					// } 
 					else if (arr[i][j] == 67) {
 						const bomb1 = core.getObjectById("bomb1");
-						bomb1.getBehaviour(Transform).x = j * 50+ 215;
+						bomb1.getBehaviour(Transform).x = j * 50 + 215;
 						bomb1.getBehaviour(Transform).y = i * 50 - 40;
 					} else if (arr[i][j] == 68) {
 						const key = core.getObjectById("key1");
@@ -281,7 +281,7 @@ class KeyContainerBehaviour extends Behaviour {
 				// 	floor++;
 				// 	arr = allMaps[floor];
 				// }
-				window.location.href= "./secondPage.html"
+				window.location.href = "./secondPage.html"
 			} else if (arr[x1][y1] == 52) {
 				if (floor >= 1 && floor < allMaps.length) {
 					floor--;
@@ -295,7 +295,7 @@ class KeyContainerBehaviour extends Behaviour {
 				if (hp < 0) {
 					arr[x][y] = 99;
 					alert("You're dead！Game Over!");
-				} else if(hp > 0 && x1 == 4 && y1 == 11){
+				} else if (hp > 0 && x1 == 4 && y1 == 11) {
 					hp = hp - 10;
 					guaiwu11.getBehaviour(Transform).x = 2000;
 					guaiwu11.getBehaviour(Transform).y = 2000;
@@ -303,7 +303,7 @@ class KeyContainerBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				}else if(hp > 0 && x1 == 4 && y1 == 9){
+				} else if (hp > 0 && x1 == 4 && y1 == 9) {
 					hp = hp - 10;
 					guaiwu12.getBehaviour(Transform).x = 2000;
 					guaiwu12.getBehaviour(Transform).y = 2000;
@@ -311,7 +311,7 @@ class KeyContainerBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				}else if(hp > 0 && x1 == 6 && y1 == 8){
+				} else if (hp > 0 && x1 == 6 && y1 == 8) {
 					hp = hp - 10;
 					guaiwu3.getBehaviour(Transform).x = 2000;
 					guaiwu3.getBehaviour(Transform).y = 2000;
@@ -319,7 +319,7 @@ class KeyContainerBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				}else if(hp > 0 && x1 == 3 && y1 == 7){
+				} else if (hp > 0 && x1 == 3 && y1 == 7) {
 					hp = hp - 10;
 					guaiwu4.getBehaviour(Transform).x = 2000;
 					guaiwu4.getBehaviour(Transform).y = 2000;
@@ -327,7 +327,7 @@ class KeyContainerBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				}else if(hp > 0 && x1 == 5 && y1 == 11){
+				} else if (hp > 0 && x1 == 5 && y1 == 11) {
 					hp = hp - 10;
 					guaiwu21.getBehaviour(Transform).x = 2000;
 					guaiwu21.getBehaviour(Transform).y = 2000;
@@ -335,7 +335,7 @@ class KeyContainerBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				}else if(hp > 0 && x1 == 6 && y1 == 13){
+				} else if (hp > 0 && x1 == 6 && y1 == 13) {
 					hp = hp - 10;
 					guaiwu22.getBehaviour(Transform).x = 2000;
 					guaiwu22.getBehaviour(Transform).y = 2000;
@@ -343,7 +343,7 @@ class KeyContainerBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				}else if(hp > 0 && x1 == 8 && y1 == 14){
+				} else if (hp > 0 && x1 == 8 && y1 == 14) {
 					hp = hp - 10;
 					guaiwu23.getBehaviour(Transform).x = 2000;
 					guaiwu23.getBehaviour(Transform).y = 2000;
@@ -368,7 +368,7 @@ class KeyContainerBehaviour extends Behaviour {
 					hp = hp + 100;
 					ys11.getBehaviour(Transform).x = 2000;
 					ys11.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 65 && x1 == 7 && y1 == 14) {
+				} else if (arr[x1][y1] == 65 && x1 == 7 && y1 == 14) {
 					hp = hp + 100;
 					ys12.getBehaviour(Transform).x = 2000;
 					ys12.getBehaviour(Transform).y = 2000;
@@ -382,15 +382,15 @@ class KeyContainerBehaviour extends Behaviour {
 					key++;
 					key1.getBehaviour(Transform).x = 2000;
 					key1.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 8) {
+				} else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 8) {
 					key++;
 					key2.getBehaviour(Transform).x = 2000;
 					key2.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 68 && x1 == 4 && y1 == 13) {
+				} else if (arr[x1][y1] == 68 && x1 == 4 && y1 == 13) {
 					key++;
 					key3.getBehaviour(Transform).x = 2000;
 					key3.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 68 && x1 == 12 && y1 == 8) {
+				} else if (arr[x1][y1] == 68 && x1 == 12 && y1 == 8) {
 					key++;
 					key4.getBehaviour(Transform).x = 2000;
 					key4.getBehaviour(Transform).y = 2000;
