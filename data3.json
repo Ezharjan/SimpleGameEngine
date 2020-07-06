@@ -27,7 +27,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/maps/map_1.png"
+							"image": "./img/maps/map_2.png"
 						}
 					]
 				},
@@ -80,6 +80,30 @@
 					]
 				},
 				{
+					"id": "guaiwu15",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/3.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu16",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/3.png"
+						}
+					]
+				},
+				{
 					"id": "guaiwu21",
 					"behaviours": [
 						{
@@ -105,6 +129,66 @@
 				},
 				{
 					"id": "guaiwu23",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/2.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu24",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/2.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu25",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/2.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu26",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/2.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu27",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/2.png"
+						}
+					]
+				},
+				{
+					"id": "guaiwu28",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -212,6 +296,18 @@
 					]
 				},
 				{
+					"id": "stone2",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/stone.png"
+						}
+					]
+				},
+				{
 					"id": "loti1",
 					"behaviours": [
 						{
@@ -237,6 +333,66 @@
 				},
 				{
 					"id": "weapon1",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/weapon1.png"
+						}
+					]
+				},
+				{
+					"id": "weapon2",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/weapon1.png"
+						}
+					]
+				},
+				{
+					"id": "weapon3",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/weapon1.png"
+						}
+					]
+				},
+				{
+					"id": "weapon4",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/weapon1.png"
+						}
+					]
+				},
+				{
+					"id": "weapon5",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/weapon1.png"
+						}
+					]
+				},
+				{
+					"id": "weapon6",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -284,19 +440,7 @@
 					]
 				},
 				{
-					"id": "ys11",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys12",
+					"id": "ys1",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -309,6 +453,66 @@
 				},
 				{
 					"id": "ys2",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys2.png"
+						}
+					]
+				},
+				{
+					"id": "ys3",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys1.png"
+						}
+					]
+				},
+				{
+					"id": "ys4",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys2.png"
+						}
+					]
+				},
+				{
+					"id": "ys5",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys1.png"
+						}
+					]
+				},
+				{
+					"id": "ys6",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys2.png"
+						}
+					]
+				},
+				{
+					"id": "ys7",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -356,19 +560,31 @@
 					]
 				},
 				{
-					"id": "key4",
+					"id": "bomb1",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/key.png"
+							"image": "./img/bomb.png"
 						}
 					]
 				},
 				{
-					"id": "bomb1",
+					"id": "bomb2",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bomb.png"
+						}
+					]
+				},
+				{
+					"id": "bomb3",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -457,7 +673,7 @@
 					"name": "Transform"
 				},
 				{
-					"name": "KeyContainerBehaviour"
+					"name": "ThirdBehaviour"
 				}
 			]
 		}
