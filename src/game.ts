@@ -1,94 +1,36 @@
 class KeyContainerBehaviour extends Behaviour {
 
-	private currentTime = 0;
-
 	onStart() {
 
-		// let allMaps = Maps.map;
-
-		var allMaps = [
-			// [
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// 	[9,1, 1, 1, 42, 0, 0, 1, 1, 1, 0, 51,9],
-			// 	[9,1, 0, 1, 1, 1, 0, 0, 0, 1, 2, 1,9],
-			// 	[9,65, 0, 1, 2, 1, 0, 63, 67, 1, 0, 0,9],
-			// 	[9,1, 0, 1, 0, 1, 0, 65, 68, 1, 0, 1,9],
-			// 	[9,1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1,9],
-			// 	[9,66, 0, 1, 0, 1, 2, 62, 66, 1, 1, 1,9],
-			// 	[9,1, 0, 1, 1, 2, 0, 0, 0, 0, 0, 1,9],
-			// 	[9,1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,9],
-			// 	[9,1, 1, 1, 1, 1, 0, 1, 0, 0, 2, 0,9],
-			// 	[9,0, 0, 0, 0, 0, 0, 1, 0, 1, 48, 1,9],
-			// 	[9,3, 1, 61, 67, 1, 1, 1, 0, 0, 65, 43,9],
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// ],
-			// [
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// 	[9,1, 67, 1, 0, 67, 61, 62, 0, 1, 1, 1,9],
-			// 	[9,66, 1, 68, 0, 66, 1, 66, 0, 67, 1, 65,9],
-			// 	[9,1, 1, 1, 0, 1, 45, 1, 0, 1, 41, 1,9],
-			// 	[9,0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0,9],
-			// 	[9,1, 42, 1, 2, 43, 1, 1, 44, 1, 1, 1,9],
-			// 	[9,1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,9],
-			// 	[9,45, 1, 46, 1, 1, 1, 1, 1, 1, 1, 1,9],
-			// 	[9,2, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2,9],
-			// 	[9,1, 0, 1, 41, 1, 0, 1, 47, 1, 0, 1,9],
-			// 	[9,1, 0, 49, 1, 63, 0, 64, 1, 65, 0, 3,9],
-			// 	[9,51, 0, 61, 43, 62, 0, 1, 48, 1, 0, 52,9],
-			// 	[9,9,9,9,9,9,9,9,9,9,9,9,9],
-			// ],
-			[//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
-				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-				[9, 1, 1, 1, 1, 0, 1, 68, 68, 21, 1, 1, 1, 0, 51, 9],
-				[9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 22, 1, 9],
-				[9, 1, 0, 1, 1, 1, 1, 1, 65, 0, 0, 1, 0, 0, 0, 9],
-				[9, 1, 0, 1, 1, 1, 1, 1, 1, 41, 0, 41, 0, 68, 1, 9],
-				[9, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 42, 0, 1, 1, 9],
-				[9, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 22, 42, 1, 9],
-				[9, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 65, 9],
-				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 22, 61, 1, 42, 9],
-				[9, 1, 0, 1, 1, 0, 0, 41, 1, 1, 1, 0, 1, 1, 1, 9],
-				[9, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 9],
-				[9, 1, 0, 0, 0, 0, 22, 0, 0, 1, 1, 1, 1, 1, 1, 9],
-				[9, 1, 1, 1, 1, 1, 1, 41, 68, 0, 1, 1, 1, 1, 1, 9],
-				[9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 9],
-				[9, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 67, 1, 9],
-				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-
-			],
-		];
-
-		var peoplex = 0;
-		var peopley = 0;
+		var chractorPosX = 0;
+		var charactorPosY = 0;
 
 		var floor = 0;
-		var bomb = 3;
-		var key = 6;
+		var bombs = 3;
+		var keys = 6;
 
 		var hp = 100;
-		var gjili = 10;
-		var fangyu = 10;
+		var attackability = 10;
+		var defandability = 10;
 
-		var arr = allMaps[0];
-		for (var i = 0; i < arr.length; i++) {
-			for (var j = 0; j < arr[i].length; j++) {
-				if (arr[i][j] == 1) {
-
-				} else if (50 <= arr[i][j] && arr[i][j] < 60) {
-					if (arr[i][j] == 51) {
+		var mapArr = Maps.map[0];
+		for (var i = 0; i < mapArr.length; i++) {
+			for (var j = 0; j < mapArr[i].length; j++) {
+				if (mapArr[i][j] == 1) {
+					//pass
+				} else if (50 <= mapArr[i][j] && mapArr[i][j] < 60) {
+					if (mapArr[i][j] == 51) {
 						const loti1 = core.getObjectById("loti1");
 						loti1.getBehaviour(Transform).x = j * 50 + 215;
 						loti1.getBehaviour(Transform).y = i * 50 - 40;
-					} else if (arr[i][j] == 52) {
-						// const loti2 = core.getObjectById("loti2");
-						// loti2.getBehaviour(Transform).x = j * 50;
-						// loti2.getBehaviour(Transform).y = i * 50;
+					} else if (mapArr[i][j] == 52) {
+						//pass
 					}
-				} else if (arr[i][j] == 21) {
+				} else if (mapArr[i][j] == 21) {
 					const stone1 = core.getObjectById("stone1");
 					stone1.getBehaviour(Transform).x = 715;
 					stone1.getBehaviour(Transform).y = 10;
-				} else if (arr[i][j] == 22) {
+				} else if (mapArr[i][j] == 22) {
 					const door1 = core.getObjectById("door1");
 					door1.getBehaviour(Transform).x = 865;
 					door1.getBehaviour(Transform).y = 60;
@@ -101,22 +43,22 @@ class KeyContainerBehaviour extends Behaviour {
 					const door4 = core.getObjectById("door4");
 					door4.getBehaviour(Transform).x = 515;
 					door4.getBehaviour(Transform).y = 510;
-				} else if (40 <= arr[i][j] && arr[i][j] < 50) {
-					if (arr[i][j] == 41) {
-						const guaiwu11 = core.getObjectById("guaiwu11");
-						guaiwu11.getBehaviour(Transform).x = 550 + 215;
-						guaiwu11.getBehaviour(Transform).y = 200 - 40;
-						const guaiwu12 = core.getObjectById("guaiwu12");
-						guaiwu12.getBehaviour(Transform).x = 665;
-						guaiwu12.getBehaviour(Transform).y = 160;
-						const guaiwu13 = core.getObjectById("guaiwu13");
-						guaiwu13.getBehaviour(Transform).x = 665;
-						guaiwu13.getBehaviour(Transform).y = 260;
-						console.log(guaiwu13.getBehaviour(Transform).x)
-						const guaiwu14 = core.getObjectById("guaiwu14");
-						guaiwu14.getBehaviour(Transform).x = 565;
-						guaiwu14.getBehaviour(Transform).y = 110;
-					} else if (arr[i][j] == 42) {
+				} else if (40 <= mapArr[i][j] && mapArr[i][j] < 50) {
+					if (mapArr[i][j] == 41) {
+						const monster11 = core.getObjectById("guaiwu11");
+						monster11.getBehaviour(Transform).x = 550 + 215;
+						monster11.getBehaviour(Transform).y = 200 - 40;
+						const monster12 = core.getObjectById("guaiwu12");
+						monster12.getBehaviour(Transform).x = 665;
+						monster12.getBehaviour(Transform).y = 160;
+						const monster13 = core.getObjectById("guaiwu13");
+						monster13.getBehaviour(Transform).x = 665;
+						monster13.getBehaviour(Transform).y = 260;
+						console.log(monster13.getBehaviour(Transform).x)
+						const monster14 = core.getObjectById("guaiwu14");
+						monster14.getBehaviour(Transform).x = 565;
+						monster14.getBehaviour(Transform).y = 110;
+					} else if (mapArr[i][j] == 42) {
 						const guaiwu21 = core.getObjectById("guaiwu21");
 						guaiwu21.getBehaviour(Transform).x = 765;
 						guaiwu21.getBehaviour(Transform).y = 210;
@@ -155,16 +97,16 @@ class KeyContainerBehaviour extends Behaviour {
 					// 	guaiwu9.getBehaviour(Transform).x = j * 50;
 					// 	guaiwu9.getBehaviour(Transform).y = i * 50;
 					// }
-				} else if (arr[i][j] == 3) {
-					peoplex = i;
-					peopley = j;
+				} else if (mapArr[i][j] == 3) {
+					chractorPosX = i;
+					charactorPosY = j;
 					const player = core.getObjectById("player");
 					player.getBehaviour(Transform).x = j * 50 + 215;
 					player.getBehaviour(Transform).y = i * 50 - 40;
-					console.log(peoplex);
-					console.log(peopley);
-				} else if (60 <= arr[i][j] && arr[i][j] < 70) {
-					if (arr[i][j] == 61) {
+					console.log(chractorPosX);
+					console.log(charactorPosY);
+				} else if (60 <= mapArr[i][j] && mapArr[i][j] < 70) {
+					if (mapArr[i][j] == 61) {
 						const weapon1 = core.getObjectById("weapon1");
 						weapon1.getBehaviour(Transform).x = j * 50 + 215;
 						weapon1.getBehaviour(Transform).y = i * 50 - 40;
@@ -182,7 +124,7 @@ class KeyContainerBehaviour extends Behaviour {
 					// 	daoju4.getBehaviour(Transform).x = j * 50;
 					// 	daoju4.getBehaviour(Transform).y = i * 50;
 					// } 
-					else if (arr[i][j] == 65) {
+					else if (mapArr[i][j] == 65) {
 						const ys11 = core.getObjectById("ys11");
 						const ys12 = core.getObjectById("ys12");
 						ys11.getBehaviour(Transform).x = 400 + 215;
@@ -195,11 +137,11 @@ class KeyContainerBehaviour extends Behaviour {
 					// 	ys2.getBehaviour(Transform).x = j * 50;
 					// 	ys2.getBehaviour(Transform).y = i * 50;
 					// } 
-					else if (arr[i][j] == 67) {
+					else if (mapArr[i][j] == 67) {
 						const bomb1 = core.getObjectById("bomb1");
 						bomb1.getBehaviour(Transform).x = j * 50 + 215;
 						bomb1.getBehaviour(Transform).y = i * 50 - 40;
-					} else if (arr[i][j] == 68) {
+					} else if (mapArr[i][j] == 68) {
 						const key = core.getObjectById("key1");
 						key.getBehaviour(Transform).x = 350 + 215;
 						key.getBehaviour(Transform).y = 50 - 40;
@@ -213,27 +155,24 @@ class KeyContainerBehaviour extends Behaviour {
 						key4.getBehaviour(Transform).x = 400 + 215;
 						key4.getBehaviour(Transform).y = 600 - 40;
 					}
-				} else if (arr[i][j] == 99) {
-					const lu2 = core.getObjectById("lu");
-					lu2.getBehaviour(Transform).x = j * 50 + 215;
-					lu2.getBehaviour(Transform).y = i * 50 - 40;
+				} else if (mapArr[i][j] == 99) {
+					const road2 = core.getObjectById("lu");
+					road2.getBehaviour(Transform).x = j * 50 + 215;
+					road2.getBehaviour(Transform).y = i * 50 - 40;
 					var die = document.createElement('div');
 					die.className = 'die';
 					die.innerHTML = '你死了！';
-					var agin = document.createElement('div');
-					agin.innerHTML = '再来一次';
-					agin.className = 'agin';
-					agin.onclick = function () {
+					var replay = document.createElement('div');
+					replay.innerHTML = '再来一次';
+					replay.className = 'agin';
+					replay.onclick = function () {
 						location.href += "?reload=true";
 					}
-					die.appendChild(agin);
-					document.onkeydown = function (event) {
-					}
+					die.appendChild(replay);
 				}
 			}
 		}
 
-		//1为路 0为墙 2x为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具
 		function playerMove(x, y, x1, y1) {
 			const player = core.getObjectById("player");
 			const weapon1 = core.getObjectById("weapon1");
@@ -246,54 +185,54 @@ class KeyContainerBehaviour extends Behaviour {
 			const key4 = core.getObjectById("key4");
 			const guaiwu11 = core.getObjectById("guaiwu11");
 			const guaiwu12 = core.getObjectById("guaiwu12");
-			const guaiwu3 = core.getObjectById("guaiwu13");
-			const guaiwu4 = core.getObjectById("guaiwu14");
-			const guaiwu21 = core.getObjectById("guaiwu21");
-			const guaiwu22 = core.getObjectById("guaiwu22");
-			const guaiwu23 = core.getObjectById("guaiwu23");
+			const monster3 = core.getObjectById("guaiwu13");
+			const monster4 = core.getObjectById("guaiwu14");
+			const monster21 = core.getObjectById("guaiwu21");
+			const monster22 = core.getObjectById("guaiwu22");
+			const monster23 = core.getObjectById("guaiwu23");
 			const ys11 = core.getObjectById("ys11");
 			const ys12 = core.getObjectById("ys12");
 			player.getBehaviour(Transform).x = y * 50 + 215;
 			player.getBehaviour(Transform).y = x * 50 - 40;
-			if (arr[x1][y1] == 1) {
+			if (mapArr[x1][y1] == 1) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
-				arr[x1][y1] = 3;
-				arr[x][y] = 1;
-			} else if (arr[x1][y1] == 21 && bomb > 0) {
+				mapArr[x1][y1] = 3;
+				mapArr[x][y] = 1;
+			} else if (mapArr[x1][y1] == 21 && bombs > 0) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				stone1.getBehaviour(Transform).x = 1000;
 				stone1.getBehaviour(Transform).y = 1000;
-				arr[x1][y1] = 3;
-				arr[x][y] = 1;
-				bomb--;
-			} else if (arr[x1][y1] == 22 && key > 0) {
+				mapArr[x1][y1] = 3;
+				mapArr[x][y] = 1;
+				bombs--;
+			} else if (mapArr[x1][y1] == 22 && keys > 0) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				//men1.getBehaviour(Transform).x = 1000;
 				//men1.getBehaviour(Transform).y = 1000;
-				arr[x1][y1] = 3;
-				arr[x][y] = 1;
-				key--;
-			} else if (arr[x1][y1] == 51) {
+				mapArr[x1][y1] = 3;
+				mapArr[x][y] = 1;
+				keys--;
+			} else if (mapArr[x1][y1] == 51) {
 				// if (floor >= 0 && floor < allMaps.length - 1) {
 				// 	floor++;
 				// 	arr = allMaps[floor];
 				// }
 				window.location.href = "./secondPage.html"
-			} else if (arr[x1][y1] == 52) {
-				if (floor >= 1 && floor < allMaps.length) {
+			} else if (mapArr[x1][y1] == 52) {
+				if (floor >= 1 && floor < Maps.map.length) {
 					floor--;
-					arr = allMaps[floor];
+					mapArr = Maps.map[floor];
 				}
 				//window.location.href= "./index.html"
-			} else if (arr[x1][y1] > 40 && arr[x1][y1] < 50) {
+			} else if (mapArr[x1][y1] > 40 && mapArr[x1][y1] < 50) {
 				// var shanghai = arr[x1][y1] % 40;
 				// hp = hp - shanghai * 10;
 				//hp = hp - 10;
 				if (hp < 0) {
-					arr[x][y] = 99;
+					mapArr[x][y] = 99;
 					alert("You're dead！Game Over!");
 				} else if (hp > 0 && x1 == 4 && y1 == 11) {
 					hp = hp - 10;
@@ -301,162 +240,160 @@ class KeyContainerBehaviour extends Behaviour {
 					guaiwu11.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				} else if (hp > 0 && x1 == 4 && y1 == 9) {
 					hp = hp - 10;
 					guaiwu12.getBehaviour(Transform).x = 2000;
 					guaiwu12.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				} else if (hp > 0 && x1 == 6 && y1 == 8) {
 					hp = hp - 10;
-					guaiwu3.getBehaviour(Transform).x = 2000;
-					guaiwu3.getBehaviour(Transform).y = 2000;
+					monster3.getBehaviour(Transform).x = 2000;
+					monster3.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				} else if (hp > 0 && x1 == 3 && y1 == 7) {
 					hp = hp - 10;
-					guaiwu4.getBehaviour(Transform).x = 2000;
-					guaiwu4.getBehaviour(Transform).y = 2000;
+					monster4.getBehaviour(Transform).x = 2000;
+					monster4.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				} else if (hp > 0 && x1 == 5 && y1 == 11) {
 					hp = hp - 10;
-					guaiwu21.getBehaviour(Transform).x = 2000;
-					guaiwu21.getBehaviour(Transform).y = 2000;
+					monster21.getBehaviour(Transform).x = 2000;
+					monster21.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				} else if (hp > 0 && x1 == 6 && y1 == 13) {
 					hp = hp - 10;
-					guaiwu22.getBehaviour(Transform).x = 2000;
-					guaiwu22.getBehaviour(Transform).y = 2000;
+					monster22.getBehaviour(Transform).x = 2000;
+					monster22.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				} else if (hp > 0 && x1 == 8 && y1 == 14) {
 					hp = hp - 10;
-					guaiwu23.getBehaviour(Transform).x = 2000;
-					guaiwu23.getBehaviour(Transform).y = 2000;
+					monster23.getBehaviour(Transform).x = 2000;
+					monster23.getBehaviour(Transform).y = 2000;
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
 				}
-			} else if (arr[x1][y1] > 60 && arr[x1][y1] < 70) {
-				if (arr[x1][y1] == 61) {
-					gjili = gjili + 10;
+			} else if (mapArr[x1][y1] > 60 && mapArr[x1][y1] < 70) {
+				if (mapArr[x1][y1] == 61) {
+					attackability = attackability + 10;
 					weapon1.getBehaviour(Transform).x = 1000;
 					weapon1.getBehaviour(Transform).y = 1000;
-				} else if (arr[x1][y1] == 62) {
-					fangyu = fangyu + 10;
-				} else if (arr[x1][y1] == 63) {
-					gjili = gjili + 10;
-				} else if (arr[x1][y1] == 64) {
-					gjili = gjili + 15;
-					fangyu = fangyu + 15;
-				} else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 8) {
+				} else if (mapArr[x1][y1] == 62) {
+					defandability = defandability + 10;
+				} else if (mapArr[x1][y1] == 63) {
+					attackability = attackability + 10;
+				} else if (mapArr[x1][y1] == 64) {
+					attackability = attackability + 15;
+					defandability = defandability + 15;
+				} else if (mapArr[x1][y1] == 65 && x1 == 3 && y1 == 8) {
 					hp = hp + 100;
 					ys11.getBehaviour(Transform).x = 2000;
 					ys11.getBehaviour(Transform).y = 2000;
-				} else if (arr[x1][y1] == 65 && x1 == 7 && y1 == 14) {
+				} else if (mapArr[x1][y1] == 65 && x1 == 7 && y1 == 14) {
 					hp = hp + 100;
 					ys12.getBehaviour(Transform).x = 2000;
 					ys12.getBehaviour(Transform).y = 2000;
-				} else if (arr[x1][y1] == 66) {
+				} else if (mapArr[x1][y1] == 66) {
 					hp = hp + 50;
-				} else if (arr[x1][y1] == 67) {
+				} else if (mapArr[x1][y1] == 67) {
 					bomb1.getBehaviour(Transform).x = 2000;
 					bomb1.getBehaviour(Transform).y = 2000;
-					bomb++;
-				} else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 7) {
-					key++;
+					bombs++;
+				} else if (mapArr[x1][y1] == 68 && x1 == 1 && y1 == 7) {
+					keys++;
 					key1.getBehaviour(Transform).x = 2000;
 					key1.getBehaviour(Transform).y = 2000;
-				} else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 8) {
-					key++;
+				} else if (mapArr[x1][y1] == 68 && x1 == 1 && y1 == 8) {
+					keys++;
 					key2.getBehaviour(Transform).x = 2000;
 					key2.getBehaviour(Transform).y = 2000;
-				} else if (arr[x1][y1] == 68 && x1 == 4 && y1 == 13) {
-					key++;
+				} else if (mapArr[x1][y1] == 68 && x1 == 4 && y1 == 13) {
+					keys++;
 					key3.getBehaviour(Transform).x = 2000;
 					key3.getBehaviour(Transform).y = 2000;
-				} else if (arr[x1][y1] == 68 && x1 == 12 && y1 == 8) {
-					key++;
+				} else if (mapArr[x1][y1] == 68 && x1 == 12 && y1 == 8) {
+					keys++;
 					key4.getBehaviour(Transform).x = 2000;
 					key4.getBehaviour(Transform).y = 2000;
 				}
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
-				arr[x1][y1] = 3;
-				arr[x][y] = 1;
+				mapArr[x1][y1] = 3;
+				mapArr[x][y] = 1;
 			}
-
-
 		}
 
 		document.onkeydown = function (event) {
 			var e = event || window.event || arguments.callee.caller.arguments[0];
 			if (e && e.keyCode == 38) {
 				//if (peoplex > 0) {
-				playerMove(peoplex, peopley, peoplex - 1, peopley);
-				if (arr[peoplex - 1][peopley] != 0 && arr[peoplex - 1][peopley] != 9 && arr[peoplex - 1][peopley] != 21 && arr[peoplex - 1][peopley] != 22) {
-					peoplex = peoplex - 1;
+				playerMove(chractorPosX, charactorPosY, chractorPosX - 1, charactorPosY);
+				if (mapArr[chractorPosX - 1][charactorPosY] != 0 && mapArr[chractorPosX - 1][charactorPosY] != 9 && mapArr[chractorPosX - 1][charactorPosY] != 21 && mapArr[chractorPosX - 1][charactorPosY] != 22) {
+					chractorPosX = chractorPosX - 1;
 
-				} else if (arr[peoplex - 1][peopley] == 21 && bomb > 0) {
-					peoplex = peoplex - 1;
-				} else if (arr[peoplex - 1][peopley] == 22 && key > 0) {
-					peoplex = peoplex - 1;
+				} else if (mapArr[chractorPosX - 1][charactorPosY] == 21 && bombs > 0) {
+					chractorPosX = chractorPosX - 1;
+				} else if (mapArr[chractorPosX - 1][charactorPosY] == 22 && keys > 0) {
+					chractorPosX = chractorPosX - 1;
 				}
-				console.log(bomb);
-				console.log(gjili);
+				console.log(bombs);
+				console.log(attackability);
 				//}
 			} else if (e && e.keyCode == 37) {
-				playerMove(peoplex, peopley, peoplex, peopley - 1);
-				if (arr[peoplex][peopley - 1] != 0 && arr[peoplex][peopley - 1] != 9 && arr[peoplex][peopley - 1] != 21 && arr[peoplex][peopley - 1] != 22) {
-					peopley = peopley - 1;
-				} else if (arr[peoplex][peopley - 1] == 21 && bomb > 0) {
-					peopley = peopley - 1;
-				} else if (arr[peoplex][peopley - 1] == 22 && key > 0) {
-					peopley = peopley - 1;
+				playerMove(chractorPosX, charactorPosY, chractorPosX, charactorPosY - 1);
+				if (mapArr[chractorPosX][charactorPosY - 1] != 0 && mapArr[chractorPosX][charactorPosY - 1] != 9 && mapArr[chractorPosX][charactorPosY - 1] != 21 && mapArr[chractorPosX][charactorPosY - 1] != 22) {
+					charactorPosY = charactorPosY - 1;
+				} else if (mapArr[chractorPosX][charactorPosY - 1] == 21 && bombs > 0) {
+					charactorPosY = charactorPosY - 1;
+				} else if (mapArr[chractorPosX][charactorPosY - 1] == 22 && keys > 0) {
+					charactorPosY = charactorPosY - 1;
 				}
 			}
 			if (e && e.keyCode == 40) {
-				playerMove(peoplex, peopley, peoplex + 1, peopley);
-				if (arr[peoplex + 1][peopley] != 0 && arr[peoplex + 1][peopley] != 9 && arr[peoplex + 1][peopley] != 21 && arr[peoplex + 1][peopley] != 22) {
-					peoplex = peoplex + 1;
-				} else if (arr[peoplex + 1][peopley] == 21 && bomb > 0) {
-					peoplex = peoplex + 1;
-				} else if (arr[peoplex + 1][peopley] == 22 && key > 0) {
-					peoplex = peoplex + 1;
+				playerMove(chractorPosX, charactorPosY, chractorPosX + 1, charactorPosY);
+				if (mapArr[chractorPosX + 1][charactorPosY] != 0 && mapArr[chractorPosX + 1][charactorPosY] != 9 && mapArr[chractorPosX + 1][charactorPosY] != 21 && mapArr[chractorPosX + 1][charactorPosY] != 22) {
+					chractorPosX = chractorPosX + 1;
+				} else if (mapArr[chractorPosX + 1][charactorPosY] == 21 && bombs > 0) {
+					chractorPosX = chractorPosX + 1;
+				} else if (mapArr[chractorPosX + 1][charactorPosY] == 22 && keys > 0) {
+					chractorPosX = chractorPosX + 1;
 				}
 			} else if (e && e.keyCode == 39) {
-				playerMove(peoplex, peopley, peoplex, peopley + 1);
-				if (arr[peoplex][peopley + 1] != 0 && arr[peoplex][peopley + 1] != 9 && arr[peoplex][peopley + 1] != 21 && arr[peoplex][peopley + 1] != 2) {
-					peopley = peopley + 1;
-				} else if (arr[peoplex][peopley + 1] == 21 && bomb > 0) {
-					peopley = peopley + 1;
-				} else if (arr[peoplex][peopley + 1] == 22 && key > 0) {
-					peopley = peopley + 1;
+				playerMove(chractorPosX, charactorPosY, chractorPosX, charactorPosY + 1);
+				if (mapArr[chractorPosX][charactorPosY + 1] != 0 && mapArr[chractorPosX][charactorPosY + 1] != 9 && mapArr[chractorPosX][charactorPosY + 1] != 21 && mapArr[chractorPosX][charactorPosY + 1] != 2) {
+					charactorPosY = charactorPosY + 1;
+				} else if (mapArr[chractorPosX][charactorPosY + 1] == 21 && bombs > 0) {
+					charactorPosY = charactorPosY + 1;
+				} else if (mapArr[chractorPosX][charactorPosY + 1] == 22 && keys > 0) {
+					charactorPosY = charactorPosY + 1;
 				}
 			}
 			const HPText = core.getObjectById("HPText");
 			HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
 			const AttackTest = core.getObjectById("AttackText");
-			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + gjili;
+			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
 			const KeyTest = core.getObjectById("KeyText");
-			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + key;
+			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
 			const BombTest = core.getObjectById("BombText");
-			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bomb;
+			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
 			// const restart = core.getObjectById("restart");
 			// restart.onclick = function () {
 			// location.href += "?reload=true";
@@ -465,72 +402,8 @@ class KeyContainerBehaviour extends Behaviour {
 	}
 
 	onUpdate() {
+		//pass
 	}
 }
 
-core.registerBehaviourClass(KeyContainerBehaviour)
-
-
-
-
-
-
-
-
-
-
-// class PlayerManager extends Behaviour {
-
-//     warrior;
-
-//     music = new AudioSystem();
-//     video = new VideoSystem();
-
-//     onStart() {
-
-//         //示例1
-//         this.warrior = core.getObjectById('image');
-//         new Trigger(this.warrior, this.warrior);
-
-//         //示例2
-//         const map = new GameMapDesigner();
-//         const isMapSet = map.setMap(["warrior", "monster", "tool", "wall"],
-//             [1, 2, 3, 4],
-//             ["../images/main***.png",
-//                 "../images/main***.png",
-//                 "../images/main***.png",
-//                 "../images/main***.png"]);
-//         if (isMapSet) {
-//             console.log("获取到的指定角色图像为: " + map.getMap("tool"));
-
-//             const walls = [];
-//             const wallImagesNeeded = 34;
-//             const wallSrc = map.getMap["wall"];
-//             for (let i = 0; i < wallImagesNeeded; i++) {
-//                 walls.push(wallSrc);
-//             }
-//         }
-
-//         //示例3
-//         this.music.audioPath = "./medias/bgMusic.mp3";
-//         this.music.playAudio(false);
-//         console.log("is audio ended? " + this.music.isAudioEnded());
-
-//         //示例6
-//         // this.video.videoPath = "./medias/sample_video.mp4";
-//         // this.video.playVideo(false);
-//         // console.log("is video ended? " + this.video.isVideoEnded());
-//     }
-
-//     onUpdate() {
-//         //示例0
-//         if (this.warrior.getBehaviour(Transform).x < 100) {
-//             this.warrior.getBehaviour(Transform).x += 1;
-//         }
-
-//         //示例4
-//         this.interaction();
-
-//     }
-
-// core.registerBehaviourClass(PlayerManager);
+core.registerBehaviourClass(KeyContainerBehaviour);
