@@ -10,11 +10,11 @@
         "./out/engine/systems.js",
         "./out/database.js",
         "./out/game/map.js",
-        "./out/game.js",
-        "./out/engine/startup.js"
+        "./out/game3.js",
+        "./out/engine/startup3.js"
     ],
     "scenes": [
-        "data.json"
+        "data3.json"
     ],
     "images": [
         "./images/main/warrior.png",
@@ -46,7 +46,7 @@
         "./img/bomb.png",
         "./img/maps/hight_10.png",
         "./img/maps/width_10.png",
-        "./img/maps/map_1.png",
+        "./img/maps/map_3.png",
         "./img/downstair.png",
         "./img/gamescore_background.png",
         "./img/gameview.png"
