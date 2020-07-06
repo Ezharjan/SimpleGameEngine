@@ -13,7 +13,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/temp/map_1.png"
+							"image": "./img/maps/map_1.png"
 						}
 					]
 				},
@@ -27,7 +27,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/temp/hight_50.png"
+							"image": "./img/maps/hight_50.png"
 						}
 					]
 				},
@@ -41,7 +41,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/temp/hight_50.png"
+							"image": "./img/maps/hight_50.png"
 						}
 					]
 				},
@@ -55,7 +55,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/temp/width_50.png"
+							"image": "./img/maps/width_50.png"
 						}
 					]
 				},
@@ -69,7 +69,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/temp/width_50.png"
+							"image": "./img/maps/width_50.png"
 						}
 					]
 				},
