@@ -6,6 +6,7 @@
     "scripts": {
         "start": "electron .",
         "watch": "tsc -w",
+        "serve": "http-server -c-1",
         "package": "electron-packager ./ myapp --out ./out --app-version 1.0.0 --overwrite --icon=icon.ico"
     },
     "author": "Alexander",
