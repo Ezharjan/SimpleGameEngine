@@ -375,7 +375,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/ys2.png"
+							"image": "./img/ys1.png"
 						}
 					]
 				},
@@ -399,7 +399,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/ys2.png"
+							"image": "./img/ys1.png"
 						}
 					]
 				},
@@ -423,7 +423,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/ys2.png"
+							"image": "./img/ys1.png"
 						}
 					]
 				},
@@ -435,7 +435,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/ys2.png"
+							"image": "./img/ys1.png"
 						}
 					]
 				},
