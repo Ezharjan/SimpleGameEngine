@@ -74,6 +74,9 @@ class BasicBehaviour extends Behaviour {
                         const guaiwu11 = core.getObjectById("guaiwu11");
                         guaiwu11.getBehaviour(Transform).x = 150 + 215;
                         guaiwu11.getBehaviour(Transform).y = 250 - 40;
+                        const guaiwu111 = core.getObjectById("guaiwu111");
+                        guaiwu111.getBehaviour(Transform).x = 150 + 215;
+                        guaiwu111.getBehaviour(Transform).y = 200 - 40;
                         const guaiwu12 = core.getObjectById("guaiwu12");
                         guaiwu12.getBehaviour(Transform).x = 250 + 215;
                         guaiwu12.getBehaviour(Transform).y = 300 - 40;
@@ -230,6 +233,7 @@ class BasicBehaviour extends Behaviour {
             const key2 = core.getObjectById("key2");
             const key3 = core.getObjectById("key3");
             const guaiwu11 = core.getObjectById("guaiwu11");
+            const guaiwu111 = core.getObjectById("guaiwu111");
             const guaiwu12 = core.getObjectById("guaiwu12");
             const guaiwu13 = core.getObjectById("guaiwu13");
             const guaiwu14 = core.getObjectById("guaiwu14");
@@ -311,6 +315,15 @@ class BasicBehaviour extends Behaviour {
                     hp = hp - 10;
                     guaiwu11.getBehaviour(Transform).x = 2000;
                     guaiwu11.getBehaviour(Transform).y = 2000;
+                    player.getBehaviour(Transform).x = y1 * 50 + 215;
+                    player.getBehaviour(Transform).y = x1 * 50 - 40;
+                    arr[x1][y1] = 3;
+                    arr[x][y] = 1;
+                }
+                else if (hp > 0 && x1 == 4 && y1 == 3) {
+                    hp = hp - 10;
+                    guaiwu111.getBehaviour(Transform).x = 2000;
+                    guaiwu111.getBehaviour(Transform).y = 2000;
                     player.getBehaviour(Transform).x = y1 * 50 + 215;
                     player.getBehaviour(Transform).y = x1 * 50 - 40;
                     arr[x1][y1] = 3;
