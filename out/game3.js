@@ -208,14 +208,14 @@ class ThirdBehaviour extends Behaviour {
                 keys--;
             }
             else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
-                if (hp < 0) {
+                if (hp <= 0) {
                     arr[x][y] = 99;
                     alert("You're dead！Game Over!");
                 }
                 else if (hp > 0 && x1 == 12 && y1 == 7) {
                     if (attackability >= 10) {
                         hp = hp - 20;
-                        if (hp < 0) {
+                        if (hp <= 0) {
                             alert("You're dead！Game Over!");
                         }
                         else {
@@ -234,7 +234,7 @@ class ThirdBehaviour extends Behaviour {
                 else if (hp > 0 && x1 == 12 && y1 == 8) {
                     if (attackability >= 10) {
                         hp = hp - 20;
-                        if (hp < 0) {
+                        if (hp <= 0) {
                             alert("You're dead！Game Over!");
                         }
                         else {
@@ -253,7 +253,7 @@ class ThirdBehaviour extends Behaviour {
                 else if ((hp > 0) && ((x1 == 3 && y1 == 7) || (x1 == 4 && y1 == 7) || (x1 == 5 && y1 == 7) || (x1 == 3 && y1 == 8) || (x1 == 4 && y1 == 8) || (x1 == 5 && y1 == 8))) {
                     if (attackability >= 70) {
                         hp = hp - 70;
-                        if (hp < 0) {
+                        if (hp <= 0) {
                             alert("You're dead！Game Over!");
                         }
                         else {
@@ -288,7 +288,7 @@ class ThirdBehaviour extends Behaviour {
                 else if ((hp > 0) && ((x1 == 7 && y1 == 7) || (x1 == 7 && y1 == 8) || (x1 == 8 && y1 == 7) || (x1 == 8 && y1 == 8))) {
                     if (attackability >= 20) {
                         hp = hp - 50;
-                        if (hp < 0) {
+                        if (hp <= 0) {
                             alert("You're dead！Game Over!");
                         }
                         else {

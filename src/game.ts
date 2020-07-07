@@ -283,6 +283,7 @@ class KeyContainerBehaviour extends Behaviour {
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
 				passed = 1;
+				alert("You have opened the altar!");
 			} else if (mapArr[x1][y1] > 40 && mapArr[x1][y1] < 50) {
 				// var shanghai = arr[x1][y1] % 40;
 				// hp = hp - shanghai * 10;
@@ -293,7 +294,7 @@ class KeyContainerBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							monster1.getBehaviour(Transform).x = 2000;
@@ -309,7 +310,7 @@ class KeyContainerBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 5 && y1 == 11) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							monster2.getBehaviour(Transform).x = 2000;
@@ -325,7 +326,7 @@ class KeyContainerBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 8 && y1 == 12) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							monster3.getBehaviour(Transform).x = 2000;
@@ -341,7 +342,7 @@ class KeyContainerBehaviour extends Behaviour {
 				} else if (hp > 0 && ((x1 == 6 && y1 == 6) || (x1 == 7 && y1 == 6))) {
 					if (attackability >= 20) {
 						hp = hp - 50;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							monster21.getBehaviour(Transform).x = 2000;
@@ -380,8 +381,16 @@ class KeyContainerBehaviour extends Behaviour {
 				} else if (mapArr[x1][y1] == 63) {
 					attackability = attackability + 10;
 				} else if (mapArr[x1][y1] == 64) {
-					attackability = attackability + 15;
-					defendability = defendability + 15;
+					player.getBehaviour(Transform).x = y1 * 50 + 215;
+					player.getBehaviour(Transform).y = x1 * 50 - 40;
+					altar1.getBehaviour(Transform).x = 2000;
+					altar1.getBehaviour(Transform).y = 2000;
+					altar2.getBehaviour(Transform).x = 300 + 215;
+					altar2.getBehaviour(Transform).y = 50 - 40;
+					mapArr[x1][y1] = 3;
+					mapArr[x][y] = 1;
+					passed = 1;
+					alert("You have opened the altar!");
 				} else if (mapArr[x1][y1] == 65 && x1 == 3 && y1 == 8) {
 					hp = hp + 50;
 					ys11.getBehaviour(Transform).x = 2000;

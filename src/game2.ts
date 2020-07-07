@@ -15,13 +15,13 @@ class BasicBehaviour extends Behaviour {
 				[9, 61, 0, 41, 0, 65, 0, 1, 1, 1, 0, 41, 1, 1, 67, 9],     //(12, 5)
 				[9, 68, 0, 1, 22, 65, 0, 1, 1, 1, 0, 1, 1, 1, 9],
 				[9, 1, 0, 1, 0, 0, 0, 42, 1, 1, 0, 1, 64, 1, 1, 9],
-				[9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
-				[9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
+				[9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
+				[9, 1, 0, 1, 42, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
 				[9, 1, 0, 1, 1, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
 				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
 				[9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9],
 				[9, 1, 0, 1, 0, 0, 1, 22, 1, 1, 0, 0, 0, 1, 1, 9],
-				[9, 1, 1, 1, 0, 67, 61, 0, 51, 1, 21, 1, 1, 1, 3, 9],
+				[9, 1, 1, 1, 0, 67, 67, 0, 51, 1, 21, 1, 1, 1, 3, 9],
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 			]
 		];
@@ -151,9 +151,9 @@ class BasicBehaviour extends Behaviour {
 						const weapon6 = core.getObjectById("weapon6");
 						weapon6.getBehaviour(Transform).x = 700 + 215;
 						weapon6.getBehaviour(Transform).y = 100 - 40;
-						const weapon7 = core.getObjectById("weapon7");
-						weapon7.getBehaviour(Transform).x = 300 + 215;
-						weapon7.getBehaviour(Transform).y = 700 - 40;
+						// const weapon7 = core.getObjectById("weapon7");
+						// weapon7.getBehaviour(Transform).x = 300 + 215;
+						// weapon7.getBehaviour(Transform).y = 700 - 40;
 					} else if (arr[i][j] == 64) {
 						const altar = core.getObjectById("altar1");
 						altar.getBehaviour(Transform).x = j * 50 + 215;
@@ -196,9 +196,9 @@ class BasicBehaviour extends Behaviour {
 						const bomb3 = core.getObjectById("bomb3");
 						bomb3.getBehaviour(Transform).x = 700 + 215;
 						bomb3.getBehaviour(Transform).y = 250 - 40;
-						// const bomb4 = core.getObjectById("bomb4");
-						// bomb4.getBehaviour(Transform).x = 300 + 215;
-						// bomb4.getBehaviour(Transform).y = 700 - 40;
+						const bomb4 = core.getObjectById("bomb4");
+						bomb4.getBehaviour(Transform).x = 300 + 215;
+						bomb4.getBehaviour(Transform).y = 700 - 40;
 					} else if (arr[i][j] == 68) {
 						const key = core.getObjectById("key1");
 						key.getBehaviour(Transform).x = 50 + 215;
@@ -239,7 +239,7 @@ class BasicBehaviour extends Behaviour {
 			const weapon4 = core.getObjectById("weapon4");
 			const weapon5 = core.getObjectById("weapon5");
 			const weapon6 = core.getObjectById("weapon6");
-			const weapon7 = core.getObjectById("weapon7");
+			//const weapon7 = core.getObjectById("weapon7");
 			const door1 = core.getObjectById("door1");
 			const door2 = core.getObjectById("door2");
 			const door3 = core.getObjectById("door3");
@@ -362,7 +362,7 @@ class BasicBehaviour extends Behaviour {
 				}
 				//window.location.href= "./index.html"
 			} else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
-				if (hp < 0) {
+				if (hp <= 0) {
 					arr[x][y] = 99;
 					alert("You're dead！Game Over!");
 				} else if (hp > 0 && x1 == 5 && y1 == 3) {
@@ -384,7 +384,7 @@ class BasicBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 3 && y1 == 10) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							guaiwu12.getBehaviour(Transform).x = 2000;
@@ -400,7 +400,7 @@ class BasicBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 5 && y1 == 11) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							guaiwu13.getBehaviour(Transform).x = 2000;
@@ -416,7 +416,7 @@ class BasicBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 10 && y1 == 14) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							guaiwu14.getBehaviour(Transform).x = 2000;
@@ -429,10 +429,10 @@ class BasicBehaviour extends Behaviour {
 					} else {
 						alert("Your attackability is lower than 10!");
 					}
-				} else if ((hp > 0) && ((x1 == 9 && y1 == 3) || (x1 == 9 && y1 == 4) || (x1 == 10 && y1 == 3) || (x1 == 10 && y1 == 4))) {
+				} else if ((hp > 0) && (x1 == 9 && y1 == 4)) {
 					if (attackability >= 20) {
 						hp = hp - 50;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							guaiwu21.getBehaviour(Transform).x = 2000;
@@ -455,7 +455,7 @@ class BasicBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 7 && y1 == 7) {
 					if (attackability >= 20) {
 						hp = hp - 50;
-						if (hp < 0) {
+						if (hp <= 0) {
 							alert("You're dead！Game Over!");
 						} else {
 							guaiwu25.getBehaviour(Transform).x = 2000;
@@ -509,11 +509,13 @@ class BasicBehaviour extends Behaviour {
 					attackability = attackability + 10;
 					weapon6.getBehaviour(Transform).x = 1000;
 					weapon6.getBehaviour(Transform).y = 1000;
-				} else if (arr[x1][y1] == 61 && x1 == 14 && y1 == 6) {
-					attackability = attackability + 10;
-					weapon7.getBehaviour(Transform).x = 1000;
-					weapon7.getBehaviour(Transform).y = 1000;
-				} else if (arr[x1][y1] == 64) {
+				} 
+				// else if (arr[x1][y1] == 61 && x1 == 14 && y1 == 6) {
+				// 	attackability = attackability + 10;
+				// 	weapon7.getBehaviour(Transform).x = 1000;
+				// 	weapon7.getBehaviour(Transform).y = 1000;
+				// } 
+				else if (arr[x1][y1] == 64) {
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					altar1.getBehaviour(Transform).x = 2000;
@@ -523,6 +525,7 @@ class BasicBehaviour extends Behaviour {
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
 					passed = 1;
+					alert("You have opened the altar!");
 				} else if (arr[x1][y1] == 65 && x1 == 5 && y1 == 5) {
 					hp = hp + 50;
 					ys1.getBehaviour(Transform).x = 2000;
