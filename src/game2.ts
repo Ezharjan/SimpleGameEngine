@@ -5,24 +5,24 @@ class BasicBehaviour extends Behaviour {
 	onStart() {
 
 		var allMaps = [
-            //1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
+			//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
 			[
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-                [9, 67, 1, 1, 1, 68, 0, 61, 1, 1, 65, 0, 65, 61, 65, 9],
-                [9, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 61, 65, 61, 9],
-                [9, 1, 1, 1, 1, 1, 0, 1, 41, 1, 1, 21, 65, 61, 65, 9],
-                [9, 0, 0, 41, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 9],
-                [9, 61, 0, 41, 0, 65, 0, 1, 1, 1, 0, 41, 41, 0, 67, 9],
-                [9, 68, 0, 1, 22, 41, 0, 1, 1, 1, 0, 1, 1, 1, 9],
-                [9, 1, 0, 1, 0, 0, 0, 42, 1, 1, 0, 1, 1, 1, 1, 9],
-                [9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
-                [9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
-                [9, 1, 0, 1, 42, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
-                [9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
-                [9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9],
-                [9, 1, 0, 1, 0, 0, 1, 22, 1, 1, 0, 0, 0, 1, 1, 9],
-                [9, 1, 1, 1, 0, 67, 1,0, 51, 1, 21, 1, 1, 1, 3, 9],
-                [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+				[9, 67, 1, 1, 1, 68, 0, 61, 1, 1, 65, 0, 65, 61, 65, 9],
+				[9, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 61, 65, 61, 9],
+				[9, 1, 1, 1, 1, 1, 0, 1, 41, 1, 1, 21, 65, 61, 65, 9],
+				[9, 0, 0, 41, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 9],
+				[9, 61, 0, 41, 0, 65, 0, 1, 1, 1, 0, 41, 41, 0, 67, 9],
+				[9, 68, 0, 1, 22, 41, 0, 1, 1, 1, 0, 1, 1, 1, 9],
+				[9, 1, 0, 1, 0, 0, 0, 42, 1, 1, 0, 1, 1, 1, 1, 9],
+				[9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
+				[9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
+				[9, 1, 0, 1, 42, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
+				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
+				[9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9],
+				[9, 1, 0, 1, 0, 0, 1, 22, 1, 1, 0, 0, 0, 1, 1, 9],
+				[9, 1, 1, 1, 0, 67, 1, 0, 51, 1, 21, 1, 1, 1, 3, 9],
+				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 			]
 		];
 
@@ -32,6 +32,9 @@ class BasicBehaviour extends Behaviour {
 		var floor = 0;
 		var bomb = 3;
 		var key = 6;
+
+
+		console.log("%%%%%%%%% " + getPlayerData("life"));
 
 		var hp = 100;
 		var gjili = 10;
@@ -119,7 +122,7 @@ class BasicBehaviour extends Behaviour {
 						const guaiwu28 = core.getObjectById("guaiwu28");
 						guaiwu28.getBehaviour(Transform).x = 400 + 215;
 						guaiwu28.getBehaviour(Transform).y = 350 - 40;
-					} 
+					}
 				} else if (arr[i][j] == 3) {
 					peoplex = i;
 					peopley = j;
@@ -148,7 +151,7 @@ class BasicBehaviour extends Behaviour {
 						const weapon6 = core.getObjectById("weapon6");
 						weapon6.getBehaviour(Transform).x = 700 + 215;
 						weapon6.getBehaviour(Transform).y = 100 - 40;
-					}  else if (arr[i][j] == 65) {
+					} else if (arr[i][j] == 65) {
 						const ys1 = core.getObjectById("ys1");
 						ys1.getBehaviour(Transform).x = 250 + 215;
 						ys1.getBehaviour(Transform).y = 250 - 40;
@@ -257,7 +260,7 @@ class BasicBehaviour extends Behaviour {
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
-			} else if (arr[x1][y1] == 21 && bomb > 0 && x1 ==14 && y1 ==10) {
+			} else if (arr[x1][y1] == 21 && bomb > 0 && x1 == 14 && y1 == 10) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				stone1.getBehaviour(Transform).x = 1000;
@@ -265,7 +268,7 @@ class BasicBehaviour extends Behaviour {
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
 				bomb--;
-			} else if (arr[x1][y1] == 21 && bomb > 0 && x1 ==3 && y1 ==11) {
+			} else if (arr[x1][y1] == 21 && bomb > 0 && x1 == 3 && y1 == 11) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				stone2.getBehaviour(Transform).x = 1000;
@@ -273,9 +276,9 @@ class BasicBehaviour extends Behaviour {
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
 				bomb--;
-			}else if (arr[x1][y1] == 22 && key > 0) {
+			} else if (arr[x1][y1] == 22 && key > 0) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
-				player.getBehaviour(Transform).y = x1 * 50 -40;
+				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				//men1.getBehaviour(Transform).x = 1000;
 				//men1.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
@@ -286,7 +289,7 @@ class BasicBehaviour extends Behaviour {
 				// 	floor++;
 				// 	arr = allMaps[floor];
 				// }
-				window.location.href= "./thirdPage.html"
+				window.location.href = "./thirdPage.html"
 			} else if (arr[x1][y1] == 52) {
 				if (floor >= 1 && floor < allMaps.length) {
 					floor--;
@@ -300,142 +303,151 @@ class BasicBehaviour extends Behaviour {
 				if (hp < 0) {
 					arr[x][y] = 99;
 					alert("You're dead！Game Over!");
-				} else if(hp > 0 && x1 == 5 && y1 == 3){
+				} else if (hp > 0 && x1 == 5 && y1 == 3) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu11.getBehaviour(Transform).x = 2000;
-					guaiwu11.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 4 && y1 == 3){
+					} else {
+						guaiwu11.getBehaviour(Transform).x = 2000;
+						guaiwu11.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 4 && y1 == 3) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu111.getBehaviour(Transform).x = 2000;
-					guaiwu111.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 6 && y1 == 5){
+					} else {
+						guaiwu111.getBehaviour(Transform).x = 2000;
+						guaiwu111.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 6 && y1 == 5) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu12.getBehaviour(Transform).x = 2000;
-					guaiwu12.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 3 && y1 == 8){
+					} else {
+						guaiwu12.getBehaviour(Transform).x = 2000;
+						guaiwu12.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 3 && y1 == 8) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu13.getBehaviour(Transform).x = 2000;
-					guaiwu13.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 5 && y1 == 11){
+					} else {
+						guaiwu13.getBehaviour(Transform).x = 2000;
+						guaiwu13.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 5 && y1 == 11) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu14.getBehaviour(Transform).x = 2000;
-					guaiwu14.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 5 && y1 == 12){
+					} else {
+						guaiwu14.getBehaviour(Transform).x = 2000;
+						guaiwu14.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 5 && y1 == 12) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu15.getBehaviour(Transform).x = 2000;
-					guaiwu15.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 10 && y1 == 14){
+					} else {
+						guaiwu15.getBehaviour(Transform).x = 2000;
+						guaiwu15.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 10 && y1 == 14) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu16.getBehaviour(Transform).x = 2000;
-					guaiwu16.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if((hp > 0) &&  ((x1 == 9 && y1 == 3) || (x1 == 9 && y1 == 4) || (x1 == 10 && y1 == 3) || (x1 == 10 && y1 == 4))){
+					} else {
+						guaiwu16.getBehaviour(Transform).x = 2000;
+						guaiwu16.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if ((hp > 0) && ((x1 == 9 && y1 == 3) || (x1 == 9 && y1 == 4) || (x1 == 10 && y1 == 3) || (x1 == 10 && y1 == 4))) {
 					hp = hp - 50;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu21.getBehaviour(Transform).x = 2000;
-					guaiwu21.getBehaviour(Transform).y = 2000;
-					guaiwu22.getBehaviour(Transform).x = 2000;
-					guaiwu22.getBehaviour(Transform).y = 2000;
-					guaiwu23.getBehaviour(Transform).x = 2000;
-					guaiwu23.getBehaviour(Transform).y = 2000;
-					guaiwu24.getBehaviour(Transform).x = 2000;
-					guaiwu24.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;
-					arr[3][9] = 1; arr[4][9] = 1; arr[3][10] = 1; arr[4][10] = 1;}
-				// }else if(hp > 0 && x1 == 9 && y1 == 4){
-				// 	hp = hp - 10;
-				// 	guaiwu22.getBehaviour(Transform).x = 2000;
-				// 	guaiwu22.getBehaviour(Transform).y = 2000;
-				// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
-				// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
-				// 	arr[x1][y1] = 3;
-				// 	arr[x][y] = 1;
-				// }else if(hp > 0 && x1 == 10 && y1 == 3){
-				// 	hp = hp - 10;
-				// 	guaiwu23.getBehaviour(Transform).x = 2000;
-				// 	guaiwu23.getBehaviour(Transform).y = 2000;
-				// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
-				// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
-				// 	arr[x1][y1] = 3;
-				// 	arr[x][y] = 1;
-				// }else if(hp > 0 && x1 == 10 && y1 == 4){
-				// 	hp = hp - 10;
-				// 	guaiwu24.getBehaviour(Transform).x = 2000;
-				// 	guaiwu24.getBehaviour(Transform).y = 2000;
-				// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
-				// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
-				// 	arr[x1][y1] = 3;
-				// 	arr[x][y] = 1;
-				}else if((hp > 0) &&  ((x1 == 6 && y1 == 7) || (x1 == 6 && y1 == 8) || (x1 == 7 && y1 == 7) || (x1 == 7 && y1 == 8))){
+					} else {
+						guaiwu21.getBehaviour(Transform).x = 2000;
+						guaiwu21.getBehaviour(Transform).y = 2000;
+						guaiwu22.getBehaviour(Transform).x = 2000;
+						guaiwu22.getBehaviour(Transform).y = 2000;
+						guaiwu23.getBehaviour(Transform).x = 2000;
+						guaiwu23.getBehaviour(Transform).y = 2000;
+						guaiwu24.getBehaviour(Transform).x = 2000;
+						guaiwu24.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+						arr[3][9] = 1; arr[4][9] = 1; arr[3][10] = 1; arr[4][10] = 1;
+					}
+					// }else if(hp > 0 && x1 == 9 && y1 == 4){
+					// 	hp = hp - 10;
+					// 	guaiwu22.getBehaviour(Transform).x = 2000;
+					// 	guaiwu22.getBehaviour(Transform).y = 2000;
+					// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
+					// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
+					// 	arr[x1][y1] = 3;
+					// 	arr[x][y] = 1;
+					// }else if(hp > 0 && x1 == 10 && y1 == 3){
+					// 	hp = hp - 10;
+					// 	guaiwu23.getBehaviour(Transform).x = 2000;
+					// 	guaiwu23.getBehaviour(Transform).y = 2000;
+					// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
+					// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
+					// 	arr[x1][y1] = 3;
+					// 	arr[x][y] = 1;
+					// }else if(hp > 0 && x1 == 10 && y1 == 4){
+					// 	hp = hp - 10;
+					// 	guaiwu24.getBehaviour(Transform).x = 2000;
+					// 	guaiwu24.getBehaviour(Transform).y = 2000;
+					// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
+					// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
+					// 	arr[x1][y1] = 3;
+					// 	arr[x][y] = 1;
+				} else if ((hp > 0) && ((x1 == 6 && y1 == 7) || (x1 == 6 && y1 == 8) || (x1 == 7 && y1 == 7) || (x1 == 7 && y1 == 8))) {
 					hp = hp - 50;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu25.getBehaviour(Transform).x = 2000;
-					guaiwu25.getBehaviour(Transform).y = 2000;
-					guaiwu26.getBehaviour(Transform).x = 2000;
-					guaiwu26.getBehaviour(Transform).y = 2000;
-					guaiwu27.getBehaviour(Transform).x = 2000;
-					guaiwu27.getBehaviour(Transform).y = 2000;
-					guaiwu28.getBehaviour(Transform).x = 2000;
-					guaiwu28.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
+					} else {
+						guaiwu25.getBehaviour(Transform).x = 2000;
+						guaiwu25.getBehaviour(Transform).y = 2000;
+						guaiwu26.getBehaviour(Transform).x = 2000;
+						guaiwu26.getBehaviour(Transform).y = 2000;
+						guaiwu27.getBehaviour(Transform).x = 2000;
+						guaiwu27.getBehaviour(Transform).y = 2000;
+						guaiwu28.getBehaviour(Transform).x = 2000;
+						guaiwu28.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
 				}
 				// else if(hp > 0 && x1 == 6 && y1 == 8){
 				// 	hp = hp - 10;
@@ -471,27 +483,27 @@ class BasicBehaviour extends Behaviour {
 					gjili = gjili + 10;
 					weapon2.getBehaviour(Transform).x = 1000;
 					weapon2.getBehaviour(Transform).y = 1000;
-				}else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 12) {
+				} else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 12) {
 					gjili = gjili + 10;
 					weapon3.getBehaviour(Transform).x = 1000;
 					weapon3.getBehaviour(Transform).y = 1000;
-				}else if (arr[x1][y1] == 61 && x1 == 1 && y1 == 13) {
+				} else if (arr[x1][y1] == 61 && x1 == 1 && y1 == 13) {
 					gjili = gjili + 10;
 					weapon4.getBehaviour(Transform).x = 1000;
 					weapon4.getBehaviour(Transform).y = 1000;
-				}else if (arr[x1][y1] == 61 && x1 == 3 && y1 == 13) {
+				} else if (arr[x1][y1] == 61 && x1 == 3 && y1 == 13) {
 					gjili = gjili + 10;
 					weapon5.getBehaviour(Transform).x = 1000;
 					weapon5.getBehaviour(Transform).y = 1000;
-				}else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 14) {
+				} else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 14) {
 					gjili = gjili + 10;
 					weapon6.getBehaviour(Transform).x = 1000;
 					weapon6.getBehaviour(Transform).y = 1000;
-				}else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 13) {
+				} else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 13) {
 					gjili = gjili + 10;
 					weapon2.getBehaviour(Transform).x = 1000;
 					weapon2.getBehaviour(Transform).y = 1000;
-				}else if (arr[x1][y1] == 62) {
+				} else if (arr[x1][y1] == 62) {
 					fangyu = fangyu + 10;
 				} else if (arr[x1][y1] == 63) {
 					gjili = gjili + 10;
@@ -502,23 +514,23 @@ class BasicBehaviour extends Behaviour {
 					hp = hp + 100;
 					ys1.getBehaviour(Transform).x = 2000;
 					ys1.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 10) {
+				} else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 10) {
 					hp = hp + 100;
 					ys2.getBehaviour(Transform).x = 2000;
 					ys2.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 12) {
+				} else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 12) {
 					hp = hp + 100;
 					ys3.getBehaviour(Transform).x = 2000;
 					ys3.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 12) {
+				} else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 12) {
 					hp = hp + 100;
 					ys4.getBehaviour(Transform).x = 2000;
 					ys4.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 65 && x1 == 2 && y1 == 13) {
+				} else if (arr[x1][y1] == 65 && x1 == 2 && y1 == 13) {
 					hp = hp + 100;
 					ys5.getBehaviour(Transform).x = 2000;
 					ys5.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 14) {
+				} else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 14) {
 					hp = hp + 100;
 					ys6.getBehaviour(Transform).x = 2000;
 					ys6.getBehaviour(Transform).y = 2000;
@@ -527,7 +539,7 @@ class BasicBehaviour extends Behaviour {
 					hp = hp + 100;
 					ys7.getBehaviour(Transform).x = 2000;
 					ys7.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 66) {
+				} else if (arr[x1][y1] == 66) {
 					hp = hp + 50;
 				} else if (arr[x1][y1] == 67) {
 					bomb1.getBehaviour(Transform).x = 2000;
@@ -537,11 +549,11 @@ class BasicBehaviour extends Behaviour {
 					key++;
 					key1.getBehaviour(Transform).x = 2000;
 					key1.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 5) {
+				} else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 5) {
 					key++;
 					key2.getBehaviour(Transform).x = 2000;
 					key2.getBehaviour(Transform).y = 2000;
-				}else if (arr[x1][y1] == 68 && x1 == 9 && y1 == 13) {
+				} else if (arr[x1][y1] == 68 && x1 == 9 && y1 == 13) {
 					key++;
 					key3.getBehaviour(Transform).x = 2000;
 					key3.getBehaviour(Transform).y = 2000;

@@ -5,7 +5,7 @@ class ThirdBehaviour extends Behaviour {
 	onStart() {
 
 		var allMaps = [
-            //1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
+			//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
 			[
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 				[9, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
@@ -16,12 +16,12 @@ class ThirdBehaviour extends Behaviour {
 				[9, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 1, 1, 42, 42, 1, 1, 0, 0, 0, 0, 9],
-				[9, 0, 0, 0, 0, 1, 1 ,1, 1, 1, 1, 0, 0, 0, 0, 9],
-				[9, 0, 0, 0, 0, 1, 1 ,1, 1, 1, 1, 0, 0, 0, 0, 9],
-				[9, 0, 0, 0, 0, 1, 1 ,1, 1, 1, 1, 0, 0, 0, 0, 9],
+				[9, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 9],
+				[9, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 9],
+				[9, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 0, 41, 41, 0, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
-				[9, 3, 1, 22, 22, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,  9],
+				[9, 3, 1, 22, 22, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 			]
 		];
@@ -33,6 +33,9 @@ class ThirdBehaviour extends Behaviour {
 		var bomb = 3;
 		var key = 6;
 
+
+		console.log("%%%%%%%%% " + getPlayerData("life"));
+
 		var hp = 100;
 		var gjili = 10;
 		var fangyu = 10;
@@ -40,7 +43,7 @@ class ThirdBehaviour extends Behaviour {
 		var arr = allMaps[0];
 		for (var i = 0; i < arr.length; i++) {
 			for (var j = 0; j < arr[i].length; j++) {
-				 if (arr[i][j] == 22) {
+				if (arr[i][j] == 22) {
 					const door1 = core.getObjectById("door1");
 					door1.getBehaviour(Transform).x = 150 + 215;
 					door1.getBehaviour(Transform).y = 700 - 40;
@@ -97,7 +100,7 @@ class ThirdBehaviour extends Behaviour {
 					console.log(peoplex);
 					console.log(peopley);
 				} else if (60 <= arr[i][j] && arr[i][j] < 70) {
-				    
+
 				} else if (arr[i][j] == 99) {
 					const lu2 = core.getObjectById("lu");
 					lu2.getBehaviour(Transform).x = j * 50 + 215;
@@ -143,17 +146,17 @@ class ThirdBehaviour extends Behaviour {
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
-			}  else if (arr[x1][y1] == 22 && key > 0 && x1 ==14 && y1 == 3) {
+			} else if (arr[x1][y1] == 22 && key > 0 && x1 == 14 && y1 == 3) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
-				player.getBehaviour(Transform).y = x1 * 50 -40;
+				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door1.getBehaviour(Transform).x = 1000;
 				door1.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
 				key--;
-			}else if (arr[x1][y1] == 22 && key > 0 && x1 ==14 && y1 == 4) {
+			} else if (arr[x1][y1] == 22 && key > 0 && x1 == 14 && y1 == 4) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
-				player.getBehaviour(Transform).y = x1 * 50 -40;
+				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door2.getBehaviour(Transform).x = 1000;
 				door2.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
@@ -164,22 +167,22 @@ class ThirdBehaviour extends Behaviour {
 				// 	floor++;
 				// 	arr = allMaps[floor];
 				// }
-				window.location.href= "./secondPage.html"
+				window.location.href = "./secondPage.html"
 			} else if (arr[x1][y1] == 52) {
 				if (floor >= 1 && floor < allMaps.length) {
 					floor--;
 					arr = allMaps[floor];
 				}
 				//window.location.href= "./index.html"
-			} else if (arr[x1][y1] == 22 && key > 0 && x1 ==14 && y1 == 4) {
+			} else if (arr[x1][y1] == 22 && key > 0 && x1 == 14 && y1 == 4) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
-				player.getBehaviour(Transform).y = x1 * 50 -40;
+				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door2.getBehaviour(Transform).x = 1000;
 				door2.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
 				key--;
-			} 
+			}
 			else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
 				// var shanghai = arr[x1][y1] % 40;
 				// hp = hp - shanghai * 10;
@@ -187,51 +190,54 @@ class ThirdBehaviour extends Behaviour {
 				if (hp < 0) {
 					arr[x][y] = 99;
 					alert("You're dead！Game Over!");
-				} else if(hp > 0 && x1 == 12 && y1 == 7){
+				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu11.getBehaviour(Transform).x = 2000;
-					guaiwu11.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 1;
-					arr[x][y] = 1;}
-				}else if(hp > 0 && x1 == 12 && y1 == 8){
+					} else {
+						guaiwu11.getBehaviour(Transform).x = 2000;
+						guaiwu11.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 1;
+						arr[x][y] = 1;
+					}
+				} else if (hp > 0 && x1 == 12 && y1 == 8) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu12.getBehaviour(Transform).x = 2000;
-					guaiwu12.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[x][y] = 1;}
-				}else if((hp > 0) &&  ((x1 == 3 && y1 == 7) || (x1 == 4 && y1 == 7) || (x1 == 5 && y1 == 7) || (x1 == 3 && y1 == 8) || (x1 == 4 && y1 == 8) || (x1 == 5 && y1 == 8))){
+					} else {
+						guaiwu12.getBehaviour(Transform).x = 2000;
+						guaiwu12.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[x][y] = 1;
+					}
+				} else if ((hp > 0) && ((x1 == 3 && y1 == 7) || (x1 == 4 && y1 == 7) || (x1 == 5 && y1 == 7) || (x1 == 3 && y1 == 8) || (x1 == 4 && y1 == 8) || (x1 == 5 && y1 == 8))) {
 					hp = hp - 50;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					coffin1.getBehaviour(Transform).x = 2000;
-					coffin1.getBehaviour(Transform).y = 2000;
-					coffin2.getBehaviour(Transform).x = 2000;
-					coffin2.getBehaviour(Transform).y = 2000;
-					coffin3.getBehaviour(Transform).x = 2000;
-					coffin3.getBehaviour(Transform).y = 2000;
-					coffin4.getBehaviour(Transform).x = 2000;
-					coffin4.getBehaviour(Transform).y = 2000;
-					coffin5.getBehaviour(Transform).x = 2000;
-					coffin5.getBehaviour(Transform).y = 2000;
-					coffin6.getBehaviour(Transform).x = 2000;
-					coffin6.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[7][3] = 1;arr[7][4] = 1;arr[7][5] = 1;arr[8][3] = 1;arr[8][4] = 1;arr[8][5] = 1;
-					arr[x][y] = 1;}
-				 }
+					} else {
+						coffin1.getBehaviour(Transform).x = 2000;
+						coffin1.getBehaviour(Transform).y = 2000;
+						coffin2.getBehaviour(Transform).x = 2000;
+						coffin2.getBehaviour(Transform).y = 2000;
+						coffin3.getBehaviour(Transform).x = 2000;
+						coffin3.getBehaviour(Transform).y = 2000;
+						coffin4.getBehaviour(Transform).x = 2000;
+						coffin4.getBehaviour(Transform).y = 2000;
+						coffin5.getBehaviour(Transform).x = 2000;
+						coffin5.getBehaviour(Transform).y = 2000;
+						coffin6.getBehaviour(Transform).x = 2000;
+						coffin6.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[7][3] = 1; arr[7][4] = 1; arr[7][5] = 1; arr[8][3] = 1; arr[8][4] = 1; arr[8][5] = 1;
+						arr[x][y] = 1;
+					}
+				}
 				//else if(hp > 0 && x1 == 8 && y1 == 7){
 				// 	hp = hp - 10;
 				// 	guaiwu22.getBehaviour(Transform).x = 2000;
@@ -257,27 +263,28 @@ class ThirdBehaviour extends Behaviour {
 				// 	arr[x1][y1] = 3;
 				// 	arr[x][y] = 1;
 				// }
-				else if((hp > 0) &&  ((x1 == 7 && y1 == 7) || (x1 == 7 && y1 == 8) || (x1 == 8 && y1 == 7) || (x1 == 8 && y1 == 8))){
+				else if ((hp > 0) && ((x1 == 7 && y1 == 7) || (x1 == 7 && y1 == 8) || (x1 == 8 && y1 == 7) || (x1 == 8 && y1 == 8))) {
 					hp = hp - 50;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu21.getBehaviour(Transform).x = 2000;
-					guaiwu21.getBehaviour(Transform).y = 2000;
-					guaiwu22.getBehaviour(Transform).x = 2000;
-					guaiwu22.getBehaviour(Transform).y = 2000;
-					guaiwu23.getBehaviour(Transform).x = 2000;
-					guaiwu23.getBehaviour(Transform).y = 2000;
-					guaiwu24.getBehaviour(Transform).x = 2000;
-					guaiwu24.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					arr[x1][y1] = 3;
-					arr[8][8] = 1;
-					arr[x][y] = 1;}
-				 }
+					} else {
+						guaiwu21.getBehaviour(Transform).x = 2000;
+						guaiwu21.getBehaviour(Transform).y = 2000;
+						guaiwu22.getBehaviour(Transform).x = 2000;
+						guaiwu22.getBehaviour(Transform).y = 2000;
+						guaiwu23.getBehaviour(Transform).x = 2000;
+						guaiwu23.getBehaviour(Transform).y = 2000;
+						guaiwu24.getBehaviour(Transform).x = 2000;
+						guaiwu24.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						arr[x1][y1] = 3;
+						arr[8][8] = 1;
+						arr[x][y] = 1;
+					}
+				}
 			} else if (arr[x1][y1] > 60 && arr[x1][y1] < 70) {
-				 if (arr[x1][y1] == 62) {
+				if (arr[x1][y1] == 62) {
 					fangyu = fangyu + 10;
 				} else if (arr[x1][y1] == 63) {
 					gjili = gjili + 10;
