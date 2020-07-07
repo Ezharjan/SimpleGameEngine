@@ -598,7 +598,7 @@ class BasicBehaviour extends Behaviour {
 
 		document.onkeydown = function (event) {
 			var e = event || window.event || arguments.callee.caller.arguments[0];
-			if (e && e.keyCode == 38) {
+			if (e && e.keyCode == 87) {
 				//if (peoplex > 0) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX - 1, charactorPosY);
 				if (arr[charactorPosX - 1][charactorPosY] != 0 && arr[charactorPosX - 1][charactorPosY] != 9 &&
@@ -621,7 +621,7 @@ class BasicBehaviour extends Behaviour {
 				console.log(bombs);
 				console.log(attackability);
 				//}
-			} else if (e && e.keyCode == 37) {
+			} else if (e && e.keyCode == 65) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY - 1);
 				if (arr[charactorPosX][charactorPosY - 1] != 0 && arr[charactorPosX][charactorPosY - 1] != 9 &&
 					arr[charactorPosX][charactorPosY - 1] != 21 && arr[charactorPosX][charactorPosY - 1] != 22 &&
@@ -640,7 +640,7 @@ class BasicBehaviour extends Behaviour {
 					charactorPosY = charactorPosY - 1;
 				}
 			}
-			if (e && e.keyCode == 40) {
+			if (e && e.keyCode == 83) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX + 1, charactorPosY);
 				if (arr[charactorPosX + 1][charactorPosY] != 0 && arr[charactorPosX + 1][charactorPosY] != 9 &&
 					arr[charactorPosX + 1][charactorPosY] != 21 && arr[charactorPosX + 1][charactorPosY] != 22 &&
@@ -658,7 +658,7 @@ class BasicBehaviour extends Behaviour {
 				} else if (arr[charactorPosX + 1][charactorPosY] == 51 && passed == 1) {
 					charactorPosX = charactorPosX + 1;
 				}
-			} else if (e && e.keyCode == 39) {
+			} else if (e && e.keyCode == 68) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY + 1);
 				if (arr[charactorPosX][charactorPosY + 1] != 0 && arr[charactorPosX][charactorPosY + 1] != 9 &&
 					arr[charactorPosX][charactorPosY + 1] != 21 && arr[charactorPosX][charactorPosY + 1] != 22 &&

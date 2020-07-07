@@ -472,7 +472,7 @@ class KeyContainerBehaviour extends Behaviour {
         }
         document.onkeydown = function (event) {
             var e = event || window.event || arguments.callee.caller.arguments[0];
-            if (e && e.keyCode == 38) {
+            if (e && e.keyCode == 87) {
                 //if (peoplex > 0) {
                 playerMove(charactorPosX, charactorPosY, charactorPosX - 1, charactorPosY);
                 if (mapArr[charactorPosX - 1][charactorPosY] != 0 && mapArr[charactorPosX - 1][charactorPosY] != 9 &&
@@ -500,7 +500,7 @@ class KeyContainerBehaviour extends Behaviour {
                 console.log(attackability);
                 //}
             }
-            else if (e && e.keyCode == 37) {
+            else if (e && e.keyCode == 65) {
                 playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY - 1);
                 if (mapArr[charactorPosX][charactorPosY - 1] != 0 && mapArr[charactorPosX][charactorPosY - 1] != 9 &&
                     mapArr[charactorPosX][charactorPosY - 1] != 21 && mapArr[charactorPosX][charactorPosY - 1] != 22 &&
@@ -524,7 +524,7 @@ class KeyContainerBehaviour extends Behaviour {
                     charactorPosY = charactorPosY - 1;
                 }
             }
-            if (e && e.keyCode == 40) {
+            if (e && e.keyCode == 83) {
                 playerMove(charactorPosX, charactorPosY, charactorPosX + 1, charactorPosY);
                 if (mapArr[charactorPosX + 1][charactorPosY] != 0 && mapArr[charactorPosX + 1][charactorPosY] != 9 &&
                     mapArr[charactorPosX + 1][charactorPosY] != 21 && mapArr[charactorPosX + 1][charactorPosY] != 22 &&
@@ -548,7 +548,7 @@ class KeyContainerBehaviour extends Behaviour {
                     charactorPosX = charactorPosX + 1;
                 }
             }
-            else if (e && e.keyCode == 39) {
+            else if (e && e.keyCode == 68) {
                 playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY + 1);
                 if (mapArr[charactorPosX][charactorPosY + 1] != 0 && mapArr[charactorPosX][charactorPosY + 1] != 9 &&
                     mapArr[charactorPosX][charactorPosY + 1] != 21 && mapArr[charactorPosX][charactorPosY + 1] != 22 &&
