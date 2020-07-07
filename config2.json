@@ -53,6 +53,9 @@
         "./img/Ammit/Ammit_11.png",
         "./img/Ammit/Ammit_12.png",
         "./img/Ammit/Ammit_21.png",
-        "./img/Ammit/Ammit_22.png"
+        "./img/Ammit/Ammit_22.png",
+        "./img/altar_actived.png",
+        "./img/altar.png",
+        "./img/trap.png"
     ]
 }

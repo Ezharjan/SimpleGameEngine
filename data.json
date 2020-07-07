@@ -68,18 +68,6 @@
 					]
 				},
 				{
-					"id": "guaiwu14",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
 					"id": "guaiwu21",
 					"behaviours": [
 						{
@@ -87,7 +75,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_11.png"
 						}
 					]
 				},
@@ -99,7 +87,7 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_12.png"
 						}
 					]
 				},
@@ -111,43 +99,55 @@
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/2.png"
+							"image": "./img/Ammit/Ammit_21.png"
 						}
 					]
 				},
 				{
-					"id": "lu1",
+					"id": "guaiwu24",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/bg.png"
+							"image": "./img/Ammit/Ammit_22.png"
 						}
 					]
 				},
 				{
-					"id": "lu",
+					"id": "altar1",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/bg.png"
+							"image": "./img/altar.png"
 						}
 					]
 				},
 				{
-					"id": "qiang",
+					"id": "altar2",
 					"behaviours": [
 						{
 							"name": "Transform"
 						},
 						{
 							"name": "ImageRenderer",
-							"image": "./img/q.png"
+							"image": "./img/altar_actived.png"
+						}
+					]
+				},
+				{
+					"id": "trap",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/trap.png"
 						}
 					]
 				},
@@ -212,6 +212,18 @@
 					]
 				},
 				{
+					"id": "stone2",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/stone.png"
+						}
+					]
+				},
+				{
 					"id": "loti1",
 					"behaviours": [
 						{
@@ -224,18 +236,6 @@
 					]
 				},
 				{
-					"id": "loti2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/lt2.png"
-						}
-					]
-				},
-				{
 					"id": "weapon1",
 					"behaviours": [
 						{
@@ -244,42 +244,6 @@
 						{
 							"name": "ImageRenderer",
 							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "daoju2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/dun.png"
-						}
-					]
-				},
-				{
-					"id": "daoju3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/j.png"
-						}
-					]
-				},
-				{
-					"id": "daoju4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/jl.png"
 						}
 					]
 				},
@@ -304,18 +268,6 @@
 						{
 							"name": "ImageRenderer",
 							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys2.png"
 						}
 					]
 				},
@@ -357,6 +309,18 @@
 				},
 				{
 					"id": "key4",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/key.png"
+						}
+					]
+				},
+				{
+					"id": "key5",
 					"behaviours": [
 						{
 							"name": "Transform"

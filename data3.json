@@ -176,6 +176,18 @@
 					]
 				},
 				{
+					"id": "stone1",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/stone.png"
+						}
+					]
+				},
+				{
 					"id": "door1",
 					"behaviours": [
 						{

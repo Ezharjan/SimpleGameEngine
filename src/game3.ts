@@ -21,23 +21,23 @@ class ThirdBehaviour extends Behaviour {
 				[9, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 0, 41, 41, 0, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
-				[9, 3, 1, 22, 22, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
+				[9, 3, 1, 22, 22, 21, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 			]
 		];
 
-		var peoplex = 0;
-		var peopley = 0;
+		var charactorPosX = 0;
+		var charactorPosY = 0;
 
 		var floor = 0;
-		var bomb = 3;
-		var key = 6;
-
+		var bombs = 3;
+		var keys = 6;
+		var passed = 0;
 
 		console.log("%%%%%%%%% " + getPlayerData("life"));
 
 		var hp = 100;
-		var gjili = 10;
+		var attackability = 10;
 		var fangyu = 10;
 
 		var arr = allMaps[0];
@@ -50,7 +50,11 @@ class ThirdBehaviour extends Behaviour {
 					const door2 = core.getObjectById("door2");
 					door2.getBehaviour(Transform).x = 200 + 215;
 					door2.getBehaviour(Transform).y = 700 - 40;
-				} else if (40 <= arr[i][j] && arr[i][j] < 50) {
+				} else if(arr[i][j] == 21){
+					const stone1 = core.getObjectById("stone1");
+					stone1.getBehaviour(Transform).x = 250 + 215;
+					stone1.getBehaviour(Transform).y = 700 - 40;
+				}else if (40 <= arr[i][j] && arr[i][j] < 50) {
 					if (arr[i][j] == 41) {
 						const guaiwu11 = core.getObjectById("guaiwu11");
 						guaiwu11.getBehaviour(Transform).x = 350 + 215;
@@ -92,13 +96,11 @@ class ThirdBehaviour extends Behaviour {
 						coffin6.getBehaviour(Transform).y = 250 - 40;
 					}
 				} else if (arr[i][j] == 3) {
-					peoplex = i;
-					peopley = j;
+					charactorPosX = i;
+					charactorPosY = j;
 					const player = core.getObjectById("player");
 					player.getBehaviour(Transform).x = j * 50 + 215;
 					player.getBehaviour(Transform).y = i * 50 - 40;
-					console.log(peoplex);
-					console.log(peopley);
 				} else if (60 <= arr[i][j] && arr[i][j] < 70) {
 
 				} else if (arr[i][j] == 99) {
@@ -126,6 +128,7 @@ class ThirdBehaviour extends Behaviour {
 			const player = core.getObjectById("player");
 			const door1 = core.getObjectById("door1");
 			const door2 = core.getObjectById("door2");
+			const stone1 = core.getObjectById("stone1");
 			const guaiwu11 = core.getObjectById("guaiwu11");
 			const guaiwu12 = core.getObjectById("guaiwu12");
 			const guaiwu21 = core.getObjectById("guaiwu21");
@@ -146,22 +149,30 @@ class ThirdBehaviour extends Behaviour {
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
-			} else if (arr[x1][y1] == 22 && key > 0 && x1 == 14 && y1 == 3) {
+			} else if (arr[x1][y1] == 21 && bombs > 0) {
+				player.getBehaviour(Transform).x = y1 * 50 + 215;
+				player.getBehaviour(Transform).y = x1 * 50 - 40;
+				stone1.getBehaviour(Transform).x = 1000;
+				stone1.getBehaviour(Transform).y = 1000;
+				arr[x1][y1] = 3;
+				arr[x][y] = 1;
+				bombs--;
+			}else if (arr[x1][y1] == 22 && keys > 0 && x1 == 14 && y1 == 3) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door1.getBehaviour(Transform).x = 1000;
 				door1.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
-				key--;
-			} else if (arr[x1][y1] == 22 && key > 0 && x1 == 14 && y1 == 4) {
+				keys--;
+			} else if (arr[x1][y1] == 22 && keys > 0 && x1 == 14 && y1 == 4) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door2.getBehaviour(Transform).x = 1000;
 				door2.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
-				key--;
+				keys--;
 			} else if (arr[x1][y1] == 51) {
 				// if (floor >= 0 && floor < allMaps.length - 1) {
 				// 	floor++;
@@ -174,24 +185,22 @@ class ThirdBehaviour extends Behaviour {
 					arr = allMaps[floor];
 				}
 				//window.location.href= "./index.html"
-			} else if (arr[x1][y1] == 22 && key > 0 && x1 == 14 && y1 == 4) {
+			} else if (arr[x1][y1] == 22 && keys > 0 && x1 == 14 && y1 == 4) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door2.getBehaviour(Transform).x = 1000;
 				door2.getBehaviour(Transform).y = 1000;
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
-				key--;
+				keys--;
 			}
 			else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
-				// var shanghai = arr[x1][y1] % 40;
-				// hp = hp - shanghai * 10;
-				//hp = hp - 110;
 				if (hp < 0) {
 					arr[x][y] = 99;
 					alert("You're dead！Game Over!");
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
-					hp = hp - 10;
+				 if(attackability >= 10){
+					hp = hp - 20;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
 					} else {
@@ -202,8 +211,12 @@ class ThirdBehaviour extends Behaviour {
 						arr[x1][y1] = 1;
 						arr[x][y] = 1;
 					}
+				   }else{
+					  alert("Your attackability is lower than 10!");
+				   }
 				} else if (hp > 0 && x1 == 12 && y1 == 8) {
-					hp = hp - 10;
+				   if(attackability >= 10){
+					hp = hp - 20;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
 					} else {
@@ -214,8 +227,12 @@ class ThirdBehaviour extends Behaviour {
 						arr[x1][y1] = 3;
 						arr[x][y] = 1;
 					}
+				  }else{
+					alert("Your attackability is lower than 10!");
+				  }
 				} else if ((hp > 0) && ((x1 == 3 && y1 == 7) || (x1 == 4 && y1 == 7) || (x1 == 5 && y1 == 7) || (x1 == 3 && y1 == 8) || (x1 == 4 && y1 == 8) || (x1 == 5 && y1 == 8))) {
-					hp = hp - 50;
+					if(attackability >= 70){
+					hp = hp - 70;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
 					} else {
@@ -237,33 +254,13 @@ class ThirdBehaviour extends Behaviour {
 						arr[7][3] = 1; arr[7][4] = 1; arr[7][5] = 1; arr[8][3] = 1; arr[8][4] = 1; arr[8][5] = 1;
 						arr[x][y] = 1;
 					}
+					}else{
+						alert("Your attackability is lower than 70!");
+					}
 				}
-				//else if(hp > 0 && x1 == 8 && y1 == 7){
-				// 	hp = hp - 10;
-				// 	guaiwu22.getBehaviour(Transform).x = 2000;
-				// 	guaiwu22.getBehaviour(Transform).y = 2000;
-				// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
-				// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
-				// 	arr[x1][y1] = 3;
-				// 	arr[x][y] = 1;
-				// }else if(hp > 0 && x1 == 7 && y1 == 8){
-				// 	hp = hp - 10;
-				// 	guaiwu23.getBehaviour(Transform).x = 2000;
-				// 	guaiwu23.getBehaviour(Transform).y = 2000;
-				// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
-				// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
-				// 	arr[x1][y1] = 3;
-				// 	arr[x][y] = 1;
-				// }else if(hp > 0 && x1 == 8 && y1 == 8){
-				// 	hp = hp - 10;
-				// 	guaiwu24.getBehaviour(Transform).x = 2000;
-				// 	guaiwu24.getBehaviour(Transform).y = 2000;
-				// 	player.getBehaviour(Transform).x = y1 * 50 + 215;
-				// 	player.getBehaviour(Transform).y = x1 * 50 - 40;
-				// 	arr[x1][y1] = 3;
-				// 	arr[x][y] = 1;
-				// }
+			
 				else if ((hp > 0) && ((x1 == 7 && y1 == 7) || (x1 == 7 && y1 == 8) || (x1 == 8 && y1 == 7) || (x1 == 8 && y1 == 8))) {
+					if(attackability >= 20){
 					hp = hp - 50;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
@@ -282,14 +279,17 @@ class ThirdBehaviour extends Behaviour {
 						arr[8][8] = 1;
 						arr[x][y] = 1;
 					}
+				}else{
+					alert("Your attackability is lower than 20!");
+				}
 				}
 			} else if (arr[x1][y1] > 60 && arr[x1][y1] < 70) {
 				if (arr[x1][y1] == 62) {
 					fangyu = fangyu + 10;
 				} else if (arr[x1][y1] == 63) {
-					gjili = gjili + 10;
+					attackability = attackability + 10;
 				} else if (arr[x1][y1] == 64) {
-					gjili = gjili + 15;
+					attackability = attackability + 15;
 					fangyu = fangyu + 15;
 				}
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
@@ -297,63 +297,95 @@ class ThirdBehaviour extends Behaviour {
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
 			}
-
-
 		}
 
 		document.onkeydown = function (event) {
 			var e = event || window.event || arguments.callee.caller.arguments[0];
 			if (e && e.keyCode == 38) {
 				//if (peoplex > 0) {
-				playerMove(peoplex, peopley, peoplex - 1, peopley);
-				if (arr[peoplex - 1][peopley] != 0 && arr[peoplex - 1][peopley] != 9 && arr[peoplex - 1][peopley] != 21 && arr[peoplex - 1][peopley] != 22) {
-					peoplex = peoplex - 1;
+				playerMove(charactorPosX, charactorPosY, charactorPosX - 1, charactorPosY);
+				if (arr[charactorPosX - 1][charactorPosY] != 0 &&arr[charactorPosX - 1][charactorPosY] != 9 && 
+					arr[charactorPosX - 1][charactorPosY] != 21 && arr[charactorPosX - 1][charactorPosY] != 22 &&
+					arr[charactorPosX - 1][charactorPosY] != 41 && arr[charactorPosX - 1][charactorPosY] != 42 &&
+					arr[charactorPosX - 1][charactorPosY] != 43) {
+					charactorPosX = charactorPosX - 1;
 
-				} else if (arr[peoplex - 1][peopley] == 21 && bomb > 0) {
-					peoplex = peoplex - 1;
-				} else if (arr[peoplex - 1][peopley] == 22 && key > 0) {
-					peoplex = peoplex - 1;
+				} else if (arr[charactorPosX - 1][charactorPosY] == 21 && bombs > 0) {
+					charactorPosX = charactorPosX - 1;
+				} else if (arr[charactorPosX - 1][charactorPosY] == 22 && keys > 0) {
+					charactorPosX = charactorPosX - 1;
+				} else if (arr[charactorPosX - 1][charactorPosY] == 41 && attackability >= 10) {
+					charactorPosX = charactorPosX - 1;
+				} else if (arr[charactorPosX - 1][charactorPosY] == 42 && attackability >= 20) {
+					charactorPosX = charactorPosX - 1;
+				} else if (arr[charactorPosX - 1][charactorPosY] == 43 && attackability >= 70) {
+					charactorPosX = charactorPosX - 1;
 				}
-				console.log(bomb);
-				console.log(gjili);
 				//}
 			} else if (e && e.keyCode == 37) {
-				playerMove(peoplex, peopley, peoplex, peopley - 1);
-				if (arr[peoplex][peopley - 1] != 0 && arr[peoplex][peopley - 1] != 9 && arr[peoplex][peopley - 1] != 21 && arr[peoplex][peopley - 1] != 22) {
-					peopley = peopley - 1;
-				} else if (arr[peoplex][peopley - 1] == 21 && bomb > 0) {
-					peopley = peopley - 1;
-				} else if (arr[peoplex][peopley - 1] == 22 && key > 0) {
-					peopley = peopley - 1;
+				playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY - 1);
+				if (arr[charactorPosX][charactorPosY - 1] != 0 && arr[charactorPosX][charactorPosY - 1] != 9 && 
+					arr[charactorPosX][charactorPosY - 1] != 21 && arr[charactorPosX][charactorPosY - 1] != 22 &&
+					arr[charactorPosX][charactorPosY - 1] != 41 && arr[charactorPosX][charactorPosY - 1] != 42 &&
+					arr[charactorPosX][charactorPosY - 1] != 43) {
+					charactorPosY = charactorPosY - 1;
+				} else if (arr[charactorPosX][charactorPosY - 1] == 21 && bombs > 0) {
+					charactorPosY = charactorPosY - 1;
+				} else if (arr[charactorPosX][charactorPosY - 1] == 22 && keys > 0) {
+					charactorPosY = charactorPosY - 1;
+				} else if (arr[charactorPosX][charactorPosY - 1] == 41 && attackability >= 10) {
+					charactorPosY = charactorPosY - 1;
+				} else if (arr[charactorPosX][charactorPosY - 1] == 42 && attackability >= 20) {
+					charactorPosY = charactorPosY - 1;
+				}else if (arr[charactorPosX][charactorPosY - 1] == 43 && attackability >= 70) {
+					charactorPosY = charactorPosY - 1;
 				}
 			}
 			if (e && e.keyCode == 40) {
-				playerMove(peoplex, peopley, peoplex + 1, peopley);
-				if (arr[peoplex + 1][peopley] != 0 && arr[peoplex + 1][peopley] != 9 && arr[peoplex + 1][peopley] != 21 && arr[peoplex + 1][peopley] != 22) {
-					peoplex = peoplex + 1;
-				} else if (arr[peoplex + 1][peopley] == 21 && bomb > 0) {
-					peoplex = peoplex + 1;
-				} else if (arr[peoplex + 1][peopley] == 22 && key > 0) {
-					peoplex = peoplex + 1;
+				playerMove(charactorPosX, charactorPosY, charactorPosX + 1, charactorPosY);
+				if (arr[charactorPosX + 1][charactorPosY] != 0 && arr[charactorPosX + 1][charactorPosY] != 9 && 
+					arr[charactorPosX + 1][charactorPosY] != 21 && arr[charactorPosX + 1][charactorPosY] != 22 && 
+					arr[charactorPosX + 1][charactorPosY] != 41 && arr[charactorPosX + 1][charactorPosY] != 42 &&
+					arr[charactorPosX + 1][charactorPosY] != 43) {
+					charactorPosX = charactorPosX + 1;
+				} else if (arr[charactorPosX + 1][charactorPosY] == 21 && bombs > 0) {
+					charactorPosX = charactorPosX + 1;
+				} else if (arr[charactorPosX + 1][charactorPosY] == 22 && keys > 0) {
+					charactorPosX = charactorPosX + 1;
+				} else if (arr[charactorPosX + 1][charactorPosY] == 41 && attackability >= 10) {
+					charactorPosX = charactorPosX + 1;
+				} else if (arr[charactorPosX + 1][charactorPosY] == 42 && attackability >= 20) {
+					charactorPosX = charactorPosX + 1;
+				} else if (arr[charactorPosX + 1][charactorPosY] == 43 && attackability >= 70) {
+					charactorPosX = charactorPosX + 1;
 				}
 			} else if (e && e.keyCode == 39) {
-				playerMove(peoplex, peopley, peoplex, peopley + 1);
-				if (arr[peoplex][peopley + 1] != 0 && arr[peoplex][peopley + 1] != 9 && arr[peoplex][peopley + 1] != 21 && arr[peoplex][peopley + 1] != 2) {
-					peopley = peopley + 1;
-				} else if (arr[peoplex][peopley + 1] == 21 && bomb > 0) {
-					peopley = peopley + 1;
-				} else if (arr[peoplex][peopley + 1] == 22 && key > 0) {
-					peopley = peopley + 1;
+				playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY + 1);
+				if (arr[charactorPosX][charactorPosY + 1] != 0 && arr[charactorPosX][charactorPosY + 1] != 9 && 
+					arr[charactorPosX][charactorPosY + 1] != 21 && arr[charactorPosX][charactorPosY + 1] != 22 && 
+					arr[charactorPosX][charactorPosY + 1] != 41 && arr[charactorPosX][charactorPosY + 1] != 42 &&
+					arr[charactorPosX][charactorPosY + 1] != 43) {
+					charactorPosY = charactorPosY + 1;
+				} else if (arr[charactorPosX][charactorPosY + 1] == 21 && bombs > 0) {
+					charactorPosY = charactorPosY + 1;
+				} else if (arr[charactorPosX][charactorPosY + 1] == 22 && keys > 0) {
+					charactorPosY = charactorPosY + 1;
+				} else if (arr[charactorPosX][charactorPosY + 1] == 41 && attackability >= 10) {
+					charactorPosY = charactorPosY + 1;
+				} else if (arr[charactorPosX][charactorPosY + 1] == 42 && attackability >= 20) {
+					charactorPosY = charactorPosY + 1;
+				} else if (arr[charactorPosX][charactorPosY + 1] == 43 && attackability >= 70) {
+					charactorPosY = charactorPosY + 1;
 				}
 			}
 			const HPText = core.getObjectById("HPText");
 			HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
 			const AttackTest = core.getObjectById("AttackText");
-			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + gjili;
+			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
 			const KeyTest = core.getObjectById("KeyText");
-			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + key;
+			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
 			const BombTest = core.getObjectById("BombText");
-			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bomb;
+			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
 			// const restart = core.getObjectById("restart");
 			// restart.onclick = function () {
 			// location.href += "?reload=true";

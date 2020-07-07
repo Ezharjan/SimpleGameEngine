@@ -44,18 +44,6 @@
 					]
 				},
 				{
-					"id": "guaiwu111",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
 					"id": "guaiwu12",
 					"behaviours": [
 						{
@@ -81,30 +69,6 @@
 				},
 				{
 					"id": "guaiwu14",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu15",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu16",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -272,6 +236,30 @@
 					]
 				},
 				{
+					"id": "stone3",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/stone.png"
+						}
+					]
+				},
+				{
+					"id": "stone4",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/stone.png"
+						}
+					]
+				},
+				{
 					"id": "loti1",
 					"behaviours": [
 						{
@@ -345,6 +333,18 @@
 				},
 				{
 					"id": "weapon6",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/weapon1.png"
+						}
+					]
+				},
+				{
+					"id": "weapon7",
 					"behaviours": [
 						{
 							"name": "Transform"
@@ -440,6 +440,18 @@
 					]
 				},
 				{
+					"id": "ys8",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/ys1.png"
+						}
+					]
+				},
+				{
 					"id": "key1",
 					"behaviours": [
 						{
@@ -508,6 +520,54 @@
 						{
 							"name": "ImageRenderer",
 							"image": "./img/bomb.png"
+						}
+					]
+				},
+				{
+					"id": "bomb4",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/bomb.png"
+						}
+					]
+				},
+				{
+					"id": "altar1",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/altar.png"
+						}
+					]
+				},
+				{
+					"id": "altar2",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/altar_actived.png"
+						}
+					]
+				},
+				{
+					"id": "trap",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/trap.png"
 						}
 					]
 				},
