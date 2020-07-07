@@ -15,9 +15,9 @@ class BasicBehaviour extends Behaviour {
                 [9, 61, 0, 41, 0, 65, 0, 1, 1, 1, 0, 41, 1, 1, 67, 9],
                 [9, 68, 0, 1, 22, 65, 0, 1, 1, 1, 0, 1, 1, 1, 9],
                 [9, 1, 0, 1, 0, 0, 0, 42, 1, 1, 0, 1, 64, 1, 1, 9],
-                [9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
+                [9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
                 [9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
-                [9, 1, 0, 42, 42, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
+                [9, 1, 0, 1, 1, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
                 [9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
                 [9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9],
                 [9, 1, 0, 1, 0, 0, 1, 22, 1, 1, 0, 0, 0, 1, 1, 9],
@@ -28,17 +28,13 @@ class BasicBehaviour extends Behaviour {
         var charactorPosX = 0;
         var charactorPosY = 0;
         var floor = 0;
-        let bombs = getPlayerData("bombs");
-        let keys = getPlayerData("keys");
-        // console.log("%%%%%%%%% " + getPlayerData("life"));
-        // var hp = 100;
-        // var attackability = 10;
-        // var defendability = 10;
-        let hp = getPlayerData("life");
-        let attackability = getPlayerData("attackability");
-        let defendability = getPlayerData("defendability");
-        var passed = 0;
+        var bombs = 3;
+        var keys = 6;
         console.log("%%%%%%%%% " + getPlayerData("life"));
+        var hp = 100;
+        var attackability = 10;
+        var defandability = 10;
+        var passed = 0;
         var arr = allMaps[0];
         for (var i = 0; i < arr.length; i++) {
             for (var j = 0; j < arr[i].length; j++) {
@@ -94,16 +90,16 @@ class BasicBehaviour extends Behaviour {
                     else if (arr[i][j] == 42) {
                         const guaiwu21 = core.getObjectById("guaiwu21");
                         guaiwu21.getBehaviour(Transform).x = 150 + 215;
-                        guaiwu21.getBehaviour(Transform).y = 450 - 40;
+                        guaiwu21.getBehaviour(Transform).y = 400 - 40;
                         const guaiwu22 = core.getObjectById("guaiwu22");
                         guaiwu22.getBehaviour(Transform).x = 200 + 215;
-                        guaiwu22.getBehaviour(Transform).y = 450 - 40;
+                        guaiwu22.getBehaviour(Transform).y = 400 - 40;
                         const guaiwu23 = core.getObjectById("guaiwu23");
                         guaiwu23.getBehaviour(Transform).x = 150 + 215;
-                        guaiwu23.getBehaviour(Transform).y = 500 - 40;
+                        guaiwu23.getBehaviour(Transform).y = 450 - 40;
                         const guaiwu24 = core.getObjectById("guaiwu24");
                         guaiwu24.getBehaviour(Transform).x = 200 + 215;
-                        guaiwu24.getBehaviour(Transform).y = 500 - 40;
+                        guaiwu24.getBehaviour(Transform).y = 450 - 40;
                         const guaiwu25 = core.getObjectById("guaiwu25");
                         guaiwu25.getBehaviour(Transform).x = 350 + 215;
                         guaiwu25.getBehaviour(Transform).y = 300 - 40;
@@ -221,13 +217,13 @@ class BasicBehaviour extends Behaviour {
                     var die = document.createElement('div');
                     die.className = 'die';
                     die.innerHTML = '你死了！';
-                    var replay = document.createElement('div');
-                    replay.innerHTML = '再来一次';
-                    replay.className = 'agin';
-                    replay.onclick = function () {
+                    var agin = document.createElement('div');
+                    agin.innerHTML = '再来一次';
+                    agin.className = 'agin';
+                    agin.onclick = function () {
                         location.href += "?reload=true";
                     };
-                    die.appendChild(replay);
+                    die.appendChild(agin);
                     document.onkeydown = function (event) {
                     };
                 }
@@ -353,11 +349,6 @@ class BasicBehaviour extends Behaviour {
             }
             else if (arr[x1][y1] == 51) {
                 if (passed == 1) {
-                    updatePlayerData("life", hp);
-                    updatePlayerData("keys", keys);
-                    updatePlayerData("bombs", bombs);
-                    updatePlayerData("attackability", attackability);
-                    updatePlayerData("defendability", defendability);
                     window.location.href = "./thirdPage.html";
                 }
                 else {
@@ -474,10 +465,10 @@ class BasicBehaviour extends Behaviour {
                             player.getBehaviour(Transform).y = x1 * 50 - 40;
                             arr[x1][y1] = 3;
                             arr[x][y] = 1;
+                            arr[3][8] = 1;
+                            arr[4][8] = 1;
                             arr[3][9] = 1;
                             arr[4][9] = 1;
-                            arr[3][10] = 1;
-                            arr[4][10] = 1;
                         }
                     }
                     else {
