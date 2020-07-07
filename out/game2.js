@@ -28,13 +28,17 @@ class BasicBehaviour extends Behaviour {
         var charactorPosX = 0;
         var charactorPosY = 0;
         var floor = 0;
-        var bombs = 3;
-        var keys = 6;
-        console.log("%%%%%%%%% " + getPlayerData("life"));
-        var hp = 100;
-        var attackability = 10;
-        var defandability = 10;
+        let bombs = getPlayerData("bombs");
+        let keys = getPlayerData("keys");
+        // console.log("%%%%%%%%% " + getPlayerData("life"));
+        // var hp = 100;
+        // var attackability = 10;
+        // var defendability = 10;
+        let hp = getPlayerData("life");
+        let attackability = getPlayerData("attackability");
+        let defendability = getPlayerData("defendability");
         var passed = 0;
+        console.log("%%%%%%%%% " + getPlayerData("life"));
         var arr = allMaps[0];
         for (var i = 0; i < arr.length; i++) {
             for (var j = 0; j < arr[i].length; j++) {
@@ -349,6 +353,11 @@ class BasicBehaviour extends Behaviour {
             }
             else if (arr[x1][y1] == 51) {
                 if (passed == 1) {
+                    updatePlayerData("life", hp);
+                    updatePlayerData("keys", keys);
+                    updatePlayerData("bombs", bombs);
+                    updatePlayerData("attackability", attackability);
+                    updatePlayerData("defendability", defendability);
                     window.location.href = "./thirdPage.html";
                 }
                 else {
