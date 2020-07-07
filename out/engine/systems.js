@@ -528,3 +528,15 @@ class PrefStorageSystem {
         });
     }
 }
+function updatePlayerData(key, value) {
+    console.log("local-data: " + localStorage.getItem(key));
+    localStorage.getItem(key) && localStorage.removeItem(key);
+    localStorage.setItem(key, value.toString());
+}
+function clearPlayerData() {
+    localStorage.clear();
+}
+function getPlayerData(key) {
+    const value = localStorage.getItem(key);
+    return parseInt(value);
+}

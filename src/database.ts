@@ -11,6 +11,7 @@
 
 
 
+
 // function updataData(oldValueName: string, value: number) {
 
 //     playerData.findOne({
@@ -29,4 +30,42 @@
 //         });
 //     });
 // }
+
+
+function initializePlayerData(keys, values) {
+
+    for (let i = 0; i < values.length; i++) {
+        localStorage.setItem(keys[i], values[i]);
+    }
+}
+
+// initializePlayerData(["life", "ability", "keys", "bombs", "coins"], ["100", "10", "0", "0", "0"]);
+
+
+const initPlayerData = function () {
+    localStorage.setItem("life", "100");
+    localStorage.setItem("ability", "10");
+    localStorage.setItem("keys", "0");
+    localStorage.setItem("bombs", "0");
+    localStorage.setItem("coins", "0");
+}
+
+
+
+
+/* class PlayerData {
+    static updatePlayerData(key: string, value) {
+        console.log(localStorage.getItem(key))
+        localStorage.getItem(key) && localStorage.removeItem(key);
+        localStorage.setItem(key, value.toString());
+    }
+} */
+
+/* function updatePlayerData(key: string, value) {
+    console.log(localStorage.getItem(key))
+    localStorage.getItem(key) && localStorage.removeItem(key);
+    localStorage.setItem(key, value.toString());
+}
+ */
+
 

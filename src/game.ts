@@ -30,7 +30,8 @@ class KeyContainerBehaviour extends Behaviour {
 		var floor = 0;
 		var bombs = 3;
 		var keys = 6;
-
+		console.log("%%%%%%%%% " + getPlayerData("life"));
+		// if (getPlayerData("life") != null)
 		var hp = 100;
 		var attackability = 10;
 		var defandability = 10;
@@ -74,12 +75,12 @@ class KeyContainerBehaviour extends Behaviour {
 						monster12.getBehaviour(Transform).x = 665;
 						monster12.getBehaviour(Transform).y = 160;
 						const monster13 = core.getObjectById("guaiwu13");
-						monster13.getBehaviour(Transform).x = 350+215;
-						monster13.getBehaviour(Transform).y = 450-40;
+						monster13.getBehaviour(Transform).x = 350 + 215;
+						monster13.getBehaviour(Transform).y = 450 - 40;
 						console.log(monster13.getBehaviour(Transform).x)
 						const monster14 = core.getObjectById("guaiwu14");
-						monster14.getBehaviour(Transform).x = 350+215;
-						monster14.getBehaviour(Transform).y = 600-40;
+						monster14.getBehaviour(Transform).x = 350 + 215;
+						monster14.getBehaviour(Transform).y = 600 - 40;
 					} else if (mapArr[i][j] == 42) {
 						const guaiwu21 = core.getObjectById("guaiwu21");
 						guaiwu21.getBehaviour(Transform).x = 765;
@@ -260,79 +261,86 @@ class KeyContainerBehaviour extends Behaviour {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu11.getBehaviour(Transform).x = 2000;
-					guaiwu11.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						guaiwu11.getBehaviour(Transform).x = 2000;
+						guaiwu11.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				} else if (hp > 0 && x1 == 4 && y1 == 9) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					guaiwu12.getBehaviour(Transform).x = 2000;
-					guaiwu12.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						guaiwu12.getBehaviour(Transform).x = 2000;
+						guaiwu12.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				} else if (hp > 0 && x1 == 9 && y1 == 7) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					monster3.getBehaviour(Transform).x = 2000;
-					monster3.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						monster3.getBehaviour(Transform).x = 2000;
+						monster3.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					monster4.getBehaviour(Transform).x = 2000;
-					monster4.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						monster4.getBehaviour(Transform).x = 2000;
+						monster4.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				} else if (hp > 0 && x1 == 5 && y1 == 11) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					monster21.getBehaviour(Transform).x = 2000;
-					monster21.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						monster21.getBehaviour(Transform).x = 2000;
+						monster21.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				} else if (hp > 0 && x1 == 6 && y1 == 13) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					monster22.getBehaviour(Transform).x = 2000;
-					monster22.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						monster22.getBehaviour(Transform).x = 2000;
+						monster22.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				} else if (hp > 0 && x1 == 8 && y1 == 14) {
 					hp = hp - 10;
 					if (hp < 0) {
 						alert("You're dead！Game Over!");
-					}else{
-					monster23.getBehaviour(Transform).x = 2000;
-					monster23.getBehaviour(Transform).y = 2000;
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;}
+					} else {
+						monster23.getBehaviour(Transform).x = 2000;
+						monster23.getBehaviour(Transform).y = 2000;
+						player.getBehaviour(Transform).x = y1 * 50 + 215;
+						player.getBehaviour(Transform).y = x1 * 50 - 40;
+						mapArr[x1][y1] = 3;
+						mapArr[x][y] = 1;
+					}
 				}
 			} else if (mapArr[x1][y1] > 60 && mapArr[x1][y1] < 70) {
 				if (mapArr[x1][y1] == 61) {
@@ -431,12 +439,20 @@ class KeyContainerBehaviour extends Behaviour {
 			}
 			const HPText = core.getObjectById("HPText");
 			HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
+			updatePlayerData("life", hp);
+
 			const AttackTest = core.getObjectById("AttackText");
 			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
+			updatePlayerData("attackablity", attackability);
+
 			const KeyTest = core.getObjectById("KeyText");
 			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
+			updatePlayerData("keys", keys);
+
 			const BombTest = core.getObjectById("BombText");
 			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
+			updatePlayerData("keys", keys);
+
 			// const restart = core.getObjectById("restart");
 			// restart.onclick = function () {
 			// location.href += "?reload=true";
@@ -446,6 +462,11 @@ class KeyContainerBehaviour extends Behaviour {
 
 	onUpdate() {
 		//pass
+	}
+
+	onDestroy() {
+		clearPlayerData();
+		console.log("player data cleared!");
 	}
 }
 

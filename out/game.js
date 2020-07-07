@@ -25,6 +25,8 @@ class KeyContainerBehaviour extends Behaviour {
         var floor = 0;
         var bombs = 3;
         var keys = 6;
+        console.log("%%%%%%%%% " + getPlayerData("life"));
+        // if (getPlayerData("life") != null)
         var hp = 100;
         var attackability = 10;
         var defandability = 10;
@@ -479,12 +481,16 @@ class KeyContainerBehaviour extends Behaviour {
             }
             const HPText = core.getObjectById("HPText");
             HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
+            updatePlayerData("life", hp);
             const AttackTest = core.getObjectById("AttackText");
             AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
+            updatePlayerData("attackablity", attackability);
             const KeyTest = core.getObjectById("KeyText");
             KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
+            updatePlayerData("keys", keys);
             const BombTest = core.getObjectById("BombText");
             BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
+            updatePlayerData("keys", keys);
             // const restart = core.getObjectById("restart");
             // restart.onclick = function () {
             // location.href += "?reload=true";
@@ -493,6 +499,10 @@ class KeyContainerBehaviour extends Behaviour {
     }
     onUpdate() {
         //pass
+    }
+    onDestroy() {
+        clearPlayerData();
+        console.log("player data cleared!");
     }
 }
 core.registerBehaviourClass(KeyContainerBehaviour);
