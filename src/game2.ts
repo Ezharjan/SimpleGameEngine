@@ -21,7 +21,7 @@ class BasicBehaviour extends Behaviour {
 				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
 				[9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9],
 				[9, 1, 0, 1, 0, 0, 1, 22, 1, 1, 0, 0, 0, 1, 1, 9],
-				[9, 1, 1, 1, 0, 67, 61,0, 51, 1, 21, 1, 1, 1, 3, 9],
+				[9, 1, 1, 1, 0, 67, 61, 0, 51, 1, 21, 1, 1, 1, 3, 9],
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
 			]
 		];
@@ -30,16 +30,22 @@ class BasicBehaviour extends Behaviour {
 		var charactorPosY = 0;
 
 		var floor = 0;
-		var bombs = 3;
-		var keys = 6;
+		let bombs = getPlayerData("bombs");
+		let keys = getPlayerData("keys");
 
+
+		// console.log("%%%%%%%%% " + getPlayerData("life"));
+
+		// var hp = 100;
+		// var attackability = 10;
+		// var defendability = 10;
+		let hp = getPlayerData("life");
+		let attackability = getPlayerData("attackability");
+		let defendability = getPlayerData("defendability");
+		var passed = 0;
 
 		console.log("%%%%%%%%% " + getPlayerData("life"));
 
-		var hp = 100;
-		var attackability = 10;
-		var defandability = 10;
-		var passed = 0;
 
 		var arr = allMaps[0];
 		for (var i = 0; i < arr.length; i++) {
@@ -51,7 +57,7 @@ class BasicBehaviour extends Behaviour {
 						const loti1 = core.getObjectById("loti1");
 						loti1.getBehaviour(Transform).x = j * 50 + 215;
 						loti1.getBehaviour(Transform).y = i * 50 - 40;
-					} 
+					}
 				} else if (arr[i][j] == 21) {
 					const stone1 = core.getObjectById("stone1");
 					stone1.getBehaviour(Transform).x = 500 + 215;
@@ -114,11 +120,11 @@ class BasicBehaviour extends Behaviour {
 						const guaiwu28 = core.getObjectById("guaiwu28");
 						guaiwu28.getBehaviour(Transform).x = 400 + 215;
 						guaiwu28.getBehaviour(Transform).y = 350 - 40;
-					}else if (arr[i][j] == 44) {
+					} else if (arr[i][j] == 44) {
 						const trap = core.getObjectById("trap");
 						trap.getBehaviour(Transform).x = j * 50 + 215;
 						trap.getBehaviour(Transform).y = i * 50 - 40;
-					} 
+					}
 				} else if (arr[i][j] == 3) {
 					charactorPosX = i;
 					charactorPosY = j;
@@ -154,7 +160,7 @@ class BasicBehaviour extends Behaviour {
 						altar.getBehaviour(Transform).y = i * 50 - 40;
 						const altar2 = core.getObjectById("altar2");
 						altar2.getBehaviour(Transform).x = 2000;
-			            altar2.getBehaviour(Transform).x = 2000;
+						altar2.getBehaviour(Transform).x = 2000;
 					} else if (arr[i][j] == 65) {
 						const ys1 = core.getObjectById("ys1");
 						ys1.getBehaviour(Transform).x = 250 + 215;
@@ -211,13 +217,13 @@ class BasicBehaviour extends Behaviour {
 					var die = document.createElement('div');
 					die.className = 'die';
 					die.innerHTML = '你死了！';
-					var agin = document.createElement('div');
-					agin.innerHTML = '再来一次';
-					agin.className = 'agin';
-					agin.onclick = function () {
+					var replay = document.createElement('div');
+					replay.innerHTML = '再来一次';
+					replay.className = 'agin';
+					replay.onclick = function () {
 						location.href += "?reload=true";
 					}
-					die.appendChild(agin);
+					die.appendChild(replay);
 					document.onkeydown = function (event) {
 					}
 				}
@@ -336,9 +342,14 @@ class BasicBehaviour extends Behaviour {
 				arr[x][y] = 1;
 				keys--;
 			} else if (arr[x1][y1] == 51) {
-				if(passed == 1){
+				if (passed == 1) {
+					updatePlayerData("life", hp);
+					updatePlayerData("keys", keys);
+					updatePlayerData("bombs", bombs);
+					updatePlayerData("attackability", attackability);
+					updatePlayerData("defendability", defendability);
 					window.location.href = "./thirdPage.html"
-				}else{
+				} else {
 					alert("Please Open The Altar!");
 					//player.getBehaviour(Transform).x = y * 50 + 215;
 					//player.getBehaviour(Transform).y = x * 50 - 40;
@@ -355,116 +366,116 @@ class BasicBehaviour extends Behaviour {
 					arr[x][y] = 99;
 					alert("You're dead！Game Over!");
 				} else if (hp > 0 && x1 == 5 && y1 == 3) {
-					if(attackability >= 10){
-					hp = hp - 20;
-					if (hp < 0) {
-						alert("You're dead！Game Over!");
+					if (attackability >= 10) {
+						hp = hp - 20;
+						if (hp < 0) {
+							alert("You're dead！Game Over!");
+						} else {
+							guaiwu11.getBehaviour(Transform).x = 2000;
+							guaiwu11.getBehaviour(Transform).y = 2000;
+							player.getBehaviour(Transform).x = y1 * 50 + 215;
+							player.getBehaviour(Transform).y = x1 * 50 - 40;
+							arr[x1][y1] = 3;
+							arr[x][y] = 1;
+						}
 					} else {
-						guaiwu11.getBehaviour(Transform).x = 2000;
-						guaiwu11.getBehaviour(Transform).y = 2000;
-						player.getBehaviour(Transform).x = y1 * 50 + 215;
-						player.getBehaviour(Transform).y = x1 * 50 - 40;
-						arr[x1][y1] = 3;
-						arr[x][y] = 1;
-					}
-			     	}else{
 						alert("Your attackability is lower than 10!");
-					 }
-				} else if (hp > 0 &&  x1 == 3 && y1 == 10) {
-					if(attackability >= 10){
-					hp = hp - 20;
-					if (hp < 0) {
-						alert("You're dead！Game Over!");
+					}
+				} else if (hp > 0 && x1 == 3 && y1 == 10) {
+					if (attackability >= 10) {
+						hp = hp - 20;
+						if (hp < 0) {
+							alert("You're dead！Game Over!");
+						} else {
+							guaiwu12.getBehaviour(Transform).x = 2000;
+							guaiwu12.getBehaviour(Transform).y = 2000;
+							player.getBehaviour(Transform).x = y1 * 50 + 215;
+							player.getBehaviour(Transform).y = x1 * 50 - 40;
+							arr[x1][y1] = 3;
+							arr[x][y] = 1;
+						}
 					} else {
-						guaiwu12.getBehaviour(Transform).x = 2000;
-						guaiwu12.getBehaviour(Transform).y = 2000;
-						player.getBehaviour(Transform).x = y1 * 50 + 215;
-						player.getBehaviour(Transform).y = x1 * 50 - 40;
-						arr[x1][y1] = 3;
-						arr[x][y] = 1;
-					}
-			     	}else{
 						alert("Your attackability is lower than 10!");
-					 }
+					}
 				} else if (hp > 0 && x1 == 5 && y1 == 11) {
-					if(attackability >= 10){
-					hp = hp - 20;
-					if (hp < 0) {
-						alert("You're dead！Game Over!");
+					if (attackability >= 10) {
+						hp = hp - 20;
+						if (hp < 0) {
+							alert("You're dead！Game Over!");
+						} else {
+							guaiwu13.getBehaviour(Transform).x = 2000;
+							guaiwu13.getBehaviour(Transform).y = 2000;
+							player.getBehaviour(Transform).x = y1 * 50 + 215;
+							player.getBehaviour(Transform).y = x1 * 50 - 40;
+							arr[x1][y1] = 3;
+							arr[x][y] = 1;
+						}
 					} else {
-						guaiwu13.getBehaviour(Transform).x = 2000;
-						guaiwu13.getBehaviour(Transform).y = 2000;
-						player.getBehaviour(Transform).x = y1 * 50 + 215;
-						player.getBehaviour(Transform).y = x1 * 50 - 40;
-						arr[x1][y1] = 3;
-						arr[x][y] = 1;
+						alert("Your attackability is lower than 10!");
 					}
-				   }else{
-					alert("Your attackability is lower than 10!");
-				   }
 				} else if (hp > 0 && x1 == 10 && y1 == 14) {
-					if(attackability >= 10){
-					hp = hp - 20;
-					if (hp < 0) {
-						alert("You're dead！Game Over!");
+					if (attackability >= 10) {
+						hp = hp - 20;
+						if (hp < 0) {
+							alert("You're dead！Game Over!");
+						} else {
+							guaiwu14.getBehaviour(Transform).x = 2000;
+							guaiwu14.getBehaviour(Transform).y = 2000;
+							player.getBehaviour(Transform).x = y1 * 50 + 215;
+							player.getBehaviour(Transform).y = x1 * 50 - 40;
+							arr[x1][y1] = 3;
+							arr[x][y] = 1;
+						}
 					} else {
-						guaiwu14.getBehaviour(Transform).x = 2000;
-						guaiwu14.getBehaviour(Transform).y = 2000;
-						player.getBehaviour(Transform).x = y1 * 50 + 215;
-						player.getBehaviour(Transform).y = x1 * 50 - 40;
-						arr[x1][y1] = 3;
-						arr[x][y] = 1;
+						alert("Your attackability is lower than 10!");
 					}
-				  }else{
-					alert("Your attackability is lower than 10!");
-				  }
-				} else if ((hp > 0)  &&  ((x1 == 9 && y1 == 3) || (x1 == 9 && y1 == 4) || (x1 == 10 && y1 == 3) || (x1 == 10 && y1 == 4))) {
-					if(attackability >= 20){
-					hp = hp - 50;
-					if (hp < 0) {
-						alert("You're dead！Game Over!");
+				} else if ((hp > 0) && ((x1 == 9 && y1 == 3) || (x1 == 9 && y1 == 4) || (x1 == 10 && y1 == 3) || (x1 == 10 && y1 == 4))) {
+					if (attackability >= 20) {
+						hp = hp - 50;
+						if (hp < 0) {
+							alert("You're dead！Game Over!");
+						} else {
+							guaiwu21.getBehaviour(Transform).x = 2000;
+							guaiwu21.getBehaviour(Transform).y = 2000;
+							guaiwu22.getBehaviour(Transform).x = 2000;
+							guaiwu22.getBehaviour(Transform).y = 2000;
+							guaiwu23.getBehaviour(Transform).x = 2000;
+							guaiwu23.getBehaviour(Transform).y = 2000;
+							guaiwu24.getBehaviour(Transform).x = 2000;
+							guaiwu24.getBehaviour(Transform).y = 2000;
+							player.getBehaviour(Transform).x = y1 * 50 + 215;
+							player.getBehaviour(Transform).y = x1 * 50 - 40;
+							arr[x1][y1] = 3;
+							arr[x][y] = 1;
+							arr[3][9] = 1; arr[4][9] = 1; arr[3][10] = 1; arr[4][10] = 1;
+						}
 					} else {
-						guaiwu21.getBehaviour(Transform).x = 2000;
-						guaiwu21.getBehaviour(Transform).y = 2000;
-						guaiwu22.getBehaviour(Transform).x = 2000;
-						guaiwu22.getBehaviour(Transform).y = 2000;
-						guaiwu23.getBehaviour(Transform).x = 2000;
-						guaiwu23.getBehaviour(Transform).y = 2000;
-						guaiwu24.getBehaviour(Transform).x = 2000;
-						guaiwu24.getBehaviour(Transform).y = 2000;
-						player.getBehaviour(Transform).x = y1 * 50 + 215;
-						player.getBehaviour(Transform).y = x1 * 50 - 40;
-						arr[x1][y1] = 3;
-						arr[x][y] = 1;
-						arr[3][9] = 1; arr[4][9] = 1; arr[3][10] = 1; arr[4][10] = 1;
+						alert("Your attackability is lower than 20!");
 					}
-				  }else{
-					alert("Your attackability is lower than 20!");
-				  }
-				} else if (hp > 0 &&  x1 == 7 && y1 == 7) {
-					if(attackability >= 20){
-					hp = hp - 50;
-					if (hp < 0) {
-						alert("You're dead！Game Over!");
+				} else if (hp > 0 && x1 == 7 && y1 == 7) {
+					if (attackability >= 20) {
+						hp = hp - 50;
+						if (hp < 0) {
+							alert("You're dead！Game Over!");
+						} else {
+							guaiwu25.getBehaviour(Transform).x = 2000;
+							guaiwu25.getBehaviour(Transform).y = 2000;
+							guaiwu26.getBehaviour(Transform).x = 2000;
+							guaiwu26.getBehaviour(Transform).y = 2000;
+							guaiwu27.getBehaviour(Transform).x = 2000;
+							guaiwu27.getBehaviour(Transform).y = 2000;
+							guaiwu28.getBehaviour(Transform).x = 2000;
+							guaiwu28.getBehaviour(Transform).y = 2000;
+							player.getBehaviour(Transform).x = y1 * 50 + 215;
+							player.getBehaviour(Transform).y = x1 * 50 - 40;
+							arr[x1][y1] = 3;
+							arr[x][y] = 1;
+							arr[7][6] = 1; arr[8][6] = 1; arr[7][7] = 1; arr[8][7] = 1;
+						}
 					} else {
-						guaiwu25.getBehaviour(Transform).x = 2000;
-						guaiwu25.getBehaviour(Transform).y = 2000;
-						guaiwu26.getBehaviour(Transform).x = 2000;
-						guaiwu26.getBehaviour(Transform).y = 2000;
-						guaiwu27.getBehaviour(Transform).x = 2000;
-						guaiwu27.getBehaviour(Transform).y = 2000;
-						guaiwu28.getBehaviour(Transform).x = 2000;
-						guaiwu28.getBehaviour(Transform).y = 2000;
-						player.getBehaviour(Transform).x = y1 * 50 + 215;
-						player.getBehaviour(Transform).y = x1 * 50 - 40;
-						arr[x1][y1] = 3;
-						arr[x][y] = 1;
-						arr[7][6] = 1; arr[8][6] = 1; arr[7][7] = 1; arr[8][7] = 1;
+						alert("Your attackability is lower than 20!");
 					}
-				   }else{
-					alert("Your attackability is lower than 20!");
-				   }
-				}else if(arr[x1][y1] == 44){
+				} else if (arr[x1][y1] == 44) {
 					attackability = attackability - 5;
 					trap.getBehaviour(Transform).x = 2000;
 					trap.getBehaviour(Transform).y = 2000;
@@ -472,7 +483,7 @@ class BasicBehaviour extends Behaviour {
 					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				} 
+				}
 			} else if (arr[x1][y1] > 60 && arr[x1][y1] < 70) {
 				if (arr[x1][y1] == 61 && x1 == 5 && y1 == 1) {
 					attackability = attackability + 10;
@@ -504,14 +515,14 @@ class BasicBehaviour extends Behaviour {
 					weapon7.getBehaviour(Transform).y = 1000;
 				} else if (arr[x1][y1] == 64) {
 					player.getBehaviour(Transform).x = y1 * 50 + 215;
-				    player.getBehaviour(Transform).y = x1 * 50 - 40;
+					player.getBehaviour(Transform).y = x1 * 50 - 40;
 					altar1.getBehaviour(Transform).x = 2000;
 					altar1.getBehaviour(Transform).y = 2000;
 					altar2.getBehaviour(Transform).x = 600 + 215;
 					altar2.getBehaviour(Transform).y = 350 - 40;
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
-				passed = 1;
+					passed = 1;
 				} else if (arr[x1][y1] == 65 && x1 == 5 && y1 == 5) {
 					hp = hp + 50;
 					ys1.getBehaviour(Transform).x = 2000;
@@ -587,7 +598,7 @@ class BasicBehaviour extends Behaviour {
 			if (e && e.keyCode == 38) {
 				//if (peoplex > 0) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX - 1, charactorPosY);
-				if (arr[charactorPosX - 1][charactorPosY] != 0 &&arr[charactorPosX - 1][charactorPosY] != 9 && 
+				if (arr[charactorPosX - 1][charactorPosY] != 0 && arr[charactorPosX - 1][charactorPosY] != 9 &&
 					arr[charactorPosX - 1][charactorPosY] != 21 && arr[charactorPosX - 1][charactorPosY] != 22 &&
 					arr[charactorPosX - 1][charactorPosY] != 41 && arr[charactorPosX - 1][charactorPosY] != 42 &&
 					arr[charactorPosX - 1][charactorPosY] != 51) {
@@ -609,7 +620,7 @@ class BasicBehaviour extends Behaviour {
 				//}
 			} else if (e && e.keyCode == 37) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY - 1);
-				if (arr[charactorPosX][charactorPosY - 1] != 0 && arr[charactorPosX][charactorPosY - 1] != 9 && 
+				if (arr[charactorPosX][charactorPosY - 1] != 0 && arr[charactorPosX][charactorPosY - 1] != 9 &&
 					arr[charactorPosX][charactorPosY - 1] != 21 && arr[charactorPosX][charactorPosY - 1] != 22 &&
 					arr[charactorPosX][charactorPosY - 1] != 41 && arr[charactorPosX][charactorPosY - 1] != 42 &&
 					arr[charactorPosX][charactorPosY - 1] != 51) {
@@ -622,14 +633,14 @@ class BasicBehaviour extends Behaviour {
 					charactorPosY = charactorPosY - 1;
 				} else if (arr[charactorPosX][charactorPosY - 1] == 42 && attackability >= 20) {
 					charactorPosY = charactorPosY - 1;
-				}else if (arr[charactorPosX][charactorPosY - 1] == 51 && passed == 1) {
+				} else if (arr[charactorPosX][charactorPosY - 1] == 51 && passed == 1) {
 					charactorPosY = charactorPosY - 1;
 				}
 			}
 			if (e && e.keyCode == 40) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX + 1, charactorPosY);
-				if (arr[charactorPosX + 1][charactorPosY] != 0 && arr[charactorPosX + 1][charactorPosY] != 9 && 
-					arr[charactorPosX + 1][charactorPosY] != 21 && arr[charactorPosX + 1][charactorPosY] != 22 && 
+				if (arr[charactorPosX + 1][charactorPosY] != 0 && arr[charactorPosX + 1][charactorPosY] != 9 &&
+					arr[charactorPosX + 1][charactorPosY] != 21 && arr[charactorPosX + 1][charactorPosY] != 22 &&
 					arr[charactorPosX + 1][charactorPosY] != 41 && arr[charactorPosX + 1][charactorPosY] != 42 &&
 					arr[charactorPosX + 1][charactorPosY] != 51) {
 					charactorPosX = charactorPosX + 1;
@@ -646,8 +657,8 @@ class BasicBehaviour extends Behaviour {
 				}
 			} else if (e && e.keyCode == 39) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX, charactorPosY + 1);
-				if (arr[charactorPosX][charactorPosY + 1] != 0 && arr[charactorPosX][charactorPosY + 1] != 9 && 
-					arr[charactorPosX][charactorPosY + 1] != 21 && arr[charactorPosX][charactorPosY + 1] != 22 && 
+				if (arr[charactorPosX][charactorPosY + 1] != 0 && arr[charactorPosX][charactorPosY + 1] != 9 &&
+					arr[charactorPosX][charactorPosY + 1] != 21 && arr[charactorPosX][charactorPosY + 1] != 22 &&
 					arr[charactorPosX][charactorPosY + 1] != 41 && arr[charactorPosX][charactorPosY + 1] != 42 &&
 					arr[charactorPosX][charactorPosY + 1] != 51) {
 					charactorPosY = charactorPosY + 1;

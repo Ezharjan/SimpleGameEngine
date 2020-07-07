@@ -28,13 +28,16 @@ class ThirdBehaviour extends Behaviour {
         var charactorPosX = 0;
         var charactorPosY = 0;
         var floor = 0;
-        var bombs = 3;
-        var keys = 6;
+        let bombs = getPlayerData("bombs");
+        let keys = getPlayerData("keys");
         var passed = 0;
         console.log("%%%%%%%%% " + getPlayerData("life"));
-        var hp = 100;
-        var attackability = 10;
-        var fangyu = 10;
+        // var hp = 100;
+        // var attackability = 10;
+        // var defendability = 10;
+        let hp = getPlayerData("life");
+        let attackability = getPlayerData("attackability");
+        let defendability = getPlayerData("defendability");
         var arr = allMaps[0];
         for (var i = 0; i < arr.length; i++) {
             for (var j = 0; j < arr[i].length; j++) {
@@ -181,6 +184,11 @@ class ThirdBehaviour extends Behaviour {
                 // 	floor++;
                 // 	arr = allMaps[floor];
                 // }
+                updatePlayerData("life", hp);
+                updatePlayerData("keys", keys);
+                updatePlayerData("bombs", bombs);
+                updatePlayerData("attackability", attackability);
+                updatePlayerData("defendability", defendability);
                 window.location.href = "./secondPage.html";
             }
             else if (arr[x1][y1] == 52) {
@@ -306,14 +314,14 @@ class ThirdBehaviour extends Behaviour {
             }
             else if (arr[x1][y1] > 60 && arr[x1][y1] < 70) {
                 if (arr[x1][y1] == 62) {
-                    fangyu = fangyu + 10;
+                    defendability = defendability + 10;
                 }
                 else if (arr[x1][y1] == 63) {
                     attackability = attackability + 10;
                 }
                 else if (arr[x1][y1] == 64) {
                     attackability = attackability + 15;
-                    fangyu = fangyu + 15;
+                    defendability = defendability + 15;
                 }
                 player.getBehaviour(Transform).x = y1 * 50 + 215;
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
@@ -436,6 +444,9 @@ class ThirdBehaviour extends Behaviour {
         };
     }
     onUpdate() {
+    }
+    onDestroy() {
+        clearPlayerData();
     }
 }
 core.registerBehaviourClass(ThirdBehaviour);

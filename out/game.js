@@ -21,16 +21,22 @@ class KeyContainerBehaviour extends Behaviour {
                 [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
             ],
         ];
-        var charactorPosX = 0;
-        var charactorPosY = 0;
-        var floor = 0;
-        var bombs = 3;
-        var keys = 6;
+        let charactorPosX = 0;
+        let charactorPosY = 0;
+        let floor = 0;
+        let bombs = 3;
+        let keys = 6;
+        if (getPlayerData("life") != NaN
+            || getPlayerData("attackability") != NaN
+            || getPlayerData("defendability") != NaN
+            || getPlayerData("keys") != NaN
+            || getPlayerData("bombs") != NaN) {
+            clearPlayerData();
+        }
         console.log("%%%%%%%%% " + getPlayerData("life"));
-        // if (getPlayerData("life") != null)
-        var hp = 100;
-        var attackability = 10;
-        var defandability = 10;
+        let hp = 100;
+        let attackability = 10;
+        let defendability = 10;
         var passed = 0;
         var mapArr = allMaps[0];
         for (var i = 0; i < mapArr.length; i++) {
@@ -261,6 +267,11 @@ class KeyContainerBehaviour extends Behaviour {
                 // 	arr = allMaps[floor];
                 // }
                 if (passed == 1) {
+                    updatePlayerData("life", hp);
+                    updatePlayerData("keys", keys);
+                    updatePlayerData("bombs", bombs);
+                    updatePlayerData("attackability", attackability);
+                    updatePlayerData("defendability", defendability);
                     window.location.href = "./secondPage.html";
                 }
                 else {
@@ -392,14 +403,14 @@ class KeyContainerBehaviour extends Behaviour {
                     weapon1.getBehaviour(Transform).y = 2000;
                 }
                 else if (mapArr[x1][y1] == 62) {
-                    defandability = defandability + 10;
+                    defendability = defendability + 10;
                 }
                 else if (mapArr[x1][y1] == 63) {
                     attackability = attackability + 10;
                 }
                 else if (mapArr[x1][y1] == 64) {
                     attackability = attackability + 15;
-                    defandability = defandability + 15;
+                    defendability = defendability + 15;
                 }
                 else if (mapArr[x1][y1] == 65 && x1 == 3 && y1 == 8) {
                     hp = hp + 50;
@@ -554,16 +565,12 @@ class KeyContainerBehaviour extends Behaviour {
             }
             const HPText = core.getObjectById("HPText");
             HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
-            updatePlayerData("life", hp);
             const AttackTest = core.getObjectById("AttackText");
             AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
-            updatePlayerData("attackablity", attackability);
             const KeyTest = core.getObjectById("KeyText");
             KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
-            updatePlayerData("keys", keys);
             const BombTest = core.getObjectById("BombText");
             BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
-            updatePlayerData("keys", keys);
             // const restart = core.getObjectById("restart");
             // restart.onclick = function () {
             // location.href += "?reload=true";
