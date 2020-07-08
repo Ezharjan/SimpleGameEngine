@@ -282,6 +282,30 @@
 							"text": " "
 						}
 					]
+				},
+				{
+					"id": "deadend",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/DeadEnd.png"
+						}
+					]
+				},
+				{
+					"id": "goodend",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/GoodEnd.png"
+						}
+					]
 				}
 			],
 			"behaviours": [

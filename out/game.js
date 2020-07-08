@@ -24,8 +24,8 @@ class KeyContainerBehaviour extends Behaviour {
         let charactorPosX = 0;
         let charactorPosY = 0;
         let floor = 0;
-        let bombs = 3;
-        let keys = 6;
+        let bombs = 0;
+        let keys = 0;
         if (getPlayerData("life") != NaN
             || getPlayerData("attackability") != NaN
             || getPlayerData("defendability") != NaN
@@ -39,6 +39,9 @@ class KeyContainerBehaviour extends Behaviour {
         let defendability = 10;
         var passed = 0;
         var mapArr = allMaps[0];
+        const deadend = core.getObjectById("deadend");
+        deadend.getBehaviour(Transform).x = 2000;
+        deadend.getBehaviour(Transform).y = 2000;
         for (var i = 0; i < mapArr.length; i++) {
             for (var j = 0; j < mapArr[i].length; j++) {
                 if (mapArr[i][j] == 1) {
@@ -199,6 +202,7 @@ class KeyContainerBehaviour extends Behaviour {
             const trap = core.getObjectById("trap");
             const ys11 = core.getObjectById("ys11");
             const ys12 = core.getObjectById("ys12");
+            const deadend = core.getObjectById("deadend");
             player.getBehaviour(Transform).x = y * 50 + 215;
             player.getBehaviour(Transform).y = x * 50 - 40;
             if (mapArr[x1][y1] == 1) {
@@ -305,7 +309,10 @@ class KeyContainerBehaviour extends Behaviour {
                     if (attackability >= 10) {
                         hp = hp - 20;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             monster1.getBehaviour(Transform).x = 2000;
@@ -324,7 +331,10 @@ class KeyContainerBehaviour extends Behaviour {
                     if (attackability >= 10) {
                         hp = hp - 20;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             monster2.getBehaviour(Transform).x = 2000;
@@ -343,7 +353,10 @@ class KeyContainerBehaviour extends Behaviour {
                     if (attackability >= 10) {
                         hp = hp - 20;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             monster3.getBehaviour(Transform).x = 2000;
@@ -362,7 +375,10 @@ class KeyContainerBehaviour extends Behaviour {
                     if (attackability >= 20) {
                         hp = hp - 50;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             monster21.getBehaviour(Transform).x = 2000;

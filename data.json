@@ -414,6 +414,18 @@
 							"text": " "
 						}
 					]
+				},
+				{
+					"id": "deadend",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/DeadEnd.png"
+						}
+					]
 				}
 			],
 			"behaviours": [

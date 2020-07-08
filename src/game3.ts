@@ -36,8 +36,8 @@ class ThirdBehaviour extends Behaviour {
 
 		console.log("%%%%%%%%% " + getPlayerData("life"));
 
-		// var hp = 100;
-		// var attackability = 10;
+		//var hp = 100;
+		//var attackability = 100;
 		// var defendability = 10;
 		let hp = getPlayerData("life");
 		let attackability = getPlayerData("attackability");
@@ -53,6 +53,12 @@ class ThirdBehaviour extends Behaviour {
 					const door2 = core.getObjectById("door2");
 					door2.getBehaviour(Transform).x = 200 + 215;
 					door2.getBehaviour(Transform).y = 700 - 40;
+					const goodend = core.getObjectById("goodend");
+		            goodend.getBehaviour(Transform).x = 2000;
+					goodend.getBehaviour(Transform).y = 2000;
+					const deadend = core.getObjectById("deadend");
+		            deadend.getBehaviour(Transform).x = 2000;
+		            deadend.getBehaviour(Transform).y = 2000;
 				} else if (arr[i][j] == 21) {
 					const stone1 = core.getObjectById("stone1");
 					stone1.getBehaviour(Transform).x = 250 + 215;
@@ -144,6 +150,8 @@ class ThirdBehaviour extends Behaviour {
 			const coffin4 = core.getObjectById("coffin4");
 			const coffin5 = core.getObjectById("coffin5");
 			const coffin6 = core.getObjectById("coffin6");
+			const goodend = core.getObjectById("goodend");
+			const deadend = core.getObjectById("deadend");
 
 			player.getBehaviour(Transform).x = y * 50 + 215;
 			player.getBehaviour(Transform).y = x * 50 - 40;
@@ -186,14 +194,16 @@ class ThirdBehaviour extends Behaviour {
 				updatePlayerData("bombs", bombs);
 				updatePlayerData("attackability", attackability);
 				updatePlayerData("defendability", defendability);
-				window.location.href = "./secondPage.html"
-			} else if (arr[x1][y1] == 52) {
-				if (floor >= 1 && floor < allMaps.length) {
-					floor--;
-					arr = allMaps[floor];
-				}
-				//window.location.href= "./index.html"
-			} else if (arr[x1][y1] == 22 && keys > 0 && x1 == 14 && y1 == 4) {
+				//window.location.href = "./secondPage.html"
+			} 
+			// else if (arr[x1][y1] == 52) {
+			// 	if (floor >= 1 && floor < allMaps.length) {
+			// 		floor--;
+			// 		arr = allMaps[floor];
+			// 	}
+			// 	//window.location.href= "./index.html"
+			// } 
+			else if (arr[x1][y1] == 22 && keys > 0 && x1 == 14 && y1 == 4) {
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				door2.getBehaviour(Transform).x = 1000;
@@ -205,12 +215,18 @@ class ThirdBehaviour extends Behaviour {
 			else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
 				if (hp <= 0) {
 					arr[x][y] = 99;
+					deadend.getBehaviour(Transform).x = 0;
+					deadend.getBehaviour(Transform).y = 0;
 					alert("You're dead！Game Over!");
+					window.location.href = "./firstPage.html"
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu11.getBehaviour(Transform).x = 2000;
 							guaiwu11.getBehaviour(Transform).y = 2000;
@@ -226,7 +242,10 @@ class ThirdBehaviour extends Behaviour {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu12.getBehaviour(Transform).x = 2000;
 							guaiwu12.getBehaviour(Transform).y = 2000;
@@ -242,7 +261,10 @@ class ThirdBehaviour extends Behaviour {
 					if (attackability >= 70) {
 						hp = hp - 70;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							coffin1.getBehaviour(Transform).x = 2000;
 							coffin1.getBehaviour(Transform).y = 2000;
@@ -261,6 +283,9 @@ class ThirdBehaviour extends Behaviour {
 							arr[x1][y1] = 3;
 							arr[7][3] = 1; arr[7][4] = 1; arr[7][5] = 1; arr[8][3] = 1; arr[8][4] = 1; arr[8][5] = 1;
 							arr[x][y] = 1;
+							alert("Congratulations!");
+							goodend.getBehaviour(Transform).x = 0;
+		                    goodend.getBehaviour(Transform).y = 0;
 						}
 					} else {
 						alert("Your attackability is lower than 70!");
