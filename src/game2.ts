@@ -299,7 +299,7 @@ class BasicBehaviour extends Behaviour {
 				stone1.getBehaviour(Transform).x = 1000;
 				stone1.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.mp3";
+				BoomStoneAudio.audioPath = "./music/re-Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
@@ -310,7 +310,7 @@ class BasicBehaviour extends Behaviour {
 				stone2.getBehaviour(Transform).x = 1000;
 				stone2.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.mp3";
+				BoomStoneAudio.audioPath = "./music/re-Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
@@ -321,7 +321,7 @@ class BasicBehaviour extends Behaviour {
 				stone3.getBehaviour(Transform).x = 1000;
 				stone3.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.mp3";
+				BoomStoneAudio.audioPath = "./music/re-Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
@@ -332,7 +332,7 @@ class BasicBehaviour extends Behaviour {
 				stone4.getBehaviour(Transform).x = 1000;
 				stone4.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.mp3";
+				BoomStoneAudio.audioPath = "./music/re-Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
@@ -535,42 +535,42 @@ class BasicBehaviour extends Behaviour {
 					weapon1.getBehaviour(Transform).x = 1000;
 					weapon1.getBehaviour(Transform).y = 1000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.mp3";
+					weaponAudio.audioPath = "./music/re-knife.mp3";
 					weaponAudio.playAudio(false);
 				} else if (arr[x1][y1] == 61 && x1 == 1 && y1 == 7) {
 					attackability = attackability + 10;
 					weapon2.getBehaviour(Transform).x = 1000;
 					weapon2.getBehaviour(Transform).y = 1000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.mp3";
+					weaponAudio.audioPath = "./music/re-knife.mp3";
 					weaponAudio.playAudio(false);
 				} else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 12) {
 					attackability = attackability + 10;
 					weapon3.getBehaviour(Transform).x = 1000;
 					weapon3.getBehaviour(Transform).y = 1000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.mp3";
+					weaponAudio.audioPath = "./music/re-knife.mp3";
 					weaponAudio.playAudio(false);
 				} else if (arr[x1][y1] == 61 && x1 == 1 && y1 == 13) {
 					attackability = attackability + 10;
 					weapon4.getBehaviour(Transform).x = 1000;
 					weapon4.getBehaviour(Transform).y = 1000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.mp3";
+					weaponAudio.audioPath = "./music/re-knife.mp3";
 					weaponAudio.playAudio(false);
 				} else if (arr[x1][y1] == 61 && x1 == 3 && y1 == 13) {
 					attackability = attackability + 10;
 					weapon5.getBehaviour(Transform).x = 1000;
 					weapon5.getBehaviour(Transform).y = 1000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.mp3";
+					weaponAudio.audioPath = "./music/re-knife.mp3";
 					weaponAudio.playAudio(false);
 				} else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 14) {
 					attackability = attackability + 10;
 					weapon6.getBehaviour(Transform).x = 1000;
 					weapon6.getBehaviour(Transform).y = 1000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.mp3";
+					weaponAudio.audioPath = "./music/re-knife.mp3";
 					weaponAudio.playAudio(false);
 				}
 				// else if (arr[x1][y1] == 61 && x1 == 14 && y1 == 6) {
@@ -586,7 +586,7 @@ class BasicBehaviour extends Behaviour {
 					altar2.getBehaviour(Transform).x = 600 + 215;
 					altar2.getBehaviour(Transform).y = 350 - 40;
 					const altarAudio = new AudioSystem();
-					altarAudio.audioPath = "./music/altar.mp3";
+					altarAudio.audioPath = "./music/re-altar.mp3";
 					altarAudio.playAudio(false);
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
@@ -597,49 +597,49 @@ class BasicBehaviour extends Behaviour {
 					ys1.getBehaviour(Transform).x = 2000;
 					ys1.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 10) {
 					hp = hp + 50;
 					ys2.getBehaviour(Transform).x = 2000;
 					ys2.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 12) {
 					hp = hp + 50;
 					ys3.getBehaviour(Transform).x = 2000;
 					ys3.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 12) {
 					hp = hp + 50;
 					ys4.getBehaviour(Transform).x = 2000;
 					ys4.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 2 && y1 == 13) {
 					hp = hp + 50;
 					ys5.getBehaviour(Transform).x = 2000;
 					ys5.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 14) {
 					hp = hp + 50;
 					ys6.getBehaviour(Transform).x = 2000;
 					ys6.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 14) {
 					hp = hp + 50;
 					ys7.getBehaviour(Transform).x = 2000;
 					ys7.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.mp3";
+					potionAudio.audioPath = "./music/re-potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (arr[x1][y1] == 65 && x1 == 6 && y1 == 5) {
 					hp = hp + 50;
@@ -649,28 +649,28 @@ class BasicBehaviour extends Behaviour {
 					bomb1.getBehaviour(Transform).x = 2000;
 					bomb1.getBehaviour(Transform).y = 2000;
 					const pickAudio = new AudioSystem();
-					pickAudio.audioPath = "./music/pick.mp3";
+					pickAudio.audioPath = "./music/re-pick.mp3";
 					pickAudio.playAudio(false);
 					bombs++;
 				} else if (arr[x1][y1] == 67 && x1 == 14 && y1 == 5) {
 					bomb2.getBehaviour(Transform).x = 2000;
 					bomb2.getBehaviour(Transform).y = 2000;
 					const pickAudio = new AudioSystem();
-					pickAudio.audioPath = "./music/pick.mp3";
+					pickAudio.audioPath = "./music/re-pick.mp3";
 					pickAudio.playAudio(false);
 					bombs++;
 				} else if (arr[x1][y1] == 67 && x1 == 5 && y1 == 14) {
 					bomb3.getBehaviour(Transform).x = 2000;
 					bomb3.getBehaviour(Transform).y = 2000;
 					const pickAudio = new AudioSystem();
-					pickAudio.audioPath = "./music/pick.mp3";
+					pickAudio.audioPath = "./music/re-pick.mp3";
 					pickAudio.playAudio(false);
 					bombs++;
 				} else if (arr[x1][y1] == 67 && x1 == 14 && y1 == 6) {
 					bomb4.getBehaviour(Transform).x = 2000;
 					bomb4.getBehaviour(Transform).y = 2000;
 					const pickAudio = new AudioSystem();
-					pickAudio.audioPath = "./music/pick.mp3";
+					pickAudio.audioPath = "./music/re-pick.mp3";
 					pickAudio.playAudio(false);
 					bombs++;
 				} else if (arr[x1][y1] == 68 && x1 == 6 && y1 == 1) {
@@ -678,21 +678,21 @@ class BasicBehaviour extends Behaviour {
 					key1.getBehaviour(Transform).x = 2000;
 					key1.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.mp3";
+					keyAudio.audioPath = "./music/re-key.mp3";
 					keyAudio.playAudio(false);
 				} else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 5) {
 					keys++;
 					key2.getBehaviour(Transform).x = 2000;
 					key2.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.mp3";
+					keyAudio.audioPath = "./music/re-key.mp3";
 					keyAudio.playAudio(false);
 				} else if (arr[x1][y1] == 68 && x1 == 9 && y1 == 13) {
 					keys++;
 					key3.getBehaviour(Transform).x = 2000;
 					key3.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.mp3";
+					keyAudio.audioPath = "./music/re-key.mp3";
 					keyAudio.playAudio(false);
 				}
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
@@ -711,7 +711,7 @@ class BasicBehaviour extends Behaviour {
 				// const floorBackgroungAudio = document.createElement("audio");
 				const floorBackgroungAudio = new AudioSystem();
 				//第二层的音乐
-				floorBackgroungAudio.audioPath = "./music/BGM.mp3";
+				floorBackgroungAudio.audioPath = "./music/re-BGM.mp3";
 				floorBackgroungAudio.playAudio(true, 0.1);
 				FloorController.isAudioPlaying = false;
 			}
