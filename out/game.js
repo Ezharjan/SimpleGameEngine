@@ -1,5 +1,7 @@
 class KeyContainerBehaviour extends Behaviour {
     onStart() {
+        // const deadAudio = new AudioSystem();
+        // deadAudio.audioPath = "./music/altar.wav";
         var allMaps = [
             [
                 //61为刀 64为祭坛 65为药 67炸弹 68钥匙
@@ -26,11 +28,11 @@ class KeyContainerBehaviour extends Behaviour {
         let floor = 0;
         let bombs = 0;
         let keys = 0;
-        if (getPlayerData("life") != NaN
-            || getPlayerData("attackability") != NaN
-            || getPlayerData("defendability") != NaN
-            || getPlayerData("keys") != NaN
-            || getPlayerData("bombs") != NaN) {
+        if (getPlayerData("life") != (NaN || null || undefined)
+            || getPlayerData("attackability") != (NaN || null || undefined)
+            || getPlayerData("defendability") != (NaN || null || undefined)
+            || getPlayerData("keys") != (NaN || null || undefined)
+            || getPlayerData("bombs") != (NaN || null || undefined)) {
             clearPlayerData();
         }
         console.log("%%%%%%%%% " + getPlayerData("life"));
@@ -304,6 +306,7 @@ class KeyContainerBehaviour extends Behaviour {
                 if (hp < 0) {
                     mapArr[x][y] = 99;
                     alert("You're dead！Game Over!");
+                    window.location.href = "./died.html";
                 }
                 else if (hp > 0 && x1 == 12 && y1 == 7) {
                     if (attackability >= 10) {
@@ -311,8 +314,11 @@ class KeyContainerBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // setTimeout(() => {
+                            // alert("You're dead！Game Over!");
+                            // }, 200);
+                            window.location.href = "./died.html";
                         }
                         else {
                             monster1.getBehaviour(Transform).x = 2000;
@@ -333,8 +339,9 @@ class KeyContainerBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // alert("You're dead！Game Over!");
+                            // deadAudio.playAudio(false);
+                            window.location.href = "./died.html";
                         }
                         else {
                             monster2.getBehaviour(Transform).x = 2000;
@@ -355,8 +362,9 @@ class KeyContainerBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // alert("You're dead！Game Over!");
+                            // deadAudio.playAudio(false);
+                            window.location.href = "./died.html";
                         }
                         else {
                             monster3.getBehaviour(Transform).x = 2000;
@@ -377,8 +385,9 @@ class KeyContainerBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // alert("You're dead！Game Over!");
+                            // deadAudio.playAudio(false);
+                            window.location.href = "./died.html";
                         }
                         else {
                             monster21.getBehaviour(Transform).x = 2000;

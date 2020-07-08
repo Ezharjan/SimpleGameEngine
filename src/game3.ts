@@ -4,6 +4,13 @@ class ThirdBehaviour extends Behaviour {
 
 	onStart() {
 
+
+		// const deadAudio = new AudioSystem();
+		// const wonAudio = new AudioSystem();
+		// deadAudio.audioPath = "./music/altar.wav";
+		// wonAudio.audioPath = "./music/altar.wav";
+
+
 		var allMaps = [
 			//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
 			[
@@ -54,11 +61,11 @@ class ThirdBehaviour extends Behaviour {
 					door2.getBehaviour(Transform).x = 200 + 215;
 					door2.getBehaviour(Transform).y = 700 - 40;
 					const goodend = core.getObjectById("goodend");
-		            goodend.getBehaviour(Transform).x = 2000;
+					goodend.getBehaviour(Transform).x = 2000;
 					goodend.getBehaviour(Transform).y = 2000;
 					const deadend = core.getObjectById("deadend");
-		            deadend.getBehaviour(Transform).x = 2000;
-		            deadend.getBehaviour(Transform).y = 2000;
+					deadend.getBehaviour(Transform).x = 2000;
+					deadend.getBehaviour(Transform).y = 2000;
 				} else if (arr[i][j] == 21) {
 					const stone1 = core.getObjectById("stone1");
 					stone1.getBehaviour(Transform).x = 250 + 215;
@@ -195,7 +202,7 @@ class ThirdBehaviour extends Behaviour {
 				updatePlayerData("attackability", attackability);
 				updatePlayerData("defendability", defendability);
 				//window.location.href = "./secondPage.html"
-			} 
+			}
 			// else if (arr[x1][y1] == 52) {
 			// 	if (floor >= 1 && floor < allMaps.length) {
 			// 		floor--;
@@ -217,16 +224,19 @@ class ThirdBehaviour extends Behaviour {
 					arr[x][y] = 99;
 					deadend.getBehaviour(Transform).x = 0;
 					deadend.getBehaviour(Transform).y = 0;
-					alert("You're dead！Game Over!");
-					window.location.href = "./firstPage.html"
+					// deadAudio.playAudio(false);
+					// deadAudio.playAudio(false);
+					// alert("You're dead！Game Over!");
+					window.location.href = "./index.html"
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// deadAudio.playAudio(false);
+							// alert("You're dead！Game Over!");
+							window.location.href = "./index.html"
 						} else {
 							guaiwu11.getBehaviour(Transform).x = 2000;
 							guaiwu11.getBehaviour(Transform).y = 2000;
@@ -244,8 +254,9 @@ class ThirdBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// deadAudio.playAudio(false);
+							// alert("You're dead！Game Over!");
+							window.location.href = "./index.html"
 						} else {
 							guaiwu12.getBehaviour(Transform).x = 2000;
 							guaiwu12.getBehaviour(Transform).y = 2000;
@@ -263,8 +274,9 @@ class ThirdBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// deadAudio.playAudio(false);
+							// alert("You're dead！Game Over!");
+							window.location.href = "./index.html"
 						} else {
 							coffin1.getBehaviour(Transform).x = 2000;
 							coffin1.getBehaviour(Transform).y = 2000;
@@ -283,9 +295,11 @@ class ThirdBehaviour extends Behaviour {
 							arr[x1][y1] = 3;
 							arr[7][3] = 1; arr[7][4] = 1; arr[7][5] = 1; arr[8][3] = 1; arr[8][4] = 1; arr[8][5] = 1;
 							arr[x][y] = 1;
-							alert("Congratulations!");
+							// wonAudio.playAudio(false);
+							// alert("Congratulations!");
+							window.location.href = "../won.html";
 							goodend.getBehaviour(Transform).x = 0;
-		                    goodend.getBehaviour(Transform).y = 0;
+							goodend.getBehaviour(Transform).y = 0;
 						}
 					} else {
 						alert("Your attackability is lower than 70!");
@@ -296,7 +310,9 @@ class ThirdBehaviour extends Behaviour {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
-							alert("You're dead！Game Over!");
+							// deadAudio.playAudio(false);
+							// alert("You're dead！Game Over!");
+							window.location.href = "../died.html";
 						} else {
 							guaiwu21.getBehaviour(Transform).x = 2000;
 							guaiwu21.getBehaviour(Transform).y = 2000;
