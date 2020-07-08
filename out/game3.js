@@ -169,6 +169,9 @@ class ThirdBehaviour extends Behaviour {
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
                 stone1.getBehaviour(Transform).x = 1000;
                 stone1.getBehaviour(Transform).y = 1000;
+                const BoomStoneAudio = new AudioSystem();
+                BoomStoneAudio.audioPath = "./music/Boom.wav";
+                BoomStoneAudio.playAudio(false);
                 arr[x1][y1] = 3;
                 arr[x][y] = 1;
                 bombs--;
@@ -227,7 +230,7 @@ class ThirdBehaviour extends Behaviour {
                     // deadAudio.playAudio(false);
                     // deadAudio.playAudio(false);
                     // alert("You're dead！Game Over!");
-                    window.location.href = "./index.html";
+                    window.location.href = "./died.html";
                 }
                 else if (hp > 0 && x1 == 12 && y1 == 7) {
                     if (attackability >= 10) {
@@ -237,7 +240,7 @@ class ThirdBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu11.getBehaviour(Transform).x = 2000;
@@ -260,7 +263,7 @@ class ThirdBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu12.getBehaviour(Transform).x = 2000;
@@ -283,7 +286,7 @@ class ThirdBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             coffin1.getBehaviour(Transform).x = 2000;
@@ -311,8 +314,8 @@ class ThirdBehaviour extends Behaviour {
                             // wonAudio.playAudio(false);
                             // alert("Congratulations!");
                             window.location.href = "../won.html";
-                            goodend.getBehaviour(Transform).x = 0;
-                            goodend.getBehaviour(Transform).y = 0;
+                            //goodend.getBehaviour(Transform).x = 0;
+                            //goodend.getBehaviour(Transform).y = 0;
                         }
                     }
                     else {

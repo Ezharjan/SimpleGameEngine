@@ -15,10 +15,10 @@ class BasicBehaviour extends Behaviour {
                 [9, 1, 1, 1, 1, 1, 0, 1, 1, 1, 41, 21, 65, 61, 65, 9],
                 [9, 0, 0, 44, 0, 0, 0, 0, 1, 0, 21, 21, 0, 0, 0, 9],
                 [9, 61, 0, 41, 0, 65, 0, 1, 1, 1, 0, 41, 1, 1, 67, 9],
-                [9, 68, 0, 1, 22, 65, 0, 1, 1, 1, 0, 1, 1, 1, 9],
+                [9, 68, 0, 1, 22, 65, 0, 1, 1, 1, 0, 1, 1, 1, 1, 9],
                 [9, 1, 0, 1, 0, 0, 0, 42, 1, 1, 0, 1, 64, 1, 1, 9],
                 [9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
-                [9, 1, 0, 1, 42, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
+                [9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
                 [9, 1, 0, 1, 1, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
                 [9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
                 [9, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9],
@@ -299,6 +299,9 @@ class BasicBehaviour extends Behaviour {
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
                 stone1.getBehaviour(Transform).x = 1000;
                 stone1.getBehaviour(Transform).y = 1000;
+                const BoomStoneAudio = new AudioSystem();
+                BoomStoneAudio.audioPath = "./music/Boom.wav";
+                BoomStoneAudio.playAudio(false);
                 arr[x1][y1] = 3;
                 arr[x][y] = 1;
                 bombs--;
@@ -308,6 +311,9 @@ class BasicBehaviour extends Behaviour {
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
                 stone2.getBehaviour(Transform).x = 1000;
                 stone2.getBehaviour(Transform).y = 1000;
+                const BoomStoneAudio = new AudioSystem();
+                BoomStoneAudio.audioPath = "./music/Boom.wav";
+                BoomStoneAudio.playAudio(false);
                 arr[x1][y1] = 3;
                 arr[x][y] = 1;
                 bombs--;
@@ -317,6 +323,9 @@ class BasicBehaviour extends Behaviour {
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
                 stone3.getBehaviour(Transform).x = 1000;
                 stone3.getBehaviour(Transform).y = 1000;
+                const BoomStoneAudio = new AudioSystem();
+                BoomStoneAudio.audioPath = "./music/Boom.wav";
+                BoomStoneAudio.playAudio(false);
                 arr[x1][y1] = 3;
                 arr[x][y] = 1;
                 bombs--;
@@ -326,6 +335,9 @@ class BasicBehaviour extends Behaviour {
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
                 stone4.getBehaviour(Transform).x = 1000;
                 stone4.getBehaviour(Transform).y = 1000;
+                const BoomStoneAudio = new AudioSystem();
+                BoomStoneAudio.audioPath = "./music/Boom.wav";
+                BoomStoneAudio.playAudio(false);
                 arr[x1][y1] = 3;
                 arr[x][y] = 1;
                 bombs--;
@@ -394,7 +406,7 @@ class BasicBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu11.getBehaviour(Transform).x = 2000;
@@ -417,7 +429,7 @@ class BasicBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu12.getBehaviour(Transform).x = 2000;
@@ -440,7 +452,7 @@ class BasicBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu13.getBehaviour(Transform).x = 2000;
@@ -463,7 +475,7 @@ class BasicBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu14.getBehaviour(Transform).x = 2000;
@@ -478,7 +490,7 @@ class BasicBehaviour extends Behaviour {
                         alert("Your attackability is lower than 10!");
                     }
                 }
-                else if ((hp > 0) && (x1 == 9 && y1 == 4)) {
+                else if ((hp > 0) && ((x1 == 9 && y1 == 4) || (x1 == 9 && y1 == 3))) {
                     if (attackability >= 20) {
                         hp = hp - 50;
                         if (hp <= 0) {
@@ -486,7 +498,7 @@ class BasicBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu21.getBehaviour(Transform).x = 2000;
@@ -519,7 +531,7 @@ class BasicBehaviour extends Behaviour {
                             deadend.getBehaviour(Transform).y = 0;
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "./index.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu25.getBehaviour(Transform).x = 2000;
@@ -559,31 +571,49 @@ class BasicBehaviour extends Behaviour {
                     attackability = attackability + 10;
                     weapon1.getBehaviour(Transform).x = 1000;
                     weapon1.getBehaviour(Transform).y = 1000;
+                    const weaponAudio = new AudioSystem();
+                    weaponAudio.audioPath = "./music/knife.wav";
+                    weaponAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 61 && x1 == 1 && y1 == 7) {
                     attackability = attackability + 10;
                     weapon2.getBehaviour(Transform).x = 1000;
                     weapon2.getBehaviour(Transform).y = 1000;
+                    const weaponAudio = new AudioSystem();
+                    weaponAudio.audioPath = "./music/knife.wav";
+                    weaponAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 12) {
                     attackability = attackability + 10;
                     weapon3.getBehaviour(Transform).x = 1000;
                     weapon3.getBehaviour(Transform).y = 1000;
+                    const weaponAudio = new AudioSystem();
+                    weaponAudio.audioPath = "./music/knife.wav";
+                    weaponAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 61 && x1 == 1 && y1 == 13) {
                     attackability = attackability + 10;
                     weapon4.getBehaviour(Transform).x = 1000;
                     weapon4.getBehaviour(Transform).y = 1000;
+                    const weaponAudio = new AudioSystem();
+                    weaponAudio.audioPath = "./music/knife.wav";
+                    weaponAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 61 && x1 == 3 && y1 == 13) {
                     attackability = attackability + 10;
                     weapon5.getBehaviour(Transform).x = 1000;
                     weapon5.getBehaviour(Transform).y = 1000;
+                    const weaponAudio = new AudioSystem();
+                    weaponAudio.audioPath = "./music/knife.wav";
+                    weaponAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 61 && x1 == 2 && y1 == 14) {
                     attackability = attackability + 10;
                     weapon6.getBehaviour(Transform).x = 1000;
                     weapon6.getBehaviour(Transform).y = 1000;
+                    const weaponAudio = new AudioSystem();
+                    weaponAudio.audioPath = "./music/knife.wav";
+                    weaponAudio.playAudio(false);
                 }
                 // else if (arr[x1][y1] == 61 && x1 == 14 && y1 == 6) {
                 // 	attackability = attackability + 10;
@@ -597,6 +627,9 @@ class BasicBehaviour extends Behaviour {
                     altar1.getBehaviour(Transform).y = 2000;
                     altar2.getBehaviour(Transform).x = 600 + 215;
                     altar2.getBehaviour(Transform).y = 350 - 40;
+                    const altarAudio = new AudioSystem();
+                    altarAudio.audioPath = "./music/altar.wav";
+                    altarAudio.playAudio(false);
                     arr[x1][y1] = 3;
                     arr[x][y] = 1;
                     passed = 1;
@@ -606,36 +639,57 @@ class BasicBehaviour extends Behaviour {
                     hp = hp + 50;
                     ys1.getBehaviour(Transform).x = 2000;
                     ys1.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 10) {
                     hp = hp + 50;
                     ys2.getBehaviour(Transform).x = 2000;
                     ys2.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 12) {
                     hp = hp + 50;
                     ys3.getBehaviour(Transform).x = 2000;
                     ys3.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 12) {
                     hp = hp + 50;
                     ys4.getBehaviour(Transform).x = 2000;
                     ys4.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 2 && y1 == 13) {
                     hp = hp + 50;
                     ys5.getBehaviour(Transform).x = 2000;
                     ys5.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 1 && y1 == 14) {
                     hp = hp + 50;
                     ys6.getBehaviour(Transform).x = 2000;
                     ys6.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 3 && y1 == 14) {
                     hp = hp + 50;
                     ys7.getBehaviour(Transform).x = 2000;
                     ys7.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/potion.wav";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 65 && x1 == 6 && y1 == 5) {
                     hp = hp + 50;
@@ -645,37 +699,58 @@ class BasicBehaviour extends Behaviour {
                 else if (arr[x1][y1] == 67 && x1 == 1 && y1 == 1) {
                     bomb1.getBehaviour(Transform).x = 2000;
                     bomb1.getBehaviour(Transform).y = 2000;
+                    const pickAudio = new AudioSystem();
+                    pickAudio.audioPath = "./music/pick.wav";
+                    pickAudio.playAudio(false);
                     bombs++;
                 }
                 else if (arr[x1][y1] == 67 && x1 == 14 && y1 == 5) {
                     bomb2.getBehaviour(Transform).x = 2000;
                     bomb2.getBehaviour(Transform).y = 2000;
+                    const pickAudio = new AudioSystem();
+                    pickAudio.audioPath = "./music/pick.wav";
+                    pickAudio.playAudio(false);
                     bombs++;
                 }
                 else if (arr[x1][y1] == 67 && x1 == 5 && y1 == 14) {
                     bomb3.getBehaviour(Transform).x = 2000;
                     bomb3.getBehaviour(Transform).y = 2000;
+                    const pickAudio = new AudioSystem();
+                    pickAudio.audioPath = "./music/pick.wav";
+                    pickAudio.playAudio(false);
                     bombs++;
                 }
                 else if (arr[x1][y1] == 67 && x1 == 14 && y1 == 6) {
                     bomb4.getBehaviour(Transform).x = 2000;
                     bomb4.getBehaviour(Transform).y = 2000;
+                    const pickAudio = new AudioSystem();
+                    pickAudio.audioPath = "./music/pick.wav";
+                    pickAudio.playAudio(false);
                     bombs++;
                 }
                 else if (arr[x1][y1] == 68 && x1 == 6 && y1 == 1) {
                     keys++;
                     key1.getBehaviour(Transform).x = 2000;
                     key1.getBehaviour(Transform).y = 2000;
+                    const keyAudio = new AudioSystem();
+                    keyAudio.audioPath = "./music/key.wav";
+                    keyAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 68 && x1 == 1 && y1 == 5) {
                     keys++;
                     key2.getBehaviour(Transform).x = 2000;
                     key2.getBehaviour(Transform).y = 2000;
+                    const keyAudio = new AudioSystem();
+                    keyAudio.audioPath = "./music/key.wav";
+                    keyAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 68 && x1 == 9 && y1 == 13) {
                     keys++;
                     key3.getBehaviour(Transform).x = 2000;
                     key3.getBehaviour(Transform).y = 2000;
+                    const keyAudio = new AudioSystem();
+                    keyAudio.audioPath = "./music/key.wav";
+                    keyAudio.playAudio(false);
                 }
                 player.getBehaviour(Transform).x = y1 * 50 + 215;
                 player.getBehaviour(Transform).y = x1 * 50 - 40;

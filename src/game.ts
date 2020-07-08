@@ -164,16 +164,16 @@ class KeyContainerBehaviour extends Behaviour {
 					const road2 = core.getObjectById("lu");
 					road2.getBehaviour(Transform).x = j * 50 + 215;
 					road2.getBehaviour(Transform).y = i * 50 - 40;
-					var die = document.createElement('div');
-					die.className = 'die';
-					die.innerHTML = '你死了！';
-					var replay = document.createElement('div');
-					replay.innerHTML = '再来一次';
-					replay.className = 'agin';
-					replay.onclick = function () {
-						location.href += "?reload=true";
-					}
-					die.appendChild(replay);
+					//var die = document.createElement('div');
+					// die.className = 'die';
+					// die.innerHTML = '你死了！';
+					// var replay = document.createElement('div');
+					// replay.innerHTML = '再来一次';
+					// replay.className = 'agin';
+					// replay.onclick = function () {
+					// 	location.href += "?reload=true";
+					// }
+					// die.appendChild(replay);
 				}
 			}
 		}
@@ -218,6 +218,9 @@ class KeyContainerBehaviour extends Behaviour {
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				stone1.getBehaviour(Transform).x = 1000;
 				stone1.getBehaviour(Transform).y = 1000;
+				const BoomStoneAudio = new AudioSystem();
+				BoomStoneAudio.audioPath = "./music/Boom.wav";
+				BoomStoneAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
 				bombs--;
@@ -226,6 +229,9 @@ class KeyContainerBehaviour extends Behaviour {
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
 				stone2.getBehaviour(Transform).x = 1000;
 				stone2.getBehaviour(Transform).y = 1000;
+				const BoomStoneAudio = new AudioSystem();
+				BoomStoneAudio.audioPath = "./music/Boom.wav";
+				BoomStoneAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
 				bombs--;
@@ -287,6 +293,9 @@ class KeyContainerBehaviour extends Behaviour {
 				altar1.getBehaviour(Transform).y = 2000;
 				altar2.getBehaviour(Transform).x = 300 + 215;
 				altar2.getBehaviour(Transform).y = 50 - 40;
+				const altarAudio = new AudioSystem();
+			    altarAudio.audioPath = "./music/altar.wav";
+				altarAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
 				passed = 1;
@@ -365,9 +374,9 @@ class KeyContainerBehaviour extends Behaviour {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
-							deadend.getBehaviour(Transform).x = 0;
-							deadend.getBehaviour(Transform).y = 0;
-							// alert("You're dead！Game Over!");
+							//deadend.getBehaviour(Transform).x = 0;
+							//deadend.getBehaviour(Transform).y = 0;
+							//alert("You're dead！Game Over!");
 							// deadAudio.playAudio(false);
 							window.location.href = "./died.html"
 						} else {
@@ -402,56 +411,72 @@ class KeyContainerBehaviour extends Behaviour {
 					attackability = attackability + 10;
 					weapon1.getBehaviour(Transform).x = 2000;
 					weapon1.getBehaviour(Transform).y = 2000;
+					const weaponAudio = new AudioSystem();
+					weaponAudio.audioPath = "./music/knife.wav";
+					weaponAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 62) {
 					defendability = defendability + 10;
 				} else if (mapArr[x1][y1] == 63) {
 					attackability = attackability + 10;
-				} else if (mapArr[x1][y1] == 64) {
-					player.getBehaviour(Transform).x = y1 * 50 + 215;
-					player.getBehaviour(Transform).y = x1 * 50 - 40;
-					altar1.getBehaviour(Transform).x = 2000;
-					altar1.getBehaviour(Transform).y = 2000;
-					altar2.getBehaviour(Transform).x = 300 + 215;
-					altar2.getBehaviour(Transform).y = 50 - 40;
-					mapArr[x1][y1] = 3;
-					mapArr[x][y] = 1;
-					passed = 1;
-					alert("You have opened the altar!");
 				} else if (mapArr[x1][y1] == 65 && x1 == 3 && y1 == 8) {
 					hp = hp + 50;
 					ys11.getBehaviour(Transform).x = 2000;
 					ys11.getBehaviour(Transform).y = 2000;
+					const potionAudio = new AudioSystem();
+					potionAudio.audioPath = "./music/potion.wav";
+					potionAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 65 && x1 == 7 && y1 == 14) {
 					hp = hp + 50;
 					ys12.getBehaviour(Transform).x = 2000;
 					ys12.getBehaviour(Transform).y = 2000;
+					const potionAudio = new AudioSystem();
+					potionAudio.audioPath = "./music/potion.wav";
+					potionAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 66) {
 					hp = hp + 50;
 				} else if (mapArr[x1][y1] == 67) {
 					bomb1.getBehaviour(Transform).x = 2000;
 					bomb1.getBehaviour(Transform).y = 2000;
+					const pickAudio = new AudioSystem();
+					pickAudio.audioPath = "./music/pick.wav";
+					pickAudio.playAudio(false);
 					bombs++;
 				} else if (mapArr[x1][y1] == 68 && x1 == 1 && y1 == 7) {
 					keys++;
 					key1.getBehaviour(Transform).x = 2000;
 					key1.getBehaviour(Transform).y = 2000;
+					const keyAudio = new AudioSystem();
+					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 68 && x1 == 1 && y1 == 8) {
 					keys++;
 					key2.getBehaviour(Transform).x = 2000;
 					key2.getBehaviour(Transform).y = 2000;
+					const keyAudio = new AudioSystem();
+					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 68 && x1 == 4 && y1 == 13) {
 					keys++;
 					key3.getBehaviour(Transform).x = 2000;
 					key3.getBehaviour(Transform).y = 2000;
+					const keyAudio = new AudioSystem();
+					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 68 && x1 == 12 && y1 == 8) {
 					keys++;
 					key4.getBehaviour(Transform).x = 2000;
 					key4.getBehaviour(Transform).y = 2000;
+					const keyAudio = new AudioSystem();
+					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.playAudio(false);
 				}
 				else if (mapArr[x1][y1] == 68 && x1 == 14 && y1 == 13) {
 					keys++;
 					key5.getBehaviour(Transform).x = 2000;
 					key5.getBehaviour(Transform).y = 2000;
+					const keyAudio = new AudioSystem();
+					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.playAudio(false);
 				}
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
 				player.getBehaviour(Transform).y = x1 * 50 - 40;
