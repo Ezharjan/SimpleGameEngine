@@ -32,8 +32,8 @@ class ThirdBehaviour extends Behaviour {
         let keys = getPlayerData("keys");
         var passed = 0;
         console.log("%%%%%%%%% " + getPlayerData("life"));
-        // var hp = 100;
-        // var attackability = 10;
+        //var hp = 100;
+        //var attackability = 100;
         // var defendability = 10;
         let hp = getPlayerData("life");
         let attackability = getPlayerData("attackability");
@@ -48,6 +48,12 @@ class ThirdBehaviour extends Behaviour {
                     const door2 = core.getObjectById("door2");
                     door2.getBehaviour(Transform).x = 200 + 215;
                     door2.getBehaviour(Transform).y = 700 - 40;
+                    const goodend = core.getObjectById("goodend");
+                    goodend.getBehaviour(Transform).x = 2000;
+                    goodend.getBehaviour(Transform).y = 2000;
+                    const deadend = core.getObjectById("deadend");
+                    deadend.getBehaviour(Transform).x = 2000;
+                    deadend.getBehaviour(Transform).y = 2000;
                 }
                 else if (arr[i][j] == 21) {
                     const stone1 = core.getObjectById("stone1");
@@ -144,6 +150,8 @@ class ThirdBehaviour extends Behaviour {
             const coffin4 = core.getObjectById("coffin4");
             const coffin5 = core.getObjectById("coffin5");
             const coffin6 = core.getObjectById("coffin6");
+            const goodend = core.getObjectById("goodend");
+            const deadend = core.getObjectById("deadend");
             player.getBehaviour(Transform).x = y * 50 + 215;
             player.getBehaviour(Transform).y = x * 50 - 40;
             if (arr[x1][y1] == 1) {
@@ -189,15 +197,15 @@ class ThirdBehaviour extends Behaviour {
                 updatePlayerData("bombs", bombs);
                 updatePlayerData("attackability", attackability);
                 updatePlayerData("defendability", defendability);
-                window.location.href = "./secondPage.html";
+                //window.location.href = "./secondPage.html"
             }
-            else if (arr[x1][y1] == 52) {
-                if (floor >= 1 && floor < allMaps.length) {
-                    floor--;
-                    arr = allMaps[floor];
-                }
-                //window.location.href= "./index.html"
-            }
+            // else if (arr[x1][y1] == 52) {
+            // 	if (floor >= 1 && floor < allMaps.length) {
+            // 		floor--;
+            // 		arr = allMaps[floor];
+            // 	}
+            // 	//window.location.href= "./index.html"
+            // } 
             else if (arr[x1][y1] == 22 && keys > 0 && x1 == 14 && y1 == 4) {
                 player.getBehaviour(Transform).x = y1 * 50 + 215;
                 player.getBehaviour(Transform).y = x1 * 50 - 40;
@@ -210,13 +218,19 @@ class ThirdBehaviour extends Behaviour {
             else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
                 if (hp <= 0) {
                     arr[x][y] = 99;
+                    deadend.getBehaviour(Transform).x = 0;
+                    deadend.getBehaviour(Transform).y = 0;
                     alert("You're dead！Game Over!");
+                    window.location.href = "./firstPage.html";
                 }
                 else if (hp > 0 && x1 == 12 && y1 == 7) {
                     if (attackability >= 10) {
                         hp = hp - 20;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             guaiwu11.getBehaviour(Transform).x = 2000;
@@ -235,7 +249,10 @@ class ThirdBehaviour extends Behaviour {
                     if (attackability >= 10) {
                         hp = hp - 20;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             guaiwu12.getBehaviour(Transform).x = 2000;
@@ -254,7 +271,10 @@ class ThirdBehaviour extends Behaviour {
                     if (attackability >= 70) {
                         hp = hp - 70;
                         if (hp <= 0) {
+                            deadend.getBehaviour(Transform).x = 0;
+                            deadend.getBehaviour(Transform).y = 0;
                             alert("You're dead！Game Over!");
+                            window.location.href = "./firstPage.html";
                         }
                         else {
                             coffin1.getBehaviour(Transform).x = 2000;
@@ -279,6 +299,9 @@ class ThirdBehaviour extends Behaviour {
                             arr[8][4] = 1;
                             arr[8][5] = 1;
                             arr[x][y] = 1;
+                            alert("Congratulations!");
+                            goodend.getBehaviour(Transform).x = 0;
+                            goodend.getBehaviour(Transform).y = 0;
                         }
                     }
                     else {
@@ -430,13 +453,13 @@ class ThirdBehaviour extends Behaviour {
                 }
             }
             const HPText = core.getObjectById("HPText");
-            HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
+            HPText.getBehaviour(TextRenderer).text = hp;
             const AttackTest = core.getObjectById("AttackText");
-            AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
+            AttackTest.getBehaviour(TextRenderer).text = attackability;
             const KeyTest = core.getObjectById("KeyText");
-            KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
+            KeyTest.getBehaviour(TextRenderer).text = keys;
             const BombTest = core.getObjectById("BombText");
-            BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
+            BombTest.getBehaviour(TextRenderer).text = bombs;
             // const restart = core.getObjectById("restart");
             // restart.onclick = function () {
             // location.href += "?reload=true";

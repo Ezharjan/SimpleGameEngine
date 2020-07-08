@@ -58,6 +58,8 @@
         "./img/maps/map_3.png",
         "./img/downstair.png",
         "./img/gamescore_background.png",
-        "./img/gameview.png"
+        "./img/gameview.png",
+        "./img/GoodEnd.png",
+        "./img/DeadEnd.png"
     ]
 }

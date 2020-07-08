@@ -48,6 +48,9 @@ class BasicBehaviour extends Behaviour {
 
 
 		var arr = allMaps[0];
+		const deadend = core.getObjectById("deadend");
+		deadend.getBehaviour(Transform).x = 2000;
+		deadend.getBehaviour(Transform).y = 2000;
 		for (var i = 0; i < arr.length; i++) {
 			for (var j = 0; j < arr[i].length; j++) {
 				if (arr[i][j] == 1) {
@@ -277,6 +280,7 @@ class BasicBehaviour extends Behaviour {
 			const ys6 = core.getObjectById("ys6");
 			const ys7 = core.getObjectById("ys7");
 			const ys8 = core.getObjectById("ys8");
+			const deadend = core.getObjectById("deadend");
 
 			player.getBehaviour(Transform).x = y * 50 + 215;
 			player.getBehaviour(Transform).y = x * 50 - 40;
@@ -368,8 +372,11 @@ class BasicBehaviour extends Behaviour {
 				} else if (hp > 0 && x1 == 5 && y1 == 3) {
 					if (attackability >= 10) {
 						hp = hp - 20;
-						if (hp < 0) {
+						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu11.getBehaviour(Transform).x = 2000;
 							guaiwu11.getBehaviour(Transform).y = 2000;
@@ -385,7 +392,10 @@ class BasicBehaviour extends Behaviour {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu12.getBehaviour(Transform).x = 2000;
 							guaiwu12.getBehaviour(Transform).y = 2000;
@@ -401,7 +411,10 @@ class BasicBehaviour extends Behaviour {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu13.getBehaviour(Transform).x = 2000;
 							guaiwu13.getBehaviour(Transform).y = 2000;
@@ -417,7 +430,10 @@ class BasicBehaviour extends Behaviour {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu14.getBehaviour(Transform).x = 2000;
 							guaiwu14.getBehaviour(Transform).y = 2000;
@@ -433,7 +449,10 @@ class BasicBehaviour extends Behaviour {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu21.getBehaviour(Transform).x = 2000;
 							guaiwu21.getBehaviour(Transform).y = 2000;
@@ -456,7 +475,10 @@ class BasicBehaviour extends Behaviour {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
+							deadend.getBehaviour(Transform).x = 0;
+							deadend.getBehaviour(Transform).y = 0;
 							alert("You're dead！Game Over!");
+							window.location.href = "./firstPage.html"
 						} else {
 							guaiwu25.getBehaviour(Transform).x = 2000;
 							guaiwu25.getBehaviour(Transform).y = 2000;
@@ -678,13 +700,13 @@ class BasicBehaviour extends Behaviour {
 				}
 			}
 			const HPText = core.getObjectById("HPText");
-			HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
+			HPText.getBehaviour(TextRenderer).text = hp;
 			const AttackTest = core.getObjectById("AttackText");
-			AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
+			AttackTest.getBehaviour(TextRenderer).text = attackability;
 			const KeyTest = core.getObjectById("KeyText");
-			KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
+			KeyTest.getBehaviour(TextRenderer).text = keys;
 			const BombTest = core.getObjectById("BombText");
-			BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
+			BombTest.getBehaviour(TextRenderer).text = bombs;
 			// const restart = core.getObjectById("restart");
 			// restart.onclick = function () {
 			// location.href += "?reload=true";

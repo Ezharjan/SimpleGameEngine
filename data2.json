@@ -344,18 +344,6 @@
 					]
 				},
 				{
-					"id": "weapon7",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
 					"id": "ys1",
 					"behaviours": [
 						{
@@ -588,13 +576,13 @@
 					"behaviours": [
 						{
 							"name": "Transform",
-							"x": 100,
-							"y": 300
+							"x": 140,
+							"y": 280
 						},
 						{
 							"name": "TextRenderer",
 							"color": "#00000",
-							"text": "生命值"
+							"text": " "
 						}
 					]
 				},
@@ -603,13 +591,13 @@
 					"behaviours": [
 						{
 							"name": "Transform",
-							"x": 100,
-							"y": 320
+							"x": 140,
+							"y": 325
 						},
 						{
 							"name": "TextRenderer",
 							"color": "#00000",
-							"text": "攻击力"
+							"text": " "
 						}
 					]
 				},
@@ -618,13 +606,13 @@
 					"behaviours": [
 						{
 							"name": "Transform",
-							"x": 100,
-							"y": 340
+							"x": 140,
+							"y": 375
 						},
 						{
 							"name": "TextRenderer",
 							"color": "#00000",
-							"text": "钥匙数"
+							"text": " "
 						}
 					]
 				},
@@ -633,13 +621,25 @@
 					"behaviours": [
 						{
 							"name": "Transform",
-							"x": 100,
-							"y": 360
+							"x": 140,
+							"y": 420
 						},
 						{
 							"name": "TextRenderer",
 							"color": "#00000",
-							"text": "炸弹数"
+							"text": " "
+						}
+					]
+				},
+				{
+					"id": "deadend",
+					"behaviours": [
+						{
+							"name": "Transform"
+						},
+						{
+							"name": "ImageRenderer",
+							"image": "./img/DeadEnd.png"
 						}
 					]
 				}
