@@ -6,7 +6,7 @@ class KeyContainerBehaviour extends Behaviour {
 		FloorController.isAudioPlaying = true;
 
 		// const deadAudio = new AudioSystem();
-		// deadAudio.audioPath = "./music/altar.wav";
+		// deadAudio.audioPath = "./music/altar.mp3";
 
 		var allMaps = [
 			[//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
@@ -221,7 +221,7 @@ class KeyContainerBehaviour extends Behaviour {
 				stone1.getBehaviour(Transform).x = 1000;
 				stone1.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.wav";
+				BoomStoneAudio.audioPath = "./music/Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
@@ -232,7 +232,7 @@ class KeyContainerBehaviour extends Behaviour {
 				stone2.getBehaviour(Transform).x = 1000;
 				stone2.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.wav";
+				BoomStoneAudio.audioPath = "./music/Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
@@ -296,7 +296,7 @@ class KeyContainerBehaviour extends Behaviour {
 				altar2.getBehaviour(Transform).x = 300 + 215;
 				altar2.getBehaviour(Transform).y = 50 - 40;
 				const altarAudio = new AudioSystem();
-				altarAudio.audioPath = "./music/altar.wav";
+				altarAudio.audioPath = "./music/altar.mp3";
 				altarAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
@@ -414,7 +414,7 @@ class KeyContainerBehaviour extends Behaviour {
 					weapon1.getBehaviour(Transform).x = 2000;
 					weapon1.getBehaviour(Transform).y = 2000;
 					const weaponAudio = new AudioSystem();
-					weaponAudio.audioPath = "./music/knife.wav";
+					weaponAudio.audioPath = "./music/knife.mp3";
 					weaponAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 62) {
 					defendability = defendability + 10;
@@ -425,14 +425,14 @@ class KeyContainerBehaviour extends Behaviour {
 					ys11.getBehaviour(Transform).x = 2000;
 					ys11.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.wav";
+					potionAudio.audioPath = "./music/potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 65 && x1 == 7 && y1 == 14) {
 					hp = hp + 50;
 					ys12.getBehaviour(Transform).x = 2000;
 					ys12.getBehaviour(Transform).y = 2000;
 					const potionAudio = new AudioSystem();
-					potionAudio.audioPath = "./music/potion.wav";
+					potionAudio.audioPath = "./music/potion.mp3";
 					potionAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 66) {
 					hp = hp + 50;
@@ -440,7 +440,7 @@ class KeyContainerBehaviour extends Behaviour {
 					bomb1.getBehaviour(Transform).x = 2000;
 					bomb1.getBehaviour(Transform).y = 2000;
 					const pickAudio = new AudioSystem();
-					pickAudio.audioPath = "./music/pick.wav";
+					pickAudio.audioPath = "./music/pick.mp3";
 					pickAudio.playAudio(false);
 					bombs++;
 				} else if (mapArr[x1][y1] == 68 && x1 == 1 && y1 == 7) {
@@ -448,28 +448,28 @@ class KeyContainerBehaviour extends Behaviour {
 					key1.getBehaviour(Transform).x = 2000;
 					key1.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.audioPath = "./music/key.mp3";
 					keyAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 68 && x1 == 1 && y1 == 8) {
 					keys++;
 					key2.getBehaviour(Transform).x = 2000;
 					key2.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.audioPath = "./music/key.mp3";
 					keyAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 68 && x1 == 4 && y1 == 13) {
 					keys++;
 					key3.getBehaviour(Transform).x = 2000;
 					key3.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.audioPath = "./music/key.mp3";
 					keyAudio.playAudio(false);
 				} else if (mapArr[x1][y1] == 68 && x1 == 12 && y1 == 8) {
 					keys++;
 					key4.getBehaviour(Transform).x = 2000;
 					key4.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.audioPath = "./music/key.mp3";
 					keyAudio.playAudio(false);
 				}
 				else if (mapArr[x1][y1] == 68 && x1 == 14 && y1 == 13) {
@@ -477,7 +477,7 @@ class KeyContainerBehaviour extends Behaviour {
 					key5.getBehaviour(Transform).x = 2000;
 					key5.getBehaviour(Transform).y = 2000;
 					const keyAudio = new AudioSystem();
-					keyAudio.audioPath = "./music/key.wav";
+					keyAudio.audioPath = "./music/key.mp3";
 					keyAudio.playAudio(false);
 				}
 				player.getBehaviour(Transform).x = y1 * 50 + 215;
@@ -493,7 +493,7 @@ class KeyContainerBehaviour extends Behaviour {
 				// const floorBackgroungAudio = document.createElement("audio");
 				const floorBackgroungAudio = new AudioSystem();
 				//第一层的音乐
-				floorBackgroungAudio.audioPath = "./music/BGM.wav";
+				floorBackgroungAudio.audioPath = "./music/BGM.mp3";
 				floorBackgroungAudio.playAudio(true, 0.1);
 				FloorController.isAudioPlaying = false;
 			}

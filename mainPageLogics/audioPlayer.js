@@ -1,5 +1,5 @@
 // const wonAudio = document.createElement("audio");
-// wonAudio.src = "./music/altar.wav";
+// wonAudio.src = "./music/altar.mp3";
 // wonAudio.play();
 
 function PlayAudio(audioPath) {

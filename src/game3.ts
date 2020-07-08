@@ -10,8 +10,8 @@ class ThirdBehaviour extends Behaviour {
 
 		// const deadAudio = new AudioSystem();
 		// const wonAudio = new AudioSystem();
-		// deadAudio.audioPath = "./music/altar.wav";
-		// wonAudio.audioPath = "./music/altar.wav";
+		// deadAudio.audioPath = "./music/altar.mp3";
+		// wonAudio.audioPath = "./music/altar.mp3";
 
 
 		var allMaps = [
@@ -176,7 +176,7 @@ class ThirdBehaviour extends Behaviour {
 				stone1.getBehaviour(Transform).x = 1000;
 				stone1.getBehaviour(Transform).y = 1000;
 				const BoomStoneAudio = new AudioSystem();
-				BoomStoneAudio.audioPath = "./music/Boom.wav";
+				BoomStoneAudio.audioPath = "./music/Boom.mp3";
 				BoomStoneAudio.playAudio(false);
 				arr[x1][y1] = 3;
 				arr[x][y] = 1;
@@ -360,7 +360,7 @@ class ThirdBehaviour extends Behaviour {
 				// const floorBackgroungAudio = document.createElement("audio");
 				const floorBackgroungAudio = new AudioSystem();
 				//第三层的音乐
-				floorBackgroungAudio.audioPath = "./music/BGM.wav";
+				floorBackgroungAudio.audioPath = "./music/BGM.mp3";
 				floorBackgroungAudio.playAudio(true, 0.1);
 				FloorController.isAudioPlaying = false;
 			}
