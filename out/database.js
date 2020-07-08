@@ -60,8 +60,7 @@ window.onmousedown = function (e) {
     clickPosX = e.offsetX;
     clickPosY = e.offsetY;
     checkClickPosition(() => {
-        // console.error("Button Clicked");
-        window.location.href = "./index.html";
+        console.error("Button Clicked");
     });
 };
 window.onmouseup = function (e) {
@@ -76,6 +75,16 @@ function checkClickPosition(callback) {
         window.event.returnValue = false;
         //
         // loadPage("./firstPage.html");
+        window.location.href = "./index.html";
+    }
+    if (clickPosX >= 66 && (clickPosX <= 212) &&
+        clickPosY >= 546 && (clickPosY <= 594)) {
+        callback && callback();
+        console.log("Renew button clicked!");
+        window.event.returnValue = false;
+        //
+        // loadPage("./firstPage.html");
+        window.location.href = "./firstPage.html";
     }
     // if (clickPosX >= rectStartBTN.posX && clickPosX < rectStartBTN.posX + rectStartBTN.width &&
     //     clickPosY >= rectStartBTN.poxY && clickPosY < rectStartBTN.posY + rectStartBTN.height) {

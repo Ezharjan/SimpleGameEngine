@@ -4,6 +4,8 @@ class BasicBehaviour extends Behaviour {
         this.currentTime = 0;
     }
     onStart() {
+        // const deadAudio = new AudioSystem();
+        // deadAudio.audioPath = "./music/altar.wav";
         var allMaps = [
             //1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
             [
@@ -381,7 +383,8 @@ class BasicBehaviour extends Behaviour {
             else if (arr[x1][y1] > 40 && arr[x1][y1] < 50 && hp > 0) {
                 if (hp <= 0) {
                     arr[x][y] = 99;
-                    alert("You're dead！Game Over!");
+                    // alert("You're dead！Game Over!");
+                    window.location.href = "./died.html";
                 }
                 else if (hp > 0 && x1 == 5 && y1 == 3) {
                     if (attackability >= 10) {
@@ -389,8 +392,9 @@ class BasicBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // alert("You're dead！Game Over!");
+                            window.location.href = "./index.html";
                         }
                         else {
                             guaiwu11.getBehaviour(Transform).x = 2000;
@@ -411,8 +415,9 @@ class BasicBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // alert("You're dead！Game Over!");
+                            window.location.href = "./index.html";
                         }
                         else {
                             guaiwu12.getBehaviour(Transform).x = 2000;
@@ -433,8 +438,9 @@ class BasicBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // alert("You're dead！Game Over!");
+                            window.location.href = "./index.html";
                         }
                         else {
                             guaiwu13.getBehaviour(Transform).x = 2000;
@@ -455,8 +461,9 @@ class BasicBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // alert("You're dead！Game Over!");
+                            window.location.href = "./index.html";
                         }
                         else {
                             guaiwu14.getBehaviour(Transform).x = 2000;
@@ -477,8 +484,9 @@ class BasicBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // alert("You're dead！Game Over!");
+                            window.location.href = "./index.html";
                         }
                         else {
                             guaiwu21.getBehaviour(Transform).x = 2000;
@@ -509,8 +517,9 @@ class BasicBehaviour extends Behaviour {
                         if (hp <= 0) {
                             deadend.getBehaviour(Transform).x = 0;
                             deadend.getBehaviour(Transform).y = 0;
-                            alert("You're dead！Game Over!");
-                            window.location.href = "./firstPage.html";
+                            // deadAudio.playAudio(false);
+                            // alert("You're dead！Game Over!");
+                            window.location.href = "./index.html";
                         }
                         else {
                             guaiwu25.getBehaviour(Transform).x = 2000;

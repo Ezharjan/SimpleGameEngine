@@ -1,6 +1,11 @@
 class KeyContainerBehaviour extends Behaviour {
 
 	onStart() {
+
+
+		// const deadAudio = new AudioSystem();
+		// deadAudio.audioPath = "./music/altar.wav";
+
 		var allMaps = [
 			[//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
 				//61为刀 64为祭坛 65为药 67炸弹 68钥匙
@@ -20,8 +25,6 @@ class KeyContainerBehaviour extends Behaviour {
 				[9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 9],
 				[9, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 68, 1, 9],
 				[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-
-
 			],
 		];
 
@@ -33,11 +36,11 @@ class KeyContainerBehaviour extends Behaviour {
 		let bombs = 0;
 		let keys = 0;
 
-		if (getPlayerData("life") != NaN
-			|| getPlayerData("attackability") != NaN
-			|| getPlayerData("defendability") != NaN
-			|| getPlayerData("keys") != NaN
-			|| getPlayerData("bombs") != NaN
+		if (getPlayerData("life") != (NaN || null || undefined)
+			|| getPlayerData("attackability") != (NaN || null || undefined)
+			|| getPlayerData("defendability") != (NaN || null || undefined)
+			|| getPlayerData("keys") != (NaN || null || undefined)
+			|| getPlayerData("bombs") != (NaN || null || undefined)
 		) {
 			clearPlayerData();
 		}
@@ -295,14 +298,18 @@ class KeyContainerBehaviour extends Behaviour {
 				if (hp < 0) {
 					mapArr[x][y] = 99;
 					alert("You're dead！Game Over!");
+					window.location.href = "./died.html";
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					if (attackability >= 10) {
 						hp = hp - 20;
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// deadAudio.playAudio(false);
+							// setTimeout(() => {
+							// alert("You're dead！Game Over!");
+							// }, 200);
+							window.location.href = "./died.html"
 						} else {
 							monster1.getBehaviour(Transform).x = 2000;
 							monster1.getBehaviour(Transform).y = 2000;
@@ -320,8 +327,9 @@ class KeyContainerBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// alert("You're dead！Game Over!");
+							// deadAudio.playAudio(false);
+							window.location.href = "./died.html"
 						} else {
 							monster2.getBehaviour(Transform).x = 2000;
 							monster2.getBehaviour(Transform).y = 2000;
@@ -339,8 +347,9 @@ class KeyContainerBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// alert("You're dead！Game Over!");
+							// deadAudio.playAudio(false);
+							window.location.href = "./died.html"
 						} else {
 							monster3.getBehaviour(Transform).x = 2000;
 							monster3.getBehaviour(Transform).y = 2000;
@@ -358,8 +367,9 @@ class KeyContainerBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							alert("You're dead！Game Over!");
-							window.location.href = "./firstPage.html"
+							// alert("You're dead！Game Over!");
+							// deadAudio.playAudio(false);
+							window.location.href = "./died.html"
 						} else {
 							monster21.getBehaviour(Transform).x = 2000;
 							monster21.getBehaviour(Transform).y = 2000;
