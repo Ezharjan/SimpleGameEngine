@@ -374,8 +374,8 @@ class ThirdBehaviour extends Behaviour {
                 // const floorBackgroungAudio = document.createElement("audio");
                 const floorBackgroungAudio = new AudioSystem();
                 //第三层的音乐
-                floorBackgroungAudio.audioPath = "./music/altar.wav";
-                floorBackgroungAudio.playAudio(true);
+                floorBackgroungAudio.audioPath = "./music/BGM.wav";
+                floorBackgroungAudio.playAudio(true, 0.1);
                 FloorController.isAudioPlaying = false;
             }
             var e = event || window.event || arguments.callee.caller.arguments[0];

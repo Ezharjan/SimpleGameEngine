@@ -395,11 +395,13 @@ class AudioSystem extends GameEngineSystem {
         super();
         this.audioTag = document.createElement("audio");
         this.audioPath = "";
+        this.volume = 1;
     }
-    playAudio(shouldLoop) {
+    playAudio(shouldLoop, audioVolume = this.volume) {
         try {
             this.audioTag.src = this.audioPath;
             shouldLoop && (this.audioTag.loop = true);
+            this.audioTag.volume = audioVolume;
             this.audioTag.play();
             return true;
         }

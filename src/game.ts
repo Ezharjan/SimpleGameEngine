@@ -493,8 +493,8 @@ class KeyContainerBehaviour extends Behaviour {
 				// const floorBackgroungAudio = document.createElement("audio");
 				const floorBackgroungAudio = new AudioSystem();
 				//第一层的音乐
-				floorBackgroungAudio.audioPath = "./music/key.wav";
-				floorBackgroungAudio.playAudio(true);
+				floorBackgroungAudio.audioPath = "./music/BGM.wav";
+				floorBackgroungAudio.playAudio(true, 0.1);
 				FloorController.isAudioPlaying = false;
 			}
 
