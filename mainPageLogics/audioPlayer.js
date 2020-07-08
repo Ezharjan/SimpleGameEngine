@@ -49,6 +49,3 @@ function PlayAudio(audioPath) {
         console.log('!Your browser does not support AudioContext');
     }
 }
-
-
-PlayAudio('./music/altar.wav');

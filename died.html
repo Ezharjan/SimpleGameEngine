@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Died</title>
 </head>
+
 <img src="./img/DeadEnd.png" onclick="loadPage('./index.html')"></img>
+
+<script src="./libs/jquery/jquery.js"></script>
+<script src="./mainPageLogics/audioPlayer.js"></script>
+
 
 <body>
 
@@ -14,6 +19,8 @@
         function loadPage(page2Load) {
             window.location.href = page2Load;
         }
+
+        PlayAudio('./music/death.wav');
     </script>
 
 </body>
