@@ -4,8 +4,7 @@ class BasicBehaviour extends Behaviour {
         this.currentTime = 0;
     }
     onStart() {
-        // const deadAudio = new AudioSystem();
-        // deadAudio.audioPath = "./music/altar.wav";
+        FloorController.isAudioPlaying = true;
         var allMaps = [
             //1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
             [
@@ -759,6 +758,14 @@ class BasicBehaviour extends Behaviour {
             }
         }
         document.onkeydown = function (event) {
+            if (FloorController.isAudioPlaying) {
+                // const floorBackgroungAudio = document.createElement("audio");
+                const floorBackgroungAudio = new AudioSystem();
+                //第二层的音乐
+                floorBackgroungAudio.audioPath = "./music/pick.wav";
+                floorBackgroungAudio.playAudio(true);
+                FloorController.isAudioPlaying = false;
+            }
             var e = event || window.event || arguments.callee.caller.arguments[0];
             if (e && e.keyCode == 87) {
                 //if (peoplex > 0) {

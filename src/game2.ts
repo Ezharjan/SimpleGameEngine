@@ -4,8 +4,8 @@ class BasicBehaviour extends Behaviour {
 
 	onStart() {
 
-		// const deadAudio = new AudioSystem();
-		// deadAudio.audioPath = "./music/altar.wav";
+
+		FloorController.isAudioPlaying = true;
 
 
 		var allMaps = [
@@ -586,8 +586,8 @@ class BasicBehaviour extends Behaviour {
 					altar2.getBehaviour(Transform).x = 600 + 215;
 					altar2.getBehaviour(Transform).y = 350 - 40;
 					const altarAudio = new AudioSystem();
-			        altarAudio.audioPath = "./music/altar.wav";
-				    altarAudio.playAudio(false);
+					altarAudio.audioPath = "./music/altar.wav";
+					altarAudio.playAudio(false);
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
 					passed = 1;
@@ -705,7 +705,21 @@ class BasicBehaviour extends Behaviour {
 		}
 
 		document.onkeydown = function (event) {
+
+
+			if (FloorController.isAudioPlaying) {
+				// const floorBackgroungAudio = document.createElement("audio");
+				const floorBackgroungAudio = new AudioSystem();
+				//第二层的音乐
+				floorBackgroungAudio.audioPath = "./music/pick.wav";
+				floorBackgroungAudio.playAudio(true);
+				FloorController.isAudioPlaying = false;
+			}
+
+
 			var e = event || window.event || arguments.callee.caller.arguments[0];
+
+
 			if (e && e.keyCode == 87) {
 				//if (peoplex > 0) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX - 1, charactorPosY);

@@ -1,5 +1,7 @@
 class KeyContainerBehaviour extends Behaviour {
     onStart() {
+        // FloorController.floorIndex = 1;
+        FloorController.isAudioPlaying = true;
         // const deadAudio = new AudioSystem();
         // deadAudio.audioPath = "./music/altar.wav";
         var allMaps = [
@@ -520,6 +522,14 @@ class KeyContainerBehaviour extends Behaviour {
             }
         }
         document.onkeydown = function (event) {
+            if (FloorController.isAudioPlaying) {
+                // const floorBackgroungAudio = document.createElement("audio");
+                const floorBackgroungAudio = new AudioSystem();
+                //第一层的音乐
+                floorBackgroungAudio.audioPath = "./music/key.wav";
+                floorBackgroungAudio.playAudio(true);
+                FloorController.isAudioPlaying = false;
+            }
             var e = event || window.event || arguments.callee.caller.arguments[0];
             if (e && e.keyCode == 87) {
                 //if (peoplex > 0) {
