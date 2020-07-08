@@ -4,6 +4,7 @@ class ThirdBehaviour extends Behaviour {
         this.currentTime = 0;
     }
     onStart() {
+        FloorController.isAudioPlaying = true;
         // const deadAudio = new AudioSystem();
         // const wonAudio = new AudioSystem();
         // deadAudio.audioPath = "./music/altar.wav";
@@ -369,6 +370,14 @@ class ThirdBehaviour extends Behaviour {
             }
         }
         document.onkeydown = function (event) {
+            if (FloorController.isAudioPlaying) {
+                // const floorBackgroungAudio = document.createElement("audio");
+                const floorBackgroungAudio = new AudioSystem();
+                //第三层的音乐
+                floorBackgroungAudio.audioPath = "./music/altar.wav";
+                floorBackgroungAudio.playAudio(true);
+                FloorController.isAudioPlaying = false;
+            }
             var e = event || window.event || arguments.callee.caller.arguments[0];
             if (e && e.keyCode == 87) {
                 //if (peoplex > 0) {

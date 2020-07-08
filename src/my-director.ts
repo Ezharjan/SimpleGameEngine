@@ -206,3 +206,7 @@ function Load() {
 }
 
 
+class FloorController {
+    static floorIndex = 0;
+    static isAudioPlaying = false;
+}

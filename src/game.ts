@@ -2,6 +2,8 @@ class KeyContainerBehaviour extends Behaviour {
 
 	onStart() {
 
+		// FloorController.floorIndex = 1;
+		FloorController.isAudioPlaying = true;
 
 		// const deadAudio = new AudioSystem();
 		// deadAudio.audioPath = "./music/altar.wav";
@@ -294,7 +296,7 @@ class KeyContainerBehaviour extends Behaviour {
 				altar2.getBehaviour(Transform).x = 300 + 215;
 				altar2.getBehaviour(Transform).y = 50 - 40;
 				const altarAudio = new AudioSystem();
-			    altarAudio.audioPath = "./music/altar.wav";
+				altarAudio.audioPath = "./music/altar.wav";
 				altarAudio.playAudio(false);
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
@@ -486,7 +488,19 @@ class KeyContainerBehaviour extends Behaviour {
 		}
 
 		document.onkeydown = function (event) {
+
+			if (FloorController.isAudioPlaying) {
+				// const floorBackgroungAudio = document.createElement("audio");
+				const floorBackgroungAudio = new AudioSystem();
+				//第一层的音乐
+				floorBackgroungAudio.audioPath = "./music/key.wav";
+				floorBackgroungAudio.playAudio(true);
+				FloorController.isAudioPlaying = false;
+			}
+
 			var e = event || window.event || arguments.callee.caller.arguments[0];
+
+
 			if (e && e.keyCode == 87) {
 				//if (peoplex > 0) {
 				playerMove(charactorPosX, charactorPosY, charactorPosX - 1, charactorPosY);

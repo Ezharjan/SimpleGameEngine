@@ -157,3 +157,7 @@ function Load() {
         this.speed += 0.1;
     }());
 }
+class FloorController {
+}
+FloorController.floorIndex = 0;
+FloorController.isAudioPlaying = false;
