@@ -755,13 +755,13 @@ class BasicBehaviour extends Behaviour {
                 }
             }
             const HPText = core.getObjectById("HPText");
-            HPText.getBehaviour(TextRenderer).text = "生命值：" + hp;
+            HPText.getBehaviour(TextRenderer).text = hp;
             const AttackTest = core.getObjectById("AttackText");
-            AttackTest.getBehaviour(TextRenderer).text = "攻击力：" + attackability;
+            AttackTest.getBehaviour(TextRenderer).text = attackability;
             const KeyTest = core.getObjectById("KeyText");
-            KeyTest.getBehaviour(TextRenderer).text = "钥匙数：" + keys;
+            KeyTest.getBehaviour(TextRenderer).text = keys;
             const BombTest = core.getObjectById("BombText");
-            BombTest.getBehaviour(TextRenderer).text = "炸弹数：" + bombs;
+            BombTest.getBehaviour(TextRenderer).text = bombs;
             // const restart = core.getObjectById("restart");
             // restart.onclick = function () {
             // location.href += "?reload=true";
