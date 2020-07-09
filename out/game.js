@@ -525,7 +525,7 @@ class KeyContainerBehaviour extends Behaviour {
                 const floorBackgroungAudio = new AudioSystem();
                 //第一层的音乐
                 floorBackgroungAudio.audioPath = "./music/re-BGM.mp3";
-                floorBackgroungAudio.playAudio(true, 0.1);
+                floorBackgroungAudio.playAudio(true, 0.5);
                 FloorController.isAudioPlaying = false;
             }
             var e = event || window.event || arguments.callee.caller.arguments[0];

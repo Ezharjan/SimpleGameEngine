@@ -715,7 +715,7 @@ class BasicBehaviour extends Behaviour {
 				const floorBackgroungAudio = new AudioSystem();
 				//第二层的音乐
 				floorBackgroungAudio.audioPath = "./music/re-BGM.mp3";
-				floorBackgroungAudio.playAudio(true, 0.1);
+				floorBackgroungAudio.playAudio(true, 0.5);
 				FloorController.isAudioPlaying = false;
 			}
 
