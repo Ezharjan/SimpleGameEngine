@@ -5,35 +5,10 @@ function loadPage(page2Load) {
 
 //electron中可行
 const music = document.createElement("audio");
-music.src = "./medias/bgMusic.mp3";
+music.src = "./music/background_music.mp3";
 music.autoplay = true;
 music.play();
 
-
-// setTimeout(function() {
-//     // IE
-//     if (document.all) {
-//         document.getElementById("clickMe").click();
-//         const music = document.createElement("audio");
-//         music.src = "./medias/bgMusic.mp3";
-//         music.autoplay = true;
-//         music.play();
-//     }
-//     // 其它浏览器
-//     else {
-//         var e = document.createEvent("MouseEvents");
-//         e.initEvent("click", true, true);
-//         document.getElementById("clickMe").dispatchEvent(e);
-//         const music = document.createElement("audio");
-//         music.src = "./medias/bgMusic.mp3";
-//         music.autoplay = true;
-//         music.play();
-//     }
-// }, 2);
-
-
-// const music = document.getElementById("index-audio");
-// music.play();
 
 
 console.log("write what you want ");
@@ -111,17 +86,6 @@ bgImage.height = 720;
 
 
 
-
-// function getMousePos(e) {　　　
-//     e = e || window.event;
-//     var movex = e.pageX;
-//     var movey = e.pageY;
-
-//     console.log(movex);　
-//     console.log(movey);　
-// }
-
-
 var clickPosX = 0;
 var clickPosY = 0;
 
@@ -145,10 +109,6 @@ window.onmouseup = function(e) {
 
 
 function checkClickPosition(callback) {
-    // if (clickPosX >= 720 && clickPosX <= 930 &&
-    //     clickPosY >= 280 && clickPosY <= 360) {
-    //     console.error("Start button Clicked");
-    // }
 
     // console.log("x : " + container.posX);
     // console.log("y : " + container.posY);
