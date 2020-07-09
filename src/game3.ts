@@ -1,4 +1,4 @@
-class ThirdBehaviour extends Behaviour {
+class ThirdFloorBehavior extends Behaviour {
 
 	private currentTime = 0;
 
@@ -6,13 +6,6 @@ class ThirdBehaviour extends Behaviour {
 
 
 		FloorController.isAudioPlaying = true;
-
-
-		// const deadAudio = new AudioSystem();
-		// const wonAudio = new AudioSystem();
-		// deadAudio.audioPath = "./music/re-altar.mp3";
-		// wonAudio.audioPath = "./music/re-altar.mp3";
-
 
 		var allMaps = [
 			//1为路 0为墙 21石堆 22为门 3为人物 4x为怪物 5x为楼梯 6x为增益道具 67炸弹 68钥匙
@@ -207,7 +200,6 @@ class ThirdBehaviour extends Behaviour {
 				updatePlayerData("bombs", bombs);
 				updatePlayerData("attackability", attackability);
 				updatePlayerData("defendability", defendability);
-				//window.location.href = "./secondPage.html"
 			}
 			// else if (arr[x1][y1] == 52) {
 			// 	if (floor >= 1 && floor < allMaps.length) {
@@ -230,9 +222,6 @@ class ThirdBehaviour extends Behaviour {
 					arr[x][y] = 99;
 					deadend.getBehaviour(Transform).x = 0;
 					deadend.getBehaviour(Transform).y = 0;
-					// deadAudio.playAudio(false);
-					// deadAudio.playAudio(false);
-					// alert("You're dead！Game Over!");
 					window.location.href = "./died.html"
 				} else if (hp > 0 && x1 == 12 && y1 == 7) {
 					if (attackability >= 10) {
@@ -260,8 +249,6 @@ class ThirdBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							// deadAudio.playAudio(false);
-							// alert("You're dead！Game Over!");
 							window.location.href = "./died.html"
 						} else {
 							guaiwu12.getBehaviour(Transform).x = 2000;
@@ -280,8 +267,6 @@ class ThirdBehaviour extends Behaviour {
 						if (hp <= 0) {
 							deadend.getBehaviour(Transform).x = 0;
 							deadend.getBehaviour(Transform).y = 0;
-							// deadAudio.playAudio(false);
-							// alert("You're dead！Game Over!");
 							window.location.href = "./died.html"
 						} else {
 							coffin1.getBehaviour(Transform).x = 2000;
@@ -301,11 +286,7 @@ class ThirdBehaviour extends Behaviour {
 							arr[x1][y1] = 3;
 							arr[3][7] = 1; arr[4][7] = 1; arr[5][7] = 1; arr[3][8] = 1; arr[4][8] = 1; arr[5][8] = 1;
 							arr[x][y] = 1;
-							// wonAudio.playAudio(false);
-							// alert("Congratulations!");
 							window.location.href = "./won.html";
-							//goodend.getBehaviour(Transform).x = 0;
-							//goodend.getBehaviour(Transform).y = 0;
 						}
 					} else {
 						alert("Your attackability is lower than 70!");
@@ -316,8 +297,6 @@ class ThirdBehaviour extends Behaviour {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
-							// deadAudio.playAudio(false);
-							// alert("You're dead！Game Over!");
 							window.location.href = "./died.html";
 						} else {
 							guaiwu21.getBehaviour(Transform).x = 2000;
@@ -468,7 +447,7 @@ class ThirdBehaviour extends Behaviour {
 	}
 }
 
-core.registerBehaviourClass(ThirdBehaviour)
+core.registerBehaviourClass(ThirdFloorBehavior)
 
 
 

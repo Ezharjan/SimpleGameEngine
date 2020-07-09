@@ -1,662 +1,604 @@
 {
-	"id": "container1",
-	"children": [
-		{
-			"children": [
-				{
-					"id": "UI",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":0,
-							"y":0
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/gameview.png"
-						}
-					]
-				},
-				{
-					"id": "backmap",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":265,
-							"y":10
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/maps/map_2.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu11",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu12",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu13",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu14",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu21",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_11.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu22",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_12.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu23",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_21.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu24",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_22.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu25",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_11.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu26",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_12.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu27",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_21.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu28",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_22.png"
-						}
-					]
-				},
-				{
-					"id": "door1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "stone1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/stone.png"
-						}
-					]
-				},
-				{
-					"id": "stone2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/stone.png"
-						}
-					]
-				},
-				{
-					"id": "stone3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/stone.png"
-						}
-					]
-				},
-				{
-					"id": "stone4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/stone.png"
-						}
-					]
-				},
-				{
-					"id": "loti1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/downstair.png"
-						}
-					]
-				},
-				{
-					"id": "weapon1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "weapon2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "weapon3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "weapon4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "weapon5",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "weapon6",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/weapon1.png"
-						}
-					]
-				},
-				{
-					"id": "ys1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys5",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys6",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys7",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "ys8",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/ys1.png"
-						}
-					]
-				},
-				{
-					"id": "key1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/key.png"
-						}
-					]
-				},
-				{
-					"id": "key2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/key.png"
-						}
-					]
-				},
-				{
-					"id": "key3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/key.png"
-						}
-					]
-				},
-				{
-					"id": "bomb1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bomb.png"
-						}
-					]
-				},
-				{
-					"id": "bomb2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bomb.png"
-						}
-					]
-				},
-				{
-					"id": "bomb3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bomb.png"
-						}
-					]
-				},
-				{
-					"id": "bomb4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/bomb.png"
-						}
-					]
-				},
-				{
-					"id": "altar1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/altar.png"
-						}
-					]
-				},
-				{
-					"id": "altar2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/altar_actived.png"
-						}
-					]
-				},
-				{
-					"id": "trap",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/trap.png"
-						}
-					]
-				},
-				{
-					"id": "player",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/player.png"
-						}
-					]
-				},
-				{
-					"id": "HPText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 280
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "AttackText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 325
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "KeyText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 375
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "BombText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 420
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "deadend",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/DeadEnd.png"
-						}
-					]
-				}
-			],
-			"behaviours": [
-				{
-					"name": "Transform"
-				},
-				{
-					"name": "BasicBehaviour"
-				}
-			]
-		}
-	],
-	"behaviours": [
-		{
-			"name": "Transform"
-		}
-	]
+    "id": "container1",
+    "children": [{
+        "children": [{
+                "id": "UI",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/gameview.png"
+                    }
+                ]
+            },
+            {
+                "id": "backmap",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 265,
+                        "y": 10
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/maps/map_2.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu11",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu12",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu13",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu14",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu21",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_11.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu22",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_12.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu23",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_21.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu24",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_22.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu25",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_11.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu26",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_12.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu27",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_21.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu28",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_22.png"
+                    }
+                ]
+            },
+            {
+                "id": "door1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "door2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "door3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "stone1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/stone.png"
+                    }
+                ]
+            },
+            {
+                "id": "stone2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/stone.png"
+                    }
+                ]
+            },
+            {
+                "id": "stone3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/stone.png"
+                    }
+                ]
+            },
+            {
+                "id": "stone4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/stone.png"
+                    }
+                ]
+            },
+            {
+                "id": "loti1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/downstair.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon5",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "weapon6",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/weapon1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys5",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys6",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys7",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "ys8",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/ys1.png"
+                    }
+                ]
+            },
+            {
+                "id": "key1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/key.png"
+                    }
+                ]
+            },
+            {
+                "id": "key2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/key.png"
+                    }
+                ]
+            },
+            {
+                "id": "key3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/key.png"
+                    }
+                ]
+            },
+            {
+                "id": "bomb1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bomb.png"
+                    }
+                ]
+            },
+            {
+                "id": "bomb2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bomb.png"
+                    }
+                ]
+            },
+            {
+                "id": "bomb3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bomb.png"
+                    }
+                ]
+            },
+            {
+                "id": "bomb4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/bomb.png"
+                    }
+                ]
+            },
+            {
+                "id": "altar1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/altar.png"
+                    }
+                ]
+            },
+            {
+                "id": "altar2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/altar_actived.png"
+                    }
+                ]
+            },
+            {
+                "id": "trap",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/trap.png"
+                    }
+                ]
+            },
+            {
+                "id": "player",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/player.png"
+                    }
+                ]
+            },
+            {
+                "id": "HPText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 280
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "AttackText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 325
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "KeyText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 375
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "BombText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 420
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "deadend",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/DeadEnd.png"
+                    }
+                ]
+            }
+        ],
+        "behaviours": [{
+                "name": "Transform"
+            },
+            {
+                "name": "SecondFloorBehavior"
+            }
+        ]
+    }],
+    "behaviours": [{
+        "name": "Transform"
+    }]
 }

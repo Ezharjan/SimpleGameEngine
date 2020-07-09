@@ -75,7 +75,7 @@ setTimeout(async () => {
         // win.loadFile("firstPage.html");//New page --- 1st page of the game 
         win.maximize();
         //开发者工具
-        win.webContents.openDevTools();
+        // win.webContents.openDevTools();
     };
     const buttonBuild = document.createElement("button");
     buttonBuild.innerText = "Build";

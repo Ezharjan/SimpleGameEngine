@@ -1,14 +1,13 @@
 {
     "id": "warrior",
-    "behaviours": [
-        {
+    "behaviours": [{
             "name": "Transform"
         },
         {
-            "name":"ClickContainerBehaviour"
+            "name": "ClickContainerBehaviour"
         },
         {
-            "name":"KeyContainerBehaviour"
+            "name": "FirstFloorBehavior"
         },
         {
             "name": "ImageRenderer",

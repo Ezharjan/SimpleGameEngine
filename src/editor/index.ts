@@ -82,7 +82,7 @@ setTimeout(async () => {
         win.maximize();
 
         //开发者工具
-        win.webContents.openDevTools();
+        // win.webContents.openDevTools();
     }
 
 

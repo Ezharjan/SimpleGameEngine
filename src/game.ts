@@ -1,4 +1,4 @@
-class KeyContainerBehaviour extends Behaviour {
+class FirstFloorBehavior extends Behaviour {
 
 	onStart() {
 
@@ -376,10 +376,6 @@ class KeyContainerBehaviour extends Behaviour {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
-							//deadend.getBehaviour(Transform).x = 0;
-							//deadend.getBehaviour(Transform).y = 0;
-							//alert("You're dead！Game Over!");
-							// deadAudio.playAudio(false);
 							window.location.href = "./died.html"
 						} else {
 							monster21.getBehaviour(Transform).x = 2000;
@@ -609,4 +605,4 @@ class KeyContainerBehaviour extends Behaviour {
 	}
 }
 
-core.registerBehaviourClass(KeyContainerBehaviour);
+core.registerBehaviourClass(FirstFloorBehavior);

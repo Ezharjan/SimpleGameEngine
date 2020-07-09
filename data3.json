@@ -1,326 +1,296 @@
 {
-	"id": "container1",
-	"children": [
-		{
-			"children": [
-				{
-					"id": "UI",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":0,
-							"y":0
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/gameview.png"
-						}
-					]
-				},
-				{
-					"id": "backmap",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x":265,
-							"y":10
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/maps/map_3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu11",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu12",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/3.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu21",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_11.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu22",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_12.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu23",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_21.png"
-						}
-					]
-				},
-				{
-					"id": "guaiwu24",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/Ammit/Ammit_22.png"
-						}
-					]
-				},
-				{
-					"id": "coffin1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/coffin/coffin_11.png"
-						}
-					]
-				},
-				{
-					"id": "coffin2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/coffin/coffin_12.png"
-						}
-					]
-				},
-				{
-					"id": "coffin3",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/coffin/coffin_21.png"
-						}
-					]
-				},
-				{
-					"id": "coffin4",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/coffin/coffin_22.png"
-						}
-					]
-				},
-				{
-					"id": "coffin5",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/coffin/coffin_31.png"
-						}
-					]
-				},
-				{
-					"id": "coffin6",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/coffin/coffin_32.png"
-						}
-					]
-				},
-				{
-					"id": "stone1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/stone.png"
-						}
-					]
-				},
-				{
-					"id": "door1",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "door2",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/door.png"
-						}
-					]
-				},
-				{
-					"id": "player",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/player.png"
-						}
-					]
-				},
-				{
-					"id": "HPText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 280
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "AttackText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 325
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "KeyText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 375
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "BombText",
-					"behaviours": [
-						{
-							"name": "Transform",
-							"x": 140,
-							"y": 420
-						},
-						{
-							"name": "TextRenderer",
-							"color": "#00000",
-							"text": " "
-						}
-					]
-				},
-				{
-					"id": "deadend",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/DeadEnd.png"
-						}
-					]
-				},
-				{
-					"id": "goodend",
-					"behaviours": [
-						{
-							"name": "Transform"
-						},
-						{
-							"name": "ImageRenderer",
-							"image": "./img/GoodEnd.png"
-						}
-					]
-				}
-			],
-			"behaviours": [
-				{
-					"name": "Transform"
-				},
-				{
-					"name": "ThirdBehaviour"
-				}
-			]
-		}
-	],
-	"behaviours": [
-		{
-			"name": "Transform"
-		}
-	]
+    "id": "container1",
+    "children": [{
+        "children": [{
+                "id": "UI",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/gameview.png"
+                    }
+                ]
+            },
+            {
+                "id": "backmap",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 265,
+                        "y": 10
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/maps/map_3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu11",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu12",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/3.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu21",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_11.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu22",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_12.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu23",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_21.png"
+                    }
+                ]
+            },
+            {
+                "id": "guaiwu24",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/Ammit/Ammit_22.png"
+                    }
+                ]
+            },
+            {
+                "id": "coffin1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/coffin/coffin_11.png"
+                    }
+                ]
+            },
+            {
+                "id": "coffin2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/coffin/coffin_12.png"
+                    }
+                ]
+            },
+            {
+                "id": "coffin3",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/coffin/coffin_21.png"
+                    }
+                ]
+            },
+            {
+                "id": "coffin4",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/coffin/coffin_22.png"
+                    }
+                ]
+            },
+            {
+                "id": "coffin5",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/coffin/coffin_31.png"
+                    }
+                ]
+            },
+            {
+                "id": "coffin6",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/coffin/coffin_32.png"
+                    }
+                ]
+            },
+            {
+                "id": "stone1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/stone.png"
+                    }
+                ]
+            },
+            {
+                "id": "door1",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "door2",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/door.png"
+                    }
+                ]
+            },
+            {
+                "id": "player",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/player.png"
+                    }
+                ]
+            },
+            {
+                "id": "HPText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 280
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "AttackText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 325
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "KeyText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 375
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "BombText",
+                "behaviours": [{
+                        "name": "Transform",
+                        "x": 140,
+                        "y": 420
+                    },
+                    {
+                        "name": "TextRenderer",
+                        "color": "#00000",
+                        "text": " "
+                    }
+                ]
+            },
+            {
+                "id": "deadend",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/DeadEnd.png"
+                    }
+                ]
+            },
+            {
+                "id": "goodend",
+                "behaviours": [{
+                        "name": "Transform"
+                    },
+                    {
+                        "name": "ImageRenderer",
+                        "image": "./img/GoodEnd.png"
+                    }
+                ]
+            }
+        ],
+        "behaviours": [{
+                "name": "Transform"
+            },
+            {
+                "name": "ThirdFloorBehavior"
+            }
+        ]
+    }],
+    "behaviours": [{
+        "name": "Transform"
+    }]
 }
