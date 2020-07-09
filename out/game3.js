@@ -314,7 +314,7 @@ class ThirdBehaviour extends Behaviour {
                             arr[x][y] = 1;
                             // wonAudio.playAudio(false);
                             // alert("Congratulations!");
-                            window.location.href = "../won.html";
+                            window.location.href = "./won.html";
                             //goodend.getBehaviour(Transform).x = 0;
                             //goodend.getBehaviour(Transform).y = 0;
                         }
@@ -329,7 +329,7 @@ class ThirdBehaviour extends Behaviour {
                         if (hp <= 0) {
                             // deadAudio.playAudio(false);
                             // alert("You're dead！Game Over!");
-                            window.location.href = "../died.html";
+                            window.location.href = "./died.html";
                         }
                         else {
                             guaiwu21.getBehaviour(Transform).x = 2000;

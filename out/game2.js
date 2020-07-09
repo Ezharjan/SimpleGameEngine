@@ -632,7 +632,7 @@ class BasicBehaviour extends Behaviour {
                     arr[x1][y1] = 3;
                     arr[x][y] = 1;
                     passed = 1;
-                    alert("You have opened the altar!");
+                    // alert("You have opened the altar!");
                 }
                 else if (arr[x1][y1] == 65 && x1 == 5 && y1 == 5) {
                     hp = hp + 50;
@@ -694,6 +694,9 @@ class BasicBehaviour extends Behaviour {
                     hp = hp + 50;
                     ys8.getBehaviour(Transform).x = 2000;
                     ys8.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/re-potion.mp3";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 67 && x1 == 1 && y1 == 1) {
                     bomb1.getBehaviour(Transform).x = 2000;
