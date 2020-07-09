@@ -24,7 +24,7 @@ class ThirdBehaviour extends Behaviour {
 				[9, 0, 0, 0, 0, 0, 1, 43, 43, 1, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 1, 43, 43, 1, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 9],
-				[9, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 9],
+				[9, 0, 0, 0, 0, 0, 0, 42, 42, 0, 0, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 1, 1, 42, 42, 1, 1, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 9],
 				[9, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 9],
@@ -299,7 +299,7 @@ class ThirdBehaviour extends Behaviour {
 							player.getBehaviour(Transform).x = y1 * 50 + 215;
 							player.getBehaviour(Transform).y = x1 * 50 - 40;
 							arr[x1][y1] = 3;
-							arr[7][3] = 1; arr[7][4] = 1; arr[7][5] = 1; arr[8][3] = 1; arr[8][4] = 1; arr[8][5] = 1;
+							arr[3][7] = 1; arr[4][7] = 1; arr[5][7] = 1; arr[3][8] = 1; arr[4][8] = 1; arr[5][8] = 1;
 							arr[x][y] = 1;
 							// wonAudio.playAudio(false);
 							// alert("Congratulations!");
@@ -331,7 +331,7 @@ class ThirdBehaviour extends Behaviour {
 							player.getBehaviour(Transform).x = y1 * 50 + 215;
 							player.getBehaviour(Transform).y = x1 * 50 - 40;
 							arr[x1][y1] = 3;
-							arr[8][8] = 1;
+							arr[8][8] = 1; arr[7][7] = 1; arr[7][8] = 1; arr[8][7] = 1;
 							arr[x][y] = 1;
 						}
 					} else {

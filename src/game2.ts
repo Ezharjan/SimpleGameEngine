@@ -19,7 +19,7 @@ class BasicBehaviour extends Behaviour {
 				[9, 61, 0, 41, 0, 65, 0, 1, 1, 1, 0, 41, 1, 1, 67, 9],     //(12, 5)
 				[9, 68, 0, 1, 22, 65, 0, 1, 1, 1, 0, 1, 1, 1, 1, 9],
 				[9, 1, 0, 1, 0, 0, 0, 42, 1, 1, 0, 1, 64, 1, 1, 9],
-				[9, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
+				[9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9],
 				[9, 1, 0, 42, 42, 1, 0, 1, 0, 0, 0, 0, 0, 68, 1, 9],
 				[9, 1, 0, 1, 1, 1, 22, 1, 1, 1, 1, 1, 1, 0, 41, 9],
 				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 9],
@@ -466,7 +466,7 @@ class BasicBehaviour extends Behaviour {
 					} else {
 						alert("Your attackability is lower than 10!");
 					}
-				} else if ((hp > 0) && ((x1 == 9 && y1 == 4) || (x1 == 9 && y1 == 3))) {
+				} else if ((hp > 0) && ((x1 == 9 && y1 == 4) || (x1 == 9 && y1 == 3) || (x1 == 8 && y1 == 3) || (x1 == 8 && y1 == 4))) {
 					if (attackability >= 20) {
 						hp = hp - 50;
 						if (hp <= 0) {
@@ -488,7 +488,7 @@ class BasicBehaviour extends Behaviour {
 							player.getBehaviour(Transform).y = x1 * 50 - 40;
 							arr[x1][y1] = 3;
 							arr[x][y] = 1;
-							arr[3][8] = 1; arr[4][8] = 1; arr[3][9] = 1; arr[4][9] = 1;
+							arr[9][4] = 1; arr[9][3] = 1; arr[8][3] = 1; arr[8][4] = 1;
 						}
 					} else {
 						alert("Your attackability is lower than 20!");
@@ -591,7 +591,7 @@ class BasicBehaviour extends Behaviour {
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
 					passed = 1;
-					alert("You have opened the altar!");
+					//alert("You have opened the altar!");
 				} else if (arr[x1][y1] == 65 && x1 == 5 && y1 == 5) {
 					hp = hp + 50;
 					ys1.getBehaviour(Transform).x = 2000;

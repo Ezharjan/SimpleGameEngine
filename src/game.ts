@@ -17,8 +17,8 @@ class KeyContainerBehaviour extends Behaviour {
 				[9, 1, 0, 1, 1, 1, 1, 1, 65, 0, 0, 1, 0, 0, 0, 9],
 				[9, 1, 0, 1, 1, 1, 1, 1, 67, 21, 0, 44, 0, 68, 1, 9],
 				[9, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 41, 0, 1, 1, 9],
-				[9, 1, 0, 1, 1, 42, 42, 1, 1, 1, 1, 1, 22, 1, 1, 9],
-				[9, 1, 0, 1, 1, 42, 42, 1, 1, 1, 1, 0, 0, 0, 65, 9],
+				[9, 1, 0, 1, 1, 1, 42, 1, 1, 1, 1, 1, 22, 1, 1, 9],
+				[9, 1, 0, 1, 1, 1, 42, 1, 1, 1, 1, 0, 0, 0, 65, 9],
 				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 22, 41, 1, 61, 9],
 				[9, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 9],
 				[9, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 9],
@@ -301,7 +301,7 @@ class KeyContainerBehaviour extends Behaviour {
 				mapArr[x1][y1] = 3;
 				mapArr[x][y] = 1;
 				passed = 1;
-				alert("You have opened the altar!");
+				//alert("You have opened the altar!");
 			} else if (mapArr[x1][y1] > 40 && mapArr[x1][y1] < 50) {
 				// var shanghai = arr[x1][y1] % 40;
 				// hp = hp - shanghai * 10;
@@ -394,7 +394,7 @@ class KeyContainerBehaviour extends Behaviour {
 							player.getBehaviour(Transform).y = x1 * 50 - 40;
 							mapArr[x1][y1] = 3;
 							mapArr[x][y] = 1;
-							mapArr[5][6] = 1; mapArr[6][6] = 1; mapArr[5][7] = 1; mapArr[6][7] = 1;
+							mapArr[6][6] = 1; mapArr[7][6] = 1;
 						}
 					} else {
 						alert("Your attackability is lower than 20!");
