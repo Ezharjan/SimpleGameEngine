@@ -10,7 +10,6 @@
         "./out/engine/systems.js",
         "./out/database.js",
         "./out/my-director.js",
-        "./out/game/map.js",
         "./out/game.js",
         "./out/engine/startup.js"
     ],

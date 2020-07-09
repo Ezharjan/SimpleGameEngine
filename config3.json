@@ -10,7 +10,6 @@
         "./out/engine/components.js",
         "./out/engine/systems.js",
         "./out/database.js",
-        "./out/game/map.js",
         "./out/game3.js",
         "./out/engine/startup3.js"
     ],
