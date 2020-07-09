@@ -314,7 +314,7 @@ class ThirdBehaviour extends Behaviour {
                             arr[x][y] = 1;
                             // wonAudio.playAudio(false);
                             // alert("Congratulations!");
-                            window.location.href = "../won.html";
+                            window.location.href = "./won.html";
                             //goodend.getBehaviour(Transform).x = 0;
                             //goodend.getBehaviour(Transform).y = 0;
                         }
@@ -375,7 +375,7 @@ class ThirdBehaviour extends Behaviour {
                 const floorBackgroungAudio = new AudioSystem();
                 //第三层的音乐
                 floorBackgroungAudio.audioPath = "./music/re-BGM.mp3";
-                floorBackgroungAudio.playAudio(true, 0.1);
+                floorBackgroungAudio.playAudio(true, 0.5);
                 FloorController.isAudioPlaying = false;
             }
             var e = event || window.event || arguments.callee.caller.arguments[0];

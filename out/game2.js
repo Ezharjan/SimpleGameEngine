@@ -694,6 +694,9 @@ class BasicBehaviour extends Behaviour {
                     hp = hp + 50;
                     ys8.getBehaviour(Transform).x = 2000;
                     ys8.getBehaviour(Transform).y = 2000;
+                    const potionAudio = new AudioSystem();
+                    potionAudio.audioPath = "./music/re-potion.mp3";
+                    potionAudio.playAudio(false);
                 }
                 else if (arr[x1][y1] == 67 && x1 == 1 && y1 == 1) {
                     bomb1.getBehaviour(Transform).x = 2000;

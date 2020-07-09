@@ -303,7 +303,7 @@ class ThirdBehaviour extends Behaviour {
 							arr[x][y] = 1;
 							// wonAudio.playAudio(false);
 							// alert("Congratulations!");
-							window.location.href = "../won.html";
+							window.location.href = "./won.html";
 							//goodend.getBehaviour(Transform).x = 0;
 							//goodend.getBehaviour(Transform).y = 0;
 						}
