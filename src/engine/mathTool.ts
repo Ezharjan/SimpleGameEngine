@@ -2,12 +2,9 @@
 /**
  * 数学工具
  */
-class MathTool
-{
-    constructor()
-    {
-        if (new.target === MathTool)
-        {
+class MathTool {
+    constructor() {
+        if (new.target === MathTool) {
             throw new Error("该类无法被实例化！");
         }
     }
@@ -16,8 +13,7 @@ class MathTool
      * @param degreeAngle 角度制下的角度
      * @returns 弧度制下的角度
      */
-    public static degreetoRadian(degreeAngle: number): number
-    {
+    public static degreetoRadian(degreeAngle: number): number {
         return (degreeAngle / 180) * Math.PI;
     }
     /**
@@ -25,8 +21,7 @@ class MathTool
      * @param radianAngle 弧度制下的角度
      * @returns 角度制下的角度
      */
-    public static radiantoDegree(radianAngle: number): number
-    {
+    public static radiantoDegree(radianAngle: number): number {
         return (radianAngle / Math.PI) * 180;
     }
     /**
@@ -35,8 +30,7 @@ class MathTool
      * @param center 圆心位置
      * @param radius 圆半径
      */
-    public static isPointInRound(position: Vector2, center: Vector2, radius: number): boolean
-    {
+    public static isPointInRound(position: Vector2, center: Vector2, radius: number): boolean {
         return Vector2.distance(position, center) <= radius;
     }
     /**
@@ -46,17 +40,14 @@ class MathTool
      * @param width 矩形宽
      * @param height 矩形高
      */
-    public static isPointInRect(point: Vector2, offset?: Vector2, width?: number, height?: number, points?: Vector2[]): boolean
-    {
-        if (points)
-        {
+    public static isPointInRect(point: Vector2, offset?: Vector2, width?: number, height?: number, points?: Vector2[]): boolean {
+        if (points) {
             const width = MathTool.pointToLineLength(points[0], points[1], points[2]);
             const height = MathTool.pointToLineLength(points[0], points[2], points[3]);
             const total = MathTool.pointToLineLength(point, points[0], points[1]) + MathTool.pointToLineLength(point, points[1], points[2]) + MathTool.pointToLineLength(point, points[2], points[3]) + MathTool.pointToLineLength(point, points[0], points[3]);
             return total === width + height;
         }
-        else
-        {
+        else {
             return point.x > offset.x && (point.x < offset.x + width) && point.y > offset.y && (point.y < offset.y + height);
         }
 
@@ -68,8 +59,7 @@ class MathTool
      * @param B 三角形B点
      * @param C 三角形C点
      */
-    public static isPointInTriangle(point: Vector2, A: Vector2, B: Vector2, C: Vector2): boolean
-    {
+    public static isPointInTriangle(point: Vector2, A: Vector2, B: Vector2, C: Vector2): boolean {
         const triangleArea = Math.abs(B.sub(A).cross(C.sub(A)));//三角形面积为(AB叉乘AC)/2[省去除法]
         const ABPArea = Math.abs(point.sub(A).cross(B.sub(A)));//ABP面积
         const BCPArea = Math.abs(point.sub(B).cross(C.sub(B)));//BCP面积
@@ -82,10 +72,8 @@ class MathTool
      * @param linePoint1 直线上的点1
      * @param linePoint2 直线上的点2
      */
-    public static pointToLineLength(point: Vector2, linePoint1: Vector2, linePoint2: Vector2): number
-    {
-        if (linePoint1 === linePoint2)
-        {
+    public static pointToLineLength(point: Vector2, linePoint1: Vector2, linePoint2: Vector2): number {
+        if (linePoint1 === linePoint2) {
             console.error("构成线段的两点不能相同！");
             return 0;
         }
@@ -102,8 +90,7 @@ class MathTool
      * @param radius 圆半径
      * @returns 线段是否穿过圆
      */
-    public static isSegmentThroughRound(start: Vector2, end: Vector2, center: Vector2, radius: number): boolean
-    {
+    public static isSegmentThroughRound(start: Vector2, end: Vector2, center: Vector2, radius: number): boolean {
         const centerToLineDistance = MathTool.pointToLineLength(center, start, end);
         if (centerToLineDistance <= radius)//直线穿过圆
         {
@@ -121,8 +108,7 @@ class MathTool
      * @param angle 角度制下的角度
      * @returns 位置
      */
-    public static getPointOnRound(center: Vector2, radius: number, angle: number): Vector2
-    {
+    public static getPointOnRound(center: Vector2, radius: number, angle: number): Vector2 {
         angle = -MathTool.degreetoRadian(angle + 180);
         const x = Math.sin(angle) * radius + center.x;
         const y = Math.cos(angle) * radius + center.y;
@@ -135,8 +121,7 @@ class MathTool
      * @param radius1 半径1
      * @param radius2 半径2
      */
-    public static isRoundsIntersectOrInclude(center1: Vector2, center2: Vector2, radius1: number, radius2: number): boolean
-    {
+    public static isRoundsIntersectOrInclude(center1: Vector2, center2: Vector2, radius1: number, radius2: number): boolean {
         return (Vector2.distance(center1, center2) <= radius1 + radius2);
     }
     /**
@@ -145,12 +130,9 @@ class MathTool
      * @param radius 半径
      * @param points 多边形点坐标
      */
-    public static isRoundIntersectWithPolygon(center: Vector2, radius: number, points: Vector2[]): boolean
-    {
-        for (let i = 0; i < points.length; i++)
-        {
-            if (MathTool.isSegmentThroughRound(points[i], points[(i === points.length - 1) ? 0 : i + 1], center, radius))
-            {
+    public static isRoundIntersectWithPolygon(center: Vector2, radius: number, points: Vector2[]): boolean {
+        for (let i = 0; i < points.length; i++) {
+            if (MathTool.isSegmentThroughRound(points[i], points[(i === points.length - 1) ? 0 : i + 1], center, radius)) {
                 return true;
             }
         }
@@ -162,8 +144,7 @@ class MathTool
      * @param radius 半径
      * @param points 多边形点坐标
      */
-    public static isPointInPolygon(center: Vector2, radius: number, points: Vector2[]): boolean
-    {
+    public static isPointInPolygon(center: Vector2, radius: number, points: Vector2[]): boolean {
         if (points.length === 3)//三角形
         {
             return MathTool.isPointInTriangle(center, points[0], points[1], points[2]);
@@ -177,8 +158,7 @@ class MathTool
 /**
  * 缓动类型
  */
-enum EaseType
-{
+enum EaseType {
     /** 线性 */
     Linear,
     /** 缓入 */
@@ -191,8 +171,7 @@ enum EaseType
 /**
  * 缓动函数
  */
-class EasingFunction
-{
+class EasingFunction {
     /**
      * 缓动数据数组
      */
@@ -205,8 +184,7 @@ class EasingFunction
      * @param easeType 缓动类型
      * @param isLoop 是否循环(默认不循环)
      */
-    public static setEasingFunction(name: string, start: number, end: number, easeType: EaseType, isLoop: boolean = false)
-    {
+    public static setEasingFunction(name: string, start: number, end: number, easeType: EaseType, isLoop: boolean = false) {
         this.easingDatas.push({ name, start, end, easeType, isLoop });
     }
     /**
@@ -215,24 +193,18 @@ class EasingFunction
      * @param time 时间(不循环会钳制在0-1之间)
      * @returns 输入时刻的函数值
      */
-    public static getValue(name: string, time: number): number
-    {
-        for (const data of this.easingDatas)
-        {
-            if (data.name === name)
-            {
-                if (!data.isLoop)
-                {
+    public static getValue(name: string, time: number): number {
+        for (const data of this.easingDatas) {
+            if (data.name === name) {
+                if (!data.isLoop) {
                     time = (time < 0) ? 0 : ((time > 1) ? 1 : time);
                 }
-                else
-                {
+                else {
                     const float = time % 1;//取小数部分
                     const int = time - float;//取整数部分
                     time = (int % 2 === 0) ? float : (1 - float);
                 }
-                switch (data.easeType)
-                {
+                switch (data.easeType) {
                     case EaseType.Linear:
                         return (data.end - data.start) * time + data.start;
                     case EaseType.EaseIn:
@@ -240,8 +212,7 @@ class EasingFunction
                     case EaseType.EaseOut:
                         return data.end - Math.pow((1 - time), 3) * (data.end - data.start);
                     case EaseType.EaseInOut:
-                        if (time <= 0.5)
-                        {
+                        if (time <= 0.5) {
                             return (data.end - data.start) * Math.pow(time, 3) * 4 + data.start;
                         }
                         return data.end - Math.pow((1 - time), 3) * 4 * (data.end - data.start);
@@ -254,12 +225,9 @@ class EasingFunction
 /**
  * 随机
  */
-class Random
-{
-    constructor()
-    {
-        if (new.target === Random)
-        {
+class Random {
+    constructor() {
+        if (new.target === Random) {
             throw new Error("该类无法被实例化！");
         }
     }
@@ -269,8 +237,7 @@ class Random
      * @param max 最大值
      * @param isInteger 是否为整数(默认是)
      */
-    public static generateNumber(min: number, max: number, isInteger: boolean = true): number
-    {
+    public static generateNumber(min: number, max: number, isInteger: boolean = true): number {
         const result = Math.random() * (max - min) + min;
         return isInteger ? Math.floor(result) : result;
     }
@@ -278,8 +245,7 @@ class Random
 /**
  * 二维向量
  */
-class Vector2
-{
+class Vector2 {
     /**
      * 横坐标
      */
@@ -292,8 +258,7 @@ class Vector2
      * @param x 横坐标
      * @param y 纵坐标
      */
-    constructor(x: number, y: number)
-    {
+    constructor(x: number, y: number) {
         this.x = x;
         this.y = y;
     }
@@ -301,24 +266,21 @@ class Vector2
      * @type 零向量
      * @readonly
      */
-    public static get zero(): Vector2
-    {
+    public static get zero(): Vector2 {
         return new Vector2(0, 0);
     }
     /**
      * @type 向量(1,1)
      * @readonly
      */
-    public static get one(): Vector2
-    {
+    public static get one(): Vector2 {
         return new Vector2(1, 1);
     }
     /**
      * 向量长度
      * @readonly
      */
-    public get magnitude(): number
-    {
+    public get magnitude(): number {
         return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
     }
     /**
@@ -326,8 +288,7 @@ class Vector2
      * @param addend 加数
      * @returns 运算结果
      */
-    public add(addend: Vector2): Vector2
-    {
+    public add(addend: Vector2): Vector2 {
         return new Vector2(this.x + addend.x, this.y + addend.y);
     }
     /**
@@ -335,8 +296,7 @@ class Vector2
      * @param reduction 减数
      * @returns 运算结果
      */
-    public sub(reduction: Vector2): Vector2
-    {
+    public sub(reduction: Vector2): Vector2 {
         return new Vector2(this.x - reduction.x, this.y - reduction.y);
     }
     /**
@@ -344,8 +304,7 @@ class Vector2
      * @param multiplier 乘数
      * @returns 运算结果
      */
-    public mul(multiplier: Vector2 | number): Vector2 | number
-    {
+    public mul(multiplier: Vector2 | number): Vector2 | number {
         if (multiplier instanceof Vector2)//向量点乘
         {
             return (this.x * multiplier.x) + (this.y * multiplier.y);
@@ -356,21 +315,17 @@ class Vector2
      * 叉乘
      * @param otherVector 另一个向量
      */
-    public cross(otherVector: Vector2): number
-    {
+    public cross(otherVector: Vector2): number {
         return this.x * otherVector.y - otherVector.x * this.y;
     }
     /**
      * 标准化
      */
-    public normalize(): Vector2
-    {
-        if (this.magnitude)
-        {
+    public normalize(): Vector2 {
+        if (this.magnitude) {
             return this.mul(1 / this.magnitude) as Vector2;
         }
-        else
-        {
+        else {
             console.warn("零向量不能被标准化！");
             return this;
         }
@@ -381,8 +336,7 @@ class Vector2
      * @param point2 点2
      * @returns 距离
      */
-    public static distance(point1: Vector2, point2: Vector2): number
-    {
+    public static distance(point1: Vector2, point2: Vector2): number {
         return Math.sqrt(Math.pow(point1.x - point2.x, 2) + Math.pow(point1.y - point2.y, 2));
     }
     /**
@@ -391,10 +345,8 @@ class Vector2
      * @param vector2 向量2
      * @returns 角度制下的夹角度数
      */
-    public static angle(vector1: Vector2, vector2: Vector2): number
-    {
-        if ((vector1.x === 0 && vector1.y === 0) || (vector2.x === 0 && vector2.y === 0))
-        {
+    public static angle(vector1: Vector2, vector2: Vector2): number {
+        if ((vector1.x === 0 && vector1.y === 0) || (vector2.x === 0 && vector2.y === 0)) {
             console.warn("其中一个向量为零向量，无法求得夹角");
             return 0;
         }
@@ -405,8 +357,7 @@ class Vector2
 /**
  * 矩阵
  */
-class Matrix
-{
+class CustomizedMatrix {
     a = 1;
     b = 0;
     dx = 0;
@@ -423,8 +374,7 @@ class Matrix
         (
             a = 1, b = 0, dx = 0,
             c = 0, d = 1, dy = 0
-        )
-    {
+        ) {
         this.a = a;
         this.b = b;
         this.dx = dx;
@@ -435,8 +385,7 @@ class Matrix
     /**
      * 打印矩阵
      */
-    public print()
-    {
+    public print() {
         console.log(this.a + ", " + this.b + ", " + this.dx);
         console.log(this.c + ", " + this.d + ", " + this.dy);
         console.log("0, 0, 1");
@@ -446,9 +395,8 @@ class Matrix
      * @param translation 平移方向及距离
      * @returns 平移矩阵
      */
-    public static translateMatrix(translation: Vector2): Matrix
-    {
-        return new Matrix
+    public static translateMatrix(translation: Vector2): CustomizedMatrix {
+        return new CustomizedMatrix
             (
                 1, 0, translation.x,
                 0, 1, translation.y,
@@ -458,10 +406,9 @@ class Matrix
      * 旋转矩阵
      * @param rotation 角度制下的旋转角度
      */
-    public static rotateMatrix(rotation: number): Matrix
-    {
+    public static rotateMatrix(rotation: number): CustomizedMatrix {
         const angle = MathTool.degreetoRadian(rotation);
-        return new Matrix
+        return new CustomizedMatrix
             (
                 Math.cos(angle), -Math.sin(angle), 0,
                 Math.sin(angle), Math.cos(angle), 0
@@ -471,9 +418,8 @@ class Matrix
      * 缩放矩阵
      * @param deltaScale 缩放增量
      */
-    public static scaleMatrix(deltaScale: Vector2): Matrix
-    {
-        return new Matrix
+    public static scaleMatrix(deltaScale: Vector2): CustomizedMatrix {
+        return new CustomizedMatrix
             (
                 deltaScale.x, 0, 0,
                 0, deltaScale.y, 0
@@ -486,8 +432,7 @@ class Matrix
      * @param deltaScale 缩放增量
      * @returns 变换矩阵
      */
-    public setAsTransformMatrix(deltaPosition: Vector2 = Vector2.zero, rotation: number = 0, deltaScale: Vector2 = Vector2.one): Matrix
-    {
+    public setAsTransformMatrix(deltaPosition: Vector2 = Vector2.zero, rotation: number = 0, deltaScale: Vector2 = Vector2.one): CustomizedMatrix {
         this.dx = deltaPosition.x;
         this.dy = deltaPosition.y;
         const angle = MathTool.degreetoRadian(rotation);
@@ -502,15 +447,14 @@ class Matrix
      * @param multiplier 乘数(向量/矩阵)
      * @returns 运算结果
      */
-    public mul(multiplier: Vector2 | Matrix): Vector2 | Matrix
-    {
+    public mul(multiplier: Vector2 | CustomizedMatrix): Vector2 | CustomizedMatrix {
         if (multiplier instanceof Vector2)//如果是矩阵与向量相乘
         {
             const x = this.a * multiplier.x + this.b * multiplier.y + this.dx;
             const y = this.c * multiplier.x + this.d * multiplier.y + this.dy;
             return new Vector2(x, y);
         }
-        else if (multiplier instanceof Matrix)//如果是矩阵与矩阵相乘
+        else if (multiplier instanceof CustomizedMatrix)//如果是矩阵与矩阵相乘
         {
             const a = this.a * multiplier.a + this.b * multiplier.c;
             const b = this.a * multiplier.b + this.b * multiplier.d;
@@ -518,7 +462,7 @@ class Matrix
             const c = this.c * multiplier.a + this.d * multiplier.c;
             const d = this.c * multiplier.b + this.d * multiplier.d;
             const dy = this.c * multiplier.dx + this.d * multiplier.dy + this.dy;
-            return new Matrix
+            return new CustomizedMatrix
                 (
                     a, b, dx,
                     c, d, dy
@@ -530,8 +474,7 @@ class Matrix
      * 求逆
      * @returns 运算结果
      */
-    public invert(): Matrix
-    {
+    public invert(): CustomizedMatrix {
         const determinant = this.a * this.d - this.b * this.c;
         if (determinant === 0)//行列式等于0
         {
@@ -544,7 +487,7 @@ class Matrix
         const c = -this.c / determinant;
         const d = this.a / determinant;
         const dy = (this.c * this.dx - this.a * this.dy) / determinant;
-        return new Matrix
+        return new CustomizedMatrix
             (
                 a, b, dx,
                 c, d, dy

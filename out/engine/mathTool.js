@@ -357,7 +357,7 @@ class Vector2 {
 /**
  * 矩阵
  */
-class Matrix {
+class CustomizedMatrix {
     /**
      * 构造的矩阵形式：
      *| a  b  dx |
@@ -392,7 +392,7 @@ class Matrix {
      * @returns 平移矩阵
      */
     static translateMatrix(translation) {
-        return new Matrix(1, 0, translation.x, 0, 1, translation.y);
+        return new CustomizedMatrix(1, 0, translation.x, 0, 1, translation.y);
     }
     /**
      * 旋转矩阵
@@ -400,14 +400,14 @@ class Matrix {
      */
     static rotateMatrix(rotation) {
         const angle = MathTool.degreetoRadian(rotation);
-        return new Matrix(Math.cos(angle), -Math.sin(angle), 0, Math.sin(angle), Math.cos(angle), 0);
+        return new CustomizedMatrix(Math.cos(angle), -Math.sin(angle), 0, Math.sin(angle), Math.cos(angle), 0);
     }
     /**
      * 缩放矩阵
      * @param deltaScale 缩放增量
      */
     static scaleMatrix(deltaScale) {
-        return new Matrix(deltaScale.x, 0, 0, 0, deltaScale.y, 0);
+        return new CustomizedMatrix(deltaScale.x, 0, 0, 0, deltaScale.y, 0);
     }
     /**
      * 设置为变换矩阵
@@ -438,7 +438,7 @@ class Matrix {
             const y = this.c * multiplier.x + this.d * multiplier.y + this.dy;
             return new Vector2(x, y);
         }
-        else if (multiplier instanceof Matrix) //如果是矩阵与矩阵相乘
+        else if (multiplier instanceof CustomizedMatrix) //如果是矩阵与矩阵相乘
          {
             const a = this.a * multiplier.a + this.b * multiplier.c;
             const b = this.a * multiplier.b + this.b * multiplier.d;
@@ -446,7 +446,7 @@ class Matrix {
             const c = this.c * multiplier.a + this.d * multiplier.c;
             const d = this.c * multiplier.b + this.d * multiplier.d;
             const dy = this.c * multiplier.dx + this.d * multiplier.dy + this.dy;
-            return new Matrix(a, b, dx, c, d, dy);
+            return new CustomizedMatrix(a, b, dx, c, d, dy);
         }
         throw new Error("乘数错误！");
     }
@@ -467,6 +467,6 @@ class Matrix {
         const c = -this.c / determinant;
         const d = this.a / determinant;
         const dy = (this.c * this.dx - this.a * this.dy) / determinant;
-        return new Matrix(a, b, dx, c, d, dy);
+        return new CustomizedMatrix(a, b, dx, c, d, dy);
     }
 }
