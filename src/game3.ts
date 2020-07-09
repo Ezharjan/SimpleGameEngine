@@ -318,7 +318,7 @@ class ThirdBehaviour extends Behaviour {
 						if (hp <= 0) {
 							// deadAudio.playAudio(false);
 							// alert("You're dead！Game Over!");
-							window.location.href = "../died.html";
+							window.location.href = "./died.html";
 						} else {
 							guaiwu21.getBehaviour(Transform).x = 2000;
 							guaiwu21.getBehaviour(Transform).y = 2000;
