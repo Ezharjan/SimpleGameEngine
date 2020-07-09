@@ -3,6 +3,7 @@
         "./out/engine/utils.js",
         "./out/engine/input.js",
         "./out/my-director.js",
+        "./out/engine/mathTool.js",
         "./out/engine/math.js",
         "./out/engine/core.js",
         "./out/engine/entities.js",
