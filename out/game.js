@@ -308,7 +308,7 @@ class KeyContainerBehaviour extends Behaviour {
                 mapArr[x1][y1] = 3;
                 mapArr[x][y] = 1;
                 passed = 1;
-                alert("You have opened the altar!");
+                // alert("You have opened the altar!");
             }
             else if (mapArr[x1][y1] > 40 && mapArr[x1][y1] < 50) {
                 // var shanghai = arr[x1][y1] % 40;

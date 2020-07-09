@@ -591,7 +591,7 @@ class BasicBehaviour extends Behaviour {
 					arr[x1][y1] = 3;
 					arr[x][y] = 1;
 					passed = 1;
-					alert("You have opened the altar!");
+					// alert("You have opened the altar!");
 				} else if (arr[x1][y1] == 65 && x1 == 5 && y1 == 5) {
 					hp = hp + 50;
 					ys1.getBehaviour(Transform).x = 2000;

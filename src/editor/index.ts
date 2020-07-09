@@ -98,8 +98,8 @@ setTimeout(async () => {
     canvas.id = 'game';
     // canvas.width = 1920;
     // canvas.height = 1280;
-    canvas.width = 410;
-    canvas.height = 410;
+    canvas.width = 1290;
+    canvas.height = 500;
     gamePanel.appendChild(canvas);
     gamePanel.appendChild(buttonPlay);
     gamePanel.appendChild(buttonBuild);
