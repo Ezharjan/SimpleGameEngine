@@ -1,3 +1,7 @@
+# MyTeamGame (A Simple Game Engine along with A Demo Game)
+
+
+
 ## The third version of the engine.
 
 #### More flexible and mature than the second version.
@@ -18,3 +22,10 @@
 ### Warn:
 1.  Running node http-server on the google browser will cause its storage unclearance and finnally result in failure to see the latest scripts running but the last one, so running on the private mode on google browser will eventually solve this trouble but it was not the best solution.  
 2.  Best solution is to disable cache in **Settings** --> **Preferences** --> **Net** .
+
+<br>
+<br>
+<br>
+
+
+_Developed during the summer vacation of 2020._
